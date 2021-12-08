@@ -1,11 +1,11 @@
 import { IRootState } from '@src/app-redux/interface';
 import { createSelector } from 'reselect';
 
-import { IThemeReducer } from './Theme.reducer';
+import { IThemeState } from './Theme.reducer';
 
 export const themeSelector = createSelector(
   (state: IRootState) => state.theme,
-  (theme: IThemeReducer) => theme,
+  (theme: IThemeState) => theme,
 );
 
 export const darkModeSelector = createSelector(themeSelector, (theme) => theme.darkMode);

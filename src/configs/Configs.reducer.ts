@@ -3,7 +3,7 @@ import { persistReducer } from 'redux-persist';
 import autoMergeLevel2 from 'redux-persist/es/stateReconciler/autoMergeLevel2';
 import storage from 'redux-persist/lib/storage';
 
-export interface IConfigsReducer {
+export interface IConfigsState {
   auth?: {
     deviceId: string;
     deviceToken: string;
@@ -11,7 +11,7 @@ export interface IConfigsReducer {
   language: string;
 }
 
-const initialState: IConfigsReducer = {
+const initialState: IConfigsState = {
   language: 'en',
 };
 

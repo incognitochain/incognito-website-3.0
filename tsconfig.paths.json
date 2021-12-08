@@ -9,7 +9,7 @@
       "@configs/*" : ["./configs/*"],
       "@services/*" : ["./services/*"],
       "@images/*" : ["./assets/images/*"],
-      "@theme/*" : ["./theme/*"]
+      "@theme/*" : ["./theme/*"],
     }
   }
 }

@@ -13,6 +13,9 @@ export const Image = styled.img`
   position: relative;
   height: 726px;
   object-fit: cover;
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+      height: 80vh;
+    `}
 `;
 
 export const Styled = styled.div`
