@@ -193,6 +193,14 @@ export const ThemedGlobalStyle = createGlobalStyle`
         user-select: none;
     }
     
+    p {
+      color: ${({ theme }) => theme.text1}
+    }
+
+    div {
+      color: ${({ theme }) => theme.background1}
+    }
+    
     // text
     .text1 {
       color: ${({ theme }) => theme.text1}

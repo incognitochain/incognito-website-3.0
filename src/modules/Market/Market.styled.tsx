@@ -3,8 +3,8 @@ import styled, { ITheme } from 'styled-components';
 export const Styled = styled.div`
   height: 100px;
   .wrap-content {
-    margin-left: 160px;
-    margin-right: 160px;
+    margin-left: 140px;
+    margin-right: 140px;
     margin-top: 168px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
