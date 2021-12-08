@@ -6,7 +6,7 @@ export const route = '/';
 const HomeRoute: IRouteProps = {
   path: route,
   exact: true,
-  component: lazy(() => import('@modules/Home')),
+  component: lazy(() => import('@modules/Market')),
   name: 'Home',
   to: route,
 };

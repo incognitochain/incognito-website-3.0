@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { Styled } from './Home.styled';
+import { Styled } from './Market.styled';
 
 const Home = () => {
   return <Styled />;
