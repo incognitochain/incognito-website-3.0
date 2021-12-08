@@ -5,6 +5,12 @@ export interface Colors {
   // base
   white: Color;
   black: Color;
+
+  // background
+  background1: Color;
+
+  // text
+  text1: Color;
 }
 
 export interface Grids {

@@ -12,17 +12,7 @@ export const translateSelector = createSelector(configsSelector, (configs) =>
   translateByLanguage(configs.language),
 );
 
-export const appTranslateSelector = createSelector(
+export const marketTranslateSelector = createSelector(
   translateSelector,
-  (translate) => translate.app,
-);
-
-export const nodeMonitorTranslateSelector = createSelector(
-  translateSelector,
-  (translate) => translate.nodeMonitor,
-);
-
-export const reuseTranslateSelector = createSelector(
-  translateSelector,
-  (translate) => translate.reuse,
+  (translate) => translate.market,
 );
