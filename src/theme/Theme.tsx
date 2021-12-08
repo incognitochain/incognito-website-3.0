@@ -166,6 +166,13 @@ export const ThemedGlobalStyle = createGlobalStyle`
         font-size: ${FONTS.SIZE.superLarge}px;
         line-height: ${FONTS.SIZE.superLarge + 7}px;
     }
+
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        .fs-superlarge {
+            font-size: ${FONTS.SIZE.veryLarge}px;
+            line-height: ${FONTS.SIZE.veryLarge + 7}px;
+        }
+    `}
     
     .center {
         display: flex;
@@ -186,7 +193,19 @@ export const ThemedGlobalStyle = createGlobalStyle`
         user-select: none;
     }
     
+    // text
     .text1 {
       color: ${({ theme }) => theme.text1}
+    }
+    .text2 {
+      color: ${({ theme }) => theme.text2}
+    }
+    
+    // background
+    .background1 {
+      background-color: ${({ theme }) => theme.background1}
+    }
+    .background2 {
+      background-color: ${({ theme }) => theme.background2}
     }
 `;

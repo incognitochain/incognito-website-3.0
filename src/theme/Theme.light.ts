@@ -7,9 +7,13 @@ const lightTheme = (): Colors => {
     white,
     black,
 
+    // background
     background1: white,
+    background2: white,
 
+    // text
     text1: black,
+    text2: black,
   };
 };
 

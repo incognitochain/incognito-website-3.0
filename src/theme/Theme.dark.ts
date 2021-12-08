@@ -7,9 +7,12 @@ const darkTheme = (): Colors => {
     white,
     black,
 
+    // background
     background1: black,
+    background2: '#303030',
 
     text1: white,
+    text2: '#9C9C9C',
   };
 };
 

@@ -5,4 +5,10 @@ export interface ILanguage {
 
 export interface IMarket {
   mainTitle: any;
+  untraceable: string;
+  untraceableDetail: string;
+  unlinkable: string;
+  unlinkableDetail: string;
+  commissionFree: string;
+  commissionFreeDetail: string;
 }

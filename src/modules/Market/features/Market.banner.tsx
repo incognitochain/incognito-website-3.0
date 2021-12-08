@@ -11,12 +11,17 @@ import styled, { ITheme } from 'styled-components';
 export const Image = styled.img`
   width: 100%;
   position: relative;
+  height: 726px;
+  object-fit: cover;
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+        height: 480px;
+    `}
 `;
 
 export const Styled = styled.div`
   margin-top: 47px;
   position: relative;
-  .wrap-content {
+  .banner-wrap-content {
     position: absolute;
     right: 0;
     left: 0;
@@ -42,6 +47,7 @@ export const Styled = styled.div`
   }
   .title {
     text-align: center;
+    white-space: pre-wrap;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .wrap-app-link {
@@ -61,8 +67,8 @@ const MarketBanner = () => {
   return (
     <Styled>
       <Image src={marketBanner} alt="market-banner" />
-      <div className="wrap-content">
-        <p className="text1 fs-superlarge title">{marketTrs.mainTitle}</p>
+      <div className="banner-wrap-content">
+        <p className="text1 fs-superlarge fw-medium title">{marketTrs.mainTitle}</p>
         <Row className="wrap-app-link">
           <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">
             <img className="app-link" src={appstore} alt="appstore" />

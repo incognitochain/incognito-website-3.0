@@ -8,9 +8,11 @@ export interface Colors {
 
   // background
   background1: Color;
+  background2: Color;
 
   // text
   text1: Color;
+  text2: Color;
 }
 
 export interface Grids {
