@@ -12,4 +12,7 @@ export interface IMarket {
   commissionFree: string;
   commissionFreeDetail: string;
   privacyMarket: string;
+  name: string;
+  lastPrice: string;
+  change24h: string;
 }

@@ -1,7 +1,7 @@
 import {
   actionGetCustomTokens,
   actionGetPTokens,
-} from '@src/app-redux/tokens/Token.action';
+} from '@src/app-redux/token/Token.action';
 import React, { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 

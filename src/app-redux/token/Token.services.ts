@@ -1,7 +1,7 @@
 import httpAppService from '@services/rpcClient/rpchttpappservice';
 import httpCoinService from '@services/rpcClient/rpchttpcoinservice';
-import { CustomTokenBuilder, PTokensBuilder } from '@src/app-redux/tokens/Token.builder';
-import { IPTokenState } from '@src/app-redux/tokens/Token.type';
+import { CustomTokenBuilder, PTokensBuilder } from '@src/app-redux/token/Token.builder';
+import { IPTokenState } from '@src/app-redux/token/Token.type';
 
 export const apiGetPTokenList = async (): Promise<IPTokenState[]> => {
   const pTokens: any = await httpCoinService.apiGetPTokenList();

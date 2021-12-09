@@ -1,5 +1,5 @@
-import TOKENS_ACTION_TYPES from '@src/app-redux/tokens/Token.actionNames';
-import { ITokenState } from '@src/app-redux/tokens/Token.type';
+import TOKENS_ACTION_TYPES from '@src/app-redux/token/Token.actionNames';
+import { ITokenState } from '@src/app-redux/token/Token.type';
 
 const initialState: ITokenState = {
   pTokens: [],

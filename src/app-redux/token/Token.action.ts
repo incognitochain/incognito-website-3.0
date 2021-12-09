@@ -1,9 +1,9 @@
-import TOKENS_ACTION_TYPES from '@src/app-redux/tokens/Token.actionNames';
+import TOKENS_ACTION_TYPES from '@src/app-redux/token/Token.actionNames';
 import {
   apiGetCustomTokenList,
   apiGetPTokenList,
-} from '@src/app-redux/tokens/Token.services';
-import { ICustomTokenState, IPTokenState } from '@src/app-redux/tokens/Token.type';
+} from '@src/app-redux/token/Token.services';
+import { ICustomTokenState, IPTokenState } from '@src/app-redux/token/Token.type';
 import { Dispatch } from 'react';
 
 const actionSetPTokens = (payload: IPTokenState[]) => ({

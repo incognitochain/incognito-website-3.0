@@ -1,4 +1,4 @@
-import { ICustomTokenState, IPTokenState } from '@src/app-redux/tokens/Token.type';
+import { ICustomTokenState, IPTokenState } from '@src/app-redux/token/Token.type';
 
 export const PTokensBuilder = (data: any): IPTokenState => {
   const pairPrv = data?.CurrentPrvPool !== 0;

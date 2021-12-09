@@ -1,6 +1,6 @@
 import { apiGetPoolList } from '@src/app-redux/pool/Pool.services';
 import { IPoolItemState } from '@src/app-redux/pool/Pool.type';
-import TOKENS_ACTION_TYPES from '@src/app-redux/tokens/Token.actionNames';
+import TOKENS_ACTION_TYPES from '@src/app-redux/token/Token.actionNames';
 import { Dispatch } from 'react';
 
 const actionSetPoolList = (payload: IPoolItemState[]) => ({
