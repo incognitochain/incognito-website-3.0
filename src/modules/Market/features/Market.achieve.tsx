@@ -1,5 +1,5 @@
 import { marketTranslateSelector } from '@src/configs';
-import { Card, Col, List } from 'antd';
+import { Card, Col, List, Row } from 'antd';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
@@ -19,7 +19,7 @@ export const Styled = styled.div`
     text-align: center;
   }
   .achieve-margin-right {
-    margin-right: 100px;
+    //margin-right: 100px;
   }
 
   .achieve-wrap {
@@ -55,9 +55,11 @@ const Item = styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${({ theme }) => theme.background3};
+    margin: auto;
   }
   .achieve-item-title {
     font-size: 54px;
+    margin-bottom: 0;
     color: ${({ theme }) => theme.background4};
   }
   .achieve-item-sub-title {
@@ -120,7 +122,24 @@ const MarketAchieve = () => {
   return (
     <Styled className="background2">
       <p className="achieve-title">{marketTrs.youCanTradeCrypto}</p>
-      <div className="achieve-wrap">{Factory.map(renderItem)}</div>
+      <Row>
+        <Col xs={24} style={{ textAlign: 'center' }}>
+          <List
+            grid={{
+              gutter: 24,
+              xs: 2,
+              sm: 2,
+              md: 2,
+              lg: 2,
+              xl: 4,
+              xxl: 4,
+            }}
+            dataSource={Factory}
+            renderItem={renderItem}
+          />
+        </Col>
+      </Row>
+      ,{/*<div className="achieve-wrap">{Factory.map(renderItem)}</div>*/}
     </Styled>
   );
 };
