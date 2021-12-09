@@ -5,12 +5,13 @@ import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled.div`
-  height: 752px;
   margin-top: 121px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 120px;
+  padding-top: 120px;
 
   .achieve-title {
     font-size: 62px;
@@ -18,32 +19,13 @@ export const Styled = styled.div`
     white-space: pre-wrap;
     text-align: center;
   }
-  .achieve-margin-right {
-    //margin-right: 100px;
+  .achieve-margin-right ~ .achieve-margin-right {
+    margin-left: 24px;
   }
 
   .achieve-wrap {
-    display: flex;
-    flex-direction: row;
     margin-top: 80px;
   }
-
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-        height: 500px;
-        .achieve-circle {
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            background-color: ${({ theme }) => theme.background3};
-        }
-        .achieve-margin-right {
-            margin-right: 20px;
-        }
-        .achieve-title {
-            font-size: 32px;
-            line-height: 40px;
-        }
-    `}
 `;
 
 const Item = styled.div`
@@ -112,34 +94,36 @@ const MarketAchieve = () => {
   );
 
   const renderItem = (item: any) => (
-    <Item className={`${item.className}`}>
-      <div className={`achieve-circle`}>
-        <p className="achieve-item-title">{item.title}</p>
-      </div>
-      <p className="text-align-center achieve-item-sub-title">{item.content}</p>
-    </Item>
+    <Card>
+      <Item className="achieve-margin-right">
+        <div className={`achieve-circle`}>
+          <p className="achieve-item-title">{item.title}</p>
+        </div>
+        <p className="text-align-center achieve-item-sub-title">{item.content}</p>
+      </Item>
+    </Card>
   );
   return (
     <Styled className="background2">
       <p className="achieve-title">{marketTrs.youCanTradeCrypto}</p>
-      <Row>
+      <Row className="achieve-wrap">
         <Col xs={24} style={{ textAlign: 'center' }}>
           <List
             grid={{
-              gutter: 24,
-              xs: 2,
-              sm: 2,
-              md: 2,
+              gutter: 16,
+              xs: 1,
+              sm: 1,
+              md: 1,
               lg: 2,
               xl: 4,
               xxl: 4,
             }}
+            style={{ marginLeft: 12 }}
             dataSource={Factory}
             renderItem={renderItem}
           />
         </Col>
       </Row>
-      ,{/*<div className="achieve-wrap">{Factory.map(renderItem)}</div>*/}
     </Styled>
   );
 };

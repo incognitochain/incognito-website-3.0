@@ -14,12 +14,13 @@ export const Styled = styled(Col)`
     border-radius: 16px;
     margin-top: 40px;
     overflow: auto;
+    -webkit-box-pack: justify;
   }
   .token-main-title {
     margin-top: 120px;
   }
   .token-wrap-item {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     height: 89px;
     align-items: center;
@@ -44,7 +45,7 @@ export const Styled = styled(Col)`
     min-width: 250px;
   }
   .token-wrap-header {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     min-width: 250px;
@@ -56,7 +57,7 @@ export const Styled = styled(Col)`
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .token-extra {
-            overflow-y: auto;
+            overflow-x: scroll;
         }
         .token-wrap-item {
             padding-right: 32px;

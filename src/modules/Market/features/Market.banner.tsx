@@ -11,7 +11,7 @@ import styled, { ITheme } from 'styled-components';
 export const Image = styled.img`
   width: 100%;
   position: relative;
-  height: 726px;
+  height: auto;
   object-fit: cover;
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
       height: 80vh;

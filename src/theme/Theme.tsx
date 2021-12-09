@@ -227,4 +227,11 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .background2 {
       background-color: ${({ theme }) => theme.background2}
     }
+
+    .ant-card {
+      background: transparent;
+    }
+    .ant-card-bordered {
+      border: none;
+    }
 `;
