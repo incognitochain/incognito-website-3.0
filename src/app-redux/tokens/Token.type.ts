@@ -1,5 +1,6 @@
 export interface ITokenState {
   pTokens: IPTokenState[];
+  customTokens: ICustomTokenState[];
 }
 
 export interface IPTokenState {
@@ -22,4 +23,24 @@ export interface IPTokenState {
   defaultPoolPair: string;
   defaultPairToken: string;
   network: string;
+}
+
+export interface ICustomTokenState {
+  id: string;
+  tokenID: string;
+  image: string;
+  isPrivacy: boolean;
+  name: string;
+  symbol: string;
+  userID: string;
+  ownerAddress: string;
+  description: string;
+  showOwnerAddress: boolean;
+  isOwner: boolean;
+  ownerName: string;
+  ownerEmail: string;
+  ownerWebsite: string;
+  totalSupply: number;
+  verified: boolean;
+  amount: number;
 }

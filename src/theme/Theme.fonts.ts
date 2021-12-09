@@ -5,7 +5,7 @@ export const FONT_SIZES = {
   medium: 18,
   superMedium: 20,
   large: 26,
-  avgLarge: 30,
+  avgLarge: 34,
   veryLarge: 48,
   superLarge: 88,
 };

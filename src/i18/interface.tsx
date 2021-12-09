@@ -11,4 +11,5 @@ export interface IMarket {
   unlinkableDetail: string;
   commissionFree: string;
   commissionFreeDetail: string;
+  privacyMarket: string;
 }

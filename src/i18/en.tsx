@@ -9,6 +9,7 @@ const language: ILanguage = {
     unlinkableDetail: 'One-time addresses are created for every transaction.',
     commissionFree: 'Commission-free',
     commissionFreeDetail: 'No trading fees. What you buy is what you get.',
+    privacyMarket: 'Privacy Markets',
   },
 };
 

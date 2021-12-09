@@ -3,6 +3,7 @@ import { ITokenState } from '@src/app-redux/tokens/Token.type';
 
 const initialState: ITokenState = {
   pTokens: [],
+  customTokens: [],
 };
 
 const tokenReducer = (state = initialState, action: { type: string; payload: any }) => {
@@ -11,6 +12,12 @@ const tokenReducer = (state = initialState, action: { type: string; payload: any
       return {
         ...state,
         pTokens: action.payload || [],
+      };
+    }
+    case TOKENS_ACTION_TYPES.SET_CUSTOM_TOKEN_LIST: {
+      return {
+        ...state,
+        customTokens: action.payload || [],
       };
     }
     default:

@@ -1,4 +1,4 @@
-import { IPTokenState } from '@src/app-redux/tokens/Token.type';
+import { ICustomTokenState, IPTokenState } from '@src/app-redux/tokens/Token.type';
 
 export const PTokensBuilder = (data: any): IPTokenState => {
   const pairPrv = data?.CurrentPrvPool !== 0;
@@ -41,5 +41,44 @@ export const PTokensBuilder = (data: any): IPTokenState => {
     defaultPoolPair,
     defaultPairToken,
     network,
+  };
+};
+
+export const CustomTokenBuilder = (data: any): ICustomTokenState => {
+  const id = data?.TokenID;
+  const tokenID = data?.TokenID;
+  const image = data?.Image;
+  const isPrivacy = data?.IsPrivacy;
+  const name = data?.Name;
+  const symbol = data?.Symbol;
+  const userID = data?.UserID;
+  const ownerAddress = data?.OwnerAddress;
+  const description = data?.Description;
+  const showOwnerAddress = Boolean(data?.ShowOwnerAddress);
+  const isOwner = data?.IsOwner;
+  const ownerName = data?.OwnerName;
+  const ownerEmail = data?.OwnerEmail;
+  const ownerWebsite = data?.OwnerWebsite;
+  const totalSupply = data?.Amount;
+  const verified = data?.Verified || false;
+  const amount = 0;
+  return {
+    id,
+    tokenID,
+    image,
+    isPrivacy,
+    name,
+    symbol,
+    userID,
+    ownerAddress,
+    description,
+    showOwnerAddress,
+    isOwner,
+    ownerName,
+    ownerEmail,
+    ownerWebsite,
+    totalSupply,
+    verified,
+    amount,
   };
 };

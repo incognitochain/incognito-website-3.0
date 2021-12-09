@@ -73,13 +73,13 @@ const MarketCategory = () => {
         subTitle: marketTrs.commissionFreeDetail,
       },
     ];
-  }, []);
+  }, [marketTrs]);
 
   const renderItem = (item: ICategory) => (
     <Col key={item.title} className={`wrap-category-item background2 ${item.className}`}>
       {item.icon}
       <p className="fs-large category-title">{item.title}</p>
-      <p className="fw-regular fs-medium category-sub-title">{item.subTitle}</p>
+      <p className="fw-regular fs-medium category-sub-title text2">{item.subTitle}</p>
     </Col>
   );
 

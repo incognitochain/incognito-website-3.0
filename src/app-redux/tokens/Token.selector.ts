@@ -8,3 +8,8 @@ const tokenSelector = createSelector(
 );
 
 export const pTokenSelector = createSelector(tokenSelector, (tokens) => tokens.pTokens);
+
+export const pCustomTokenSelector = createSelector(
+  tokenSelector,
+  (tokens) => tokens.customTokens,
+);
