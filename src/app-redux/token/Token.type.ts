@@ -18,11 +18,14 @@ export interface IPTokenState {
   verified: boolean;
   currencyType: number; // including ERC20, BEP1, BEP2,...
   priceUsd: number;
+  priceUSDHuman: string;
   change: string;
   pricePrv: number;
   defaultPoolPair: string;
   defaultPairToken: string;
   network: string;
+  pName: string;
+  changeStr: string;
 }
 
 export interface ICustomTokenState {

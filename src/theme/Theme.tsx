@@ -192,6 +192,13 @@ export const ThemedGlobalStyle = createGlobalStyle`
         -ms-user-select: none;
         user-select: none;
     }
+    .text-align-left {
+      text-align: left;
+    }
+
+    .text-align-right {
+      text-align: right;
+    }
     
     p {
       color: ${({ theme }) => theme.text1}

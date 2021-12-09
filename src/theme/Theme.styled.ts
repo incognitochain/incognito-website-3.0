@@ -13,6 +13,8 @@ export interface Colors {
   // text
   text1: Color;
   text2: Color;
+
+  border1: Color;
 }
 
 export interface Grids {

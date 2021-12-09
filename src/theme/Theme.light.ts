@@ -14,6 +14,9 @@ const lightTheme = (): Colors => {
     // text
     text1: black,
     text2: black,
+
+    // border
+    border1: '#484848',
   };
 };
 

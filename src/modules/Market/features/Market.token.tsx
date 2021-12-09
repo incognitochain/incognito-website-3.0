@@ -2,34 +2,65 @@ import { mainPTokenSelector } from '@src/app-redux/token/Token.selector';
 import { IPTokenState } from '@src/app-redux/token/Token.type';
 import { TokenConstant } from '@src/common';
 import { marketTranslateSelector } from '@src/configs';
-import { Col } from 'antd';
+import { Col, Row } from 'antd';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled(Col)`
+  .token-extra {
+    border: 1px solid ${({ theme }) => theme.border1};
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin-top: 40px;
+    overflow: auto;
+  }
   .token-main-title {
     margin-top: 120px;
   }
   .token-wrap-item {
     display: flex;
     flex-direction: row;
+    height: 89px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .token-name {
+    margin-left: 16px;
+  }
+  .token-price {
+    min-width: 200px;
+  }
+  .token-change {
+    min-width: 200px;
+  }
+  .token-wrap-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 250px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        .token-extra {
+            overflow-y: auto;
+        }
+        .token-wrap-item {
+            padding-right: 32px;
+        }
     `}
 `;
 
-const Item = React.memo(({ item }: { item: IPTokenState }) => {
-  const getName = () => {
-    if (item.tokenId === TokenConstant.PRV_TOKEN_ID) {
-      return `${item.name} Incognito`;
-    }
-    return `Privacy ${item.name}`;
-  };
+const Item = React.memo(({ item, index }: { item: IPTokenState; index: number }) => {
   return (
-    <div className="token-wrap-item">
-      <p>{item.symbol}</p>
-      <p>{getName()}</p>
+    <div className={`token-wrap-item ${index % 2 !== 0 ? 'background2' : ''}`}>
+      <div className="token-wrap-section">
+        <p className="fs-superMedium">{item.pSymbol}</p>
+        <p className="fs-superMedium text2 token-name">{item.pName}</p>
+      </div>
+      <p className="fs-superMedium text-align-right token-price">{`$${item.priceUSDHuman}`}</p>
+      <p className="fs-superMedium text-align-right token-change">{`${item.changeStr}`}</p>
     </div>
   );
 });
@@ -37,13 +68,15 @@ const Item = React.memo(({ item }: { item: IPTokenState }) => {
 const MarketTokens = () => {
   const marketTrs = useSelector(marketTranslateSelector);
   const tokens = useSelector(mainPTokenSelector);
-  const renderItem = (item: IPTokenState) => <Item item={item} />;
+  const renderItem = (item: IPTokenState, index: number) => (
+    <Item item={item} index={index} />
+  );
   return (
     <Styled>
       <p className="fs-avglarge fw-suppermedium token-main-title">
         {marketTrs.privacyMarket}
       </p>
-      {tokens.map(renderItem)}
+      <div className="token-extra">{tokens.map(renderItem)}</div>
     </Styled>
   );
 };

@@ -1,4 +1,8 @@
 import { ICustomTokenState, IPTokenState } from '@src/app-redux/token/Token.type';
+import { TokenConstant } from '@src/common';
+import { Convert } from '@src/utils';
+import { formatPrice } from '@utils/convert';
+import replace from 'lodash/replace';
 
 export const PTokensBuilder = (data: any): IPTokenState => {
   const pairPrv = data?.CurrentPrvPool !== 0;
@@ -11,7 +15,13 @@ export const PTokensBuilder = (data: any): IPTokenState => {
   const decimals = data.Decimals;
   const pDecimals = data.PDecimals;
   const type = data.Type; // coin or token
-  const pSymbol = data.PSymbol;
+  let pName;
+  if (tokenId === TokenConstant.PRV_TOKEN_ID) {
+    pName = 'Private Coin';
+  } else {
+    pName = `Privacy ${name}`;
+  }
+  const pSymbol = `p${symbol}`;
   const verified = data.Verified;
   const currencyType = data.CurrencyType; // including ERC20, BEP1, BEP2,...
   const priceUsd = data?.PriceUsd;
@@ -20,7 +30,17 @@ export const PTokensBuilder = (data: any): IPTokenState => {
   const defaultPoolPair = data?.DefaultPoolPair;
   const defaultPairToken = data?.DefaultPairToken;
   const network = data?.Network;
+  const priceUSDHuman = formatPrice({ price: priceUsd });
 
+  const isTokenDecrease = change && change[0] === '-';
+  const changeToNumber = Number(replace(change, '-', ''));
+  const changeStr =
+    changeToNumber === 0
+      ? '0%'
+      : `${isTokenDecrease ? '-' : '+'}${Convert.amountVer2({
+          amount: changeToNumber,
+          decimals: 0,
+        })}%`;
   return {
     pairPrv,
     id,
@@ -28,6 +48,7 @@ export const PTokensBuilder = (data: any): IPTokenState => {
     tokenId,
     symbol,
     name,
+    pName,
     contractId,
     decimals,
     pDecimals,
@@ -41,6 +62,8 @@ export const PTokensBuilder = (data: any): IPTokenState => {
     defaultPoolPair,
     defaultPairToken,
     network,
+    priceUSDHuman,
+    changeStr,
   };
 };
 
