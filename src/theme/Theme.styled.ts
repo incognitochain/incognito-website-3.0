@@ -9,6 +9,8 @@ export interface Colors {
   // background
   background1: Color;
   background2: Color;
+  background3: Color;
+  background4: Color;
 
   // text
   text1: Color;

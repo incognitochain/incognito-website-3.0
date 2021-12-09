@@ -199,6 +199,10 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .text-align-right {
       text-align: right;
     }
+
+    .text-align-center {
+      text-align: center;
+    }
     
     p {
       color: ${({ theme }) => theme.text1}

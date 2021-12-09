@@ -15,4 +15,10 @@ export interface IMarket {
   name: string;
   lastPrice: string;
   change24h: string;
+  youCanTradeCrypto: string;
+  getStartedIn: string;
+  volumeTraded: string;
+  anonymousTrades: string;
+  privateCryptocurrencies: string;
+  bridgedBlockchains: string;
 }

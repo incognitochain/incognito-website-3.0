@@ -10,6 +10,8 @@ const darkTheme = (): Colors => {
     // background
     background1: black,
     background2: '#303030',
+    background3: '#1A1A1A',
+    background4: '#1A73E8',
 
     text1: white,
     text2: '#9C9C9C',

@@ -13,6 +13,12 @@ const language: ILanguage = {
     name: 'Name',
     lastPrice: 'Last price',
     change24h: '24h change',
+    youCanTradeCrypto: 'You can trade crypto\nwithout being spied on.',
+    getStartedIn: 'Get started in a few minutes.',
+    volumeTraded: 'Volume traded',
+    anonymousTrades: 'Anonymous trades',
+    privateCryptocurrencies: 'Private cryptocurrencies',
+    bridgedBlockchains: 'Bridged blockchains',
   },
 };
 

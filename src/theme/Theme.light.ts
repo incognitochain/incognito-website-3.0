@@ -10,6 +10,8 @@ const lightTheme = (): Colors => {
     // background
     background1: white,
     background2: white,
+    background3: '#1A1A1A',
+    background4: '#1A73E8',
 
     // text
     text1: black,
