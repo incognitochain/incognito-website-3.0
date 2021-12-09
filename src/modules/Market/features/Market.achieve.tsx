@@ -110,7 +110,6 @@ const MarketAchieve = () => {
         <Col xs={24} style={{ textAlign: 'center' }}>
           <List
             grid={{
-              gutter: 16,
               xs: 1,
               sm: 1,
               md: 1,

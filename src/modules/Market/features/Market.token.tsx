@@ -88,7 +88,7 @@ const MarketTokens = () => {
   const marketTrs = useSelector(marketTranslateSelector);
   const tokens = useSelector(mainPTokenSelector);
   const renderItem = (item: IPTokenState, index: number) => (
-    <Item item={item} index={index} />
+    <Item key={item.tokenId} item={item} index={index} />
   );
   return (
     <Styled>
