@@ -20,7 +20,7 @@ export const Styled = styled(Col)`
     margin-top: 120px;
   }
   .token-wrap-item {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     height: 89px;
     align-items: center;
@@ -45,7 +45,7 @@ export const Styled = styled(Col)`
     min-width: 250px;
   }
   .token-wrap-header {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     min-width: 250px;
@@ -61,6 +61,12 @@ export const Styled = styled(Col)`
         }
         .token-wrap-item {
             padding-right: 32px;
+        }
+        .token-wrap-header {
+            display: inline-flex;
+        }
+        .token-wrap-item {
+            display: inline-flex;
         }
     `}
 `;
