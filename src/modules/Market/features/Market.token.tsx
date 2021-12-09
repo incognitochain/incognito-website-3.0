@@ -26,6 +26,7 @@ export const Styled = styled(Col)`
     justify-content: space-between;
     padding-left: 32px;
     padding-right: 32px;
+    border-bottom: 1px solid ${({ theme }) => theme.border1};
   }
   .token-name {
     margin-left: 16px;
@@ -41,6 +42,17 @@ export const Styled = styled(Col)`
     flex-direction: row;
     align-items: center;
     min-width: 250px;
+  }
+  .token-wrap-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 250px;
+    padding-left: 32px;
+    padding-right: 32px;
+    height: 59px;
+    justify-content: space-between;
+    border-bottom: 1px solid ${({ theme }) => theme.border1};
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .token-extra {
@@ -76,7 +88,20 @@ const MarketTokens = () => {
       <p className="fs-avglarge fw-suppermedium token-main-title">
         {marketTrs.privacyMarket}
       </p>
-      <div className="token-extra">{tokens.map(renderItem)}</div>
+      <div className="token-extra">
+        <div className="token-wrap-header background2">
+          <div className="token-wrap-section">
+            <p className="fs-superMedium text2">{marketTrs.name}</p>
+          </div>
+          <p className="fs-superMedium text-align-right token-price text2">
+            {marketTrs.lastPrice}
+          </p>
+          <p className="fs-superMedium text-align-right token-change text2">
+            {marketTrs.change24h}
+          </p>
+        </div>
+        {tokens.map(renderItem)}
+      </div>
     </Styled>
   );
 };
