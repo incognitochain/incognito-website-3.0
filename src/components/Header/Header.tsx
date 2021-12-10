@@ -49,6 +49,11 @@ const Styled = styled(Row)`
     height: 32px;
   }
 
+  .wrap-menu-desktop {
+    margin: auto;
+    padding-right: 80px;
+  }
+
   .ant-menu-dark.ant-menu-horizontal {
     flex: 1;
     background: transparent;
@@ -77,6 +82,8 @@ const Styled = styled(Row)`
   .sub-menu-text {
     font-size: 18px;
     font-weight: 500;
+    margin-top: 7px;
+    text-align: right;
   }
 `;
 
@@ -142,9 +149,9 @@ const Header = () => {
   );
 
   return (
-    <Styled align="middle" justify="space-between" className="default-padding-horizontal">
+    <Styled align="middle" className="default-padding-horizontal">
       <img className="app-logo" src={logo} alt="app-logo" />
-      <Row>
+      <Row className="wrap-menu-desktop">
         <div className="menu">{HomeMenu()}</div>
       </Row>
       <Dropdown overlay={MoreMenu} placement="bottomRight">
