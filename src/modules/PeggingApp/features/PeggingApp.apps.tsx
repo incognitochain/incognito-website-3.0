@@ -1,5 +1,6 @@
 import cakeImg from '@images/cake-icon.png';
-import unkowImg from '@images/unknow-icon.png';
+import linkImg from '@images/link-icon.png';
+import unknowImg from '@images/unknow-icon.png';
 import { Col, Row } from 'antd';
 import React from 'react';
 import styled, { ITheme } from 'styled-components';
@@ -64,6 +65,11 @@ const StyledItem = styled.div`
     margin-left: 16px;
   }
 
+  .link-text {
+    color: ${({ theme }) => theme.text3};
+    cursor: pointer;
+  }
+
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       padding: 30px 30px 20px;
       .item-img {
@@ -101,7 +107,7 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
   return (
     <StyledItem className={`background2 ${className}`}>
       <Row align="middle">
-        <img src={cakeImg} className="item-img" alt="icon" />
+        <img src={data.img} className="item-img" alt="icon" />
         <Col className="wrap-main-content">
           <div className="wrap-name">
             <p className="large-text normal-text">{data.name}</p>
@@ -118,7 +124,23 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
           </Row>
         </Col>
       </Row>
-      <p className="medium-text normal-text desc-text">{data.desc}</p>
+      <p className="medium-text normal-text desc-text">
+        {data.desc}{' '}
+        {!!data.link && (
+          <span
+            className="link-text"
+            onClick={() => {
+              window.open(data.linkPath, '_blank');
+            }}>
+            {` ${data.link}`}
+            <img
+              src={linkImg}
+              style={{ width: 18, height: 'auto', marginLeft: 5 }}
+              alt="link-icon"
+            />
+          </span>
+        )}
+      </p>
     </StyledItem>
   );
 });
@@ -128,6 +150,7 @@ const PeggingListApps = () => {
     <Styled>
       <Item
         data={{
+          img: cakeImg,
           name: 'pPancake',
           nameDesc: 'Private Pancake Swap',
           chain: ['Binance Smart Chain', 'Dex'],
@@ -137,10 +160,13 @@ const PeggingListApps = () => {
       <div className="line-view" />
       <Item
         data={{
+          img: unknowImg,
           name: 'pAnything',
           nameDesc: 'Private Anything You Want',
           chain: ['Blockchain', 'Use case'],
-          desc: "Trade anonymously on Binance Smart Chain's leading DEX. Deep liquidity and super low fees – now with privacy.",
+          desc: 'The Incognito community is building out the 2022 roadmap. Which app do you want privacy for?',
+          link: 'Join the conversation',
+          linkPath: 'https://we.incognito.org/',
         }}
       />
     </Styled>
