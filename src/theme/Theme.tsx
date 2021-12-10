@@ -234,4 +234,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .ant-card-bordered {
       border: none;
     }
+    
+    .default-padding-horizontal {
+      padding-left: 140px;
+      padding-right: 140px;
+    }
 `;

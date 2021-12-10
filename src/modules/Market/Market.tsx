@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Styled>
       <MarketBanner />
-      <div className="wrap-content">
+      <div className="wrap-content default-padding-horizontal">
         <MarketCategory />
         <MarketTokens />
       </div>

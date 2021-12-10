@@ -1,6 +1,6 @@
 import logo from '@images/logo.png';
 import { routeMarket } from '@src/modules';
-import { Menu, Row } from 'antd';
+import { Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from 'rebass';
@@ -24,6 +24,17 @@ const menuItem = [
     path: 'https://we.incognito.org/',
     target: '_blank',
     isLink: true,
+  },
+];
+
+const moreItem = [
+  {
+    name: 'Markets',
+    path: routeMarket,
+  },
+  {
+    name: 'Apps',
+    path: routeMarket,
   },
 ];
 
@@ -61,6 +72,21 @@ const Styled = styled(Row)`
     :hover {
       color: ${({ theme }: { theme: ITheme }) => theme.text1};
     }
+  }
+
+  .sub-menu-text {
+    font-size: 18px;
+    font-weight: 500;
+  }
+`;
+
+const WrapSubMenu = styled(Menu)`
+  border-radius: 16px;
+  .logo {
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
   }
 `;
 
@@ -100,12 +126,30 @@ const Header = () => {
     );
   };
 
+  const MoreMenu = () => (
+    <WrapSubMenu theme="dark" mode="horizontal">
+      {moreItem.map((item) => {
+        return (
+          <Menu.Item key={item.name} onClick={() => console.log('SANG')}>
+            <Row>
+              <img className="logo" alt="" src={logo} />
+              <p>{item.name}</p>
+            </Row>
+          </Menu.Item>
+        );
+      })}
+    </WrapSubMenu>
+  );
+
   return (
-    <Styled align="middle" justify="space-between">
+    <Styled align="middle" justify="space-between" className="default-padding-horizontal">
       <img className="app-logo" src={logo} alt="app-logo" />
       <Row>
         <div className="menu">{HomeMenu()}</div>
       </Row>
+      <Dropdown overlay={MoreMenu} placement="bottomRight">
+        <p className="sub-menu-text">More</p>
+      </Dropdown>
     </Styled>
   );
 };
