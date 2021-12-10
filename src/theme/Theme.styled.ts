@@ -18,6 +18,8 @@ export interface Colors {
   text3: Color;
 
   border1: Color;
+
+  btnBG1: Color;
 }
 
 export interface Grids {
@@ -36,6 +38,7 @@ declare module 'styled-components' {
       upToSmall: ThemedCssFunction<ITheme>;
       upToMedium: ThemedCssFunction<ITheme>;
       upToLarge: ThemedCssFunction<ITheme>;
+      upToSupperLarge: ThemedCssFunction<ITheme>;
     };
 
     // css snippets

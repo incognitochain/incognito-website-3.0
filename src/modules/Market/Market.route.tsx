@@ -3,12 +3,12 @@ import { lazy } from 'react';
 
 export const route = '/';
 
-const HomeRoute: IRouteProps = {
+const MarketRoute: IRouteProps = {
   path: route,
   exact: true,
   component: lazy(() => import('@modules/Market')),
-  name: 'Home',
+  name: 'Market',
   to: route,
 };
 
-export default HomeRoute;
+export default MarketRoute;

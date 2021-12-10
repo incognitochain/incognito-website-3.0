@@ -1,6 +1,7 @@
 export interface ILanguage {
   [key: string]: any;
   market: IMarket;
+  peggingApp: IPeggingApp;
 }
 
 export interface IMarket {
@@ -21,4 +22,17 @@ export interface IMarket {
   anonymousTrades: string;
   privateCryptocurrencies: string;
   bridgedBlockchains: string;
+}
+
+export interface IPeggingApp {
+  mainTitle: string;
+  howWork: string;
+  private: string;
+  privateSub: string;
+  permission: string;
+  permissionSub: string;
+  trust: string;
+  trustSub: string;
+  privacyApp: string;
+  coming: string;
 }

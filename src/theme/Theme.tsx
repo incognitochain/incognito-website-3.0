@@ -16,7 +16,8 @@ const MEDIA_WIDTHS = {
   upToExtraSmall: 500,
   upToSmall: 720,
   upToMedium: 960,
-  upToLarge: 1280,
+  upToLarge: 1920,
+  upToSupperLarge: 2560,
 };
 
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } =
@@ -236,7 +237,33 @@ export const ThemedGlobalStyle = createGlobalStyle`
     }
     
     .default-padding-horizontal {
-      padding-left: 140px;
-      padding-right: 140px;
+      padding-left: 200px;
+      padding-right: 200px;
+    }
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        .default-padding-horizontal {
+          padding-left: 140px;
+          padding-right: 140px;
+        }
+  `}
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        .default-padding-horizontal {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+    `}
+
+    .ant-btn-round.ant-btn-lg {
+      height: 60px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+    }
+    
+    .button1 {
+      background-color: ${({ theme }) => theme.btnBG1};
     }
 `;

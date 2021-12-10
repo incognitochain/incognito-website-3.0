@@ -20,6 +20,18 @@ const language: ILanguage = {
     privateCryptocurrencies: 'Private cryptocurrencies',
     bridgedBlockchains: 'Bridged blockchains',
   },
+  peggingApp: {
+    mainTitle: 'Use your favorite\ncrypto apps privately.',
+    howWork: 'How it works',
+    private: 'Private',
+    privateSub: 'Trade, lend, borrow, invest, etc. – confidentially.',
+    permission: 'Permissionless',
+    permissionSub: 'Enable privacy for new and existing dApps.',
+    trust: 'Trustless',
+    trustSub: 'Interact directly with ETH and BSC smart contracts.',
+    privacyApp: 'Privacy Apps',
+    coming: 'Coming Soon',
+  },
 };
 
 export default language;

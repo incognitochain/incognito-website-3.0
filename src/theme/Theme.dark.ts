@@ -19,6 +19,9 @@ const darkTheme = (): Colors => {
 
     // border
     border1: '#484848',
+
+    // btn
+    btnBG1: '#1A73E8',
   };
 };
 

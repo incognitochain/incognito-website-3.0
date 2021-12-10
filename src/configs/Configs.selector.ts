@@ -16,3 +16,8 @@ export const marketTranslateSelector = createSelector(
   translateSelector,
   (translate) => translate.market,
 );
+
+export const peggingAppTranslateSelector = createSelector(
+  translateSelector,
+  (translate) => translate.peggingApp,
+);

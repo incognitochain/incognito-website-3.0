@@ -20,6 +20,9 @@ const lightTheme = (): Colors => {
 
     // border
     border1: '#484848',
+
+    // btn
+    btnBG1: '#1a73e8',
   };
 };
 

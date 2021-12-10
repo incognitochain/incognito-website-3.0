@@ -7,6 +7,9 @@ import React, { memo } from 'react';
 import { Styled } from './Market.styled';
 
 const Home = () => {
+  React.useEffect(() => {
+    // console.log('DIMENSIONS::::', window.innerWidth, window.innerHeight);
+  }, []);
   return (
     <Styled>
       <MarketBanner />

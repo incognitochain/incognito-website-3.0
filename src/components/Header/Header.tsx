@@ -1,5 +1,5 @@
 import logo from '@images/logo.png';
-import { routeMarket } from '@src/modules';
+import { routeMarket, routePeggingApps } from '@src/modules';
 import { Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
@@ -13,7 +13,7 @@ const menuItem = [
   },
   {
     name: 'Apps',
-    path: routeMarket,
+    path: routePeggingApps,
   },
   {
     name: 'Infrastructure',
