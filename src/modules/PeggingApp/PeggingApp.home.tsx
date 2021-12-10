@@ -1,4 +1,6 @@
 import cakeImg from '@images/cake-logo.png';
+import PeggingListApps from '@modules/PeggingApp/features/PeggingApp.apps';
+import PeggingCategory from '@modules/PeggingApp/features/PeggingApp.category';
 import { peggingAppTranslateSelector } from '@src/configs';
 import { Button, Col, Row } from 'antd';
 import React, { memo } from 'react';
@@ -26,6 +28,14 @@ const Home = () => {
         </Row>
         <img src={cakeImg} alt="cake-logo" className="cake-img" />
       </Row>
+      <div className="default-padding-horizontal wrap-content">
+        <PeggingCategory />
+        <div className="section-2">
+          <p className="title fw-medium">{peggingTrs.privacyApp}</p>
+          <p className="sub-title text3 fw-medium">{peggingTrs.coming}</p>
+        </div>
+        <PeggingListApps />
+      </div>
     </Styled>
   );
 };

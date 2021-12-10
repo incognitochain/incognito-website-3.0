@@ -30,7 +30,7 @@ const language: ILanguage = {
     trust: 'Trustless',
     trustSub: 'Interact directly with ETH and BSC smart contracts.',
     privacyApp: 'Privacy Apps',
-    coming: 'Coming Soon',
+    coming: 'COMING SOON',
   },
 };
 

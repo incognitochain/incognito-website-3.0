@@ -7,7 +7,9 @@ import styled from 'styled-components';
 
 import enhance from './MainRoute.enhance';
 import { IProps } from './MainRoute.inteface';
-const Styled = styled.div``;
+const Styled = styled.div`
+  padding-bottom: 120px;
+`;
 
 const MainRoute = (props: IProps & any) => {
   const { routes } = props;
