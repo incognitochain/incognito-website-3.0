@@ -107,12 +107,12 @@ const MarketAchieve = () => {
     <Styled className="background2">
       <p className="achieve-title">{marketTrs.youCanTradeCrypto}</p>
       <Row className="achieve-wrap">
-        <Col xs={24} style={{ textAlign: 'center' }}>
+        <Col xs={24}>
           <List
             grid={{
               xs: 1,
-              sm: 1,
-              md: 1,
+              sm: 2,
+              md: 2,
               lg: 2,
               xl: 4,
               xxl: 4,

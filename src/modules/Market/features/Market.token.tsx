@@ -100,10 +100,10 @@ const MarketTokens = () => {
           <div className="token-wrap-section">
             <p className="fs-superMedium text2">{marketTrs.name}</p>
           </div>
-          <p className="fs-superMedium text-align-right token-price text2">
+          <p className="fs-superMedium fw-medium text-align-right token-price text2">
             {marketTrs.lastPrice}
           </p>
-          <p className="fs-superMedium text-align-right token-change text2">
+          <p className="fs-superMedium fw-medium text-align-right token-change text2">
             {marketTrs.change24h}
           </p>
         </div>

@@ -15,6 +15,7 @@ export interface Colors {
   // text
   text1: Color;
   text2: Color;
+  text3: Color;
 
   border1: Color;
 }

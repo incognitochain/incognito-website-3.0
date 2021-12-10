@@ -15,6 +15,7 @@ const darkTheme = (): Colors => {
 
     text1: white,
     text2: '#9C9C9C',
+    text3: '#1A73E8',
 
     // border
     border1: '#484848',

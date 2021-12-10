@@ -11,3 +11,4 @@ export interface IRouteProps extends RouteProps {
 }
 
 export { default as MainRoute } from './MainRoute';
+export { route as routeMarket } from './Market/Market.route';
