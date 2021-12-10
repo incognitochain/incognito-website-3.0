@@ -1,6 +1,6 @@
 import { IRootState } from '@src/app-redux/interface';
 import { IConfigsState } from '@src/configs';
-import { translateByLanguage } from '@src/i18';
+import { IStructure, translateByLanguage } from '@src/i18';
 import { createSelector } from 'reselect';
 
 export const configsSelector = createSelector(
@@ -24,5 +24,5 @@ export const peggingAppTranslateSelector = createSelector(
 
 export const structureTranslateSelector = createSelector(
   translateSelector,
-  (translate) => translate.structure,
+  (translate): IStructure => translate.structure,
 );

@@ -10,26 +10,26 @@ export const Styled = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 120px;
-  padding-top: 120px;
+  padding-bottom: 50px;
+  padding-top: 50px;
 
-  .achieve-title {
+  .circle-title {
     font-size: 62px;
     line-height: 70px;
     white-space: pre-wrap;
     text-align: center;
   }
-  .achieve-margin-right ~ .achieve-margin-right {
+  .circle-margin-right ~ .circle-margin-right {
     margin-left: 24px;
   }
 
-  .achieve-wrap {
+  .circle-wrap {
     margin-top: 80px;
   }
 `;
 
 const Item = styled.div`
-  .achieve-circle {
+  .circle-circle {
     width: 240px;
     height: 240px;
     border-radius: 120px;
@@ -39,96 +39,67 @@ const Item = styled.div`
     background-color: ${({ theme }) => theme.background3};
     margin: auto;
   }
-  .achieve-item-title {
+  .circle-item-title {
     font-size: 54px;
     margin-bottom: 0;
+    text-align: center;
+    white-space: pre-wrap;
     color: ${({ theme }) => theme.background4};
   }
-  .achieve-item-sub-title {
+  .circle-item-sub-title {
     margin-top: 24px;
     font-size: 22px;
     color: ${({ theme }) => theme.text2};
   }
   :hover {
-    .achieve-circle {
+    .circle-circle {
       background-color: ${({ theme }) => theme.background4};
     }
-    .achieve-item-title {
+    .circle-item-title {
       color: ${({ theme }) => theme.white};
     }
-    .achieve-item-sub-title {
+    .circle-item-sub-title {
       color: ${({ theme }) => theme.text1};
     }
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-          .achieve-item-title {
+          .circle-item-title {
             font-size: 24;
           }
-          .achieve-circle {
+          .circle-circle {
             width: 196px;
             height: 196px;
           }
-          .achieve-item-title {
+          .circle-item-title {
             font-size: 34px;
           }
-          .achieve-item-sub-title {
+          .circle-item-sub-title {
             font-size: 16px;
           }
     `}
 `;
 
-const MarketAchieve = () => {
-  const marketTrs = useSelector(marketTranslateSelector);
-
-  const Factory = React.useMemo(
-    () => [
-      {
-        title: '$550M',
-        content: marketTrs.volumeTraded,
-        className: 'achieve-margin-right',
-      },
-      {
-        title: '1M',
-        content: marketTrs.anonymousTrades,
-        className: 'achieve-margin-right',
-      },
-      {
-        title: '73',
-        content: marketTrs.privateCryptocurrencies,
-        className: 'achieve-margin-right',
-      },
-      { title: '11', content: marketTrs.bridgedBlockchains },
-    ],
-    [marketTrs],
-  );
-
+const CircleList = ({ data = [], grid = {} }: { data: any[]; grid: any }) => {
   const renderItem = (item: any) => (
     <Card>
-      <Item className="achieve-margin-right">
-        <div className={`achieve-circle`}>
-          <p className="achieve-item-title">{item.title}</p>
+      <Item className="circle-margin-right">
+        <div className={`circle-circle`}>
+          <p className="circle-item-title">{item.title}</p>
         </div>
-        <p className="text-align-center achieve-item-sub-title">{item.content}</p>
+        <p className="text-align-center circle-item-sub-title">{item.content}</p>
       </Item>
     </Card>
   );
   return (
     <Styled className="background2">
-      <p className="achieve-title">{marketTrs.youCanTradeCrypto}</p>
-      <Row className="achieve-wrap">
+      {/*<p className="circle-title">{marketTrs.youCanTradeCrypto}</p>*/}
+      <Row className="circle-wrap">
         <Col xs={24}>
           <List
-            grid={{
-              xs: 1,
-              sm: 2,
-              md: 2,
-              lg: 2,
-              xl: 4,
-              xxl: 4,
-            }}
+            grid={grid}
             style={{ marginLeft: 12 }}
-            dataSource={Factory}
+            dataSource={data}
             renderItem={renderItem}
           />
         </Col>
@@ -137,4 +108,4 @@ const MarketAchieve = () => {
   );
 };
 
-export default React.memo(MarketAchieve);
+export default React.memo(CircleList);
