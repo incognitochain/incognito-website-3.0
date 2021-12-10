@@ -32,6 +32,31 @@ const language: ILanguage = {
     privacyApp: 'Privacy Apps',
     coming: 'COMING SOON',
   },
+  structure: {
+    mainTitle: 'Power the privacy layer\nof web3. Earn PRV.',
+    mainDesc:
+      'Incognito is a decentralized blockchain built for privacy at scale. Incognito validators ensure that all crypto holders have an alternative to a future of surveillance.',
+    becomeValidator: 'Become a validator',
+    mintToDate: 'Mined to date',
+    validatorsAcross: 'Validators across 8 shards',
+    smallFixed: 'Small fixed stake',
+    privacyByDesign: 'Privacy by design',
+    privacyByDesignDesc:
+      'Transactions on Incognito are confidential. A number of cryptographic techniques are used to ensure that no one can track your activity while you’re in the network, and no one will be able to search your financial history.',
+    privacyByDesignMore: 'More on privacy techniques',
+    privacyForEvery: 'Privacy for every blockchain',
+    privacyForEveryDesc:
+      'You don’t have to sacrifice privacy to hold and trade your favorite coins. 11 major blockchains are using Incognito bridges to interact privately, anonymizing and swapping over $500M in currencies like BTC, ETH, BNB, and LTC to date.',
+    privacyForEveryMore: 'More on cross-chain privacy',
+    privacyAtScale: 'Privacy at scale',
+    privacyAtScaleDesc:
+      'Your coins perform better when they’re private. Designed to scale sustainably as the need for privacy grows, Incognito implements sharding to boost throughput, and builds for decentralization, security, and environmental responsibility by improving on Proof of Stake, pBFT and BLS at the consensus layer.',
+    privacyAtScaleMore: 'More on scalability',
+    privacyFuel: 'Privacy fuel (PRV)',
+    privacyFuelDesc:
+      'Privacy (PRV) is the native cryptocurrency of Incognito. Use it to participate in privacy markets, use your favorite apps privately, and stake it to earn block rewards. PRV is minted for every new block mined, and has a fixed maximum supply of 100M.',
+    privacyFuelMore: 'More on PRV economics',
+  },
 };
 
 export default language;

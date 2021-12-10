@@ -21,3 +21,8 @@ export const peggingAppTranslateSelector = createSelector(
   translateSelector,
   (translate) => translate.peggingApp,
 );
+
+export const structureTranslateSelector = createSelector(
+  translateSelector,
+  (translate) => translate.structure,
+);

@@ -2,6 +2,7 @@ export interface ILanguage {
   [key: string]: any;
   market: IMarket;
   peggingApp: IPeggingApp;
+  structure: IStructure;
 }
 
 export interface IMarket {
@@ -35,4 +36,25 @@ export interface IPeggingApp {
   trustSub: string;
   privacyApp: string;
   coming: string;
+}
+
+export interface IStructure {
+  mainTitle: string;
+  mainDesc: string;
+  becomeValidator: string;
+  mintToDate: string;
+  validatorsAcross: string;
+  smallFixed: string;
+  privacyByDesign: string;
+  privacyByDesignDesc: string;
+  privacyByDesignMore: string;
+  privacyForEvery: string;
+  privacyForEveryDesc: string;
+  privacyForEveryMore: string;
+  privacyAtScale: string;
+  privacyAtScaleDesc: string;
+  privacyAtScaleMore: string;
+  privacyFuel: string;
+  privacyFuelDesc: string;
+  privacyFuelMore: string;
 }
