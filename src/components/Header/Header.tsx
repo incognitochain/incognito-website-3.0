@@ -1,8 +1,10 @@
+import { MenuOutlined } from '@ant-design/icons';
 import downImg from '@images/down-icon.png';
 import linkImg from '@images/link-white-icon.png';
 import logo from '@images/logo.png';
+import { ReactComponent as IcClose } from '@images/svg/close-icon.svg';
 import { routeMarket, routePeggingApps, routeStructure } from '@src/modules';
-import { Dropdown, Menu, Row } from 'antd';
+import { Button, Col, Drawer, Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from 'rebass';
@@ -47,7 +49,15 @@ const moreItem = [
 
 const Header = () => {
   const [pathName, setPathName] = React.useState<string>('');
+  const [visible, setVisible] = React.useState(false);
+  const [expand, setExpand] = React.useState(false);
   const history = useHistory();
+  const openMenu = () => {
+    setVisible(true);
+  };
+  const onClose = () => {
+    setVisible(false);
+  };
   React.useEffect(() => {
     const menuName = (
       menuItem.find((item: any) => item.path === history.location.pathname) as any
@@ -107,7 +117,11 @@ const Header = () => {
       <Row className="wrap-menu-desktop">
         <div className="menu">{HomeMenu()}</div>
       </Row>
-      <Dropdown overlay={MoreMenu} placement="bottomCenter" arrow>
+      <Dropdown
+        overlay={MoreMenu}
+        placement="bottomCenter"
+        arrow
+        className="more-dropdown">
         <Row align="middle" style={{ paddingTop: 7 }}>
           <p className="sub-menu-text">More</p>
           <img
@@ -118,6 +132,104 @@ const Header = () => {
           />
         </Row>
       </Dropdown>
+      <Button
+        className="menu-mobile btn-round"
+        type="primary"
+        shape="round"
+        size="large"
+        onClick={openMenu}>
+        <MenuOutlined width={22} height={22} style={{ cursor: 'pointer' }} />
+      </Button>
+      <Drawer
+        placement="right"
+        width="100%"
+        closable
+        visible={visible}
+        key="right"
+        onClose={onClose}
+        drawerStyle={{ backgroundColor: 'black' }}
+        headerStyle={{
+          backgroundColor: 'black',
+          display: 'flex',
+          justifyContent: 'flex-end',
+          flexDirection: 'row',
+        }}
+        closeIcon={<IcClose style={{ marginTop: 8 }} width={22} height={22} />}>
+        <Col>
+          {menuItem.map((item) => {
+            if (item.isLink) {
+              return (
+                <Link
+                  style={{
+                    color: 'white',
+                    marginTop: 32,
+                    fontWeight: 'bold',
+                    fontSize: 16,
+                  }}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  {item.name}
+                </Link>
+              );
+            }
+            return (
+              <NavLink
+                key={item.name}
+                style={{
+                  color: 'white',
+                  marginTop: 32,
+                  fontWeight: 'bold',
+                  fontSize: 16,
+                }}
+                to={item.path}
+                onClick={onClose}>
+                {item.name}
+              </NavLink>
+            );
+          })}
+        </Col>
+        <Row
+          align="middle"
+          style={{ paddingTop: 32 }}
+          onClick={() => setExpand((expand) => !expand)}>
+          <p
+            className="sub-menu-text"
+            style={{
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: 16,
+            }}>
+            More
+          </p>
+          <img
+            className="logo"
+            alt=""
+            src={downImg}
+            style={{ width: 14, height: 14, marginLeft: 10, marginTop: 3 }}
+          />
+        </Row>
+        {expand && (
+          <Col>
+            {moreItem.map((item) => (
+              <div key={item.name}>
+                <Link
+                  style={{
+                    color: 'white',
+                    marginTop: 32,
+                    fontWeight: 'medium',
+                    fontSize: 16,
+                  }}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  {item.name}
+                </Link>
+              </div>
+            ))}
+          </Col>
+        )}
+      </Drawer>
     </Styled>
   );
 };

@@ -15,6 +15,7 @@ export const Styled = styled(Row)`
   .wrap-menu-desktop {
     margin: auto;
     padding-right: 80px;
+    display: initial;
   }
 
   .ant-menu-dark.ant-menu-horizontal {
@@ -101,6 +102,33 @@ export const Styled = styled(Row)`
       color: ${({ theme }: { theme: ITheme }) => theme.red1};
     }
   }
+  .menu-mobile {
+    display: none;
+  }
+  .btn-round {
+    background: none;
+  }
+  .ant-drawer-header {
+    background-color: #5340ff;
+    border-radius: 0;
+  }
+  .mobile-link {
+    color: ${({ theme }: { theme: ITheme }) => theme.text1};
+    margin-top: 32px;
+    font-size: 16px;
+  }
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+          justify-content: space-between;
+          .menu-mobile {
+            display: initial;
+          }
+          .wrap-menu-desktop {
+            display: none;
+          }
+          .more-dropdown {
+            display: none;
+          }
+    `}
 `;
 
 export const WrapSubMenu = styled(Menu)`
