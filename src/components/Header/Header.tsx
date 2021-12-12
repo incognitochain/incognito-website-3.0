@@ -1,3 +1,5 @@
+import downImg from '@images/down-icon.png';
+import linkImg from '@images/link-white-icon.png';
 import logo from '@images/logo.png';
 import { routeMarket, routePeggingApps, routeStructure } from '@src/modules';
 import { Dropdown, Menu, Row } from 'antd';
@@ -5,7 +7,7 @@ import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from 'rebass';
 
-import { MenuDropdown, Styled, WrapSubMenu } from './Header.styled';
+import { MenuDropdown, Styled } from './Header.styled';
 
 const menuItem = [
   {
@@ -30,12 +32,16 @@ const menuItem = [
 
 const moreItem = [
   {
-    name: 'Markets',
-    path: routeMarket,
+    name: 'Explore',
+    path: 'https://explorer.incognito.org',
   },
   {
-    name: 'Apps',
-    path: routeMarket,
+    name: 'Learn',
+    path: 'https://we.incognito.org/',
+  },
+  {
+    name: 'Follow',
+    path: 'https://we.incognito.org/',
   },
 ];
 
@@ -79,10 +85,15 @@ const Header = () => {
     <MenuDropdown theme="dark">
       {moreItem.map((item) => {
         return (
-          <Menu.Item key={item.name} onClick={() => console.log('SANG')}>
-            <Row>
-              <img className="logo" alt="" src={logo} />
-              <p>{item.name}</p>
+          <Menu.Item key={item.name} onClick={() => window.open(item.path, '_blank')}>
+            <Row align="middle">
+              <p className="fs-medium">{item.name}</p>
+              <img
+                className="logo"
+                alt=""
+                src={linkImg}
+                style={{ width: 14, height: 14, marginLeft: 10 }}
+              />
             </Row>
           </Menu.Item>
         );
@@ -96,8 +107,16 @@ const Header = () => {
       <Row className="wrap-menu-desktop">
         <div className="menu">{HomeMenu()}</div>
       </Row>
-      <Dropdown overlay={MoreMenu} placement="bottomCenter">
-        <p className="sub-menu-text">More</p>
+      <Dropdown overlay={MoreMenu} placement="bottomCenter" arrow>
+        <Row align="middle" style={{ paddingTop: 7 }}>
+          <p className="sub-menu-text">More</p>
+          <img
+            className="logo"
+            alt=""
+            src={downImg}
+            style={{ width: 14, height: 14, marginLeft: 10 }}
+          />
+        </Row>
       </Dropdown>
     </Styled>
   );

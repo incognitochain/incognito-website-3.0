@@ -45,7 +45,6 @@ export const Styled = styled(Row)`
   .sub-menu-text {
     font-size: 18px;
     font-weight: 500;
-    margin-top: 7px;
     text-align: right;
   }
 
@@ -85,6 +84,21 @@ export const Styled = styled(Row)`
       :hover {
         color: ${({ theme }: { theme: ITheme }) => theme.text4};
       }
+    }
+  }
+
+  .ant-menu-dark > .ant-menu-item {
+    background: ${({ theme }: { theme: ITheme }) => theme.red1};
+    padding: 0 16px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-align: center;
+
+    :hover {
+      color: ${({ theme }: { theme: ITheme }) => theme.red1};
     }
   }
 `;
