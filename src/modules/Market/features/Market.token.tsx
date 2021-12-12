@@ -1,6 +1,8 @@
+import logoStrokeImg from '@images/logo-stroke.png';
 import { mainPTokenSelector } from '@src/app-redux/token/Token.selector';
 import { IPTokenState } from '@src/app-redux/token/Token.type';
 import { TokenConstant } from '@src/common';
+import { ImageCached } from '@src/components';
 import { marketTranslateSelector } from '@src/configs';
 import { Col, Row } from 'antd';
 import React from 'react';
@@ -14,7 +16,6 @@ export const Styled = styled(Col)`
     box-sizing: border-box;
     border-radius: 16px;
     margin-top: 40px;
-    overflow: auto;
   }
   .token-main-title {
     margin-top: 120px;
@@ -31,10 +32,8 @@ export const Styled = styled(Col)`
     margin-left: 16px;
   }
   .token-price {
-    //min-width: 200px;
   }
   .token-change {
-    //min-width: 200px;
   }
   .token-wrap-section {
     display: flex;
@@ -45,12 +44,22 @@ export const Styled = styled(Col)`
     display: flex;
     flex-direction: row;
     align-items: center;
-    min-width: 250px;
     padding-left: 32px;
     padding-right: 32px;
-    height: 59px;
+    min-height: 59px;
     justify-content: space-between;
     border-bottom: 1px solid ${({ theme }) => theme.border1};
+  }
+  .image-token {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    margin-right: 24px;
+  }
+  .wrap-first-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .token-extra {
@@ -59,11 +68,12 @@ export const Styled = styled(Col)`
             border-radius: 0px;
         }
         .token-wrap-item {
-            // display: inline-flex;
-            padding-right: 32px;
+            padding-left: 16px;
+            padding-right: 16px;
         }
         .token-wrap-header {
-            // display: inline-flex;
+            padding-left: 16px;
+            padding-right: 16px;
         }
         .token-wrap-section {
             flex-direction: column;
@@ -72,20 +82,29 @@ export const Styled = styled(Col)`
         .token-name {
             margin-left: 0px;
         }
+        .image-token {
+            width: 32px;
+            height: 32px;
+            border-radius: 28px;
+            margin-right: 10px;
+        }
     `}
 `;
 
 const Item = React.memo(({ item, index }: { item: IPTokenState; index: number }) => {
   return (
     <Row className={`token-wrap-item ${index % 2 !== 0 ? 'background2' : ''}`}>
-      <Col span={12} className="token-wrap-section">
-        <p className="fs-superMedium">{item.pSymbol}</p>
-        <p className="fs-superMedium text2 token-name">{item.pName}</p>
+      <Col span={12} className="wrap-first-item">
+        <ImageCached src={item.image} className="image-token" />
+        <Col className="token-wrap-section">
+          <p className="fs-superMedium">{item.pSymbol}</p>
+          <p className="fs-superMedium text2 token-name">{item.pName}</p>
+        </Col>
       </Col>
-      <Col span={6}>
+      <Col span={5}>
         <p className="fs-superMedium text-align-right token-price">{`$${item.priceUSDHuman}`}</p>
       </Col>
-      <Col span={6}>
+      <Col span={7}>
         <p className="fs-superMedium text-align-right token-change">{`${item.changeStr}`}</p>
       </Col>
     </Row>

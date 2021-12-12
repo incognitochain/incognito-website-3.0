@@ -1,9 +1,9 @@
+import PRVLogo from '@images/prv-logo.png';
 import { ICustomTokenState, IPTokenState } from '@src/app-redux/token/Token.type';
-import { TokenConstant } from '@src/common';
+import { Configs, TokenConstant } from '@src/common';
 import { Convert } from '@src/utils';
 import { formatPrice } from '@utils/convert';
 import replace from 'lodash/replace';
-
 export const PTokensBuilder = (data: any): IPTokenState => {
   const pairPrv = data?.CurrentPrvPool !== 0;
   const id = data.ID;
@@ -41,6 +41,13 @@ export const PTokensBuilder = (data: any): IPTokenState => {
           amount: changeToNumber,
           decimals: 0,
         })}%`;
+
+  let image;
+  if (tokenId === TokenConstant.PRV_TOKEN_ID) {
+    image = PRVLogo;
+  } else {
+    image = `${Configs.CRYPTO_ICON_URL}/${symbol}.png`;
+  }
   return {
     pairPrv,
     id,
@@ -64,6 +71,7 @@ export const PTokensBuilder = (data: any): IPTokenState => {
     network,
     priceUSDHuman,
     changeStr,
+    image,
   };
 };
 

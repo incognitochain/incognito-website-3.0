@@ -26,6 +26,7 @@ export interface IPTokenState {
   network: string;
   pName: string;
   changeStr: string;
+  image: string;
 }
 
 export interface ICustomTokenState {
