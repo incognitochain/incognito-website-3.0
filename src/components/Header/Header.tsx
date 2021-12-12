@@ -4,7 +4,8 @@ import { Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from 'rebass';
-import styled, { ITheme } from 'styled-components';
+
+import { MenuDropdown, Styled, WrapSubMenu } from './Header.styled';
 
 const menuItem = [
   {
@@ -37,65 +38,6 @@ const moreItem = [
     path: routeMarket,
   },
 ];
-
-const Styled = styled(Row)`
-  height: 71px;
-  width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.border1};
-  z-index: 2;
-
-  .app-logo {
-    width: 162px;
-    height: 32px;
-  }
-
-  .wrap-menu-desktop {
-    margin: auto;
-    padding-right: 80px;
-  }
-
-  .ant-menu-dark.ant-menu-horizontal {
-    flex: 1;
-    background: transparent;
-    padding: 0 4px;
-    height: 40px;
-  }
-
-  .ant-menu.ant-menu-dark .ant-menu-item-selected > a {
-    color: ${({ theme }: { theme: ITheme }) => theme.text1};
-  }
-
-  .ant-menu-dark.ant-menu-horizontal > .ant-menu-item {
-    background: transparent;
-    padding: 0 16px;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 0;
-    text-align: center;
-    font-size: 18px;
-
-    :hover {
-      color: ${({ theme }: { theme: ITheme }) => theme.text1};
-    }
-  }
-
-  .sub-menu-text {
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 7px;
-    text-align: right;
-  }
-`;
-
-const WrapSubMenu = styled(Menu)`
-  border-radius: 16px;
-  .logo {
-    margin-right: 16px;
-    width: 24px;
-    height: 24px;
-    justify-content: center;
-  }
-`;
 
 const Header = () => {
   const [pathName, setPathName] = React.useState<string>('');
@@ -134,7 +76,7 @@ const Header = () => {
   };
 
   const MoreMenu = () => (
-    <WrapSubMenu theme="dark" mode="horizontal">
+    <MenuDropdown theme="dark">
       {moreItem.map((item) => {
         return (
           <Menu.Item key={item.name} onClick={() => console.log('SANG')}>
@@ -145,18 +87,18 @@ const Header = () => {
           </Menu.Item>
         );
       })}
-    </WrapSubMenu>
+    </MenuDropdown>
   );
 
   return (
     <Styled align="middle" className="default-padding-horizontal">
-      {/*<img className="app-logo" src={logo} alt="app-logo" />*/}
-      {/*<Row className="wrap-menu-desktop">*/}
-      {/*  <div className="menu">{HomeMenu()}</div>*/}
-      {/*</Row>*/}
-      {/*<Dropdown overlay={MoreMenu} placement="bottomRight">*/}
-      {/*  <p className="sub-menu-text">More</p>*/}
-      {/*</Dropdown>*/}
+      <img className="app-logo" src={logo} alt="app-logo" />
+      <Row className="wrap-menu-desktop">
+        <div className="menu">{HomeMenu()}</div>
+      </Row>
+      <Dropdown overlay={MoreMenu} placement="bottomCenter">
+        <p className="sub-menu-text">More</p>
+      </Dropdown>
     </Styled>
   );
 };
