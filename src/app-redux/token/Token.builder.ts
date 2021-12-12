@@ -72,6 +72,7 @@ export const PTokensBuilder = (data: any): IPTokenState => {
     priceUSDHuman,
     changeStr,
     image,
+    isTokenDecrease: changeToNumber !== 0 ? isTokenDecrease : undefined,
   };
 };
 

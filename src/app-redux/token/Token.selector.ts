@@ -34,6 +34,6 @@ export const mainPTokenSelector = createSelector(pTokenSelector, (pTokens) => {
       verified: token.verified,
     };
   });
-  const res = orderBy(sortPriority, 'priority', 'asc').slice(0, 10);
+  const res = orderBy(sortPriority, ['priority', 'change'], ['asc', 'desc']).slice(0, 10);
   return res;
 });

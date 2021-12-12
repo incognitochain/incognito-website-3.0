@@ -22,6 +22,9 @@ const darkTheme = (): Colors => {
 
     // btn
     btnBG1: '#1A73E8',
+
+    green1: '#21A465',
+    red1: '#D13D49',
   };
 };
 

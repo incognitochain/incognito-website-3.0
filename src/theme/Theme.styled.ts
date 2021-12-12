@@ -20,6 +20,9 @@ export interface Colors {
   border1: Color;
 
   btnBG1: Color;
+
+  green1: Color;
+  red1: Color;
 }
 
 export interface Grids {

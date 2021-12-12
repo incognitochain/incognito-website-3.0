@@ -23,6 +23,8 @@ const lightTheme = (): Colors => {
 
     // btn
     btnBG1: '#1a73e8',
+    green1: '#21A465',
+    red1: '#D13D49',
   };
 };
 

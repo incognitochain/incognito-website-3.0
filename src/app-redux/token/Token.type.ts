@@ -27,6 +27,7 @@ export interface IPTokenState {
   pName: string;
   changeStr: string;
   image: string;
+  isTokenDecrease?: boolean;
 }
 
 export interface ICustomTokenState {

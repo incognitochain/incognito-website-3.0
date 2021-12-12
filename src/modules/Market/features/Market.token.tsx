@@ -1,9 +1,8 @@
-import logoStrokeImg from '@images/logo-stroke.png';
 import { mainPTokenSelector } from '@src/app-redux/token/Token.selector';
 import { IPTokenState } from '@src/app-redux/token/Token.type';
-import { TokenConstant } from '@src/common';
 import { ImageCached } from '@src/components';
 import { marketTranslateSelector } from '@src/configs';
+import { colorsSelector } from '@src/theme';
 import { Col, Row } from 'antd';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
@@ -16,6 +15,7 @@ export const Styled = styled(Col)`
     box-sizing: border-box;
     border-radius: 16px;
     margin-top: 40px;
+    overflow: auto;
   }
   .token-main-title {
     margin-top: 120px;
@@ -92,6 +92,17 @@ export const Styled = styled(Col)`
 `;
 
 const Item = React.memo(({ item, index }: { item: IPTokenState; index: number }) => {
+  const colors = useSelector(colorsSelector);
+  const changeColor = React.useMemo(
+    () =>
+      item.isTokenDecrease === undefined
+        ? colors.text1
+        : item.isTokenDecrease
+        ? colors.red1
+        : colors.green1,
+    [colors, item.isTokenDecrease],
+  );
+
   return (
     <Row className={`token-wrap-item ${index % 2 !== 0 ? 'background2' : ''}`}>
       <Col span={12} className="wrap-first-item">
@@ -105,7 +116,9 @@ const Item = React.memo(({ item, index }: { item: IPTokenState; index: number })
         <p className="fs-superMedium text-align-right token-price">{`$${item.priceUSDHuman}`}</p>
       </Col>
       <Col span={7}>
-        <p className="fs-superMedium text-align-right token-change">{`${item.changeStr}`}</p>
+        <p
+          className="fs-superMedium text-align-right token-change"
+          style={{ color: changeColor }}>{`${item.changeStr}`}</p>
       </Col>
     </Row>
   );
