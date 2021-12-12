@@ -14,6 +14,7 @@ export interface IMarket {
   commissionFree: string;
   commissionFreeDetail: string;
   privacyMarket: string;
+  whatPCoins: string;
   name: string;
   lastPrice: string;
   change24h: string;

@@ -10,6 +10,7 @@ const language: ILanguage = {
     commissionFree: 'Commission-free',
     commissionFreeDetail: 'No trading fees. What you buy is what you get.',
     privacyMarket: 'Privacy Markets',
+    whatPCoins: 'What are pCoins?',
     name: 'Name',
     lastPrice: 'Last price',
     change24h: '24h change',

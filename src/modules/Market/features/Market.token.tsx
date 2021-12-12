@@ -153,9 +153,16 @@ const MarketTokens = () => {
   );
   return (
     <Styled className={`${isMobile ? '' : 'default-padding-horizontal'}`}>
-      <p className="fs-avglarge fw-suppermedium token-main-title">
-        {marketTrs.privacyMarket}
-      </p>
+      <Row justify="space-between" align="middle" className="token-main-title">
+        <p className="fs-avglarge fw-suppermedium">{marketTrs.privacyMarket}</p>
+        <a
+          href="https://we.incognito.org"
+          target="_blank"
+          className="fs-medium fw-regular text4"
+          rel="noreferrer">
+          {marketTrs.whatPCoins}
+        </a>
+      </Row>
       <div className="token-extra">
         {Header}
         {tokens.map(renderItem)}

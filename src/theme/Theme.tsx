@@ -223,9 +223,11 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .text2 {
       color: ${({ theme }) => theme.text2}
     }
-
     .text3 {
       color: ${({ theme }) => theme.text3}
+    }
+    .text4 {
+      color: ${({ theme }) => theme.text4}
     }
     
     // background
