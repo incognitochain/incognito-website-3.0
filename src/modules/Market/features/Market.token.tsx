@@ -4,6 +4,7 @@ import { TokenConstant } from '@src/common';
 import { marketTranslateSelector } from '@src/configs';
 import { Col, Row } from 'antd';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
@@ -14,14 +15,11 @@ export const Styled = styled(Col)`
     border-radius: 16px;
     margin-top: 40px;
     overflow: auto;
-    -webkit-box-pack: justify;
   }
   .token-main-title {
     margin-top: 120px;
   }
   .token-wrap-item {
-    display: flex;
-    flex-direction: row;
     height: 89px;
     align-items: center;
     justify-content: space-between;
@@ -33,16 +31,15 @@ export const Styled = styled(Col)`
     margin-left: 16px;
   }
   .token-price {
-    min-width: 200px;
+    //min-width: 200px;
   }
   .token-change {
-    min-width: 200px;
+    //min-width: 200px;
   }
   .token-wrap-section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    min-width: 250px;
   }
   .token-wrap-header {
     display: flex;
@@ -58,29 +55,40 @@ export const Styled = styled(Col)`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .token-extra {
             overflow-x: scroll;
+            border-width: 0px;
+            border-radius: 0px;
         }
         .token-wrap-item {
+            // display: inline-flex;
             padding-right: 32px;
         }
         .token-wrap-header {
-            display: inline-flex;
+            // display: inline-flex;
         }
-        .token-wrap-item {
-            display: inline-flex;
+        .token-wrap-section {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .token-name {
+            margin-left: 0px;
         }
     `}
 `;
 
 const Item = React.memo(({ item, index }: { item: IPTokenState; index: number }) => {
   return (
-    <div className={`token-wrap-item ${index % 2 !== 0 ? 'background2' : ''}`}>
-      <div className="token-wrap-section">
+    <Row className={`token-wrap-item ${index % 2 !== 0 ? 'background2' : ''}`}>
+      <Col span={12} className="token-wrap-section">
         <p className="fs-superMedium">{item.pSymbol}</p>
         <p className="fs-superMedium text2 token-name">{item.pName}</p>
-      </div>
-      <p className="fs-superMedium text-align-right token-price">{`$${item.priceUSDHuman}`}</p>
-      <p className="fs-superMedium text-align-right token-change">{`${item.changeStr}`}</p>
-    </div>
+      </Col>
+      <Col span={6}>
+        <p className="fs-superMedium text-align-right token-price">{`$${item.priceUSDHuman}`}</p>
+      </Col>
+      <Col span={6}>
+        <p className="fs-superMedium text-align-right token-change">{`${item.changeStr}`}</p>
+      </Col>
+    </Row>
   );
 });
 
@@ -90,23 +98,34 @@ const MarketTokens = () => {
   const renderItem = (item: IPTokenState, index: number) => (
     <Item key={item.tokenId} item={item} index={index} />
   );
+
+  const Header = React.useMemo(
+    () => (
+      <Row className="token-wrap-header background2">
+        <Col span={12} className="token-wrap-section">
+          <p className="fs-superMedium text2">{marketTrs.name}</p>
+        </Col>
+        <Col
+          span={6}
+          className="fs-superMedium fw-medium text-align-right token-price text2">
+          {marketTrs.lastPrice}
+        </Col>
+        <Col
+          span={6}
+          className="fs-superMedium fw-medium text-align-right token-change text2">
+          {marketTrs.change24h}
+        </Col>
+      </Row>
+    ),
+    [],
+  );
   return (
-    <Styled>
+    <Styled className={`${isMobile ? '' : 'default-padding-horizontal'}`}>
       <p className="fs-avglarge fw-suppermedium token-main-title">
         {marketTrs.privacyMarket}
       </p>
       <div className="token-extra">
-        <div className="token-wrap-header background2">
-          <div className="token-wrap-section">
-            <p className="fs-superMedium text2">{marketTrs.name}</p>
-          </div>
-          <p className="fs-superMedium fw-medium text-align-right token-price text2">
-            {marketTrs.lastPrice}
-          </p>
-          <p className="fs-superMedium fw-medium text-align-right token-change text2">
-            {marketTrs.change24h}
-          </p>
-        </div>
+        {Header}
         {tokens.map(renderItem)}
       </div>
     </Styled>

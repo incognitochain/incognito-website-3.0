@@ -15,8 +15,8 @@ const Home = () => {
       <MarketBanner />
       <div className="wrap-content default-padding-horizontal">
         <MarketCategory />
-        <MarketTokens />
       </div>
+      <MarketTokens />
       <MarketAchieve />
     </Styled>
   );

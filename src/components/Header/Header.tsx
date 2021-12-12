@@ -150,13 +150,13 @@ const Header = () => {
 
   return (
     <Styled align="middle" className="default-padding-horizontal">
-      <img className="app-logo" src={logo} alt="app-logo" />
-      <Row className="wrap-menu-desktop">
-        <div className="menu">{HomeMenu()}</div>
-      </Row>
-      <Dropdown overlay={MoreMenu} placement="bottomRight">
-        <p className="sub-menu-text">More</p>
-      </Dropdown>
+      {/*<img className="app-logo" src={logo} alt="app-logo" />*/}
+      {/*<Row className="wrap-menu-desktop">*/}
+      {/*  <div className="menu">{HomeMenu()}</div>*/}
+      {/*</Row>*/}
+      {/*<Dropdown overlay={MoreMenu} placement="bottomRight">*/}
+      {/*  <p className="sub-menu-text">More</p>*/}
+      {/*</Dropdown>*/}
     </Styled>
   );
 };

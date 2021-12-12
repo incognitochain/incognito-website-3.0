@@ -8,8 +8,6 @@ export const Styled = styled.div`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .wrap-content {
             margin-top: 24px;
-            margin-left: 24px;
-            margin-right: 24px;        
         }
     `}
 `;

@@ -200,6 +200,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .text-align-right {
       text-align: right;
     }
+    .text-align-left {
+      text-align: left;
+    }
 
     .text-align-center {
       text-align: center;
