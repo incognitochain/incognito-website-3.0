@@ -47,6 +47,7 @@ export const Styled = styled(Row)`
     font-size: 18px;
     font-weight: 500;
     text-align: right;
+    cursor: pointer;
   }
 
   .ant-menu-submenu-title {
@@ -63,33 +64,11 @@ export const Styled = styled(Row)`
     color: ${({ theme }: { theme: ITheme }) => theme.text3};
   }
 
-  .active-dropdown {
-    margin-left: 40px;
-    span {
-      color: ${({ theme }: { theme: ITheme }) => theme.text2};
-      :hover {
-        color: ${({ theme }: { theme: ITheme }) => theme.text1};
-      }
-    }
-  }
-
   .ant-menu-submenu-title {
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: 40px;
-  }
-  .ant-menu-submenu-selected .ant-menu-title-content {
-    color: ${({ theme }: { theme: ITheme }) => theme.text4};
-  }
-  .active-dropdown {
-    margin-left: 40px;
-    span {
-      color: rgba(255, 255, 255, 0.65);
-      :hover {
-        color: ${({ theme }: { theme: ITheme }) => theme.text4};
-      }
-    }
   }
 
   .ant-menu-dark > .ant-menu-item {
@@ -111,10 +90,6 @@ export const Styled = styled(Row)`
   }
   .btn-round {
     background: none;
-  }
-  .ant-drawer-header {
-    background-color: #5340ff;
-    border-radius: 0;
   }
   .mobile-link {
     color: ${({ theme }: { theme: ITheme }) => theme.text1};

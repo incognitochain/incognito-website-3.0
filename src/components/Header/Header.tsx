@@ -36,14 +36,17 @@ const moreItem = [
   {
     name: 'Explore',
     path: 'https://explorer.incognito.org',
+    sub: 'The network',
   },
   {
     name: 'Learn',
     path: 'https://we.incognito.org/',
+    sub: 'How it works',
   },
   {
     name: 'Follow',
     path: 'https://we.incognito.org/',
+    sub: 'The roadmap',
   },
 ];
 
@@ -92,19 +95,23 @@ const Header = () => {
   };
 
   const MoreMenu = () => (
-    <MenuDropdown theme="dark" style={{ width: 140 }}>
+    <MenuDropdown className="sub-menu-header" theme="dark" style={{ width: 130 }}>
       {moreItem.map((item) => {
         return (
-          <Menu.Item key={item.name} onClick={() => window.open(item.path, '_blank')}>
+          <Menu.Item
+            className="dropdown-menu-item"
+            key={item.name}
+            onClick={() => window.open(item.path, '_blank')}>
             <Row align="middle">
               <p className="fs-medium">{item.name}</p>
               <img
                 className="logo"
                 alt=""
                 src={linkImg}
-                style={{ width: 14, height: 14, marginLeft: 10 }}
+                style={{ width: 14, height: 14, marginLeft: 6 }}
               />
             </Row>
+            <p className="text2 fs-small">{item.sub}</p>
           </Menu.Item>
         );
       })}

@@ -1,3 +1,4 @@
+import linkImg from '@images/link-icon.png';
 import structure1 from '@images/structure-1.png';
 import structure2 from '@images/structure-2.png';
 import structure3 from '@images/structure-3.png';
@@ -31,11 +32,16 @@ const Styled = styled(Row)`
     letter-spacing: 0.01em;
     margin-top: 16px;
   }
+  .link-text {
+    color: ${({ theme }) => theme.text3};
+    cursor: pointer;
+    margin-top: 24px;
+  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
   `}
 `;
 
-const Item = React.memo(({ image, title, desc, isRevert }: IFactory) => {
+const Item = React.memo(({ image, title, desc, linkText, isRevert }: IFactory) => {
   const _Image = React.useMemo(
     () => (
       <Col xs={24} lg={8}>
@@ -49,6 +55,14 @@ const Item = React.memo(({ image, title, desc, isRevert }: IFactory) => {
       <Col xs={24} xxl={10} lg={12}>
         <p className="title">{title}</p>
         <p className="desc text2">{desc}</p>
+        <a className="link-text fs-supermedium">
+          {` ${linkText}`}
+          <img
+            src={linkImg}
+            style={{ width: 18, height: 'auto', marginLeft: 5 }}
+            alt="link-icon"
+          />
+        </a>
       </Col>
     ),
     [],
