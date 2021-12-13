@@ -120,7 +120,9 @@ const Header = () => {
 
   return (
     <Styled align="middle" className="default-padding-horizontal">
-      <img className="app-logo" src={logo} alt="app-logo" />
+      <NavLink className="logo-mobile" to="/" onClick={() => setPathName(routeMarket)}>
+        <img className="app-logo" src={logo} alt="app-logo" />
+      </NavLink>
       <Row className="wrap-menu-desktop">
         <div className="menu">{HomeMenu()}</div>
       </Row>
