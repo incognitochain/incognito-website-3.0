@@ -1,5 +1,7 @@
-import { IConfigsReducer } from '@src/configs';
-import { IThemeReducer } from '@src/theme';
+import { IPoolState } from '@src/app-redux/pool/Pool.type';
+import { ITokenState } from '@src/app-redux/token/Token.type';
+import { IConfigsState } from '@src/configs';
+import { IThemeState } from '@src/theme';
 
 export interface IAction {
   type: string;
@@ -7,6 +9,8 @@ export interface IAction {
 }
 
 export interface IRootState {
-  configs: IConfigsReducer;
-  theme: IThemeReducer;
+  configs: IConfigsState;
+  theme: IThemeState;
+  token: ITokenState;
+  pool: IPoolState;
 }

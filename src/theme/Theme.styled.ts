@@ -2,58 +2,51 @@ import { FlattenSimpleInterpolation, ThemedCssFunction } from 'styled-components
 
 export type Color = string;
 export interface Colors {
-    // base
-    white: Color;
-    black: Color;
+  // base
+  white: Color;
+  black: Color;
 
-    // table
-    headerRow: Color;
-    hoverRow: Color;
-    darkRow: Color;
-    lightRow: Color;
+  // background
+  background1: Color;
+  background2: Color;
+  background3: Color;
+  background4: Color;
 
-    // modal
-    modalBg: Color;
+  // text
+  text1: Color;
+  text2: Color;
+  text3: Color;
+  text4: Color;
 
-    border1: Color;
-    border2: Color;
+  border1: Color;
 
-    // Text
-    text1: Color;
-    text2: Color;
-    text3: Color;
-    text4: Color;
-    text5: Color;
+  btnBG1: Color;
 
-    // Colors
-    green1: Color;
-    red1: Color;
-    gray1: Color;
-
-    tooltipBg: string;
-    tooltipText: string;
+  green1: Color;
+  red1: Color;
 }
 
 export interface Grids {
-    sm: number;
-    md: number;
-    lg: number;
+  sm: number;
+  md: number;
+  lg: number;
 }
 
 declare module 'styled-components' {
-    export interface ITheme extends Colors {
-        grids: Grids;
+  export interface ITheme extends Colors {
+    grids: Grids;
 
-        // media queries
-        mediaWidth: {
-            upToExtraSmall: ThemedCssFunction<ITheme>;
-            upToSmall: ThemedCssFunction<ITheme>;
-            upToMedium: ThemedCssFunction<ITheme>;
-            upToLarge: ThemedCssFunction<ITheme>;
-        };
+    // media queries
+    mediaWidth: {
+      upToExtraSmall: ThemedCssFunction<ITheme>;
+      upToSmall: ThemedCssFunction<ITheme>;
+      upToMedium: ThemedCssFunction<ITheme>;
+      upToLarge: ThemedCssFunction<ITheme>;
+      upToSupperLarge: ThemedCssFunction<ITheme>;
+    };
 
-        // css snippets
-        flexColumnNoWrap: FlattenSimpleInterpolation;
-        flexRowNoWrap: FlattenSimpleInterpolation;
-    }
+    // css snippets
+    flexColumnNoWrap: FlattenSimpleInterpolation;
+    flexRowNoWrap: FlattenSimpleInterpolation;
+  }
 }

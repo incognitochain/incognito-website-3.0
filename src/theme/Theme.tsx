@@ -1,7 +1,8 @@
+import { darkTheme } from '@theme/index';
+import { FONTS } from '@theme/Theme.fonts';
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { Text, TextProps } from 'rebass';
-import styled, {
+import {
   createGlobalStyle,
   css,
   ITheme,
@@ -15,7 +16,8 @@ const MEDIA_WIDTHS = {
   upToExtraSmall: 500,
   upToSmall: 720,
   upToMedium: 960,
-  upToLarge: 1280,
+  upToLarge: 1920,
+  upToSupperLarge: 2560,
 };
 
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } =
@@ -28,41 +30,11 @@ const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } 
     return accumulator;
   }, {}) as any;
 
-const white = '#FFFFFF';
-const black = '#000000';
+export const white = '#FFFFFF';
+export const black = '#000000';
 
 export function colors(darkMode: boolean): Colors {
-  return {
-    // base
-    white,
-    black,
-
-    // table
-    headerRow: darkMode ? '#f5f5f5' : '#f5f5f5',
-    hoverRow: darkMode ? '#e0e0e0' : '#e0e0e0',
-    darkRow: darkMode ? '#F5F5F5' : '#F5F5F5',
-    lightRow: darkMode ? white : white,
-
-    // modal
-    modalBg: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
-
-    border1: darkMode ? '#CBCBCB' : '#CBCBCB',
-    border2: darkMode ? '#E0E0E0' : '#E0E0E0',
-
-    // text
-    text1: darkMode ? white : black,
-    text2: darkMode ? '#9e9e9e' : '#9e9e9e',
-    text3: darkMode ? '#616161' : '#616161',
-    text4: darkMode ? '#797979' : '#797979',
-    text5: darkMode ? '#595959' : '#595959',
-
-    green1: darkMode ? '#34C759' : '#34C759',
-    red1: darkMode ? '#FE4D4D' : '#FE4D4D',
-    gray1: darkMode ? '#D8D8D8' : '#D8D8D8',
-
-    tooltipBg: black,
-    tooltipText: white,
-  };
+  return darkTheme();
 }
 
 export function appTheme(darkMode: boolean): ITheme {
@@ -90,19 +62,6 @@ export function appTheme(darkMode: boolean): ITheme {
   };
 }
 
-const TextWrapper = styled(Text)<{ color: keyof Colors }>`
-  color: ${({ color, theme }) => (theme as any)[color]};
-`;
-
-export const TYPE = {
-  main(props: TextProps) {
-    return <TextWrapper fontWeight={500} color="black" {...props} />;
-  },
-  link(props: TextProps) {
-    return <TextWrapper fontWeight={500} color="black" {...props} />;
-  },
-};
-
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const darkMode = useSelector(darkModeSelector);
 
@@ -115,63 +74,205 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const FixedGlobalStyle = createGlobalStyle`
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
- a {
-   color: ${colors(false).black}; 
- }
-.modified-item:hover {
-    border-bottom: 2px solid transparent !important;
-    color: inherit !important;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-button {
-  user-select: none;
-}
-
-html {
-  font-size: 16px;
-  font-variant: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
-}
-`;
-
 export const ThemedGlobalStyle = createGlobalStyle`
     body {
       min-height: 100vh;
       box-sizing: border-box;
+      background: ${({ theme }: { theme: ITheme }) => theme.background1};
+    }
+    @font-face {
+      font-family: SF-Pro-Regular;
+      src: url('../assets/fonts/SF-Pro-Display/SF-Pro-Display-Bold.otf');
+      font-style: normal;
+      font-display: swap;
+      font-weight: 400;
     }
 
-    .table-row {
-        text-align: center;
+    @font-face {
+      font-family: SF-Pro-Medium;
+      src: url('../assets/fonts/SF-Pro-Display/SF-Pro-Display-Medium.otf');
+      font-style: normal;
+      font-display: swap;
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: SF-Pro-Bold;
+      src: url('../assets/fonts/SF-Pro-Display/SF-Pro-Display-Regular.otf');
+      font-style: normal;
+      font-display: swap;
+      font-weight: 700;
+    }
+    .fw-regular {
+        font-weight: 400;
+    }
+
+    .fw-medium {
         font-weight: 500;
     }
+
+    .fw-light {
+        font-weight: 200;
+    }
+
+    .fw-suppermedium {
+        font-weight: 600;
+    }
+
+    .fw-bold {
+        font-weight: 700;
+    }
+
+    .fs-suppersmall {
+        font-size: ${FONTS.SIZE.superSmall}px;
+        line-height: ${FONTS.SIZE.superSmall + 7}px;
+    }
+
+    .fs-small {
+        font-size: ${FONTS.SIZE.small}px;
+        line-height: ${FONTS.SIZE.small + 7}px;
+    }
+
+    .fs-regular {
+        font-size: ${FONTS.SIZE.regular}px;
+        line-height: ${FONTS.SIZE.regular + 7}px;
+    }
+
+    .fs-medium {
+        font-size: ${FONTS.SIZE.medium}px;
+        line-height: ${FONTS.SIZE.medium + 7}px;
+    }
+
+    .fs-supermedium {
+        font-size: ${FONTS.SIZE.superMedium}px;
+        line-height: ${FONTS.SIZE.superMedium + 7}px;
+    }
+
+    .fs-large {
+        font-size: ${FONTS.SIZE.large}px;
+        line-height: ${FONTS.SIZE.large + 7}px;
+    }
+
+    .fs-avglarge {
+        font-size: ${FONTS.SIZE.avgLarge}px;
+        line-height: ${FONTS.SIZE.avgLarge + 7}px;
+    }
+
+    .fs-verylarge {
+        font-size: ${FONTS.SIZE.veryLarge}px;
+        line-height: ${FONTS.SIZE.veryLarge + 7}px;
+    }
+
+    .fs-superlarge {
+        font-size: ${FONTS.SIZE.superLarge}px;
+        line-height: ${FONTS.SIZE.superLarge + 7}px;
+    }
+
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        .fs-superlarge {
+            font-size: ${FONTS.SIZE.veryLarge}px;
+            line-height: ${FONTS.SIZE.veryLarge + 7}px;
+        }
+    `}
     
-    .table-row-light {
-        background-color: ${({ theme }: { theme: ITheme }) => theme.lightRow};
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+    .disable-pointer {
+        cursor: default;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .text-align-left {
+      text-align: left;
+    }
+
+    .text-align-right {
+      text-align: right;
+    }
+    .text-align-left {
+      text-align: left;
+    }
+
+    .text-align-center {
+      text-align: center;
     }
     
-    .table-row-dark {
-        background-color: ${({ theme }: { theme: ITheme }) => theme.darkRow};
+    p {
+      color: ${({ theme }) => theme.text1}
+    }
+
+    div {
+      color: ${({ theme }) => theme.background1}
     }
     
-    .ant-pagination-item-active {
-        border-color: black;
+    // text
+    .text1 {
+      color: ${({ theme }) => theme.text1}
+    }
+    .text2 {
+      color: ${({ theme }) => theme.text2}
+    }
+    .text3 {
+      color: ${({ theme }) => theme.text3}
+    }
+    .text4 {
+      color: ${({ theme }) => theme.text4}
     }
     
-    .ant-pagination-item-active a {
-        color: black;
+    // background
+    .background1 {
+      background-color: ${({ theme }) => theme.background1}
+    }
+    .background2 {
+      background-color: ${({ theme }) => theme.background2}
+    }
+
+    .ant-card {
+      background: transparent;
+    }
+    .ant-card-bordered {
+      border: none;
+    }
+    
+    .default-padding-horizontal {
+      padding-left: 300px;
+      padding-right: 300px;
+    }
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        .default-padding-horizontal {
+          padding-left: 140px;
+          padding-right: 140px;
+        }
+  `}
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        .default-padding-horizontal {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+    `}
+
+    .ant-btn-round.ant-btn-lg {
+      height: 60px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+    }
+    
+    .button1 {
+      background-color: ${({ theme }) => theme.btnBG1};
     }
 `;

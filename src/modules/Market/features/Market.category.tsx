@@ -1,0 +1,34 @@
+import Category, { ICategory } from '@components/Category/Category';
+import { MarketChainIcon, MarketMoneyIcon, MarketSearchIcon } from '@components/icons';
+import { marketTranslateSelector } from '@src/configs';
+import React from 'react';
+import { useSelector } from 'react-redux';
+
+const MarketCategory = () => {
+  const marketTrs = useSelector(marketTranslateSelector);
+
+  const CATEGORIES = React.useMemo<ICategory[]>(() => {
+    return [
+      {
+        icon: <MarketSearchIcon />,
+        title: marketTrs.untraceable,
+        subTitle: marketTrs.untraceableDetail,
+      },
+      {
+        icon: <MarketChainIcon />,
+        title: marketTrs.unlinkable,
+        subTitle: marketTrs.unlinkableDetail,
+        className: 'category-item-center',
+      },
+      {
+        icon: <MarketMoneyIcon />,
+        title: marketTrs.commissionFree,
+        subTitle: marketTrs.commissionFreeDetail,
+      },
+    ];
+  }, [marketTrs]);
+
+  return <Category data={CATEGORIES} />;
+};
+
+export default React.memo(MarketCategory);

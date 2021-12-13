@@ -7,7 +7,10 @@
       "@modules/*" : ["./modules/*"],
       "@utils/*" : ["./utils/*"],
       "@configs/*" : ["./configs/*"],
-      "@services/*" : ["./services/*"]
+      "@services/*" : ["./services/*"],
+      "@images/*" : ["./assets/images/*"],
+      "@theme/*" : ["./theme/*"],
+      "@common/*" : ["./common/*"]
     }
   }
 }

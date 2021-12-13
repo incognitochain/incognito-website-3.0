@@ -1,28 +1,28 @@
 import { IRootState } from '@src/app-redux/interface';
-import { IConfigsReducer } from '@src/configs';
-import { translateByLanguage } from '@src/i18';
+import { IConfigsState } from '@src/configs';
+import { IStructure, translateByLanguage } from '@src/i18';
 import { createSelector } from 'reselect';
 
 export const configsSelector = createSelector(
   (state: IRootState) => state.configs,
-  (configs: IConfigsReducer) => configs,
+  (configs: IConfigsState) => configs,
 );
 
 export const translateSelector = createSelector(configsSelector, (configs) =>
   translateByLanguage(configs.language),
 );
 
-export const appTranslateSelector = createSelector(
+export const marketTranslateSelector = createSelector(
   translateSelector,
-  (translate) => translate.app,
+  (translate) => translate.market,
 );
 
-export const nodeMonitorTranslateSelector = createSelector(
+export const peggingAppTranslateSelector = createSelector(
   translateSelector,
-  (translate) => translate.nodeMonitor,
+  (translate) => translate.peggingApp,
 );
 
-export const reuseTranslateSelector = createSelector(
+export const structureTranslateSelector = createSelector(
   translateSelector,
-  (translate) => translate.reuse,
+  (translate): IStructure => translate.structure,
 );

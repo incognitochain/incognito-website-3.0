@@ -1,10 +1,12 @@
+import 'antd/dist/antd.css';
+import './reset.scss';
+
 import Header from '@components/Header';
+import withApp from '@src/app/App.enhance';
 import { MainRoute } from '@src/modules';
 import { ThemedGlobalStyle, ThemeProvider } from '@src/theme';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-
-import withApp from './App.enhance';
 
 const App: React.FunctionComponent = () => {
   return (

@@ -1,12 +1,15 @@
+import withStarted from '@modules/MainRoute/MainRoute.getStarted';
 import { IRouteProps } from '@src/modules';
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { compose } from 'recompose';
 import styled from 'styled-components';
 
 import enhance from './MainRoute.enhance';
 import { IProps } from './MainRoute.inteface';
-
-const Styled = styled.div``;
+const Styled = styled.div`
+  padding-bottom: 120px;
+`;
 
 const MainRoute = (props: IProps & any) => {
   const { routes } = props;
@@ -23,4 +26,4 @@ const MainRoute = (props: IProps & any) => {
   );
 };
 
-export default enhance(React.memo(MainRoute));
+export default compose(enhance, withStarted)(React.memo(MainRoute));
