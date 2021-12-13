@@ -1,6 +1,6 @@
 import Category from '@components/Category';
 import { ICategory } from '@components/Category/Category';
-import { MarketChainIcon, MarketMoneyIcon, MarketSearchIcon } from '@components/icons';
+import { AddIcon, LockIcon, TrustlessIcon } from '@components/icons';
 import { peggingAppTranslateSelector } from '@src/configs';
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -11,18 +11,18 @@ const PeggingCategory = () => {
   const CATEGORIES = React.useMemo<ICategory[]>(() => {
     return [
       {
-        icon: <MarketSearchIcon />,
+        icon: <LockIcon />,
         title: peggingTrs.private,
         subTitle: peggingTrs.privateSub,
       },
       {
-        icon: <MarketChainIcon />,
+        icon: <AddIcon />,
         title: peggingTrs.permission,
         subTitle: peggingTrs.permissionSub,
         className: 'category-item-center',
       },
       {
-        icon: <MarketMoneyIcon />,
+        icon: <TrustlessIcon />,
         title: peggingTrs.trust,
         subTitle: peggingTrs.trustSub,
       },
