@@ -16,12 +16,13 @@ export const PTokensBuilder = (data: any): IPTokenState => {
   const pDecimals = data.PDecimals;
   const type = data.Type; // coin or token
   let pName;
+  let pSymbol = `p${symbol}`;
   if (tokenId === TokenConstant.PRV_TOKEN_ID) {
     pName = 'Private Coin';
+    pSymbol = symbol;
   } else {
     pName = `Privacy ${name}`;
   }
-  const pSymbol = `p${symbol}`;
   const verified = data.Verified;
   const currencyType = data.CurrencyType; // including ERC20, BEP1, BEP2,...
   const priceUsd = data?.PriceUsd;

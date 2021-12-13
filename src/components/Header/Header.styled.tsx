@@ -59,6 +59,10 @@ export const Styled = styled(Row)`
     color: ${({ theme }: { theme: ITheme }) => theme.text2};
   }
 
+  .ant-menu-dark .ant-menu-item-selected > span > a {
+    color: ${({ theme }: { theme: ITheme }) => theme.text3};
+  }
+
   .active-dropdown {
     margin-left: 40px;
     span {

@@ -56,7 +56,6 @@ const Styled = styled(Row)`
       .btn-become-validator {
         margin: auto;
         margin-top: 50px;
-        margin-bottom: 50px;
       }
   `}
 `;

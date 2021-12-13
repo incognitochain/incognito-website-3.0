@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled.div`
-  margin-top: 121px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +40,7 @@ const Item = styled.div`
   }
   .circle-item-title {
     font-size: 54px;
+    line-height: 64px;
     margin-bottom: 0;
     text-align: center;
     white-space: pre-wrap;

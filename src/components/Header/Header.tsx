@@ -92,7 +92,7 @@ const Header = () => {
   };
 
   const MoreMenu = () => (
-    <MenuDropdown theme="dark">
+    <MenuDropdown theme="dark" style={{ width: 140 }}>
       {moreItem.map((item) => {
         return (
           <Menu.Item key={item.name} onClick={() => window.open(item.path, '_blank')}>
@@ -118,12 +118,12 @@ const Header = () => {
         <div className="menu">{HomeMenu()}</div>
       </Row>
       <Dropdown
+        overlayStyle={{ width: 120 }}
         overlay={MoreMenu}
-        placement="bottomCenter"
-        arrow
+        placement="bottomRight"
         className="more-dropdown">
         <Row align="middle" style={{ paddingTop: 7 }}>
-          <p className="sub-menu-text">More</p>
+          <p className="sub-menu-text">Dive in</p>
           <img
             className="logo"
             alt=""
