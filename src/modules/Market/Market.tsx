@@ -1,6 +1,7 @@
 import MarketAchieve from '@modules/Market/features/Market.achieve';
 import MarketBanner from '@modules/Market/features/Market.banner';
 import MarketCategory from '@modules/Market/features/Market.category';
+import Footer from '@modules/Market/features/Market.footer';
 import MarketTokens from '@modules/Market/features/Market.token';
 import React, { memo } from 'react';
 
@@ -18,6 +19,7 @@ const Home = () => {
       </div>
       <MarketTokens />
       <MarketAchieve />
+      <Footer />
     </Styled>
   );
 };
