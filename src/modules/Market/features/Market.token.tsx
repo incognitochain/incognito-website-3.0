@@ -112,10 +112,10 @@ const Item = React.memo(({ item, index }: { item: IPTokenState; index: number })
           <p className="fs-superMedium text2 token-name">{item.pName}</p>
         </Col>
       </Col>
-      <Col span={5}>
+      <Col span={6}>
         <p className="fs-superMedium text-align-right token-price">{`$${item.priceUSDHuman}`}</p>
       </Col>
-      <Col span={7}>
+      <Col span={6}>
         <p
           className="fs-superMedium text-align-right token-change"
           style={{ color: changeColor }}>{`${item.changeStr}`}</p>
