@@ -4,8 +4,9 @@ import structure2 from '@images/structure-2.png';
 import structure3 from '@images/structure-3.png';
 import structure4 from '@images/structure-4.png';
 import { structureTranslateSelector } from '@src/configs';
-import { Button, Card, Col, Row } from 'antd';
+import { Col, Row } from 'antd';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import { Image } from 'rebass';
 import styled, { ITheme } from 'styled-components';
@@ -19,6 +20,7 @@ interface IFactory {
 }
 
 const Styled = styled(Row)`
+  padding-top: 110px;
   padding-bottom: 60px;
   .title {
     font-weight: 600;
@@ -36,8 +38,29 @@ const Styled = styled(Row)`
     color: ${({ theme }) => theme.text3};
     cursor: pointer;
     margin-top: 24px;
+    text-align: center;
+  }
+  .section3-item {
+    padding-bottom: 60px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        padding-top: 40px;
+        .title {
+            text-align: center;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 38px;
+        }
+        .desc {
+            text-align: center;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        .link-text {
+            text-align: center;tẽt
+            font-size: 16px;
+            line-height: 24px;
+        }
   `}
 `;
 
@@ -67,8 +90,16 @@ const Item = React.memo(({ image, title, desc, linkText, isRevert }: IFactory) =
     ),
     [],
   );
+  if (isMobile) {
+    return (
+      <Row justify="space-between" align="middle" className="section3-item">
+        {_Image}
+        {_Content}
+      </Row>
+    );
+  }
   return (
-    <Row justify="space-between" align="middle">
+    <Row justify="space-between" align="middle" className="section3-item">
       {isRevert ? _Content : _Image}
       {isRevert ? _Image : _Content}
     </Row>

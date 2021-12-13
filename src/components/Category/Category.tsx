@@ -29,17 +29,39 @@ export const Styled = styled(Row)`
     margin-top: 4px;
   }
 
+  .wrap-category-item:last-child {
+    height: auto;
+    max-height: 300px;
+  }
+
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-        display: contents;
-        flex-direction: column;
+        // display: contents;
+        // flex-direction: column;
         .wrap-category-item {
           max-width: none;
+          padding-left: 16px;
+          padding-right: 16px;
+          padding-top: 24px;
+          height: 300px;
         }
         .category-item-center {
-          margin-left: 0px;
-          margin-right: 0px;
-          margin-top: 16px;
+          margin-left: 10px;
+          margin-right: 10px;
           margin-bottom: 16px;
+        }
+    `}
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+        // display: contents;
+        // flex-direction: column;
+        .wrap-category-item {
+          max-width: none;
+          padding-left: 16px;
+          padding-right: 16px;
+          padding-top: 24px;
+          height: 300px;
+        }
+        .category-item-center {
+          margin-right: 0px;
         }
     `}
 `;
@@ -53,7 +75,10 @@ export interface ICategory {
 
 const Category = ({ data = [] }: { data: ICategory[] }) => {
   const renderItem = (item: ICategory) => (
-    <Col key={item.title} className={`wrap-category-item background2 ${item.className}`}>
+    <Col
+      span={8}
+      key={item.title}
+      className={`wrap-category-item background2 ${item.className}`}>
       {item.icon}
       <p className="fs-large category-title">{item.title}</p>
       <p className="fw-regular fs-medium category-sub-title text2">{item.subTitle}</p>
