@@ -29,33 +29,43 @@ const Styled = styled(Row)`
     margin-top: 50px;
     width: 196px;
   }
+  .col-section1 {
+    display: flex;
+    flex-direction: column;
+  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       .logo-stroke {
         width: 35%;
         max-width: 500px;
       }
   `}
-  .col-section1 {
-    display: flex;
-    flex-direction: column;
-  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       justify-content: center;
+      flex-direction: column-reverse;
+      padding-top: 45px;
+      padding-bottom: 45px;
       .col-section1 {
         display: flex;
         flex-direction: column;
-        align-items: center;
       }
-
       .main-title {
-        text-align: center;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 44px;
+        white-space: inherit;
       }
       .sub-main-title {
-        text-align: center;
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 24px;
       }
       .btn-become-validator {
-        margin: auto;
-        margin-top: 50px;
+        margin-top: 24px;
+      }
+      .logo-stroke {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 45px;
       }
   `}
 `;
