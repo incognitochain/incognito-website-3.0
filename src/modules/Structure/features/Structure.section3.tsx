@@ -38,7 +38,7 @@ const Styled = styled(Row)`
     color: ${({ theme }) => theme.text3};
     cursor: pointer;
     margin-top: 24px;
-    text-align: center;
+    text-align: left;
   }
   .section3-item {
     padding-bottom: 60px;
@@ -57,7 +57,7 @@ const Styled = styled(Row)`
             line-height: 24px;
         }
         .link-text {
-            text-align: center;tẽt
+            text-align: center;
             font-size: 16px;
             line-height: 24px;
         }
