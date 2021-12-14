@@ -4,6 +4,7 @@ import ggplay from '@images/install/play.png';
 import { marketTranslateSelector } from '@src/configs';
 import { Col, Row } from 'antd';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
@@ -47,7 +48,11 @@ export const Styled = styled(Col)`
 const MarketBanner = () => {
   const marketTrs = useSelector(marketTranslateSelector);
   return (
-    <Styled xs={24} xl={11} xxl={9}>
+    <Styled
+      xs={24}
+      xl={11}
+      xxl={9}
+      className={`${isMobile ? 'default-padding-horizontal' : ''}`}>
       <p className="text1 fw-medium banner-title">{marketTrs.mainTitle}</p>
       <Row className="wrap-app-link">
         <Col span={8}>

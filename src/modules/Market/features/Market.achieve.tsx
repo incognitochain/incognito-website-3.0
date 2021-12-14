@@ -35,6 +35,19 @@ export const Styled = styled.div`
   .achieve-wrap {
     margin-top: 80px;
   }
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+          margin-top: 40px;
+          padding-top: 40px;
+          padding-bottom: 40px;
+          .achieve-title {
+            font-size: 24px;
+            line-height: 38px;
+          }
+          .achieve-sub-title {
+            font-size: 16px;
+            line-height: 24px;
+          }
+    `}
 `;
 
 const Item = styled.div`
@@ -72,7 +85,7 @@ const Item = styled.div`
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
           .achieve-item-title {
-            font-size: 24;
+            font-size: 24px;
           }
           .achieve-circle {
             width: 196px;
@@ -123,7 +136,7 @@ const MarketAchieve = () => {
     </Card>
   );
   return (
-    <Styled className="background2">
+    <Styled className="default-padding-horizontal background2">
       <p className="achieve-title">{marketTrs.privacyMarketplace}</p>
       <p className="achieve-sub-title text2">{marketTrs.inCogIsNone}</p>
       <Row className="achieve-wrap">

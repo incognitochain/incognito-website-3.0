@@ -5,7 +5,6 @@ import { marketTranslateSelector } from '@src/configs';
 import { colorsSelector } from '@src/theme';
 import { Col, Row } from 'antd';
 import React from 'react';
-import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
@@ -48,7 +47,7 @@ export const Styled = styled(Col)`
     flex-direction: row;
     align-items: center;
     padding-left: 32px;
-    padding-right: 32px;
+    padding-right: 47px;
     height: 56px;
     justify-content: space-between;
   }
@@ -105,7 +104,7 @@ export const Styled = styled(Col)`
         }
         .token-wrap-header {
             padding-left: 16px;
-            padding-right: 16px;
+            padding-right: 31px;
         }
         .image-token {
             width: 32px;
@@ -116,6 +115,13 @@ export const Styled = styled(Col)`
         .medium-text {
             font-size: 14px;
             line-height: 21px;
+        }
+        .token-padding {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .tab-header-title-right {
+            padding-top: 4px;
         }
     `}
 `;
@@ -186,7 +192,7 @@ const MarketTokens = () => {
         <a
           href="https://we.incognito.org"
           target="_blank"
-          className="fs-medium fw-regular text4"
+          className="fs-medium fw-regular text4 tab-header-title-right"
           rel="noreferrer">
           {marketTrs.whatPCoins}
         </a>
