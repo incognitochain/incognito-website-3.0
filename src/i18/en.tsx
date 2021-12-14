@@ -14,7 +14,10 @@ const language: ILanguage = {
     name: 'Name',
     lastPrice: 'Last price',
     change24h: '24h change',
-    youCanTradeCrypto: 'You can trade crypto\nwithout being spied on.',
+    privacyMarketplace: 'The privacy marketplace\nfor crypto assets.',
+    inCogIsNone:
+      'Incognito is non-custodial by design and confidential by default.\n' +
+      'Your keys, your money, your privacy.',
     getStartedIn: 'Get started in a few minutes.',
     volumeTraded: 'Volume traded',
     anonymousTrades: 'Anonymous trades',

@@ -1,63 +1,46 @@
-import marketBanner from '@images/banners/market-banner.png';
 import apk from '@images/install/apk.png';
 import appstore from '@images/install/appstore.png';
 import ggplay from '@images/install/play.png';
 import { marketTranslateSelector } from '@src/configs';
-import { Row } from 'antd';
+import { Col, Row } from 'antd';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
-export const Image = styled.img`
-  width: 100%;
-  position: relative;
-  height: auto;
-  object-fit: cover;
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
-      height: 80vh;
-    `}
-`;
-
-export const Styled = styled.div`
-  margin-top: 47px;
-  position: relative;
-  .banner-wrap-content {
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+export const Styled = styled(Col)`
+  display: flex;
+  flex-direction: column;
   .wrap-app-link {
     margin-top: 50px;
-    display: flex;
-    flex-direction: row;
   }
   .app-link {
-    width: 202px;
-    height: 60px;
+    width: 100%;
   }
-  .app-link-center {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  .title {
-    text-align: center;
+  .banner-title {
     white-space: pre-wrap;
+    font-size: 76px;
+    line-height: 82px;
+  }
+  .ant-col {
+    padding-right: 16px;
+  }
+  .ant-col:first-child {
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-        .wrap-app-link {
-          flex-direction: column;
+        padding-bottom: 48px;
+        .banner-title {
+          font-size: 44px;
+          line-height: 48px;
+          text-align: center;
+          letter-spacing: 0.01em;
         }
-        .app-link-center {
-          margin-left: 0px;
-          margin-right: 0px;
-          margin-top: 16px;
-          margin-bottom: 16px;      
+        .wrap-app-link {
+          margin-top: 24px;
+        }
+        .ant-col {
+          padding-right: 4px;
+          padding-left: 4px;
         }
     `}
 `;
@@ -65,22 +48,29 @@ export const Styled = styled.div`
 const MarketBanner = () => {
   const marketTrs = useSelector(marketTranslateSelector);
   return (
-    <Styled>
-      <Image src={marketBanner} alt="market-banner" />
-      <div className="banner-wrap-content">
-        <p className="text1 fs-superlarge fw-medium title">{marketTrs.mainTitle}</p>
-        <Row className="wrap-app-link">
+    <Styled
+      xs={24}
+      xl={11}
+      xxl={9}
+      className={`${isMobile ? 'default-padding-horizontal' : ''}`}>
+      <p className="text1 fw-medium banner-title">{marketTrs.mainTitle}</p>
+      <Row className="wrap-app-link">
+        <Col span={8}>
           <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">
             <img className="app-link" src={appstore} alt="appstore" />
           </a>
+        </Col>
+        <Col span={8}>
           <a href="https://play.google.com/store/apps/details?id=com.incognito.wallet">
-            <img className="app-link app-link-center" src={ggplay} alt="ggplay" />
+            <img className="app-link" src={ggplay} alt="ggplay" />
           </a>
+        </Col>
+        <Col span={8}>
           <a href="https://github.com/incognitochain/incognito-wallet/releases">
             <img className="app-link" src={apk} alt="apk" />
           </a>
-        </Row>
-      </div>
+        </Col>
+      </Row>
     </Styled>
   );
 };
