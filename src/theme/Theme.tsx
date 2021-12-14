@@ -229,6 +229,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .text4 {
       color: ${({ theme }) => theme.text4}
     }
+    .text5 {
+      color: ${({ theme }) => theme.text5}
+    }
     
     // background
     .background1 {
@@ -274,5 +277,25 @@ export const ThemedGlobalStyle = createGlobalStyle`
     
     .button1 {
       background-color: ${({ theme }) => theme.btnBG1};
+    }
+
+    ::-webkit-scrollbar {
+      width: 15px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+       background: ${({ theme }) => theme.background2};
+       border-radius: 10px;
+       border: 2px solid ${({ theme }) => theme.background1};
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: ${({ theme }) => theme.background2};;
     }
 `;

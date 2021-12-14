@@ -10,16 +10,18 @@ import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled(Col)`
-  .token-extra {
-    border: 1px solid ${({ theme }) => theme.border1};
+  border: 1px solid ${({ theme }) => theme.border1};
+  border-bottom-width: 0;
+  border-radius: 16px;
+  overflow: auto;
+  .wrap-token {
     box-sizing: border-box;
-    border-radius: 16px;
-    margin-top: 40px;
     overflow: auto;
     max-height: 440px;
   }
   .token-main-title {
-    //margin-top: 120px;
+    background-color: ${({ theme }) => theme.background2};
+    height: 72px;
   }
   .token-wrap-item {
     height: 88px;
@@ -28,6 +30,10 @@ export const Styled = styled(Col)`
     padding-left: 32px;
     padding-right: 32px;
     border-bottom: 1px solid ${({ theme }) => theme.border1};
+    border-right: 1px solid ${({ theme }) => theme.background2};
+  }
+  .token-wrap-item:last-child {
+    border-bottom-width: 0;
   }
   .token-name {
     margin-left: 0;
@@ -43,9 +49,8 @@ export const Styled = styled(Col)`
     align-items: center;
     padding-left: 32px;
     padding-right: 32px;
-    min-height: 59px;
+    height: 56px;
     justify-content: space-between;
-    border-bottom: 1px solid ${({ theme }) => theme.border1};
   }
   .image-token {
     width: 56px;
@@ -67,11 +72,32 @@ export const Styled = styled(Col)`
     font-size: 16px;
     line-height: 24px;
   }
+  .tab-header-title-left {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+  }
+  .header-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .token-padding {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .gradient-view {
+    background: linear-gradient(180deg, rgba(25, 25, 25, 0.37) 0%, #191919 100%);
+    height: 88px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-        .token-extra {
+        border-width: 0px;
+        border-radius: 0px;
+        .wrap-token {
             overflow-x: scroll;
-            border-width: 0px;
-            border-radius: 0px;
         }
         .token-wrap-item {
             padding-left: 16px;
@@ -94,7 +120,7 @@ export const Styled = styled(Col)`
     `}
 `;
 
-const Item = React.memo(({ item, index }: { item: IPTokenState; index: number }) => {
+const Item = React.memo(({ item }: { item: IPTokenState }) => {
   const colors = useSelector(colorsSelector);
   const changeColor = React.useMemo(
     () =>
@@ -107,7 +133,7 @@ const Item = React.memo(({ item, index }: { item: IPTokenState; index: number })
   );
 
   return (
-    <Row className={`token-wrap-item ${index % 2 !== 0 ? 'background2' : ''}`}>
+    <Row className={`token-wrap-item`}>
       <Col span={12} className="wrap-first-item">
         <ImageCached src={item.image} className="image-token" />
         <Col className="token-wrap-section">
@@ -131,19 +157,19 @@ const MarketTokens = () => {
   const marketTrs = useSelector(marketTranslateSelector);
   const tokens = useSelector(mainPTokenSelector);
   const renderItem = (item: IPTokenState, index: number) => (
-    <Item key={item.tokenId} item={item} index={index} />
+    <Item key={item.tokenId} item={item} />
   );
 
   const Header = React.useMemo(
     () => (
-      <Row className="token-wrap-header background2">
+      <Row className="token-wrap-header">
         <Col span={12} className="token-wrap-section">
-          <p className="medium-text text2">{marketTrs.name}</p>
+          <p className="header-text text5">{marketTrs.name}</p>
         </Col>
-        <Col span={6} className="medium-text fw-medium text-align-right text2">
+        <Col span={6} className="header-text fw-medium text-align-right text5">
           {marketTrs.lastPrice}
         </Col>
-        <Col span={6} className="medium-text fw-medium text-align-right text2">
+        <Col span={6} className="header-text fw-medium text-align-right text5">
           {marketTrs.change24h}
         </Col>
       </Row>
@@ -151,9 +177,12 @@ const MarketTokens = () => {
     [],
   );
   return (
-    <Styled xs={24} xl={11} xxl={11.5}>
-      <Row justify="space-between" align="middle" className="token-main-title">
-        <p className="fs-avglarge fw-suppermedium">{marketTrs.privacyMarket}</p>
+    <Styled xs={24} xl={11} xxl={11.5} className="token-extra">
+      <Row
+        justify="space-between"
+        align="middle"
+        className="token-main-title token-padding">
+        <p className="tab-header-title-left fw-suppermedium">{marketTrs.privacyMarket}</p>
         <a
           href="https://we.incognito.org"
           target="_blank"
@@ -162,10 +191,9 @@ const MarketTokens = () => {
           {marketTrs.whatPCoins}
         </a>
       </Row>
-      <div className="token-extra">
-        {Header}
-        {tokens.map(renderItem)}
-      </div>
+      {Header}
+      <div className="wrap-token">{tokens.map(renderItem)}</div>
+      <div className="gradient-view" />
     </Styled>
   );
 };

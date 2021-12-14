@@ -18,7 +18,8 @@ export interface IMarket {
   name: string;
   lastPrice: string;
   change24h: string;
-  youCanTradeCrypto: string;
+  privacyMarketplace: string;
+  inCogIsNone: string;
   getStartedIn: string;
   volumeTraded: string;
   anonymousTrades: string;

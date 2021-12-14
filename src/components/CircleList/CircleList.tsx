@@ -93,7 +93,7 @@ const CircleList = ({ data = [], grid = {} }: { data: any[]; grid: any }) => {
   );
   return (
     <Styled className="background2">
-      {/*<p className="circle-title">{marketTrs.youCanTradeCrypto}</p>*/}
+      {/*<p className="circle-title">{marketTrs.privacyMarketplace}</p>*/}
       <Row className="circle-wrap">
         <Col xs={24}>
           <List
