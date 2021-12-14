@@ -16,12 +16,13 @@ export const Styled = styled(Col)`
     border-radius: 16px;
     margin-top: 40px;
     overflow: auto;
+    max-height: 440px;
   }
   .token-main-title {
-    margin-top: 120px;
+    //margin-top: 120px;
   }
   .token-wrap-item {
-    height: 89px;
+    height: 88px;
     align-items: center;
     justify-content: space-between;
     padding-left: 32px;
@@ -29,16 +30,12 @@ export const Styled = styled(Col)`
     border-bottom: 1px solid ${({ theme }) => theme.border1};
   }
   .token-name {
-    margin-left: 16px;
-  }
-  .token-price {
-  }
-  .token-change {
+    margin-left: 0;
   }
   .token-wrap-section {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .token-wrap-header {
     display: flex;
@@ -61,6 +58,15 @@ export const Styled = styled(Col)`
     flex-direction: row;
     align-items: center;
   }
+  .medium-text {
+    font-size: 22px;
+    line-height: 33px;
+    letter-spacing: 0.01em;
+  }
+  .regular-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .token-extra {
             overflow-x: scroll;
@@ -75,18 +81,15 @@ export const Styled = styled(Col)`
             padding-left: 16px;
             padding-right: 16px;
         }
-        .token-wrap-section {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .token-name {
-            margin-left: 0px;
-        }
         .image-token {
             width: 32px;
             height: 32px;
             border-radius: 28px;
             margin-right: 10px;
+        }
+        .medium-text {
+            font-size: 14px;
+            line-height: 21px;
         }
     `}
 `;
@@ -108,16 +111,16 @@ const Item = React.memo(({ item, index }: { item: IPTokenState; index: number })
       <Col span={12} className="wrap-first-item">
         <ImageCached src={item.image} className="image-token" />
         <Col className="token-wrap-section">
-          <p className="fs-superMedium">{item.pSymbol}</p>
-          <p className="fs-superMedium text2 token-name">{item.pName}</p>
+          <p className="medium-text">{item.pSymbol}</p>
+          <p className="text2 token-name">{item.pName}</p>
         </Col>
       </Col>
       <Col span={6}>
-        <p className="fs-superMedium text-align-right token-price">{`$${item.priceUSDHuman}`}</p>
+        <p className="medium-text text-align-right">{`$${item.priceUSDHuman}`}</p>
       </Col>
       <Col span={6}>
         <p
-          className="fs-superMedium text-align-right token-change"
+          className="medium-text text-align-right"
           style={{ color: changeColor }}>{`${item.changeStr}`}</p>
       </Col>
     </Row>
@@ -135,16 +138,12 @@ const MarketTokens = () => {
     () => (
       <Row className="token-wrap-header background2">
         <Col span={12} className="token-wrap-section">
-          <p className="fs-superMedium text2">{marketTrs.name}</p>
+          <p className="medium-text text2">{marketTrs.name}</p>
         </Col>
-        <Col
-          span={6}
-          className="fs-superMedium fw-medium text-align-right token-price text2">
+        <Col span={6} className="medium-text fw-medium text-align-right text2">
           {marketTrs.lastPrice}
         </Col>
-        <Col
-          span={6}
-          className="fs-superMedium fw-medium text-align-right token-change text2">
+        <Col span={6} className="medium-text fw-medium text-align-right text2">
           {marketTrs.change24h}
         </Col>
       </Row>
@@ -152,7 +151,7 @@ const MarketTokens = () => {
     [],
   );
   return (
-    <Styled className={`${isMobile ? '' : 'default-padding-horizontal'}`}>
+    <Styled xs={24} xl={11} xxl={11.5}>
       <Row justify="space-between" align="middle" className="token-main-title">
         <p className="fs-avglarge fw-suppermedium">{marketTrs.privacyMarket}</p>
         <a

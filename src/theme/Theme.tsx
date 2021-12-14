@@ -251,8 +251,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
     }
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
         .default-padding-horizontal {
-          padding-left: 140px;
-          padding-right: 140px;
+          padding-left: 100px;
+          padding-right: 100px;
         }
   `}
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
