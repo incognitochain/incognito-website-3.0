@@ -1,6 +1,5 @@
 import { MenuOutlined } from '@ant-design/icons';
 import downImg from '@images/down-icon.png';
-import linkImg from '@images/link-white-icon.png';
 import logo from '@images/logo.png';
 import { ReactComponent as IcClose } from '@images/svg/close-icon.svg';
 import { routeMarket, routePeggingApps, routeStructure } from '@src/modules';
@@ -95,21 +94,20 @@ const Header = () => {
   };
 
   const MoreMenu = () => (
-    <MenuDropdown className="sub-menu-header" theme="dark" style={{ width: 130 }}>
+    <MenuDropdown
+      className="sub-menu-header"
+      theme="dark"
+      style={{ width: 155, paddingTop: 16, paddingLeft: 24, paddingRight: 10 }}>
       {moreItem.map((item) => {
         return (
           <Menu.Item
             className="dropdown-menu-item"
             key={item.name}
+            style={{ marginBottom: 16 }}
             onClick={() => window.open(item.path, '_blank')}>
             <Row align="middle">
               <p className="fs-medium">{item.name}</p>
-              <img
-                className="logo"
-                alt=""
-                src={linkImg}
-                style={{ width: 14, height: 14, marginLeft: 6 }}
-              />
+              <div className="logo" />
             </Row>
             <p className="text2 fs-small">{item.sub}</p>
           </Menu.Item>

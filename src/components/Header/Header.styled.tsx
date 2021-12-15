@@ -1,3 +1,5 @@
+import linkBlueImg from '@images/link-blue-icon.png';
+import linkImg from '@images/link-white-icon.png';
 import { Menu, Row } from 'antd';
 import styled, { ITheme } from 'styled-components';
 
@@ -96,6 +98,21 @@ export const Styled = styled(Row)`
     margin-top: 32px;
     font-size: 16px;
   }
+
+  .ant-menu-dark > .ant-menu-item {
+    background: transparent;
+    padding: 0 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: center;
+    font-size: 18px;
+
+    :hover {
+      color: ${({ theme }: { theme: ITheme }) => theme.text1};
+    }
+  }
+
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
           justify-content: space-between;
           .menu-mobile {
@@ -110,24 +127,28 @@ export const Styled = styled(Row)`
     `}
 `;
 
-export const WrapSubMenu = styled(Menu)`
-  border-radius: 16px;
-  .logo {
-    margin-right: 16px;
-    width: 24px;
-    height: 24px;
-    justify-content: center;
-  }
-`;
-
 export const MenuDropdown = styled(Menu)`
   border-radius: 16px;
-  width: 180px;
   background: #141416 !important;
   .logo {
     margin-right: 16px;
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
     justify-content: center;
+  }
+  .logo {
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+    background: url(${linkImg}) no-repeat;
+    display: inline-block;
+  }
+  .dropdown-menu-item:hover {
+    p:first-child {
+      color: #1a73e8;
+    }
+    .logo {
+      background: url(${linkBlueImg}) no-repeat;
+    }
   }
 `;

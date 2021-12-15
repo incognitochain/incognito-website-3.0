@@ -192,7 +192,7 @@ const MarketTokens = () => {
         <a
           href="https://we.incognito.org"
           target="_blank"
-          className="fs-medium fw-regular text4 tab-header-title-right"
+          className="fs-medium fw-regular text3 tab-header-title-right"
           rel="noreferrer">
           {marketTrs.whatPCoins}
         </a>
