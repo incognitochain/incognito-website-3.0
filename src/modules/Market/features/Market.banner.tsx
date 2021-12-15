@@ -27,6 +27,9 @@ export const Styled = styled(Col)`
   }
   .ant-col:first-child {
   }
+  .banner-sub-title {
+    margin-top: 24px;
+  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         padding-bottom: 48px;
         .banner-title {
@@ -54,6 +57,9 @@ const MarketBanner = () => {
       xxl={9}
       className={`${isMobile ? 'default-padding-horizontal' : ''}`}>
       <p className="text1 fw-medium banner-title">{marketTrs.mainTitle}</p>
+      <p className="text2 fs-supermedium banner-sub-title">
+        Here, your coins are privacy coins. Trade them cross-chain, commission-free.
+      </p>
       <Row className="wrap-app-link">
         <Col span={8}>
           <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">
