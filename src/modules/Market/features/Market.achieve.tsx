@@ -131,7 +131,9 @@ const MarketAchieve = () => {
         <div className={`achieve-circle`}>
           <p className="achieve-item-title">{item.title}</p>
         </div>
-        <p className="text-align-center achieve-item-sub-title">{item.content}</p>
+        <p className="text-align-center fw-medium achieve-item-sub-title">
+          {item.content}
+        </p>
       </Item>
     </Card>
   );

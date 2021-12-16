@@ -21,7 +21,7 @@ const lightTheme = (): Colors => {
     text5: '#757575',
 
     // border
-    border1: '#484848',
+    border1: 'rgba(54, 54, 54, 0.5)',
 
     // btn
     btnBG1: '#1a73e8',

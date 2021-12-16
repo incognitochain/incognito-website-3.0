@@ -50,7 +50,7 @@ const language: ILanguage = {
     privacyByDesignMore: 'More on privacy techniques',
     privacyForEvery: 'Privacy for every blockchain',
     privacyForEveryDesc:
-      'You don’t have to sacrifice privacy to hold and trade your favorite coins. 11 major blockchains are using Incognito bridges to interact privately, anonymizing and swapping over $500M in currencies like BTC, ETH, BNB, and LTC to date.',
+      'You don’t have to sacrifice privacy to hold and trade your favorite coins. 11 major blockchains use Incognito bridges to interact privately. To date, they have anonymized and swapped over $500M in currencies like BTC, ETH, BNB, and many more.',
     privacyForEveryMore: 'More on cross-chain privacy',
     privacyAtScale: 'Privacy at scale',
     privacyAtScaleDesc:

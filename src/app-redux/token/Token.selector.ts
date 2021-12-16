@@ -18,22 +18,20 @@ export const pCustomTokenSelector = createSelector(
 export const mainPTokenSelector = createSelector(pTokenSelector, (pTokens) => {
   const { PRV_TOKEN_ID, BTC_TOKEN_ID, ETH_TOKEN_ID, BNB_TOKEN_ID, XMR_TOKEN_ID } =
     TokenConstant;
-  const PRIORITY_LIST: string[] = [
-    PRV_TOKEN_ID,
-    BTC_TOKEN_ID,
-    ETH_TOKEN_ID,
-    BNB_TOKEN_ID,
-    XMR_TOKEN_ID,
-  ];
-  const sortPriority = pTokens.map((token) => {
-    let priority = PRIORITY_LIST.indexOf(token?.tokenId);
-    priority = priority > -1 ? priority : PRIORITY_LIST.length;
-    return {
-      ...token,
-      priority,
-      verified: token.verified,
-    };
-  });
-  const res = orderBy(sortPriority, ['priority', 'change'], ['asc', 'desc']).slice(0, 10);
+
+  // prv, btc, eth, bnb, dai, ltc, xmr, zec, usdc, dash, usdt, doge, busd, bat, link, neo, zil
+  const PRIORITY_LIST: string[] = TokenConstant.PRIORITY_TOKEN_ID;
+  const sortPriority = pTokens
+    .filter(({ tokenId }) => PRIORITY_LIST.includes(tokenId))
+    .map((token) => {
+      let priority = PRIORITY_LIST.indexOf(token?.tokenId);
+      priority = priority > -1 ? priority : PRIORITY_LIST.length;
+      return {
+        ...token,
+        priority,
+        verified: token.verified,
+      };
+    });
+  const res = orderBy(sortPriority, ['priority'], ['asc']);
   return res;
 });
