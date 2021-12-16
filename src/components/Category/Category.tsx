@@ -1,7 +1,8 @@
 import { MarketChainIcon, MarketMoneyIcon, MarketSearchIcon } from '@components/icons';
 import { peggingAppTranslateSelector } from '@src/configs';
-import { Col, Row } from 'antd';
+import { Col, List, Row } from 'antd';
 import React, { ReactElement } from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
@@ -17,8 +18,8 @@ export const Styled = styled(Row)`
   }
 
   .category-item-center {
-    //margin-left: 40px;
-    //margin-right: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   .category-title {
@@ -31,36 +32,46 @@ export const Styled = styled(Row)`
 
   .wrap-category-item:last-child {
     height: auto;
-    max-height: 300px;
+    max-height: 320px;
   }
 
   .wrap-category-item ~ .wrap-category-item {
     margin-left: 40px;
   }
+  .wrap-category-item:last-child {
+    height: 100%;
+  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .wrap-category-item {
           max-width: none;
-          padding-top: 24px;
-          height: 300px;
+          padding: 16px;
+          max-height: 320px;
+          height: 100%
+        }
+        .category-title {
+          font-size: 20px;
+          line-height: 30px;
         }
         .category-item-center {
-          margin-bottom: 16px;
+          margin-bottom: 0px;
+          margin-left: 4px;
+          margin-right: 0px;
         }
         .wrap-category-item ~ .wrap-category-item {
           margin-left: 10px;
         }
-    `}
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToExtraSmall`
-        .wrap-category-item {
-          max-width: none;
-          height: 300px;
+        .wrap-category-item:last-child {
+          padding-top: 8px;
         }
-        .category-item-center {
+        .category-sub-title {
+          font-size: 16px;
+          line-height: 30px;
         }
-        .wrap-category-item ~ .wrap-category-item {
-          margin-left: 0px;
-          margin-top: 16px;
-          margin-bottom: 0px;
+        .wrap-category-item:first-child {
+          margin-right: 4px;
+        }
+        .wrapper:last-child {
+          padding-top: 8px
         }
     `}
 `;
@@ -73,17 +84,15 @@ export interface ICategory {
 }
 
 const Category = ({ data = [] }: { data: ICategory[] }) => {
-  const renderItem = (item: ICategory) => (
-    <Col
-      span={8}
-      key={item.title}
-      className={`wrap-category-item background2 ${item.className}`}>
-      {item.icon}
-      <p className="fs-large category-title">{item.title}</p>
-      <p className="fw-regular fs-medium category-sub-title text2">{item.subTitle}</p>
+  const renderItem = (item: ICategory, index: number) => (
+    <Col className="wrapper" xl={8} xs={index === 2 ? 24 : 12} key={item.title}>
+      <Col className={`wrap-category-item background2 ${item.className}`}>
+        {item.icon}
+        <p className="fs-large fw-medium category-title">{item.title}</p>
+        <p className="fw-regular fs-medium category-sub-title text2">{item.subTitle}</p>
+      </Col>
     </Col>
   );
-
   return <Styled>{data.map(renderItem)}</Styled>;
 };
 

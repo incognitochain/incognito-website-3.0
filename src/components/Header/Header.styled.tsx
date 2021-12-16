@@ -1,6 +1,6 @@
 import linkBlueImg from '@images/link-blue-icon.png';
 import linkImg from '@images/link-white-icon.png';
-import { Menu, Row } from 'antd';
+import { Drawer, Menu, Row } from 'antd';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled(Row)`
@@ -112,6 +112,9 @@ export const Styled = styled(Row)`
       color: ${({ theme }: { theme: ITheme }) => theme.text1};
     }
   }
+  .ant-drawer-body {
+    background-color: red;
+  }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
           justify-content: space-between;
@@ -150,5 +153,46 @@ export const MenuDropdown = styled(Menu)`
     .logo {
       background: url(${linkBlueImg}) no-repeat;
     }
+  }
+`;
+
+export const DrawerStyled = styled(Drawer)`
+  overflow-y: auto;
+  .wrap-drawer-sub-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: 1px solid ${({ theme }) => theme.border1};
+  }
+  .logo {
+    margin-right: 16px;
+    width: 14px;
+    height: 14px;
+    justify-content: center;
+  }
+  .dropdown-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .logo {
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+    background: url(${linkImg}) no-repeat;
+    display: inline-block;
+  }
+  .drawer-sub-item-label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.005em;
+  }
+  .drawer-sub-item-desc-label {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: #9c9c9c;
+  }
+  .wrap-drawer-sub-item:last-child {
+    border-bottom: 1px solid ${({ theme }) => theme.border1};
   }
 `;

@@ -113,6 +113,9 @@ export const Styled = styled(Col)`
             border-radius: 28px;
             margin-right: 10px;
         }
+        .token-main-title {
+            height: 59px;
+        }
         .medium-text {
             font-size: 14px;
             line-height: 21px;
@@ -123,6 +126,10 @@ export const Styled = styled(Col)`
         }
         .tab-header-title-right {
             padding-top: 4px;
+            font-size: 18px;
+        }
+        .tab-header-title-left {
+            font-size: 18px;
         }
     `}
 `;

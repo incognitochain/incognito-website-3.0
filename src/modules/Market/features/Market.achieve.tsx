@@ -47,6 +47,13 @@ export const Styled = styled.div`
             font-size: 16px;
             line-height: 24px;
           }
+          .ant-card-body {
+            padding: 0px;
+            padding-top: 24px;
+          }
+          .achieve-wrap {
+            margin-top: 4px;
+          }
     `}
 `;
 
@@ -82,14 +89,19 @@ const Item = styled.div`
   //     color: ${({ theme }) => theme.text1};
   //   }
   // }
+  .wrap-item {
+  }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+          .ant-card-body {
+            padding: 0px;
+          }
           .achieve-item-title {
             font-size: 24px;
           }
           .achieve-circle {
-            width: 196px;
-            height: 196px;
+            width: 150px;
+            height: 150px;
           }
           .achieve-item-title {
             font-size: 34px;
@@ -126,7 +138,7 @@ const MarketAchieve = () => {
   );
 
   const renderItem = (item: any) => (
-    <Card>
+    <Card className="wrap-item">
       <Item className="achieve-margin-right">
         <div className={`achieve-circle`}>
           <p className="achieve-item-title">{item.title}</p>
@@ -145,7 +157,7 @@ const MarketAchieve = () => {
         <Col xs={24}>
           <List
             grid={{
-              xs: 1,
+              xs: 2,
               sm: 2,
               md: 2,
               lg: 2,

@@ -1,6 +1,7 @@
 import { marketTranslateSelector } from '@src/configs';
 import { Card, Col, List, Row } from 'antd';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
@@ -25,6 +26,23 @@ export const Styled = styled.div`
   .circle-wrap {
     margin-top: 80px;
   }
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        padding-bottom: 32px;
+        padding-top: 0px;
+        .ant-list {
+          margin-left: 0px !important;
+        }
+        .ant-card-body {
+          padding: 8px;
+        }
+        .last-item {
+          width: 100vw;
+        }
+        .circle-wrap {
+          margin-top: 40px;
+        }
+    `}
 `;
 
 const Item = styled.div`
@@ -56,21 +74,25 @@ const Item = styled.div`
             font-size: 24;
           }
           .circle-circle {
-            width: 196px;
-            height: 196px;
+            width: 150px;
+            height: 150px;
           }
           .circle-item-title {
             font-size: 34px;
+            line-height: 44px;
           }
           .circle-item-sub-title {
             font-size: 16px;
+          }
+          .circle-item-sub-title {
+            margin-top: 10px;
           }
     `}
 `;
 
 const CircleList = ({ data = [], grid = {} }: { data: any[]; grid: any }) => {
-  const renderItem = (item: any) => (
-    <Card>
+  const renderItem = (item: any, index: number) => (
+    <Card className={index === 2 && isMobile ? 'last-item' : ''}>
       <Item className="circle-margin-right">
         <div className={`circle-circle`}>
           <p className="circle-item-title">{item.title}</p>
@@ -88,7 +110,7 @@ const CircleList = ({ data = [], grid = {} }: { data: any[]; grid: any }) => {
         <Col xs={24}>
           <List
             grid={grid}
-            style={{ marginLeft: 12 }}
+            style={{ marginLeft: isMobile ? 0 : 12 }}
             dataSource={data}
             renderItem={renderItem}
           />

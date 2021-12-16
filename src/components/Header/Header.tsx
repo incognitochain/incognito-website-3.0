@@ -3,12 +3,12 @@ import downImg from '@images/down-icon.png';
 import logo from '@images/logo.png';
 import { ReactComponent as IcClose } from '@images/svg/close-icon.svg';
 import { routeMarket, routePeggingApps, routeStructure } from '@src/modules';
-import { Button, Col, Drawer, Dropdown, Menu, Row } from 'antd';
+import { Button, Col, Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from 'rebass';
 
-import { MenuDropdown, Styled } from './Header.styled';
+import { DrawerStyled, MenuDropdown, Styled } from './Header.styled';
 
 const menuItem = [
   {
@@ -147,7 +147,7 @@ const Header = () => {
         onClick={openMenu}>
         <MenuOutlined width={22} height={22} style={{ cursor: 'pointer' }} />
       </Button>
-      <Drawer
+      <DrawerStyled
         placement="right"
         width="100%"
         closable
@@ -171,7 +171,7 @@ const Header = () => {
                     color: 'white',
                     marginTop: 32,
                     fontWeight: 'bold',
-                    fontSize: 16,
+                    fontSize: 34,
                   }}
                   href={item.path}
                   target="_blank"
@@ -187,7 +187,7 @@ const Header = () => {
                   color: 'white',
                   marginTop: 32,
                   fontWeight: 'bold',
-                  fontSize: 16,
+                  fontSize: 34,
                 }}
                 to={item.path}
                 onClick={onClose}>
@@ -205,38 +205,33 @@ const Header = () => {
             style={{
               color: 'white',
               fontWeight: 'bold',
-              fontSize: 16,
+              fontSize: 34,
             }}>
             More
           </p>
           <img
-            className="logo"
+            className="dropdown-icon"
             alt=""
             src={downImg}
-            style={{ width: 14, height: 14, marginLeft: 10, marginTop: 3 }}
+            style={{ marginLeft: 10, marginTop: 3 }}
           />
         </Row>
         {expand && (
-          <Col>
+          <Col style={{ marginTop: 24 }}>
             {moreItem.map((item) => (
-              <div key={item.name}>
-                <Link
-                  style={{
-                    color: 'white',
-                    marginTop: 32,
-                    fontWeight: 'medium',
-                    fontSize: 16,
-                  }}
-                  href={item.path}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  {item.name}
+              <div className="wrap-drawer-sub-item" key={item.name}>
+                <Link href={item.path} target="_blank" rel="noopener noreferrer">
+                  <Row align="middle">
+                    <p className="drawer-sub-item-label">{item.name}</p>
+                    <div className="logo" />
+                  </Row>
+                  <p className="drawer-sub-item-desc-label">{item.sub}</p>
                 </Link>
               </div>
             ))}
           </Col>
         )}
-      </Drawer>
+      </DrawerStyled>
     </Styled>
   );
 };
