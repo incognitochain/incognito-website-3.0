@@ -120,7 +120,7 @@ const MarketAchieve = () => {
         content: marketTrs.privateCryptocurrencies,
         className: 'achieve-margin-right',
       },
-      { title: '101', content: marketTrs.bridgedBlockchains },
+      { title: '11', content: marketTrs.bridgedBlockchains },
     ],
     [marketTrs],
   );
