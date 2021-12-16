@@ -143,7 +143,7 @@ const Item = React.memo(({ item }: { item: IPTokenState }) => {
     <Row className={`token-wrap-item`}>
       <Col span={12} className="wrap-first-item">
         <ImageCached src={item.image} className="image-token" />
-        <Col className="token-wrap-section">
+        <Col className="token-wrap-section" style={{ flex: 1 }}>
           <p className="medium-text">{item.pSymbol}</p>
           <p className="text2 token-name">{item.pName}</p>
         </Col>
