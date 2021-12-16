@@ -44,25 +44,13 @@ const Item = styled.div`
     margin-bottom: 0;
     text-align: center;
     white-space: pre-wrap;
-    color: ${({ theme }) => theme.background4};
+    color: ${({ theme }) => theme.text1};
   }
   .circle-item-sub-title {
     margin-top: 24px;
     font-size: 22px;
     color: ${({ theme }) => theme.text2};
   }
-  :hover {
-    .circle-circle {
-      background-color: ${({ theme }) => theme.background4};
-    }
-    .circle-item-title {
-      color: ${({ theme }) => theme.white};
-    }
-    .circle-item-sub-title {
-      color: ${({ theme }) => theme.text1};
-    }
-  }
-
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
           .circle-item-title {
             font-size: 24;
@@ -87,7 +75,9 @@ const CircleList = ({ data = [], grid = {} }: { data: any[]; grid: any }) => {
         <div className={`circle-circle`}>
           <p className="circle-item-title">{item.title}</p>
         </div>
-        <p className="text-align-center circle-item-sub-title">{item.content}</p>
+        <p className="text-align-center fw-medium circle-item-sub-title">
+          {item.content}
+        </p>
       </Item>
     </Card>
   );

@@ -30,7 +30,7 @@ const Styled = styled.div`
     font-size: 64px;
     line-height: 70px;
     letter-spacing: 0.015em;
-    color: #ffffff;
+    color: ${({ theme }) => theme.text1};
     margin-top: 40px;
     text-align: center;
   }
@@ -56,8 +56,18 @@ const Styled = styled.div`
     margin-right: 16px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        padding-top: 40px;
+        padding-bottom: 40px;
         .wrap-app-link {
           flex-direction: column;
+        }
+        .logo {
+            width: 53px;
+            height: 53px;
+        }
+        .wrap-logo {
+            width: 72px;
+            height: 72px;
         }
         .app-link-center {
           margin-left: 0px;
@@ -65,13 +75,21 @@ const Styled = styled.div`
           margin-top: 16px;
           margin-bottom: 16px;      
         }
+        .footer-title {
+          font-size: 28px;
+          line-height: 38px;
+          text-align: center;
+          letter-spacing: 0.01em;
+          max-width: 185px;
+          margin-top: 16px;
+        }
     `}
 `;
 
 const Footer = React.memo(() => {
   // Get started in a few minutes.
   return (
-    <Styled>
+    <Styled className="default-padding-horizontal">
       <div className="wrap-logo">
         <img src={logoStrokeImg} className="logo" alt="logo" />
       </div>

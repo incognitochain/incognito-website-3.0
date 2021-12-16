@@ -8,7 +8,7 @@ const darkTheme = (): Colors => {
     black,
 
     // background
-    background1: black,
+    background1: '#1A1A1A',
     background2: '#303030',
     background3: '#1A1A1A',
     background4: '#1A73E8',
@@ -20,7 +20,7 @@ const darkTheme = (): Colors => {
     text5: '#757575',
 
     // border
-    border1: '#484848',
+    border1: 'rgba(54, 54, 54, 0.5)',
 
     // btn
     btnBG1: '#1A73E8',

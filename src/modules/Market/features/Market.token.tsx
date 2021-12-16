@@ -86,10 +86,11 @@ export const Styled = styled(Col)`
     padding-right: 32px;
   }
   .gradient-view {
-    background: linear-gradient(180deg, rgba(25, 25, 25, 0.37) 0%, #191919 100%);
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.2) 0%, #1a1a1a 100%);
     height: 88px;
     position: absolute;
     bottom: 0;
+    right: 15px;
     width: 100%;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`

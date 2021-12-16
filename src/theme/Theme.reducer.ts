@@ -3,7 +3,7 @@ export interface IThemeState {
 }
 
 const initialState: IThemeState = {
-  darkMode: false,
+  darkMode: true,
 };
 
 const reducer = (

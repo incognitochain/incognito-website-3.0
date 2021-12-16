@@ -1,4 +1,4 @@
-import { darkTheme } from '@theme/index';
+import { darkTheme, lightTheme } from '@theme/index';
 import { FONTS } from '@theme/Theme.fonts';
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
@@ -34,7 +34,8 @@ export const white = '#FFFFFF';
 export const black = '#000000';
 
 export function colors(darkMode: boolean): Colors {
-  return darkTheme();
+  if (darkMode) return darkTheme();
+  return lightTheme();
 }
 
 export function appTheme(darkMode: boolean): ITheme {
