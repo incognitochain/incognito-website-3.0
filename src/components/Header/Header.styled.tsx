@@ -18,6 +18,9 @@ export const Styled = styled(Row)`
     margin: auto;
     padding-right: 80px;
     display: initial;
+    .menu {
+      //min-width: 530px;
+    }
   }
 
   .ant-menu-dark.ant-menu-horizontal {

@@ -129,7 +129,7 @@ const MarketAchieve = () => {
         className: 'achieve-margin-right',
       },
       {
-        title: '73',
+        title: '101',
         content: marketTrs.privateCryptocurrencies,
         className: 'achieve-margin-right',
       },
