@@ -62,3 +62,12 @@ jobs:
           labels: "runnumber=${GITHUB_RUN_ID}"
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: executing remote ssh commands to rollout new version
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEVELOP_REMOTE_SSH_HOST }}
+          username: ${{ secrets.DEVELOP_REMOTE_SSH_USER }}
+          key: ${{ secrets.DEVELOP_REMOTE_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.DEVELOP_REMOTE_SSH_PORT }}
+          script: /home/devops/scripts/deploy-incognito-website-3.0.sh dev ${{ env.IMAGE_TAG }}
