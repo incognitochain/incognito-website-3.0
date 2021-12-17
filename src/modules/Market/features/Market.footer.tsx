@@ -18,6 +18,8 @@ const Styled = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 120px;
+    height: 120px;
   }
   .logo {
     width: 88px;
