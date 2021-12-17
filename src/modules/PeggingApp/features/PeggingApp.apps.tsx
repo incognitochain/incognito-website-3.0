@@ -1,5 +1,8 @@
+import avveImg from '@images/avve-logo.png';
 import cakeImg from '@images/cake-icon.png';
 import linkImg from '@images/link-icon.png';
+import openSeaImg from '@images/opensea-logo.png';
+import raydiumImg from '@images/raydium-logo.png';
 import unknowImg from '@images/unknow-icon.png';
 import { Col, Row } from 'antd';
 import React from 'react';
@@ -7,8 +10,8 @@ import { isMobile } from 'react-device-detect';
 import styled, { ITheme } from 'styled-components';
 const Styled = styled(Row)`
   margin-top: 60px;
-  justify-content: center;
   flex-direction: row;
+  justify-content: space-between;
   .line-view {
     width: 24px;
   }
@@ -16,18 +19,41 @@ const Styled = styled(Row)`
     width: 0;
     height: 16px;
   }
+  .app-margin-right {
+    margin-right: 20px;
+  }
+  .app-margin-left {
+    margin-left: 20px;
+  }
+  .app-margin-top {
+    margin-top: 24px;
+  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         flex-direction: column;
         margin-top: 0px;
-        .last-item {
+        .app-margin-top {
+            margin-top: 0px;
+        }
+        .app-margin-right {
+          margin-right: 0px;
+        }
+        .app-margin-left {
+          margin-left: 0px;
+        }
+        .app-margin-top-small {
             margin-top: 8px;
         }
   `}
 `;
-const StyledItem = styled.div`
-  border-radius: 16px;
-  flex: 1;
-  padding: 60px 60px 50px;
+const StyledItem = styled(Col)`
+  //flex: 1;
+  .wrap-item-content {
+    padding: 60px 60px 50px;
+    border-radius: 16px;
+  }
+  .full-height {
+    height: 100%;
+  }
   .item-img {
     margin-right: 32px;
     width: 120px;
@@ -76,7 +102,9 @@ const StyledItem = styled.div`
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-      padding: 16px 16px 24px;
+      .wrap-item-content {
+        padding: 16px 16px 24px;
+      }
       .item-img {
         width: 80px;
         height: 80px;
@@ -116,7 +144,7 @@ const StyledItem = styled.div`
         }
   `};
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       .wrap-name {
         display: inline-flex;
         align-items: baseline;
@@ -143,37 +171,39 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
     [],
   );
   return (
-    <StyledItem className={`background2 ${className}`}>
-      <Row align="middle">
-        <img src={data.img} className="item-img" alt="icon" />
-        <Col className="wrap-main-content">
-          <div className="wrap-name">
-            <p className="large-text fw-medium normal-text">{data.name}</p>
-            <p className="medium-text text2 normal-text name-desc-text">
-              {data.nameDesc}
-            </p>
-          </div>
-          {!isMobile && ChainList}
-        </Col>
-        {isMobile && ChainList}
-      </Row>
-      <p className="medium-text normal-text desc-text">
-        {data.desc}{' '}
-        {!!data.link && (
-          <span
-            className="link-text"
-            onClick={() => {
-              window.open(data.linkPath, '_blank');
-            }}>
-            {` ${data.link}`}
-            <img
-              src={linkImg}
-              style={{ width: isMobile ? 14 : 18, height: 'auto', marginLeft: 5 }}
-              alt="link-icon"
-            />
-          </span>
-        )}
-      </p>
+    <StyledItem xs={24} lg={12}>
+      <Col className={`wrap-item-content background2 ${className}`}>
+        <Row align="middle">
+          <img src={data.img} className="item-img" alt="icon" />
+          <Col className="wrap-main-content">
+            <div className="wrap-name">
+              <p className="large-text fw-medium normal-text">{data.name}</p>
+              <p className="medium-text text2 normal-text name-desc-text">
+                {data.nameDesc}
+              </p>
+            </div>
+            {!isMobile && ChainList}
+          </Col>
+          {isMobile && ChainList}
+        </Row>
+        <p className="medium-text normal-text desc-text">
+          {data.desc}{' '}
+          {!!data.link && (
+            <span
+              className="link-text"
+              onClick={() => {
+                window.open(data.linkPath, '_blank');
+              }}>
+              {` ${data.link}`}
+              <img
+                src={linkImg}
+                style={{ width: isMobile ? 14 : 18, height: 'auto', marginLeft: 5 }}
+                alt="link-icon"
+              />
+            </span>
+          )}
+        </p>
+      </Col>
     </StyledItem>
   );
 });
@@ -189,8 +219,38 @@ const PeggingListApps = () => {
           chain: ['Binance Smart Chain', 'Dex'],
           desc: "Trade anonymously on Binance Smart Chain's leading DEX. Deep liquidity and super low fees – now with privacy.",
         }}
+        className="app-margin-right"
       />
-      <div className="line-view" />
+      <Item
+        data={{
+          img: avveImg,
+          name: 'pAave',
+          nameDesc: 'Private Aave',
+          chain: ['Polygon', 'Lending'],
+          desc: 'Earn interest on deposits and borrow assets on everyone’s favorite lending protocol – confidentially.',
+        }}
+        className="app-margin-top-small app-margin-left full-height"
+      />
+      <Item
+        data={{
+          img: raydiumImg,
+          name: 'pRadium',
+          nameDesc: 'Private Radium',
+          chain: ['Solana', 'AMM', 'Farming'],
+          desc: 'Explore DeFi on Solana with full privacy for your activity and assets. Swap, provide liquidity, farm, and stake.',
+        }}
+        className="app-margin-top app-margin-top-small app-margin-right"
+      />
+      <Item
+        data={{
+          img: openSeaImg,
+          name: 'pOpenSea',
+          nameDesc: 'Private OpenSea',
+          chain: ['Polygon', 'Marketplace', 'NFT'],
+          desc: 'Purchase and hoard rare digital items and collectibles without anyone knowing about it.',
+        }}
+        className="app-margin-top app-margin-top-small app-margin-left"
+      />
       <Item
         data={{
           img: unknowImg,
@@ -201,7 +261,7 @@ const PeggingListApps = () => {
           link: 'Join the conversation',
           linkPath: 'https://we.incognito.org/',
         }}
-        className="last-item"
+        className="app-margin-top app-margin-top-small app-margin-right"
       />
     </Styled>
   );

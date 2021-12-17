@@ -45,7 +45,7 @@ export const Styled = styled(Col)`
     flex-direction: row;
     align-items: center;
     padding-left: 32px;
-    padding-right: 47px;
+    padding-right: 32px;
     height: 56px;
     justify-content: space-between;
   }
