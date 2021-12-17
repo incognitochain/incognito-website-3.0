@@ -154,13 +154,15 @@ const StyledItem = styled(Col)`
         font-size: 14px;
         line-height: 21px;
       }
+      .wrap-apps-head {
+      }
   `};
 `;
 
 const Item = React.memo(({ className, data }: { className?: string; data: any }) => {
   const ChainList = React.useMemo(
     () => (
-      <Row style={{ marginTop: 12 }}>
+      <Row style={{ marginTop: 12, minWidth: 250 }}>
         {data.chain.map((item: any) => (
           <div key={item} className="wrap-chain background3">
             <p className="chain-text">{item}</p>
@@ -171,9 +173,9 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
     [],
   );
   return (
-    <StyledItem xs={24} lg={12}>
+    <StyledItem xs={24} lg={12} key={data.name}>
       <Col className={`wrap-item-content background2 ${className}`}>
-        <Row align="middle">
+        <Row align="middle" className="wrap-apps-head">
           <img src={data.img} className="item-img" alt="icon" />
           <Col className="wrap-main-content">
             <div className="wrap-name">
