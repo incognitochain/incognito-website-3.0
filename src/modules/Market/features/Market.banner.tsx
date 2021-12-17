@@ -39,7 +39,9 @@ export const Styled = styled(Col)`
           letter-spacing: 0.01em;
         }
         .banner-sub-title {
-          text-align: center;
+          text-align: center;          
+          font-size: 16px;
+          line-height: 24px;
         }
         .wrap-app-link {
           margin-top: 24px;

@@ -154,9 +154,9 @@ const Header = () => {
         visible={visible}
         key="right"
         onClose={onClose}
-        drawerStyle={{ backgroundColor: 'black' }}
+        drawerStyle={{ backgroundColor: '#1A1A1A' }}
         headerStyle={{
-          backgroundColor: 'black',
+          backgroundColor: '#1A1A1A',
           display: 'flex',
           justifyContent: 'flex-end',
           flexDirection: 'row',

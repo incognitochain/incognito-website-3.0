@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { isMobile } from 'react-device-detect';
 
 const MarketMoneyIcon = () => (
   <svg
-    width={72}
-    height={72}
+    width={isMobile ? 56 : 72}
+    height={isMobile ? 56 : 72}
     viewBox="0 0 72 72"
     fill="none"
     xmlns="http://www.w3.org/2000/svg">

@@ -61,11 +61,12 @@ export const Styled = styled(Row)`
           margin-left: 10px;
         }
         .wrap-category-item:last-child {
-          padding-top: 8px;
+          padding-top: 24px;
+          padding-bottom: 24px;
         }
         .category-sub-title {
           font-size: 16px;
-          line-height: 30px;
+          line-height: 24px;
         }
         .wrap-category-item:first-child {
           margin-right: 4px;

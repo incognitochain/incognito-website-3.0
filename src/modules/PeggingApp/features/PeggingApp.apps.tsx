@@ -73,7 +73,7 @@ const StyledItem = styled.div`
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-      padding: 30px 30px 20px;
+      padding: 16px 16px 24px;
       .item-img {
         width: 80px;
         height: 80px;
@@ -89,7 +89,7 @@ const StyledItem = styled.div`
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         width: 100%;
-        margin-top: 32px;
+        margin-top: 8px;
         .wrap-name {
             flex-direction: column;
         }
@@ -165,7 +165,7 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
             {` ${data.link}`}
             <img
               src={linkImg}
-              style={{ width: 18, height: 'auto', marginLeft: 5 }}
+              style={{ width: isMobile ? 14 : 18, height: 'auto', marginLeft: 5 }}
               alt="link-icon"
             />
           </span>
