@@ -162,9 +162,9 @@ const StyledItem = styled(Col)`
 const Item = React.memo(({ className, data }: { className?: string; data: any }) => {
   const ChainList = React.useMemo(
     () => (
-      <Row style={{ marginTop: 12, minWidth: 250 }}>
+      <Row style={{ minWidth: 250 }}>
         {data.chain.map((item: any) => (
-          <div key={item} className="wrap-chain background3">
+          <div style={{ marginTop: 12 }} key={item} className="wrap-chain background3">
             <p className="chain-text">{item}</p>
           </div>
         ))}
