@@ -11,7 +11,7 @@ const Styled = styled.div`
     visibility: hidden;
     background-color: ${({ theme }) => theme.background2};
     border-radius: 16px;
-    top: 68px;
+    top: 65px;
     right: 0;
     width: 412px;
     padding: 24px;
