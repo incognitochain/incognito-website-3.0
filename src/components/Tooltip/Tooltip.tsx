@@ -60,7 +60,7 @@ const Tooltip = React.memo(
       <Styled className={`tool-tip ${className}`}>
         {title}
         <div className="arrow-up" />
-        <p className="tooltip-text">{`Privacy Coins (pCoins) are 1:1 privacy-protecting equivalents of cryptocurrencies like BTC (pBTC), ETH (pETH), BNB (pBNB), and many more.\n\nWhen a coin enters the Incognito network through a connecting bridge, a pCoin is minted. When a withdrawal is made, the pCoin is burned, and the coin is released to the external wallet.`}</p>
+        <p className="tooltip-text">{`Privacy Coins (pCoins) are 1:1 privacy-protecting equivalents of cryptocurrencies like BTC (pBTC), ETH (pETH), BNB (pBNB), etc. They do not appear on public block explorers and are completely confidential.\n\nWhen a coin enters the Incognito network through a connecting bridge, a pCoin is minted. When a withdrawal is made, the pCoin is burned, and the coin is released to the external wallet.`}</p>
       </Styled>
     );
   },

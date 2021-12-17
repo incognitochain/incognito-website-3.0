@@ -83,7 +83,13 @@ const Section1 = () => {
           type="primary"
           shape="round"
           size="large"
-          className="button1 btn-become-validator">
+          className="button1 btn-become-validator"
+          onClick={() => {
+            window.open(
+              'https://we.incognito.org/t/how-to-setup-your-own-node-in-a-blink-of-an-eye-now-support-multi-nodes-per-host/12003',
+              '_blank',
+            );
+          }}>
           {structureTrs.becomeValidator}
         </Button>
       </Col>
