@@ -1,7 +1,7 @@
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled.div`
-  padding-bottom: 120px;
+  padding-bottom: 40px;
   .section-1 {
     padding-top: 120px;
     justify-content: space-between;

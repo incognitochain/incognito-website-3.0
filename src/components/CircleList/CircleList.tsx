@@ -10,8 +10,8 @@ export const Styled = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 50px;
-  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 
   .circle-title {
     font-size: 62px;
@@ -24,7 +24,7 @@ export const Styled = styled.div`
   }
 
   .circle-wrap {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
@@ -47,8 +47,8 @@ export const Styled = styled.div`
 
 const Item = styled.div`
   .circle-circle {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
     border-radius: 120px;
     display: flex;
     justify-content: center;
@@ -92,7 +92,9 @@ const Item = styled.div`
 
 const CircleList = ({ data = [], grid = {} }: { data: any[]; grid: any }) => {
   const renderItem = (item: any, index: number) => (
-    <Card className={index === 2 && isMobile ? 'last-item' : ''}>
+    <Card
+      style={{ minWidth: isMobile ? 0 : 320 }}
+      className={index === 2 && isMobile ? 'last-item' : ''}>
       <Item className="circle-margin-right">
         <div className={`circle-circle`}>
           <p className="circle-item-title">{item.title}</p>

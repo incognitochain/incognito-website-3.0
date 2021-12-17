@@ -22,7 +22,7 @@ interface IFactory {
 
 const Styled = styled(Row)`
   padding-top: 120px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   .title {
     font-weight: 600;
     font-size: 40px;

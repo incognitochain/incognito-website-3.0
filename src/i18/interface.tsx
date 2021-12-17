@@ -44,9 +44,9 @@ export interface IStructure {
   mainTitle: string;
   mainDesc: string;
   becomeValidator: string;
-  mintToDate: string;
+  averageAnnualRoi: string;
   validatorsAcross: string;
-  smallFixed: string;
+  fairFixedStake: string;
   privacyByDesign: string;
   privacyByDesignDesc: string;
   privacyByDesignMore: string;

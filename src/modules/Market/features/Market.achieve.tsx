@@ -1,6 +1,7 @@
 import { marketTranslateSelector } from '@src/configs';
 import { Card, Col, List, Row } from 'antd';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
@@ -59,8 +60,8 @@ export const Styled = styled.div`
 
 const Item = styled.div`
   .achieve-circle {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
     border-radius: 120px;
     display: flex;
     justify-content: center;
@@ -138,7 +139,7 @@ const MarketAchieve = () => {
   );
 
   const renderItem = (item: any) => (
-    <Card className="wrap-item">
+    <Card style={{ minWidth: isMobile ? 0 : 300 }} className="wrap-item">
       <Item className="achieve-margin-right">
         <div className={`achieve-circle`}>
           <p className="achieve-item-title">{item.title}</p>

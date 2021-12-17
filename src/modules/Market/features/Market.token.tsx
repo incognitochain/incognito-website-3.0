@@ -14,7 +14,7 @@ export const Styled = styled(Col)`
   overflow: hidden;
   .wrap-token {
     box-sizing: border-box;
-    max-height: 520px;
+    min-height: 520px;
   }
   .token-main-title {
     background-color: ${({ theme }) => theme.background2};
@@ -133,6 +133,9 @@ export const Styled = styled(Col)`
           font-size: 14px;
           line-height: 24px;
         }
+          .token-wrap-item:last-child {
+            border-bottom-width: 1px;
+          }
     `}
 `;
 

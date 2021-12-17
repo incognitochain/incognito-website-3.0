@@ -41,9 +41,9 @@ const language: ILanguage = {
     mainDesc:
       'Incognito is a decentralized blockchain built for privacy at scale. Incognito validators ensure that all crypto holders have an alternative to a future of surveillance.',
     becomeValidator: 'Become a validator',
-    mintToDate: 'Mined to date',
+    averageAnnualRoi: 'Average annual ROI',
     validatorsAcross: 'Validators across 8 shards',
-    smallFixed: 'Small fixed stake',
+    fairFixedStake: 'Fair fixed stake',
     privacyByDesign: 'Privacy by design',
     privacyByDesignDesc:
       'Transactions on Incognito are confidential. A number of cryptographic techniques are used to ensure that no one can track your activity while you’re in the network, and no one will be able to search your financial history.',

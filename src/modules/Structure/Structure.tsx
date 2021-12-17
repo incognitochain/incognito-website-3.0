@@ -12,18 +12,18 @@ const Structure = () => {
   const Factory = React.useMemo(
     () => [
       {
-        title: '15M\nPRV',
-        content: structureTrs.mintToDate,
+        title: '54%',
+        content: structureTrs.averageAnnualRoi,
         className: 'circle-margin-right',
       },
       {
-        title: '2,000',
+        title: '2,000+',
         content: structureTrs.validatorsAcross,
         className: 'circle-margin-right',
       },
       {
         title: '1,750\nPRV',
-        content: structureTrs.smallFixed,
+        content: structureTrs.fairFixedStake,
       },
     ],
     [structureTrs],
@@ -31,7 +31,6 @@ const Structure = () => {
   return (
     <Styled>
       <Section1 />
-      <Section3 />
       <CircleList
         grid={{
           xs: 2,
@@ -43,6 +42,7 @@ const Structure = () => {
         }}
         data={Factory}
       />
+      <Section3 />
     </Styled>
   );
 };
