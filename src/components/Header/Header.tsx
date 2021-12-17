@@ -221,7 +221,7 @@ const Header = () => {
               fontWeight: 500,
               fontSize: 34,
             }}>
-            More
+            Dive in
           </p>
           <img
             className="dropdown-icon"

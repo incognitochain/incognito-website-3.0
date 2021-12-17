@@ -261,7 +261,7 @@ const PeggingListApps = () => {
           chain: ['Blockchain', 'Use case'],
           desc: 'The Incognito community is building out the 2022 roadmap. Which app do you want privacy for?',
           link: 'Join the conversation',
-          linkPath: 'https://we.incognito.org/',
+          linkPath: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
         }}
         className="app-margin-top app-margin-top-small app-margin-right"
       />
