@@ -1,9 +1,9 @@
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled.div`
+  padding-bottom: 120px;
   .section-1 {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 120px;
     justify-content: space-between;
     .title {
       font-size: 64px;
@@ -26,6 +26,8 @@ export const Styled = styled.div`
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         display: flex;
         flex-direction: column-reverse;
+        align-items: flex-start;
+        padding-top: 40px;
         .title {
           text-align: left;
           font-size: 34px;
@@ -42,7 +44,7 @@ export const Styled = styled.div`
     object-fit: contain;
   }
   .wrap-content {
-    margin-top: 100px;
+    margin-top: 120px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
     .cake-img {
@@ -90,6 +92,7 @@ export const Styled = styled.div`
   `}
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         margin-top: 40px;
+        padding-bottom: 20px;
         justify-content: center;
         .title {
           text-align: center;

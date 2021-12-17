@@ -1,6 +1,6 @@
 import { mainPTokenSelector } from '@src/app-redux/token/Token.selector';
 import { IPTokenState } from '@src/app-redux/token/Token.type';
-import { ImageCached } from '@src/components';
+import { ImageCached, Tooltip } from '@src/components';
 import { marketTranslateSelector } from '@src/configs';
 import { colorsSelector } from '@src/theme';
 import { Col, Row } from 'antd';
@@ -201,13 +201,10 @@ const MarketTokens = () => {
         align="middle"
         className="token-main-title token-padding">
         <p className="tab-header-title-left fw-suppermedium">{marketTrs.privacyMarket}</p>
-        <a
-          href="https://we.incognito.org"
-          target="_blank"
-          className="fs-medium fw-regular text3 tab-header-title-right"
-          rel="noreferrer">
-          {marketTrs.whatPCoins}
-        </a>
+        <Tooltip
+          key="Tooltip"
+          title={marketTrs.whatPCoins}
+          className="fs-medium fw-regular text3 tab-header-title-right"></Tooltip>
       </Row>
       {Header}
       <div className="wrap-token">{tokens.map(renderItem)}</div>

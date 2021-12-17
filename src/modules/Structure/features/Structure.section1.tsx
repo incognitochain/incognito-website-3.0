@@ -22,8 +22,8 @@ const Styled = styled(Row)`
     margin-top: 40px;
   }
   .logo-stroke {
-    width: 45%;
-    max-width: 650px;
+    width: 35%;
+    max-width: 500px;
   }
   .btn-become-validator {
     margin-top: 50px;

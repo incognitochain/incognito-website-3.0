@@ -299,4 +299,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar-thumb:hover {
       background: ${({ theme }) => theme.background2};;
     }
+    .ant-tooltip-inner {
+      background: ${({ theme }) => theme.background2};;
+    }
 `;

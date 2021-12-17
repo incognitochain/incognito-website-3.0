@@ -31,6 +31,7 @@ const Structure = () => {
   return (
     <Styled>
       <Section1 />
+      <Section3 />
       <CircleList
         grid={{
           xs: 2,
@@ -42,7 +43,6 @@ const Structure = () => {
         }}
         data={Factory}
       />
-      <Section3 />
     </Styled>
   );
 };

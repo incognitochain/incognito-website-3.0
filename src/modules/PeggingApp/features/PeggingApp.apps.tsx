@@ -18,7 +18,7 @@ const Styled = styled(Row)`
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         flex-direction: column;
-        margin-top: 26px;
+        margin-top: 0px;
   `}
 `;
 const StyledItem = styled.div`
@@ -89,7 +89,7 @@ const StyledItem = styled.div`
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         width: 100%;
-        margin-top: 8px;
+        margin-top: 4px;
         .wrap-name {
             flex-direction: column;
         }

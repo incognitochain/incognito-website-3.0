@@ -15,7 +15,7 @@ const Home = () => {
       <Row
         align="middle"
         justify="space-between"
-        className="section-1 background2 default-padding-horizontal">
+        className="section-1 default-padding-horizontal">
         <Row style={{ flexDirection: 'column' }}>
           <p className="fw-medium title">{peggingTrs.mainTitle}</p>
           <Button
