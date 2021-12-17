@@ -112,9 +112,6 @@ export const Styled = styled(Row)`
       color: ${({ theme }: { theme: ITheme }) => theme.text1};
     }
   }
-  .ant-drawer-body {
-    background-color: red;
-  }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
           justify-content: space-between;
@@ -194,5 +191,8 @@ export const DrawerStyled = styled(Drawer)`
   }
   .wrap-drawer-sub-item:last-child {
     border-bottom: 1px solid ${({ theme }) => theme.border1};
+  }
+  .ant-drawer-body {
+    padding-top: 0;
   }
 `;

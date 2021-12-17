@@ -1,6 +1,8 @@
 import { MenuOutlined } from '@ant-design/icons';
+import closeIcon from '@images/close.png';
 import downImg from '@images/down-icon.png';
 import logo from '@images/logo.png';
+import menuBarIcon from '@images/menu-bar.png';
 import { ReactComponent as IcClose } from '@images/svg/close-icon.svg';
 import { routeMarket, routePeggingApps, routeStructure } from '@src/modules';
 import { Button, Col, Dropdown, Menu, Row } from 'antd';
@@ -139,14 +141,9 @@ const Header = () => {
           />
         </Row>
       </Dropdown>
-      <Button
-        className="menu-mobile btn-round"
-        type="primary"
-        shape="round"
-        size="large"
-        onClick={openMenu}>
-        <MenuOutlined width={22} height={22} style={{ cursor: 'pointer' }} />
-      </Button>
+      <div className="menu-mobile btn-round" onClick={openMenu}>
+        <img src={menuBarIcon} style={{ width: 32, height: 32 }} alt="close-icon" />
+      </div>
       <DrawerStyled
         placement="right"
         width="100%"
@@ -154,14 +151,31 @@ const Header = () => {
         visible={visible}
         key="right"
         onClose={onClose}
-        drawerStyle={{ backgroundColor: '#1A1A1A' }}
+        drawerStyle={{ backgroundColor: '#1A1A1A', paddingTop: 0 }}
         headerStyle={{
           backgroundColor: '#1A1A1A',
           display: 'flex',
           justifyContent: 'flex-end',
           flexDirection: 'row',
-        }}
-        closeIcon={<IcClose style={{ marginTop: 8 }} width={22} height={22} />}>
+          height: 0,
+          padding: 0,
+        }}>
+        <Row
+          align="middle"
+          justify="space-between"
+          className="border-bottom"
+          style={{ height: 72 }}>
+          <NavLink
+            className="logo-mobile"
+            to="/"
+            onClick={onClose}
+            style={{ width: 162 }}>
+            <img className="app-logo" src={logo} alt="app-logo" style={{ width: 162 }} />
+          </NavLink>
+          <div onClick={onClose}>
+            <img src={closeIcon} style={{ width: 32, height: 32 }} alt="close-icon" />
+          </div>
+        </Row>
         <Col>
           {menuItem.map((item) => {
             if (item.isLink) {

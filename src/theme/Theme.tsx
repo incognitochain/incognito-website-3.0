@@ -302,4 +302,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .ant-tooltip-inner {
       background: ${({ theme }) => theme.background2};;
     }
+    .border-bottom {
+      border-bottom: 1px solid ${({ theme }) => theme.border1};
+    }
 `;
