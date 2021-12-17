@@ -19,6 +19,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: incognito-website-3.0-dev
     permissions:
       packages: write
       contents: read
