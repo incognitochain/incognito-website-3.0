@@ -39,12 +39,12 @@ const moreItem = [
   },
   {
     name: 'Learn',
-    path: 'https://we.incognito.org/',
+    path: 'https://we.incognito.org/t/incognito-whitepaper-incognito-mode-for-cryptonetworks/168',
     sub: 'How it works',
   },
   {
     name: 'Follow',
-    path: 'https://we.incognito.org/',
+    path: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
     sub: 'The roadmap',
   },
 ];

@@ -17,6 +17,7 @@ interface IFactory {
   linkText: string;
   image: any;
   isRevert?: boolean;
+  link: string;
 }
 
 const Styled = styled(Row)`
@@ -78,7 +79,7 @@ const Styled = styled(Row)`
   `}
 `;
 
-const Item = React.memo(({ image, title, desc, linkText, isRevert }: IFactory) => {
+const Item = React.memo(({ image, title, desc, linkText, isRevert, link }: IFactory) => {
   const _Image = React.useMemo(
     () => (
       <Col xs={24} lg={8}>
@@ -92,7 +93,7 @@ const Item = React.memo(({ image, title, desc, linkText, isRevert }: IFactory) =
       <Col xs={24} xxl={10} lg={12}>
         <p className="title">{title}</p>
         <p className="desc text2">{desc}</p>
-        <a className="link-text fs-supermedium">
+        <a className="link-text fs-supermedium" href={link}>
           {` ${linkText}`}
           <img
             src={linkImg}
@@ -131,6 +132,7 @@ const Section3 = () => {
         linkText: structureTrs.privacyByDesignMore,
         image: structure1,
         isRevert: false,
+        link: 'https://we.incognito.org/t/sending-cryptocurrencies-confidentially-ring-signature-homomorphic-commitment-and-zero-knowledge-range-proofs/170',
       },
       {
         title: structureTrs.privacyForEvery,
@@ -138,6 +140,7 @@ const Section3 = () => {
         linkText: structureTrs.privacyForEveryMore,
         image: structure2,
         isRevert: true,
+        link: 'https://we.incognito.org/t/shielding-cryptocurrencies-turning-any-cryptocurrency-into-a-privacy-coin/83',
       },
       {
         title: structureTrs.privacyAtScale,
@@ -145,6 +148,7 @@ const Section3 = () => {
         linkText: structureTrs.privacyAtScaleMore,
         image: structure3,
         isRevert: false,
+        link: 'https://we.incognito.org/t/scaling-blockchain-privacy-with-dynamic-sharding/169',
       },
       {
         title: structureTrs.privacyFuel,
@@ -152,6 +156,7 @@ const Section3 = () => {
         linkText: structureTrs.privacyFuelMore,
         image: structure4,
         isRevert: true,
+        link: 'https://we.incognito.org/t/network-incentive-privacy-prv-mining-distribution/172',
       },
     ],
     [],

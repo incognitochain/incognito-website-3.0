@@ -42,6 +42,7 @@ const Styled = styled.div`
   }
   .wrap-app-link {
     margin-top: 50px;
+    width: 50%;
   }
   .app-link {
     width: 100%;
@@ -63,6 +64,7 @@ const Styled = styled.div`
         padding-top: 40px;
         padding-bottom: 40px;
         .wrap-app-link {
+          width: 100%;
         }
         .logo {
             width: 53px;
