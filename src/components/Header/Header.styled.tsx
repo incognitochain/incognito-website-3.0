@@ -132,7 +132,7 @@ export const Styled = styled(Row)`
 
 export const MenuDropdown = styled(Menu)`
   border-radius: 16px;
-  background: #141416 !important;
+  background: #1a1a1a !important;
   .logo {
     margin-right: 16px;
     width: 14px;

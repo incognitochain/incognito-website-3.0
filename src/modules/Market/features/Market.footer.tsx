@@ -14,8 +14,6 @@ const Styled = styled.div`
   align-items: center;
   .wrap-logo {
     border: 1px solid ${({ theme }) => theme.white};
-    width: 120px;
-    height: 120px;
     border-radius: 16px;
     display: flex;
     justify-content: center;
@@ -44,22 +42,27 @@ const Styled = styled.div`
   }
   .wrap-app-link {
     margin-top: 50px;
-    display: flex;
-    flex-direction: row;
   }
   .app-link {
-    width: 202px;
-    height: 60px;
+    width: 100%;
   }
-  .app-link-center {
-    margin-left: 16px;
-    margin-right: 16px;
+  .banner-title {
+    white-space: pre-wrap;
+    font-size: 76px;
+    line-height: 82px;
+  }
+  .ant-col {
+    padding-right: 16px;
+  }
+  .ant-col:first-child {
+  }
+  .banner-sub-title {
+    margin-top: 24px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         padding-top: 40px;
         padding-bottom: 40px;
         .wrap-app-link {
-          flex-direction: column;
         }
         .logo {
             width: 53px;
@@ -83,6 +86,13 @@ const Styled = styled.div`
           max-width: 185px;
           margin-top: 16px;
         }
+        .ant-col {
+          padding-right: 4px;
+          padding-left: 4px;
+        }
+        .wrap-app-link {
+          margin-top: 24px;
+        }
     `}
 `;
 
@@ -96,15 +106,21 @@ const Footer = React.memo(() => {
       <p className="footer-title">Get started in a few minutes.</p>
       <div className="banner-wrap-content">
         <Row className="wrap-app-link">
-          <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">
-            <img className="app-link" src={appstore} alt="appstore" />
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=com.incognito.wallet">
-            <img className="app-link app-link-center" src={ggplay} alt="ggplay" />
-          </a>
-          <a href="https://github.com/incognitochain/incognito-wallet/releases">
-            <img className="app-link" src={apk} alt="apk" />
-          </a>
+          <Col span={8}>
+            <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">
+              <img className="app-link" src={appstore} alt="appstore" />
+            </a>
+          </Col>
+          <Col span={8}>
+            <a href="https://play.google.com/store/apps/details?id=com.incognito.wallet">
+              <img className="app-link" src={ggplay} alt="ggplay" />
+            </a>
+          </Col>
+          <Col span={8}>
+            <a href="https://github.com/incognitochain/incognito-wallet/releases">
+              <img className="app-link" src={apk} alt="apk" />
+            </a>
+          </Col>
         </Row>
       </div>
     </Styled>

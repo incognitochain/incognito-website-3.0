@@ -61,6 +61,8 @@ const Styled = styled(Row)`
       }
       .btn-become-validator {
         margin-top: 24px;
+        height: 50px;
+        font-size: 18px;
       }
       .logo-stroke {
         width: 200px;

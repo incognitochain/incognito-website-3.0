@@ -20,7 +20,7 @@ interface IFactory {
 }
 
 const Styled = styled(Row)`
-  padding-top: 110px;
+  padding-top: 120px;
   padding-bottom: 60px;
   .title {
     font-weight: 600;
@@ -43,6 +43,14 @@ const Styled = styled(Row)`
   .section3-item {
     padding-bottom: 60px;
   }
+  .section3-title {
+    font-size: 64px;
+    line-height: 70px;
+    white-space: pre-wrap;
+    text-align: center;
+    margin-bottom: 60px;
+    width: 100%;
+  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         padding-top: 40px;
         .title {
@@ -60,6 +68,12 @@ const Styled = styled(Row)`
             text-align: center;
             font-size: 16px;
             line-height: 24px;
+        }
+        .section3-title {
+            font-size: 34px;
+            line-height: 44px;
+            white-space: pre-wrap;
+            margin-bottom: 40px;
         }
   `}
 `;
@@ -145,6 +159,9 @@ const Section3 = () => {
 
   return (
     <Styled align="middle" justify="space-between" className="default-padding-horizontal">
+      <p className="fw-medium section3-title">
+        {`Privacy infrastructure\n for the digital economy.`}
+      </p>
       {Factory.map((item) => (
         <Item key={item.title} {...item} />
       ))}

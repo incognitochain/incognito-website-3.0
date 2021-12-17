@@ -169,8 +169,8 @@ const Header = () => {
                 <Link
                   style={{
                     color: 'white',
-                    marginTop: 32,
-                    fontWeight: 'bold',
+                    marginTop: 16,
+                    fontWeight: 500,
                     fontSize: 34,
                   }}
                   href={item.path}
@@ -185,8 +185,8 @@ const Header = () => {
                 key={item.name}
                 style={{
                   color: 'white',
-                  marginTop: 32,
-                  fontWeight: 'bold',
+                  marginTop: 16,
+                  fontWeight: '500',
                   fontSize: 34,
                 }}
                 to={item.path}
@@ -198,13 +198,13 @@ const Header = () => {
         </Col>
         <Row
           align="middle"
-          style={{ paddingTop: 32 }}
+          style={{ paddingTop: 16 }}
           onClick={() => setExpand((expand) => !expand)}>
           <p
             className="sub-menu-text"
             style={{
               color: 'white',
-              fontWeight: 'bold',
+              fontWeight: 500,
               fontSize: 34,
             }}>
             More
@@ -213,7 +213,12 @@ const Header = () => {
             className="dropdown-icon"
             alt=""
             src={downImg}
-            style={{ marginLeft: 10, marginTop: 3 }}
+            style={{
+              marginLeft: 10,
+              marginTop: 3,
+              transform: expand ? '' : 'rotate(180deg)',
+              transition: 'transform 150ms ease',
+            }}
           />
         </Row>
         {expand && (

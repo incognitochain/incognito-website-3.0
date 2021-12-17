@@ -126,10 +126,14 @@ export const Styled = styled(Col)`
         }
         .tab-header-title-right {
             padding-top: 4px;
-            font-size: 18px;
+            font-size: 14px;
         }
         .tab-header-title-left {
             font-size: 18px;
+        }
+        .header-text {
+          font-size: 14px;
+          line-height: 24px;
         }
     `}
 `;

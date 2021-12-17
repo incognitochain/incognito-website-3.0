@@ -17,7 +17,7 @@ const Home = () => {
         justify="space-between"
         className="section-1 background2 default-padding-horizontal">
         <Row style={{ flexDirection: 'column' }}>
-          <p className="title fw-medium">{peggingTrs.mainTitle}</p>
+          <p className="fw-medium title">{peggingTrs.mainTitle}</p>
           <Button
             type="primary"
             shape="round"
@@ -31,8 +31,8 @@ const Home = () => {
       <div className="default-padding-horizontal wrap-content">
         <PeggingCategory />
         <div className="section-2">
-          <p className="title fw-medium">{peggingTrs.privacyApp}</p>
-          <p className="sub-title text3 fw-medium">{peggingTrs.coming}</p>
+          <p className="fw-medium title">{peggingTrs.privacyApp}</p>
+          <p className="text3 fw-medium sub-title">{peggingTrs.coming}</p>
         </div>
         <PeggingListApps />
       </div>

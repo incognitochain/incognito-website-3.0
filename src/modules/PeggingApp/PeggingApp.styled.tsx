@@ -9,6 +9,7 @@ export const Styled = styled.div`
       font-size: 64px;
       white-space: pre-wrap;
       line-height: 70px;
+      font-weight: 500;
       letter-spacing: 0.015em;
     }
     .btn-how-work {
@@ -18,22 +19,30 @@ export const Styled = styled.div`
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       .btn-how-work {
         margin-top: 50px;
+        height: 50px
+        font-size: 18px;
       }
   `}
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-        justify-content: center;
+        display: flex;
+        flex-direction: column-reverse;
         .title {
-          text-align: center;
+          text-align: left;
+          font-size: 34px;
+          line-height: 44px;
+          margin-top: 24px;
         }
         .btn-how-work {
-          margin: auto;
-          margin-top: 50px;
+          margin-top: 24px;
         }
     `}
   }
   .cake-img {
     width: 45%;
     object-fit: contain;
+  }
+  .wrap-content {
+    margin-top: 100px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
     .cake-img {
@@ -43,14 +52,14 @@ export const Styled = styled.div`
   `}
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
     .cake-img {
-        width: 80%;
+        width: 100%;
         object-fit: contain;
-        margin-top: 50px;
+        margin-top: 0px;
+    }
+    .wrap-content {
+      margin-top: 40px;
     }
   `}
-  .wrap-content {
-    margin-top: 100px;
-  }
 
   .section-2 {
     margin-top: 100px;
@@ -80,13 +89,23 @@ export const Styled = styled.div`
       }
   `}
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        margin-top: 40px;
         justify-content: center;
         .title {
           text-align: center;
+          width: 100%;
+          font-size: 34px;
+          line-height: 44px;
         }
         .btn-how-work {
           margin: auto;
           margin-top: 50px;
+        }
+        .sub-title {
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+          margin-top: 2px;
         }
     `}
   }

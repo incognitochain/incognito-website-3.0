@@ -3,6 +3,7 @@ import linkImg from '@images/link-icon.png';
 import unknowImg from '@images/unknow-icon.png';
 import { Col, Row } from 'antd';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import styled, { ITheme } from 'styled-components';
 const Styled = styled(Row)`
   margin-top: 60px;
@@ -17,6 +18,7 @@ const Styled = styled(Row)`
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         flex-direction: column;
+        margin-top: 26px;
   `}
 `;
 const StyledItem = styled.div`
@@ -77,7 +79,8 @@ const StyledItem = styled.div`
         height: 80px;
       }
       .large-text {
-        font-size: 24px;
+        font-size: 20px;
+        line-height: 30px;
       }
       .medium-text {
         font-size: 16px;
@@ -90,6 +93,24 @@ const StyledItem = styled.div`
         .wrap-name {
             flex-direction: column;
         }
+        .item-img {
+            margin-right: 16px;
+            width: 50px;
+            height: 50px;
+        }
+       .desc-text {
+         margin-top: 24px;
+         font-size: 16px;
+         line-height: 24px;
+       }
+        .wrap-chain {
+            min-height: 24px;
+        }
+        .chain-text {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+        }
   `};
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
@@ -99,30 +120,39 @@ const StyledItem = styled.div`
       }
       .name-desc-text {
         margin-left: 0px;
+        font-size: 14px;
+        line-height: 21px;
       }
   `};
 `;
 
 const Item = React.memo(({ className, data }: { className?: string; data: any }) => {
+  const ChainList = React.useMemo(
+    () => (
+      <Row style={{ marginTop: 12 }}>
+        {data.chain.map((item: any) => (
+          <div key={item} className="wrap-chain background3">
+            <p className="chain-text">{item}</p>
+          </div>
+        ))}
+      </Row>
+    ),
+    [],
+  );
   return (
     <StyledItem className={`background2 ${className}`}>
       <Row align="middle">
         <img src={data.img} className="item-img" alt="icon" />
         <Col className="wrap-main-content">
           <div className="wrap-name">
-            <p className="large-text normal-text">{data.name}</p>
+            <p className="large-text fw-medium normal-text">{data.name}</p>
             <p className="medium-text text2 normal-text name-desc-text">
               {data.nameDesc}
             </p>
           </div>
-          <Row style={{ marginTop: 12 }}>
-            {data.chain.map((item: any) => (
-              <div key={item} className="wrap-chain background3">
-                <p>{item}</p>
-              </div>
-            ))}
-          </Row>
+          {!isMobile && ChainList}
         </Col>
+        {isMobile && ChainList}
       </Row>
       <p className="medium-text normal-text desc-text">
         {data.desc}{' '}
