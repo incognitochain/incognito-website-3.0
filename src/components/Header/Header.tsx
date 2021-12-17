@@ -164,7 +164,7 @@ const Header = () => {
           align="middle"
           justify="space-between"
           className="border-bottom"
-          style={{ height: 72 }}>
+          style={{ height: 72, marginBottom: 32 }}>
           <NavLink
             className="logo-mobile"
             to="/"
