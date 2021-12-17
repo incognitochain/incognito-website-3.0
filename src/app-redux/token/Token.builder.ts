@@ -21,7 +21,11 @@ export const PTokensBuilder = (data: any): IPTokenState => {
     pName = 'Private Coin';
     pSymbol = symbol;
   } else {
-    pName = `Privacy ${name}`;
+    if (tokenId === TokenConstant.LTC_TOKEN_ID) {
+      pName = `Privacy Litecoin`;
+    } else {
+      pName = `Privacy ${name}`;
+    }
   }
   const verified = data.Verified;
   const currencyType = data.CurrencyType; // including ERC20, BEP1, BEP2,...
