@@ -26,7 +26,7 @@ const menuItem = [
     path: routeStructure,
   },
   {
-    name: 'People',
+    name: 'Community',
     path: 'https://we.incognito.org/',
     target: '_blank',
     isLink: true,
