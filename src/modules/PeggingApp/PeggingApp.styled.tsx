@@ -12,6 +12,10 @@ export const Styled = styled.div`
       font-weight: 500;
       letter-spacing: 0.015em;
     }
+    .sub-title {
+      margin-top: 24px;
+      white-space: pre-wrap;
+    }
     .btn-how-work {
       margin-top: 90px;
       width: 148px;
@@ -33,6 +37,11 @@ export const Styled = styled.div`
           font-size: 34px;
           line-height: 44px;
           margin-top: 24px;
+        }
+        .sub-title {
+          text-align: left;
+          font-size: 16px;
+          line-height: 24px;
         }
         .btn-how-work {
           margin-top: 24px;

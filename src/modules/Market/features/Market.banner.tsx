@@ -67,17 +67,17 @@ const MarketBanner = () => {
         Here, your coins are privacy coins. Trade them cross-chain, commission-free.
       </p>
       <Col xs={24} xl={22} className="wrap-app-link">
-        <Col span={8}>
+        <Col xs={8} lg={8} xxl={6}>
           <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">
             <img className="app-link" src={appstore} alt="appstore" />
           </a>
         </Col>
-        <Col span={8}>
+        <Col xs={8} lg={8} xxl={6}>
           <a href="https://play.google.com/store/apps/details?id=com.incognito.wallet">
             <img className="app-link" src={ggplay} alt="ggplay" />
           </a>
         </Col>
-        <Col span={8}>
+        <Col xs={8} lg={8} xxl={6}>
           <a href="https://github.com/incognitochain/incognito-wallet/releases">
             <img className="app-link" src={apk} alt="apk" />
           </a>
