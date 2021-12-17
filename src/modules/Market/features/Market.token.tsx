@@ -10,13 +10,11 @@ import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled(Col)`
   border: 1px solid ${({ theme }) => theme.border1};
-  border-bottom-width: 0;
   border-radius: 16px;
-  overflow: auto;
+  overflow: hidden;
   .wrap-token {
     box-sizing: border-box;
-    overflow: auto;
-    max-height: 440px;
+    max-height: 520px;
   }
   .token-main-title {
     background-color: ${({ theme }) => theme.background2};
@@ -29,7 +27,7 @@ export const Styled = styled(Col)`
     padding-left: 32px;
     padding-right: 32px;
     border-bottom: 1px solid ${({ theme }) => theme.border1};
-    border-right: 1px solid ${({ theme }) => theme.background2};
+    // border-right: 1px solid ${({ theme }) => theme.background2};
   }
   .token-wrap-item:last-child {
     border-bottom-width: 0;
@@ -92,12 +90,12 @@ export const Styled = styled(Col)`
     bottom: 0;
     right: 15px;
     width: 100%;
+    visibility: hidden;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         border-width: 0px;
         border-radius: 0px;
         .wrap-token {
-            overflow-x: scroll;
         }
         .token-wrap-item {
             padding-left: 16px;
@@ -105,7 +103,7 @@ export const Styled = styled(Col)`
         }
         .token-wrap-header {
             padding-left: 16px;
-            padding-right: 31px;
+            padding-right: 16px;
         }
         .image-token {
             width: 32px;
@@ -204,7 +202,8 @@ const MarketTokens = () => {
         <Tooltip
           key="Tooltip"
           title={marketTrs.whatPCoins}
-          className="fs-medium fw-regular text3 tab-header-title-right"></Tooltip>
+          className="fs-medium fw-regular text3 tab-header-title-right"
+        />
       </Row>
       {Header}
       <div className="wrap-token">{tokens.map(renderItem)}</div>

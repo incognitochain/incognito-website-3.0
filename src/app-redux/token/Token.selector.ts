@@ -16,9 +16,6 @@ export const pCustomTokenSelector = createSelector(
 );
 
 export const mainPTokenSelector = createSelector(pTokenSelector, (pTokens) => {
-  const { PRV_TOKEN_ID, BTC_TOKEN_ID, ETH_TOKEN_ID, BNB_TOKEN_ID, XMR_TOKEN_ID } =
-    TokenConstant;
-
   // prv, btc, eth, bnb, dai, ltc, xmr, zec, usdc, dash, usdt, doge, busd, bat, link, neo, zil
   const PRIORITY_LIST: string[] = TokenConstant.PRIORITY_TOKEN_ID;
   const sortPriority = pTokens
