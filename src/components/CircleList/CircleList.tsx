@@ -10,8 +10,8 @@ export const Styled = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 76px;
+  padding-top: 10px;
 
   .circle-title {
     font-size: 62px;
