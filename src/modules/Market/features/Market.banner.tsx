@@ -12,6 +12,7 @@ export const Styled = styled(Col)`
   display: flex;
   flex-direction: column;
   .wrap-app-link {
+    display: flex;
     margin-top: 50px;
   }
   .app-link {
@@ -65,7 +66,7 @@ const MarketBanner = () => {
       <p className="text2 fs-supermedium banner-sub-title">
         Here, your coins are privacy coins. Trade them cross-chain, commission-free.
       </p>
-      <Row className="wrap-app-link">
+      <Col xs={24} xl={22} className="wrap-app-link">
         <Col span={8}>
           <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">
             <img className="app-link" src={appstore} alt="appstore" />
@@ -81,7 +82,7 @@ const MarketBanner = () => {
             <img className="app-link" src={apk} alt="apk" />
           </a>
         </Col>
-      </Row>
+      </Col>
     </Styled>
   );
 };

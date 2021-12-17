@@ -19,6 +19,9 @@ const Styled = styled(Row)`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         flex-direction: column;
         margin-top: 0px;
+        .last-item {
+            margin-top: 8px;
+        }
   `}
 `;
 const StyledItem = styled.div`
@@ -198,6 +201,7 @@ const PeggingListApps = () => {
           link: 'Join the conversation',
           linkPath: 'https://we.incognito.org/',
         }}
+        className="last-item"
       />
     </Styled>
   );
