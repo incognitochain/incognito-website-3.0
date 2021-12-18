@@ -19,7 +19,7 @@ const Home = () => {
         className="section-1 default-padding-horizontal">
         <Row style={{ flexDirection: 'column' }}>
           <p className="fw-medium title">{peggingTrs.mainTitle}</p>
-          <p className="text2 fs-supermedium sub-title">
+          <p className="text2 sub-title sub-title-text">
             {isMobile
               ? `Get privacy for any decentralized application on Ethereum, Binance Smart Chain, Polygon, and Solana.`
               : `Get privacy for any decentralized application on Ethereum,\nBinance Smart Chain, Polygon, and Solana.`}

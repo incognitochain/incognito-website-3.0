@@ -63,9 +63,11 @@ const MarketBanner = () => {
       xxl={9}
       className={`${isMobile ? 'default-padding-horizontal' : ''}`}>
       <p className="text1 fw-medium banner-title">{marketTrs.mainTitle}</p>
-      <p className="text2 fs-supermedium banner-sub-title">
-        Here, your coins are privacy coins. Trade them cross-chain, commission-free.
-      </p>
+      <Col xs={24} lg={22}>
+        <p className="text2 sub-title-text banner-sub-title">
+          {`Here, your coins are privacy coins. Trade them cross-chain, commission-free.`}
+        </p>
+      </Col>
       <Col xs={24} xl={22} className="wrap-app-link">
         <Col xs={8} lg={8} xxl={6}>
           <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">

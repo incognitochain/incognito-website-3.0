@@ -65,8 +65,8 @@ const Styled = styled(Row)`
         font-size: 18px;
       }
       .logo-stroke {
-        width: 150px;
-        height: 150px;
+        width: 170px;
+        height: 170px;
         margin-bottom: 45px;
       }
   `}
