@@ -27,7 +27,7 @@ const menuItem = [
   },
   {
     name: 'Community',
-    path: 'https://we.incognito.org/',
+    path: 'https://we.incognito.org/t/about-the-incognito-community/373',
     target: '_blank',
     isLink: true,
   },

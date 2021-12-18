@@ -4,6 +4,7 @@ import PeggingCategory from '@modules/PeggingApp/features/PeggingApp.category';
 import { peggingAppTranslateSelector } from '@src/configs';
 import { Button, Col, Row } from 'antd';
 import React, { memo } from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 
 import { Styled } from './PeggingApp.styled';
@@ -19,7 +20,9 @@ const Home = () => {
         <Row style={{ flexDirection: 'column' }}>
           <p className="fw-medium title">{peggingTrs.mainTitle}</p>
           <p className="text2 fs-supermedium sub-title">
-            {`Get privacy for any decentralized application on Ethereum, \nBinance Smart Chain, Polygon, and Solana.⁤`}
+            {isMobile
+              ? `Get privacy for any decentralized application on Ethereum, Binance Smart Chain, Polygon, and Solana.`
+              : `Get privacy for any decentralized application on Ethereum,\nBinance Smart Chain, Polygon, and Solana.`}
           </p>
           <Button
             type="primary"
