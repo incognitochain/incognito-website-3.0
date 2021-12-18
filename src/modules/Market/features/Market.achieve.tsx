@@ -153,7 +153,7 @@ const MarketAchieve = () => {
   return (
     <Styled className="default-padding-horizontal background2">
       <p className="achieve-title">{marketTrs.privacyMarketplace}</p>
-      <p className="achieve-sub-title text2">{marketTrs.inCogIsNone}</p>
+      <p className="sub-title-text text2">{marketTrs.inCogIsNone}</p>
       <Row className="achieve-wrap">
         <Col xs={24}>
           <List

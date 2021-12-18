@@ -17,12 +17,12 @@ export const Styled = styled.div`
       white-space: pre-wrap;
     }
     .btn-how-work {
-      margin-top: 90px;
+      margin-top: 40px;
       width: 148px;
     }
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       .btn-how-work {
-        margin-top: 50px;
+        margin-top: 40px;
         height: 50px
         font-size: 18px;
       }
@@ -63,8 +63,7 @@ export const Styled = styled.div`
   `}
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
     .cake-img {
-        width: 100%;
-        max-width: 200px;
+        width: 85%;
         object-fit: contain;
         margin-top: 0px;
         margin: auto;
@@ -92,10 +91,6 @@ export const Styled = styled.div`
       letter-spacing: 0.02em;
       text-align: center;
     }
-    .btn-how-work {
-      margin-top: 90px;
-      width: 148px;
-    }
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       .btn-how-work {
         margin-top: 50px;
@@ -114,6 +109,7 @@ export const Styled = styled.div`
         .btn-how-work {
           margin: auto;
           margin-top: 50px;
+          height: 50px;        
         }
         .sub-title {
           font-size: 16px;

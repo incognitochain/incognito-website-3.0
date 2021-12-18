@@ -253,18 +253,6 @@ export const ThemedGlobalStyle = createGlobalStyle`
       padding-left: 300px;
       padding-right: 300px;
     }
-    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-        .default-padding-horizontal {
-          padding-left: 100px;
-          padding-right: 100px;
-        }
-  `}
-    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-        .default-padding-horizontal {
-          padding-left: 16px;
-          padding-right: 16px;
-        }
-    `}
 
     .ant-btn-round.ant-btn-lg {
       height: 60px;
@@ -305,4 +293,28 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .border-bottom {
       border-bottom: 1px solid ${({ theme }) => theme.border1};
     }
+    .sub-title-text {
+      font-size: 22px;
+      line-height: 33px;
+      letter-spacing: 0.01em;
+      white-space: pre-wrap;
+    }
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        .default-padding-horizontal {
+          padding-left: 100px;
+          padding-right: 100px;
+        }
+  `}
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        .default-padding-horizontal {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .sub-title-text {
+          font-size: 22px;
+          line-height: 33px;
+          letter-spacing: 0.01em;
+          white-space: initial;
+        }
+    `}
 `;
