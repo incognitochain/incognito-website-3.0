@@ -25,7 +25,13 @@ const Home = () => {
             type="primary"
             shape="round"
             size="large"
-            className="button1 btn-how-work">
+            className="button1 btn-how-work"
+            onClick={() => {
+              window.open(
+                'https://we.incognito.org/t/pethereum-specifications/1688',
+                '_blank',
+              );
+            }}>
             {peggingTrs.howWork}
           </Button>
         </Row>
