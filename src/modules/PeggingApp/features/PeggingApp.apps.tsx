@@ -218,7 +218,7 @@ const PeggingListApps = () => {
           img: cakeImg,
           name: 'pPancake',
           nameDesc: 'Private Pancake Swap',
-          chain: ['Binance Smart Chain', 'Dex'],
+          chain: ['Binance Smart Chain', 'DEX'],
           desc: "Trade anonymously on Binance Smart Chain's leading DEX. Deep liquidity and super low fees – now with privacy.",
         }}
         className="app-margin-right"
@@ -236,9 +236,9 @@ const PeggingListApps = () => {
       <Item
         data={{
           img: raydiumImg,
-          name: 'pRadium',
-          nameDesc: 'Private Radium',
-          chain: ['Solana', 'AMM', 'Farming'],
+          name: 'pRaydium',
+          nameDesc: 'Private Raydium',
+          chain: ['Solana', 'DEX', 'Farming'],
           desc: 'Explore DeFi on Solana with full privacy for your activity and assets. Swap, provide liquidity, farm, and stake.',
         }}
         className="app-margin-top app-margin-top-small app-margin-right"
