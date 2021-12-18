@@ -64,8 +64,10 @@ export const Styled = styled.div`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
     .cake-img {
         width: 100%;
+        max-width: 200px;
         object-fit: contain;
         margin-top: 0px;
+        margin: auto;
     }
     .wrap-content {
       margin-top: 40px;
