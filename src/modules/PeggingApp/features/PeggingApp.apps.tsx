@@ -156,6 +156,15 @@ const StyledItem = styled(Col)`
       }
       .wrap-apps-head {
       }
+      .wrap-chain {
+        margin-right: 8px;
+        border-radius: 4px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+      .chain-text {
+        line-height: 18px;
+      }
   `};
 `;
 
