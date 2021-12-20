@@ -24,6 +24,7 @@ export const Styled = styled.div`
   .achieve-sub-title {
     text-align: center;
     white-space: pre-wrap;
+    margin-top: 24px;
   }
   .achieve-margin-right ~ .achieve-margin-right {
     margin-left: 24px;
@@ -41,6 +42,7 @@ export const Styled = styled.div`
             line-height: 38px;
           }
           .achieve-sub-title {
+              margin-top: 8px;
           }
           .ant-card-body {
             padding: 0px;
