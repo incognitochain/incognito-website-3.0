@@ -36,7 +36,9 @@
   "scripts": {
     "start": "craco start",
     "start:reset": "craco start --reset-cache",
-    "build": "craco build",
+    "build": "NODE_ENV=production craco build",
+    "build:develop": "NODE_ENV=development craco build",
+    "build:production": "NODE_ENV=production craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
