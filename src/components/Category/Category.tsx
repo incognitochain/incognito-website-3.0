@@ -14,17 +14,32 @@ export const Styled = styled(Row)`
     padding: 32px;
   }
 
+  .category-item-left {
+    margin-right: 20px;
+  }
+
+  .category-item-right {
+    margin-left: 20px;
+  }
+
   .category-item-center {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .category-title {
     margin-top: 16px;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.005em;
   }
 
   .category-sub-title {
     margin-top: 4px;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
   }
 
   .wrap-category-item:last-child {
@@ -38,6 +53,39 @@ export const Styled = styled(Row)`
   .wrap-category-item:last-child {
     height: 100%;
   }
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+      .category-title {
+        margin-top: 16px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.005em;
+      }
+      .wrap-category-item {
+        border-radius: 16px;
+        padding: 24px;
+        padding-right: 12px;
+      }
+      .category-item-left {
+        margin-right: 20px;
+      }
+    
+      .category-item-right {
+        margin-left: 20px;
+      }
+      .category-item-center {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .category-sub-title {
+        margin-top: 4px;
+        font-size: 14px;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+      }
+  `}
+
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         .ant-card-body {
           padding: 0;
@@ -58,6 +106,9 @@ export const Styled = styled(Row)`
           margin-left: 4px;
           margin-right: 0px;
         }
+        .category-item-left {
+          margin-right: 4px !important;
+        }
         .wrap-category-item ~ .wrap-category-item {
           margin-left: 10px;
         }
@@ -66,14 +117,17 @@ export const Styled = styled(Row)`
           padding-bottom: 24px;
         }
         .category-sub-title {
-          font-size: 16px;
-          line-height: 24px;
+          font-size: 14px;
+          line-height: 21px;
         }
         .wrap-category-item:first-child {
-          margin-right: 4px;
+          margin-right: 0px;
         }
         .wrapper:last-child {
           padding-top: 8px
+        }
+        .category-item-right {
+          margin-left: 0px;
         }
     `}
 `;

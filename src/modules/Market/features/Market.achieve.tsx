@@ -90,6 +90,13 @@ const Item = styled.div`
             background-color: ${({ theme }) => theme.background3};
             margin: auto;
         }
+        .achieve-item-sub-title {
+            font-size: 14px;
+            line-height: 27px;
+        }
+        .achieve-item-title {
+            font-size: 40px;
+        }
     `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
@@ -97,17 +104,16 @@ const Item = styled.div`
             padding: 0px;
           }
           .achieve-item-title {
-            font-size: 24px;
+            font-size: 34px;
           }
           .achieve-circle {
             width: 145px;
             height: 145px;
           }
-          .achieve-item-title {
-            font-size: 34px;
-          }
           .achieve-item-sub-title {
             font-size: 16px;
+            line-height: 24px;
+            margin-top: 11px;
           }
     `}
 `;

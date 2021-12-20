@@ -13,6 +13,7 @@ const MarketCategory = () => {
         icon: <MarketSearchIcon />,
         title: marketTrs.untraceable,
         subTitle: marketTrs.untraceableDetail,
+        className: 'category-item-left',
       },
       {
         icon: <MarketChainIcon />,
@@ -24,6 +25,7 @@ const MarketCategory = () => {
         icon: <MarketMoneyIcon />,
         title: marketTrs.commissionFree,
         subTitle: marketTrs.commissionFreeDetail,
+        className: 'category-item-right',
       },
     ];
   }, [marketTrs]);

@@ -108,6 +108,22 @@ export const Styled = styled(Col)`
         border-radius: 28px;
         margin-right: 10px;
     }
+    .tab-header-title-left {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    .tab-header-title-right {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .header-text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .medium-text {
+        font-size: 18px;
+        line-height: 27px;
+    }
   `}
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         border-width: 0px;
