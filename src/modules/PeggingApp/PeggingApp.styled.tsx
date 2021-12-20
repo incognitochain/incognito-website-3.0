@@ -115,7 +115,7 @@ export const Styled = styled.div`
           font-size: 16px;
           line-height: 24px;
           text-align: center;
-          margin-top: 2px;
+          margin-top: 4px;
         }
     `}
   }

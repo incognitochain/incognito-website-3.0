@@ -22,12 +22,8 @@ export const Styled = styled.div`
     text-align: center;
   }
   .achieve-sub-title {
-    font-size: 22px;
-    line-height: 26px;
     text-align: center;
     white-space: pre-wrap;
-    margin-top: 24px;
-    font-weight: 400;
   }
   .achieve-margin-right ~ .achieve-margin-right {
     margin-left: 24px;
@@ -45,8 +41,6 @@ export const Styled = styled.div`
             line-height: 38px;
           }
           .achieve-sub-title {
-            font-size: 16px;
-            line-height: 24px;
           }
           .ant-card-body {
             padding: 0px;
@@ -153,7 +147,7 @@ const MarketAchieve = () => {
   return (
     <Styled className="default-padding-horizontal background2">
       <p className="achieve-title">{marketTrs.privacyMarketplace}</p>
-      <p className="sub-title-text text2">{marketTrs.inCogIsNone}</p>
+      <p className="sub-title-text text2 achieve-sub-title">{marketTrs.inCogIsNone}</p>
       <Row className="achieve-wrap">
         <Col xs={24}>
           <List
