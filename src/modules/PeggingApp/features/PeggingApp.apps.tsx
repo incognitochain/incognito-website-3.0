@@ -249,21 +249,21 @@ const PeggingListApps = () => {
       />
       <Item
         data={{
-          img: raydiumImg,
-          name: 'pRaydium',
-          nameDesc: 'Private Raydium',
-          chain: ['Solana', 'DEX', 'Farming'],
-          desc: 'Explore DeFi on Solana with full privacy for your activity and assets. Swap, provide liquidity, farm, and stake.',
-        }}
-        className="app-margin-top app-margin-top-small app-margin-right"
-      />
-      <Item
-        data={{
           img: openSeaImg,
           name: 'pOpenSea',
           nameDesc: 'Private OpenSea',
           chain: ['Polygon', 'Marketplace', 'NFT'],
           desc: 'Purchase and hoard rare digital items and collectibles without anyone knowing about it.',
+        }}
+        className="app-margin-top app-margin-top-small app-margin-right"
+      />
+      <Item
+        data={{
+          img: raydiumImg,
+          name: 'pRaydium',
+          nameDesc: 'Private Raydium',
+          chain: ['Solana', 'DEX', 'Farming'],
+          desc: 'Explore DeFi on Solana with full privacy for your activity and assets. Swap, provide liquidity, farm, and stake.',
         }}
         className="app-margin-top app-margin-top-small app-margin-left"
       />
