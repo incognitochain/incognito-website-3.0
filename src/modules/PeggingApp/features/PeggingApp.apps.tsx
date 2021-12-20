@@ -60,8 +60,9 @@ const StyledItem = styled(Col)`
     height: 120px;
   }
   .large-text {
+    font-weight: 600;
     font-size: 34px;
-    line-height: 41px;
+    line-height: 48px;
   }
   .normal-text {
     height: fit-content;
@@ -103,14 +104,14 @@ const StyledItem = styled(Col)`
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       .wrap-item-content {
-        padding: 16px 16px 24px;
+        padding: 32px 32px 40px;
       }
       .item-img {
-        width: 120px;
-        height: 120px;
+        width: 90px;
+        height: 90px;
       }
       .large-text {
-        font-size: 20px;
+        font-size: 22px;
         line-height: 30px;
       }
       .medium-text {
@@ -121,6 +122,9 @@ const StyledItem = styled(Col)`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         width: 100%;
         margin-top: 4px;
+        .wrap-item-content {
+           padding: 16px 16px 24px;
+        }
         .wrap-name {
             flex-direction: column;
         }
