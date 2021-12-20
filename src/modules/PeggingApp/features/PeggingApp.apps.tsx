@@ -47,6 +47,7 @@ const Styled = styled(Row)`
   `}
 `;
 const StyledItem = styled(Col)`
+  display: flex;
   //flex: 1;
   .wrap-item-content {
     padding: 60px 60px 50px;
