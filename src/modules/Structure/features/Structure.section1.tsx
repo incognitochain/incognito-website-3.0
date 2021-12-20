@@ -37,8 +37,6 @@ const Styled = styled(Row)`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       justify-content: center;
       flex-direction: column-reverse;
-      padding-top: 45px;
-      padding-bottom: 45px;
       .col-section1 {
         display: flex;
         flex-direction: column;
