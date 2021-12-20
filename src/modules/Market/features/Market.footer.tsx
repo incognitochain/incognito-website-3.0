@@ -7,8 +7,6 @@ import React from 'react';
 import styled, { ITheme } from 'styled-components';
 
 const Styled = styled.div`
-  padding-top: 120px;
-  padding-bottom: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,8 +25,6 @@ const Styled = styled.div`
   }
   .footer-title {
     font-weight: 500;
-    font-size: 64px;
-    line-height: 70px;
     letter-spacing: 0.015em;
     color: ${({ theme }) => theme.text1};
     margin-top: 40px;
@@ -61,6 +57,16 @@ const Styled = styled.div`
     margin-top: 24px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        .wrap-logo {
+          height: 100px;
+          width: 100px;
+        }
+        .logo {
+            width: 73px;
+            height: 73px;
+        }
+  `}
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         padding-top: 40px;
         padding-bottom: 40px;
         .wrap-app-link {
@@ -81,8 +87,6 @@ const Styled = styled.div`
           margin-bottom: 16px;      
         }
         .footer-title {
-          font-size: 28px;
-          line-height: 38px;
           text-align: center;
           letter-spacing: 0.01em;
           max-width: 185px;
@@ -101,11 +105,11 @@ const Styled = styled.div`
 const Footer = React.memo(() => {
   // Get started in a few minutes.
   return (
-    <Styled className="default-padding-horizontal">
+    <Styled className="default-padding-horizontal default-padding-vertical">
       <div className="wrap-logo">
         <img src={logoStrokeImg} className="logo" alt="logo" />
       </div>
-      <p className="footer-title">Get started in a few minutes.</p>
+      <p className="main-title-text footer-title">Get started in a few minutes.</p>
       <Col xs={24} xl={11} xxl={9} className="banner-wrap-content">
         <Col xs={24} xl={22} xxl={23} className="wrap-app-link">
           <Col className="footer-item" xs={8} lg={8} xxl={6}>
