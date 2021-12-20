@@ -106,8 +106,8 @@ const StyledItem = styled(Col)`
         padding: 16px 16px 24px;
       }
       .item-img {
-        width: 80px;
-        height: 80px;
+        width: 120px;
+        height: 120px;
       }
       .large-text {
         font-size: 20px;
