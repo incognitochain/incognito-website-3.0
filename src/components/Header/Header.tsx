@@ -165,22 +165,30 @@ const Header = () => {
           justify="space-between"
           className="border-bottom"
           style={{ height: 72, marginBottom: 32 }}>
-          <NavLink
-            className="logo-mobile"
-            to="/"
-            onClick={onClose}
-            style={{ width: 162 }}>
-            <img className="app-logo" src={logo} alt="app-logo" style={{ width: 162 }} />
-          </NavLink>
-          <div onClick={onClose}>
-            <img src={closeIcon} style={{ width: 32, height: 32 }} alt="close-icon" />
-          </div>
+          <Row className="padding-horizontal" justify="space-between">
+            <NavLink
+              className="logo-mobile"
+              to="/"
+              onClick={onClose}
+              style={{ width: 162 }}>
+              <img
+                className="app-logo"
+                src={logo}
+                alt="app-logo"
+                style={{ width: 162 }}
+              />
+            </NavLink>
+            <div onClick={onClose}>
+              <img src={closeIcon} style={{ width: 32, height: 32 }} alt="close-icon" />
+            </div>
+          </Row>
         </Row>
         <Col>
           {menuItem.map((item) => {
             if (item.isLink) {
               return (
                 <Link
+                  className="padding-horizontal"
                   style={{
                     color: 'white',
                     marginTop: 16,
@@ -196,6 +204,7 @@ const Header = () => {
             }
             return (
               <NavLink
+                className="padding-horizontal"
                 key={item.name}
                 style={{
                   color: 'white',
@@ -212,6 +221,7 @@ const Header = () => {
         </Col>
         <Row
           align="middle"
+          className="padding-horizontal"
           style={{ paddingTop: 16 }}
           onClick={() => setExpand((expand) => !expand)}>
           <p
@@ -239,7 +249,11 @@ const Header = () => {
           <Col style={{ marginTop: 24 }}>
             {moreItem.map((item) => (
               <div className="wrap-drawer-sub-item" key={item.name}>
-                <Link href={item.path} target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="padding-horizontal">
                   <Row align="middle">
                     <p className="drawer-sub-item-label">{item.name}</p>
                     <div className="logo" />

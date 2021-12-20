@@ -197,5 +197,15 @@ export const DrawerStyled = styled(Drawer)`
   }
   .ant-drawer-body {
     padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .padding-horizontal {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+  }
+  .ant-drawer-close {
+    visibility: hidden;
   }
 `;

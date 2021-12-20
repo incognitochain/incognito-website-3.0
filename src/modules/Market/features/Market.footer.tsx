@@ -44,7 +44,9 @@ const Styled = styled.div`
   }
   .wrap-app-link {
     margin-top: 50px;
-    width: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   .app-link {
     width: 100%;
@@ -54,8 +56,9 @@ const Styled = styled.div`
     font-size: 76px;
     line-height: 82px;
   }
-  .ant-col {
-    padding-right: 16px;
+  .footer-item {
+    padding-right: 8px;
+    padding-left: 8px;
   }
   .ant-col:first-child {
   }
@@ -108,25 +111,25 @@ const Footer = React.memo(() => {
         <img src={logoStrokeImg} className="logo" alt="logo" />
       </div>
       <p className="footer-title">Get started in a few minutes.</p>
-      <div className="banner-wrap-content">
-        <Row className="wrap-app-link">
-          <Col span={8}>
+      <Col xs={24} xl={11} xxl={9} className="banner-wrap-content">
+        <Col xs={24} xl={22} xxl={23} className="wrap-app-link">
+          <Col className="footer-item" xs={8} lg={8} xxl={6}>
             <a href="https://apps.apple.com/us/app/incognito-crypto-wallet/id1475631606?ls=1">
               <img className="app-link" src={appstore} alt="appstore" />
             </a>
           </Col>
-          <Col span={8}>
+          <Col className="footer-item" xs={8} lg={8} xxl={6}>
             <a href="https://play.google.com/store/apps/details?id=com.incognito.wallet">
               <img className="app-link" src={ggplay} alt="ggplay" />
             </a>
           </Col>
-          <Col span={8}>
+          <Col className="footer-item" xs={8} lg={8} xxl={6}>
             <a href="https://github.com/incognitochain/incognito-wallet/releases">
               <img className="app-link" src={apk} alt="apk" />
             </a>
           </Col>
-        </Row>
-      </div>
+        </Col>
+      </Col>
     </Styled>
   );
 });
