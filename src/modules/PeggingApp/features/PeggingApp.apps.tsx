@@ -125,6 +125,7 @@ const StyledItem = styled(Col)`
         margin-top: 4px;
         .wrap-item-content {
            padding: 16px 16px 24px;
+           flex: 1;
         }
         .wrap-name {
             flex-direction: column;
@@ -187,7 +188,7 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
     [],
   );
   return (
-    <StyledItem xs={24} lg={12} key={data.name}>
+    <StyledItem md={24} xl={12} key={data.name}>
       <Col className={`wrap-item-content background2 ${className}`}>
         <Row align="middle" className="wrap-apps-head">
           <img src={data.img} className="item-img" alt="icon" />
