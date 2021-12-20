@@ -37,7 +37,7 @@ const SectionLink = React.memo(({ className }: { className?: string }) => {
           className="text3 link-text"
           onClick={() => {
             const link =
-              'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=go@incognito.org&su=SUBJECT&body=BODY&tf=1';
+              'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=go@incognito.org&tf=1';
             window.open(link, '_blank');
           }}>
           {`Talk to us`}
