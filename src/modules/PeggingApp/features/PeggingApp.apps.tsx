@@ -48,7 +48,6 @@ const Styled = styled(Row)`
 `;
 const StyledItem = styled(Col)`
   display: flex;
-  //flex: 1;
   .wrap-item-content {
     padding: 60px 60px 50px;
     border-radius: 16px;
@@ -232,7 +231,7 @@ const PeggingListApps = () => {
         data={{
           img: cakeImg,
           name: 'pPancake',
-          nameDesc: 'Private Pancake Swap',
+          nameDesc: 'Private Pancake',
           chain: ['Binance Smart Chain', 'DEX'],
           desc: "Trade anonymously on Binance Smart Chain's leading DEX. Deep liquidity and super low fees – now with privacy.",
         }}
@@ -282,7 +281,7 @@ const PeggingListApps = () => {
         data={{
           img: unknowImg,
           name: 'pAnything',
-          nameDesc: 'Private Anything You Want',
+          nameDesc: 'Private Anything',
           chain: ['Blockchain', 'Use case'],
           desc: 'The Incognito community is building out the 2022 roadmap. Which app do you want privacy for?',
           link: 'Join the conversation',
