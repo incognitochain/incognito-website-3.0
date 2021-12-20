@@ -30,7 +30,7 @@ const Styled = styled.div`
 
 const SectionLink = React.memo(
   ({
-    title = 'Want privacy for your coin?',
+    title = 'Want to start a market for your coin?',
     subTitle = 'Talk to us',
     className,
   }: {
