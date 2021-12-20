@@ -16,9 +16,9 @@ const Home = () => {
       <Row
         align="middle"
         justify="space-between"
-        className="section-1 default-padding-horizontal">
+        className="section-1 default-padding-horizontal default-margin-top">
         <Row style={{ flexDirection: 'column' }}>
-          <p className="fw-medium title">{peggingTrs.mainTitle}</p>
+          <p className="fw-medium main-title-text title">{peggingTrs.mainTitle}</p>
           <p className="text2 sub-title sub-title-text">
             {isMobile
               ? `Get privacy for any decentralized application on Ethereum, Binance Smart Chain, Polygon, and Solana.`
@@ -40,9 +40,9 @@ const Home = () => {
         </Row>
         <img src={cakeImg} alt="cake-logo" className="cake-img" />
       </Row>
-      <div className="default-padding-horizontal wrap-content">
+      <div className="default-padding-horizontal default-margin-top">
         <PeggingCategory />
-        <div className="section-2">
+        <div className="section-2 default-margin-top">
           <p className="fw-medium title">{peggingTrs.privacyApp}</p>
           <p className="text3 fw-medium sub-title">{peggingTrs.coming}</p>
         </div>

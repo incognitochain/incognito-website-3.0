@@ -3,12 +3,9 @@ import styled, { ITheme } from 'styled-components';
 export const Styled = styled.div`
   padding-bottom: 40px;
   .section-1 {
-    padding-top: 120px;
     justify-content: space-between;
     .title {
-      font-size: 64px;
       white-space: pre-wrap;
-      line-height: 70px;
       font-weight: 500;
       letter-spacing: 0.015em;
     }
@@ -31,7 +28,6 @@ export const Styled = styled.div`
         display: flex;
         flex-direction: column-reverse;
         align-items: flex-start;
-        padding-top: 40px;
         .title {
           text-align: left;
           font-size: 34px;
@@ -51,13 +47,12 @@ export const Styled = styled.div`
   .cake-img {
     width: 45%;
     object-fit: contain;
+    max-width: 420px;
   }
-  .wrap-content {
-    margin-top: 120px;
-  }
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
     .cake-img {
-        width: 35%;
+        max-width: 370px;
         object-fit: contain;
     }
   `}
@@ -68,13 +63,9 @@ export const Styled = styled.div`
         margin-top: 0px;
         margin: auto;
     }
-    .wrap-content {
-      margin-top: 40px;
-    }
   `}
 
   .section-2 {
-    margin-top: 100px;
     justify-content: space-between;
     .title {
       font-size: 64px;
@@ -97,7 +88,6 @@ export const Styled = styled.div`
       }
   `}
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-        margin-top: 40px;
         padding-bottom: 20px;
         justify-content: center;
         .title {

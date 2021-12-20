@@ -3,6 +3,7 @@ import cakeImg from '@images/cake-icon.png';
 import linkImg from '@images/link-icon.png';
 import openSeaImg from '@images/opensea-logo.png';
 import raydiumImg from '@images/raydium-logo.png';
+import solendImg from '@images/solend-logo.png';
 import unknowImg from '@images/unknow-icon.png';
 import { Col, Row } from 'antd';
 import React from 'react';
@@ -268,6 +269,16 @@ const PeggingListApps = () => {
       />
       <Item
         data={{
+          img: solendImg,
+          name: 'pSolend',
+          nameDesc: 'Private Solend',
+          chain: ['Solana', 'Lending'],
+          desc: 'Get privacy for what you lend, borrow, and earn on Solana. Protect your activity from prying eyes.',
+        }}
+        className="app-margin-top app-margin-top-small app-margin-right"
+      />
+      <Item
+        data={{
           img: unknowImg,
           name: 'pAnything',
           nameDesc: 'Private Anything You Want',
@@ -276,7 +287,7 @@ const PeggingListApps = () => {
           link: 'Join the conversation',
           linkPath: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
         }}
-        className="app-margin-top app-margin-top-small app-margin-right"
+        className="app-margin-top app-margin-top-small app-margin-left"
       />
     </Styled>
   );

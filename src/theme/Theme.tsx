@@ -322,6 +322,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .default-margin-bottom {
       margin-bottom: 120px;
     }
+    .ant-btn-round.ant-btn-lg {
+      height: 60px;
+    }
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
         .default-padding-horizontal {
           padding-left: 105px;
@@ -356,6 +359,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
         }
         .default-margin-bottom {
           margin-bottom: 100px;
+        }
+        .ant-btn-round.ant-btn-lg {
+          height: 50px;
         }
   `}
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
@@ -393,6 +399,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
         }
         .default-margin-bottom {
           margin-bottom: 40px;
+        }
+        .ant-btn-round.ant-btn-lg {
+          height: 50px;
         }
     `}
 `;

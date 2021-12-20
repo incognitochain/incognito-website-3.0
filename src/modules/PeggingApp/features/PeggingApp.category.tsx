@@ -14,6 +14,7 @@ const PeggingCategory = () => {
         icon: <LockIcon />,
         title: peggingTrs.private,
         subTitle: peggingTrs.privateSub,
+        className: 'category-item-left',
       },
       {
         icon: <AddIcon />,
@@ -25,6 +26,7 @@ const PeggingCategory = () => {
         icon: <TrustlessIcon />,
         title: peggingTrs.trust,
         subTitle: peggingTrs.trustSub,
+        className: 'category-item-right',
       },
     ];
   }, [peggingTrs]);

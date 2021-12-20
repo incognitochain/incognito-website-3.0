@@ -65,7 +65,7 @@ export const Styled = styled(Row)`
       .wrap-category-item {
         border-radius: 16px;
         padding: 24px;
-        padding-right: 12px;
+        padding-right: 24px;
       }
       .category-item-left {
         margin-right: 20px;
