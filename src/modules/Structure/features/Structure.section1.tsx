@@ -86,7 +86,6 @@ const Section1 = () => {
           }}>
           {structureTrs.becomeValidator}
         </Button>
-        <SectionLink />
       </Col>
       <img src={logoStrokeImg} className="logo-stroke" alt="logo-stroke" />
     </Styled>

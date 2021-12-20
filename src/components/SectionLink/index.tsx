@@ -28,28 +28,38 @@ const Styled = styled.div`
   `}
 `;
 
-const SectionLink = React.memo(({ className }: { className?: string }) => {
-  return (
-    <Styled className={`${className}`}>
-      <p className="text2 label">
-        Want privacy for your coin?{' '}
-        <span
-          className="text3 link-text"
-          onClick={() => {
-            const link =
-              'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=go@incognito.org&tf=1';
-            window.open(link, '_blank');
-          }}>
-          {`Talk to us`}
-          <img
-            src={linkImg}
-            style={{ width: isMobile ? 14 : 18, height: 'auto', marginLeft: 5 }}
-            alt="link-icon"
-          />
-        </span>
-      </p>
-    </Styled>
-  );
-});
+const SectionLink = React.memo(
+  ({
+    title = 'Want privacy for your coin?',
+    subTitle = 'Talk to us',
+    className,
+  }: {
+    title?: string;
+    subTitle?: string;
+    className?: string;
+  }) => {
+    return (
+      <Styled className={`${className}`}>
+        <p className="text2 label">
+          {`${title} `}
+          <span
+            className="text3 link-text"
+            onClick={() => {
+              const link =
+                'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=go@incognito.org&tf=1';
+              window.open(link, '_blank');
+            }}>
+            {subTitle}
+            <img
+              src={linkImg}
+              style={{ width: isMobile ? 14 : 18, height: 'auto', marginLeft: 5 }}
+              alt="link-icon"
+            />
+          </span>
+        </p>
+      </Styled>
+    );
+  },
+);
 
 export default SectionLink;

@@ -40,7 +40,7 @@ const Home = () => {
             }}>
             {peggingTrs.howWork}
           </Button>
-          <SectionLink />
+          <SectionLink title="Want privacy for your app?" subTitle="Work with us" />
         </Row>
         <img src={cakeImg} alt="cake-logo" className="cake-img" />
       </Row>
