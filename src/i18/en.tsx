@@ -33,7 +33,7 @@ const language: ILanguage = {
     permissionSub: 'Enable privacy for new and existing dApps.',
     trust: 'Trustless',
     trustSub: 'Interact directly with smart contracts across multiple blockchains.',
-    privacyApp: 'Privacy Apps\nfor a better internet.',
+    privacyApp: 'Privacy apps\nfor a better internet.',
     coming: 'COMING SOON',
   },
   structure: {
