@@ -8,7 +8,6 @@ export const Styled = styled(Row)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   .wrap-category-item {
     flex: 1;
     border-radius: 16px;
@@ -40,6 +39,10 @@ export const Styled = styled(Row)`
     height: 100%;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        .ant-card-body {
+          padding: 0;
+          background-color: red;
+        }
         .wrap-category-item {
           max-width: none;
           padding: 16px;

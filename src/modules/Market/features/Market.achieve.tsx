@@ -22,7 +22,11 @@ export const Styled = styled.div`
   }
 
   .achieve-wrap {
-    margin-top: 80px;
+    width: 100%;
+    max-width: 1260px;
+  }
+  .ant-card-body {
+    padding: 0;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
           padding-bottom: 40px;
@@ -31,18 +35,30 @@ export const Styled = styled.div`
           }
           .ant-card-body {
             padding: 0px;
-            padding-top: 24px;
           }
           .achieve-wrap {
-            margin-top: 4px;
+          }
+  `}
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+          padding-bottom: 40px;
+          .achieve-sub-title {
+              margin-top: 8px;
+          }
+          .ant-card-body {
+            padding: 0px;
+          }
+          .achieve-wrap {
+          }
+          .item-margin-top {
+            margin-top: 24px;
           }
     `}
 `;
 
 const Item = styled.div`
   .achieve-circle {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
     border-radius: 120px;
     display: flex;
     justify-content: center;
@@ -60,19 +76,21 @@ const Item = styled.div`
     font-size: 22px;
     color: ${({ theme }) => theme.text2};
   }
-  // :hover {
-  //   .achieve-circle {
-  //     background-color: ${({ theme }) => theme.background4};
-  //   }
-  //   .achieve-item-title {
-  //     color: ${({ theme }) => theme.white};
-  //   }
-  //   .achieve-item-sub-title {
-  //     color: ${({ theme }) => theme.text1};
-  //   }
-  // }
   .wrap-item {
   }
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        .achieve-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: ${({ theme }) => theme.background3};
+            margin: auto;
+        }
+    `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
           .ant-card-body {
@@ -82,8 +100,8 @@ const Item = styled.div`
             font-size: 24px;
           }
           .achieve-circle {
-            width: 150px;
-            height: 150px;
+            width: 145px;
+            height: 145px;
           }
           .achieve-item-title {
             font-size: 34px;
@@ -112,15 +130,21 @@ const MarketAchieve = () => {
       {
         title: '101',
         content: marketTrs.privateCryptocurrencies,
-        className: 'achieve-margin-right',
+        className: 'achieve-margin-right item-margin-top',
       },
-      { title: '11', content: marketTrs.bridgedBlockchains },
+      {
+        title: '11',
+        content: marketTrs.bridgedBlockchains,
+        className: 'item-margin-top',
+      },
     ],
     [marketTrs],
   );
 
   const renderItem = (item: any) => (
-    <Card style={{ minWidth: isMobile ? 0 : 300 }} className="wrap-item">
+    <Card
+      style={{ minWidth: isMobile ? 0 : 300 }}
+      className={`wrap-item ${item.className}`}>
       <Item className="achieve-margin-right">
         <div className={`achieve-circle`}>
           <p className="achieve-item-title">{item.title}</p>
@@ -137,7 +161,7 @@ const MarketAchieve = () => {
       <p className="sub-title-text text2 sub-title-text achieve-sub-title">
         {marketTrs.inCogIsNone}
       </p>
-      <Row className="achieve-wrap">
+      <Row className="achieve-wrap default-margin-top">
         <Col xs={24}>
           <List
             grid={{
