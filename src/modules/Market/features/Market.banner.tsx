@@ -1,6 +1,8 @@
+import SectionLink from '@components/SectionLink';
 import apk from '@images/install/apk.png';
 import appstore from '@images/install/appstore.png';
 import ggplay from '@images/install/play.png';
+import SectionHead from '@src/components/SectionHead';
 import { marketTranslateSelector } from '@src/configs';
 import { Col, Row } from 'antd';
 import React from 'react';
@@ -23,6 +25,11 @@ export const Styled = styled(Col)`
   }
   .ant-col:first-child {
   }
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+      .wrap-app-link {
+        margin-top: 32px;
+      }
+  `}
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         padding-bottom: 48px;
         .banner-title {
@@ -38,6 +45,13 @@ export const Styled = styled(Col)`
           padding-right: 4px;
           padding-left: 4px;
         }
+        .section-head {
+            margin: auto;
+            margin-bottom: 16px
+        }
+        .section-link {
+            margin: auto;
+        }
     `}
 `;
 
@@ -49,6 +63,7 @@ const MarketBanner = () => {
       xl={11}
       xxl={9}
       className={`${isMobile ? 'default-padding-horizontal' : ''}`}>
+      <SectionHead title="Privacy Markets" className="section-head" />
       <p className="text1 fw-medium special-main-title-text banner-title">
         {marketTrs.mainTitle}
       </p>
@@ -74,6 +89,7 @@ const MarketBanner = () => {
           </a>
         </Col>
       </Col>
+      <SectionLink className="section-link" />
     </Styled>
   );
 };

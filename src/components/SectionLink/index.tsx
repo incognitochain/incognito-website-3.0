@@ -1,0 +1,53 @@
+import linkImg from '@images/link-icon.png';
+import React from 'react';
+import { isMobile } from 'react-device-detect';
+import styled, { ITheme } from 'styled-components';
+
+const Styled = styled.div`
+  padding-top: 40px;
+  .label {
+    font-size: 22px;
+    line-height: 33px;
+  }
+  .link-text {
+    cursor: pointer;
+  }
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+    .label {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+    padding-top: 16px;
+    .label {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  `}
+`;
+
+const SectionLink = React.memo(({ className }: { className?: string }) => {
+  return (
+    <Styled className={`${className}`}>
+      <p className="text2 label">
+        Want privacy for your coin?{' '}
+        <span
+          className="text3 link-text"
+          onClick={() => {
+            window.open('mailto:go@incognito.org', '_blank');
+          }}>
+          {`Talk to us`}
+          <img
+            src={linkImg}
+            style={{ width: isMobile ? 14 : 18, height: 'auto', marginLeft: 5 }}
+            alt="link-icon"
+          />
+        </span>
+      </p>
+    </Styled>
+  );
+});
+
+export default SectionLink;

@@ -1,3 +1,5 @@
+import SectionHead from '@components/SectionHead';
+import SectionLink from '@components/SectionLink';
 import logoStrokeImg from '@images/logo-stroke.png';
 import { structureTranslateSelector } from '@src/configs';
 import { Button, Col, Row } from 'antd';
@@ -70,6 +72,7 @@ const Section1 = () => {
       justify="space-between"
       className="default-padding-horizontal default-margin-top default-margin-bottom">
       <Col className="col-section1 ">
+        <SectionHead title="Privacy Infrastructure" />
         <p className="main-title main-title-text">{structureTrs.mainTitle}</p>
         <p className="sub-main-title sub-title-text text2">{structureTrs.mainDesc}</p>
         <Button
@@ -85,6 +88,7 @@ const Section1 = () => {
           }}>
           {structureTrs.becomeValidator}
         </Button>
+        <SectionLink />
       </Col>
       <img src={logoStrokeImg} className="logo-stroke" alt="logo-stroke" />
     </Styled>

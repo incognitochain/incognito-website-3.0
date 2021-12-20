@@ -32,7 +32,7 @@ export const Styled = styled.div`
           text-align: left;
           font-size: 34px;
           line-height: 44px;
-          margin-top: 24px;
+          margin-top: 16px;
         }
         .sub-title {
           text-align: left;
@@ -40,7 +40,11 @@ export const Styled = styled.div`
           line-height: 24px;
         }
         .btn-how-work {
-          margin-top: 24px;
+          margin-top: 16px;
+        }
+        .section-head {
+            margin-bottom: 0px;
+            margin-top: 40px;
         }
     `}
   }

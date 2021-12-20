@@ -1,3 +1,5 @@
+import SectionHead from '@components/SectionHead';
+import SectionLink from '@components/SectionLink';
 import cakeImg from '@images/cake-logo.png';
 import PeggingListApps from '@modules/PeggingApp/features/PeggingApp.apps';
 import PeggingCategory from '@modules/PeggingApp/features/PeggingApp.category';
@@ -18,6 +20,7 @@ const Home = () => {
         justify="space-between"
         className="section-1 default-padding-horizontal default-margin-top">
         <Row style={{ flexDirection: 'column' }}>
+          <SectionHead title="Privacy apps" className="section-head" />
           <p className="fw-medium main-title-text title">{peggingTrs.mainTitle}</p>
           <p className="text2 sub-title sub-title-text">
             {isMobile
@@ -37,6 +40,7 @@ const Home = () => {
             }}>
             {peggingTrs.howWork}
           </Button>
+          <SectionLink />
         </Row>
         <img src={cakeImg} alt="cake-logo" className="cake-img" />
       </Row>
