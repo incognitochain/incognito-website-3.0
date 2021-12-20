@@ -26,7 +26,7 @@ const Styled = styled(Row)`
     margin-left: 20px;
   }
   .app-margin-top {
-    margin-top: 24px;
+    margin-top: 40px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         flex-direction: column;
