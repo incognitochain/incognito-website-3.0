@@ -51,11 +51,6 @@ const Styled = styled.div`
   .app-link {
     width: 100%;
   }
-  .banner-title {
-    white-space: pre-wrap;
-    font-size: 76px;
-    line-height: 82px;
-  }
   .footer-item {
     padding-right: 8px;
     padding-left: 8px;

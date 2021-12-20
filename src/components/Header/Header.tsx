@@ -164,7 +164,7 @@ const Header = () => {
           align="middle"
           justify="space-between"
           className="border-bottom"
-          style={{ height: 72, marginBottom: 32 }}>
+          style={{ height: 76, marginBottom: 32 }}>
           <Row className="padding-horizontal" justify="space-between">
             <NavLink
               className="logo-mobile"

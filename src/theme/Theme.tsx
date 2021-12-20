@@ -16,8 +16,8 @@ const MEDIA_WIDTHS = {
   upToExtraSmall: 500,
   upToSmall: 720,
   upToMedium: 960,
-  upToLarge: 1920,
-  upToSupperLarge: 2560,
+  upToLarge: 1440,
+  upToSupperLarge: 1920,
 };
 
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } =
@@ -250,8 +250,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
     }
     
     .default-padding-horizontal {
-      padding-left: 300px;
-      padding-right: 300px;
+      padding-left: 200px;
+      padding-right: 200px;
     }
 
     .ant-btn-round.ant-btn-lg {
@@ -298,11 +298,64 @@ export const ThemedGlobalStyle = createGlobalStyle`
       line-height: 33px;
       letter-spacing: 0.01em;
       white-space: pre-wrap;
+      margin-top: 24px;
+    }
+    .special-main-title-text {
+      white-space: pre-wrap;
+      font-size: 76px;
+      line-height: 82px;
+      font-weight: 500;
+    }
+    .main-title-text {
+      white-space: pre-wrap;
+      font-size: 64px;
+      line-height: 70px;
+      font-weight: 500;
+    }
+    .default-padding-vertical {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+    .default-margin-top {
+      margin-top: 120px;
+    }
+    .default-margin-bottom {
+      margin-bottom: 120px;
     }
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
         .default-padding-horizontal {
-          padding-left: 100px;
-          padding-right: 100px;
+          padding-left: 105px;
+          padding-right: 105px;
+        }
+        .sub-title-text {
+          font-size: 18px;
+          line-height: 27px;
+          letter-spacing: 0.01em;
+          margin-top: 16px;
+        }
+        .special-main-title-text {
+          white-space: pre-wrap;
+          font-weight: 500;
+          font-size: 48px;
+          line-height: 54px;
+          letter-spacing: 0.01em;
+        }
+        .main-title-text {
+          white-space: pre-wrap;
+          font-weight: 500;
+          font-size: 48px;
+          line-height: 54px;
+          letter-spacing: 0.01em;
+        }
+        .default-padding-vertical {
+          padding-top: 100px;
+          padding-bottom: 100px;
+        }
+        .default-margin-top {
+          margin-top: 100px;
+        }
+        .default-margin-bottom {
+          margin-bottom: 100px;
         }
   `}
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
@@ -311,10 +364,35 @@ export const ThemedGlobalStyle = createGlobalStyle`
           padding-right: 16px;
         }
         .sub-title-text {
-          font-size: 22px;
-          line-height: 33px;
+          font-size: 16px;
+          line-height: 24px;
           letter-spacing: 0.01em;
           white-space: initial;
+          margin-top: 16px;
+        }
+        .special-main-title-text {
+          white-space: initial;
+          font-weight: 500;
+          font-size: 34px;
+          line-height: 44px;
+          letter-spacing: 0.01em;
+        }
+        .main-title-text {
+          white-space: initial;
+          font-weight: 500;
+          font-size: 28px;
+          line-height: 38px;
+          letter-spacing: 0.01em;
+        }
+        .default-padding-vertical {
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
+        .default-margin-top {
+          margin-top: 40px;
+        }
+        .default-margin-bottom {
+          margin-bottom: 40px;
         }
     `}
 `;

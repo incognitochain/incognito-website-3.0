@@ -18,31 +18,18 @@ export const Styled = styled(Col)`
   .app-link {
     width: 100%;
   }
-  .banner-title {
-    white-space: pre-wrap;
-    font-size: 76px;
-    line-height: 82px;
-  }
   .ant-col {
     padding-right: 16px;
   }
   .ant-col:first-child {
   }
-  .banner-sub-title {
-    margin-top: 24px;
-  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         padding-bottom: 48px;
         .banner-title {
-          font-size: 44px;
-          line-height: 48px;
           text-align: center;
-          letter-spacing: 0.01em;
         }
         .banner-sub-title {
           text-align: center;          
-          font-size: 16px;
-          line-height: 24px;
         }
         .wrap-app-link {
           margin-top: 24px;
@@ -62,7 +49,9 @@ const MarketBanner = () => {
       xl={11}
       xxl={9}
       className={`${isMobile ? 'default-padding-horizontal' : ''}`}>
-      <p className="text1 fw-medium banner-title">{marketTrs.mainTitle}</p>
+      <p className="text1 fw-medium special-main-title-text banner-title">
+        {marketTrs.mainTitle}
+      </p>
       <Col xs={24} lg={22}>
         <p className="text2 sub-title-text banner-sub-title">
           {`Here, your coins are privacy coins. Trade them cross-chain, commission-free.`}

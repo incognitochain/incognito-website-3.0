@@ -4,7 +4,7 @@ import { Drawer, Menu, Row } from 'antd';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled(Row)`
-  height: 71px;
+  height: 76px;
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.border1};
   z-index: 2;
@@ -115,6 +115,8 @@ export const Styled = styled(Row)`
       color: ${({ theme }: { theme: ITheme }) => theme.text1};
     }
   }
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+    `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
           justify-content: space-between;

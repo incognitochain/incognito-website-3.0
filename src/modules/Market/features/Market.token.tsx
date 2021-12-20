@@ -92,6 +92,23 @@ export const Styled = styled(Col)`
     width: 100%;
     visibility: hidden;
   }
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+    .wrap-token {
+        min-height: 480px;
+    }
+    .token-wrap-item {
+        height: 80px;
+    }
+    .token-main-title {
+      height: 64px;
+    }
+    .image-token {
+        width: 48px;
+        height: 48px;
+        border-radius: 28px;
+        margin-right: 10px;
+    }
+  `}
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         border-width: 0px;
         border-radius: 0px;

@@ -6,25 +6,16 @@ import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled.div`
-  margin-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 120px;
-  padding-top: 120px;
 
   .achieve-title {
-    font-weight: 500;
-    font-size: 64px;
-    line-height: 70px;
-    white-space: pre-wrap;
     text-align: center;
   }
   .achieve-sub-title {
     text-align: center;
-    white-space: pre-wrap;
-    margin-top: 24px;
   }
   .achieve-margin-right ~ .achieve-margin-right {
     margin-left: 24px;
@@ -34,13 +25,7 @@ export const Styled = styled.div`
     margin-top: 80px;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-          margin-top: 40px;
-          padding-top: 40px;
           padding-bottom: 40px;
-          .achieve-title {
-            font-size: 24px;
-            line-height: 38px;
-          }
           .achieve-sub-title {
               margin-top: 8px;
           }
@@ -147,9 +132,11 @@ const MarketAchieve = () => {
     </Card>
   );
   return (
-    <Styled className="default-padding-horizontal background2">
-      <p className="achieve-title">{marketTrs.privacyMarketplace}</p>
-      <p className="sub-title-text text2 achieve-sub-title">{marketTrs.inCogIsNone}</p>
+    <Styled className="default-padding-horizontal default-padding-vertical default-margin-top background2">
+      <p className="main-title-text achieve-title">{marketTrs.privacyMarketplace}</p>
+      <p className="sub-title-text text2 sub-title-text achieve-sub-title">
+        {marketTrs.inCogIsNone}
+      </p>
       <Row className="achieve-wrap">
         <Col xs={24}>
           <List

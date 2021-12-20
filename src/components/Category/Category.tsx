@@ -2,8 +2,6 @@ import { MarketChainIcon, MarketMoneyIcon, MarketSearchIcon } from '@components/
 import { peggingAppTranslateSelector } from '@src/configs';
 import { Col, List, Row } from 'antd';
 import React, { ReactElement } from 'react';
-import { isMobile } from 'react-device-detect';
-import { useSelector } from 'react-redux';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled(Row)`
