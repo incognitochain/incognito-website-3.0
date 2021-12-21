@@ -1,12 +1,15 @@
 # build environment
 FROM node:16 as build
+ARG BUILD_ENV=production
+
 WORKDIR /app
 COPY package.json ./
 COPY yarn.lock* ./
 #RUN npm install -g yarn
 RUN yarn install
 COPY . ./
-RUN yarn build
+COPY env.${BUILD_ENV}.local .env
+RUN yarn build:$BUILD_ENV
 
 # production environment
 FROM nginx:stable

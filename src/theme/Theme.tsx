@@ -15,7 +15,7 @@ import { Colors } from './Theme.styled';
 const MEDIA_WIDTHS = {
   upToExtraSmall: 500,
   upToSmall: 720,
-  upToMedium: 960,
+  upToMedium: 1200,
   upToLarge: 1440,
   upToSupperLarge: 1920,
 };
