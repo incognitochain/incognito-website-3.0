@@ -51,6 +51,7 @@ const StyledItem = styled(Col)`
   .wrap-item-content {
     padding: 60px 60px 50px;
     border-radius: 16px;
+    flex: 1;
   }
   .full-height {
     height: 100%;
