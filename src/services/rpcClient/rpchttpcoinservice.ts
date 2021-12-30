@@ -12,7 +12,7 @@ class RpcHttpCoinServiceClient {
     return this.http.get('pdex/v3/listpools?pair=all');
   }
   apiGetPTokenList() {
-    return this.http.get('tokenlist');
+    return this.http.get('coins/tokenlist');
   }
 }
 
