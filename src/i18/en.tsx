@@ -39,7 +39,7 @@ const language: ILanguage = {
   structure: {
     mainTitle: 'Power the privacy layer\nof web3. Earn PRV.',
     mainDesc:
-      'Incognito is a decentralized blockchain built for privacy at scale. Incognito validators ensure that all crypto holders have an alternative to a future of surveillance.',
+      'Incognito is a blockchain built for privacy at scale. Incognito validators ensure that all crypto holders have an alternative to a future of surveillance.',
     becomeValidator: 'Become a validator',
     averageAnnualRoi: 'Average annual ROI',
     validatorsAcross: 'Validators across 8 shards',
