@@ -46,26 +46,31 @@ const Styled = styled(Row)`
         }
   `}
 `;
-const StyledItem = styled(Col)`
+const StyledItem = styled(Col)<{ isMobile: boolean }>`
   display: flex;
+
   .wrap-item-content {
     padding: 60px 60px 50px;
     border-radius: 16px;
     flex: 1;
   }
+
   .full-height {
     height: 100%;
   }
+
   .item-img {
     margin-right: 32px;
     width: 120px;
     height: 120px;
   }
+
   .large-text {
     font-weight: 600;
     font-size: 34px;
     line-height: 48px;
   }
+
   .normal-text {
     height: fit-content;
   }
@@ -74,6 +79,7 @@ const StyledItem = styled(Col)`
     display: inline-flex;
     align-items: baseline;
   }
+
   .wrap-chain {
     margin-right: 10px;
     min-height: 48px;
@@ -85,12 +91,14 @@ const StyledItem = styled(Col)`
     border-radius: 8px;
     background: ${({ theme }) => theme.background3};
   }
+
   .wrap-main-content {
   }
 
   .desc-text {
     margin-top: 40px;
   }
+
   .medium-text {
     font-size: 22px;
   }
@@ -102,6 +110,22 @@ const StyledItem = styled(Col)`
   .link-text {
     color: ${({ theme }) => theme.text3};
     cursor: pointer;
+  }
+
+  .wrap-status {
+    padding: 2px 8px;
+    border: 1px solid ${({ theme }) => theme.text1};
+    width: fit-content;
+    color: ${({ theme }) => theme.text1};
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  .status-text {
+    font-size: 14px;
+    height: fit-content;
+    font-weight: 600;
+    line-height: 18px;
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
@@ -118,6 +142,9 @@ const StyledItem = styled(Col)`
       }
       .medium-text {
         font-size: 16px;
+      }
+      .status-text {
+        font-size: 12px;
       }
   `};
 
@@ -151,7 +178,7 @@ const StyledItem = styled(Col)`
         }
   `};
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium<{ isMobile: boolean }>`
       .wrap-name {
         display: inline-flex;
         align-items: baseline;
@@ -172,6 +199,13 @@ const StyledItem = styled(Col)`
       .chain-text {
         line-height: 18px;
       }
+      .wrap-status {
+        margin-bottom: ${({ isMobile }) => (isMobile ? 0 : 8)}px;
+        margin-left: ${({ isMobile }) => (isMobile ? 8 : 0)}px;
+      }
+      .status-text {
+        font-size: 10px;
+      }
   `};
 `;
 
@@ -188,14 +222,27 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
     ),
     [],
   );
+  const Status = React.useMemo(
+    () =>
+      data.status ? (
+        <div className="wrap-status">
+          <p className="status-text fw-medium normal-text">{data.status}</p>
+        </div>
+      ) : null,
+    [],
+  );
   return (
-    <StyledItem md={24} xl={12} key={data.name}>
+    <StyledItem md={24} xl={12} key={data.name} isMobile={isMobile}>
       <Col className={`wrap-item-content background2 ${className}`}>
         <Row align="middle" className="wrap-apps-head">
           <img src={data.img} className="item-img" alt="icon" />
           <Col className="wrap-main-content">
+            {!isMobile && Status}
             <div className="wrap-name">
-              <p className="large-text fw-medium normal-text">{data.name}</p>
+              <Row align="middle">
+                <p className="large-text fw-medium normal-text">{data.name}</p>
+                {isMobile && Status}
+              </Row>
               <p className="medium-text text2 normal-text name-desc-text">
                 {data.nameDesc}
               </p>
@@ -234,6 +281,7 @@ const PeggingListApps = () => {
           img: cakeImg,
           name: 'pPancake',
           nameDesc: 'Private Pancake',
+          status: 'SHIPPED',
           chain: ['Binance Smart Chain', 'DEX'],
           desc: "Trade anonymously on Binance Smart Chain's leading DEX. Deep liquidity and super low fees – now with privacy.",
         }}
@@ -243,6 +291,7 @@ const PeggingListApps = () => {
         data={{
           img: avveImg,
           name: 'pAave',
+          status: 'COMING SOON',
           nameDesc: 'Private Aave',
           chain: ['Polygon', 'Lending'],
           desc: 'Earn interest on deposits and borrow assets on everyone’s favorite lending protocol – confidentially.',
@@ -253,6 +302,7 @@ const PeggingListApps = () => {
         data={{
           img: openSeaImg,
           name: 'pOpenSea',
+          status: 'COMING SOON',
           nameDesc: 'Private OpenSea',
           chain: ['Polygon', 'Marketplace', 'NFT'],
           desc: 'Purchase and hoard rare digital items and collectibles without anyone knowing about it.',
@@ -263,6 +313,7 @@ const PeggingListApps = () => {
         data={{
           img: raydiumImg,
           name: 'pRaydium',
+          status: 'COMING SOON',
           nameDesc: 'Private Raydium',
           chain: ['Solana', 'DEX', 'Farming'],
           desc: 'Explore DeFi on Solana with full privacy for your activity and assets. Swap, provide liquidity, farm, and stake.',
@@ -273,6 +324,7 @@ const PeggingListApps = () => {
         data={{
           img: solendImg,
           name: 'pSolend',
+          status: 'COMING SOON',
           nameDesc: 'Private Solend',
           chain: ['Solana', 'Lending'],
           desc: 'Get privacy for what you lend, borrow, and earn on Solana. Protect your activity from prying eyes.',
