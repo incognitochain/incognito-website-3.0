@@ -124,7 +124,7 @@ const StyledItem = styled(Col)<{ isMobile: boolean }>`
   .status-text {
     font-size: 14px;
     height: fit-content;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 18px;
   }
 
