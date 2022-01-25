@@ -1,3 +1,4 @@
+import { isMainnet } from '@configs/Configs.env';
 import { camelCase } from 'lodash';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
@@ -31,7 +32,9 @@ export const configStore = (preloadedState: any = {}) => {
     blacklist: ['config'],
   };
   const persistedReducer = persistReducer(persistConfig, rootReducers);
-  const middlewareEnhancer = applyMiddleware(thunk, logger);
+  const middlewareEnhancer = isMainnet
+    ? applyMiddleware(thunk)
+    : applyMiddleware(thunk, logger);
   const store: any = createStore(persistedReducer, preloadedState, middlewareEnhancer);
   const persistor = persistStore(store);
   return { store, persistor };

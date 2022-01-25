@@ -197,6 +197,7 @@ const Header = () => {
                   }}
                   href={item.path}
                   target="_blank"
+                  key={item.name}
                   rel="noopener noreferrer">
                   {item.name}
                 </Link>
