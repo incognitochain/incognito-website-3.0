@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 const withStarted = (WrappedComponent: FunctionComponent) => (props: any) => {
   const dispatch = useDispatch();
   const initApp = async () => {
-    await Promise.all([dispatch(actionGetPTokens()), dispatch(actionGetCustomTokens())]);
+    await Promise.all([dispatch(actionGetPTokens())]);
   };
 
   React.useEffect(() => {

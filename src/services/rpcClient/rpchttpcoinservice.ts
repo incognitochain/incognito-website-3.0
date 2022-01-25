@@ -1,5 +1,6 @@
 import { ENVS } from '@configs/Configs.env';
 import createAxiosInstance from '@services/axios';
+import { TokenConstant } from '@src/common';
 import { AxiosInstance } from 'axios';
 
 class RpcHttpCoinServiceClient {
@@ -12,7 +13,10 @@ class RpcHttpCoinServiceClient {
     return this.http.get('pdex/v3/listpools?pair=all');
   }
   apiGetPTokenList() {
-    return this.http.get('coins/tokenlist');
+    const PRIORITY_LIST: string[] = TokenConstant.PRIORITY_TOKEN_ID;
+    return this.http.post('coins/tokeninfo', {
+      TokenIDs: PRIORITY_LIST,
+    });
   }
 }
 
