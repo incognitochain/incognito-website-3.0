@@ -3,7 +3,7 @@ import { lazy } from 'react';
 
 export const route = '/term-of-service';
 
-const MarketRoute: IRouteProps = {
+const TermOfServiceRoute: IRouteProps = {
   path: route,
   exact: true,
   component: lazy(() => import('@modules/TermOfService')),
@@ -11,4 +11,4 @@ const MarketRoute: IRouteProps = {
   to: route,
 };
 
-export default MarketRoute;
+export default TermOfServiceRoute;
