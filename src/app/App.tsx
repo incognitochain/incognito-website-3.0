@@ -1,6 +1,7 @@
 import 'antd/dist/antd.css';
 import './reset.scss';
 
+import Footer from '@components/Footer';
 import Header from '@components/Header';
 import withApp from '@src/app/App.enhance';
 import { MainRoute } from '@src/modules';
@@ -15,6 +16,7 @@ const App: React.FunctionComponent = () => {
       <Router>
         <Header />
         <MainRoute />
+        <Footer />
       </Router>
     </ThemeProvider>
   );
