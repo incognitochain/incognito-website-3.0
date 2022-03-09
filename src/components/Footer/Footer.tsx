@@ -7,7 +7,7 @@ import React, { memo } from 'react';
 const Footer = () => {
   return (
     <Styled className="default-padding-horizontal">
-      <Col>
+      <Col className="wrap-branch">
         <p className="normal-label">© 2022 Incognito</p>
       </Col>
       <Row className="wrap-social">
