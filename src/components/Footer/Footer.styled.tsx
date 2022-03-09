@@ -1,4 +1,4 @@
-import { Row } from 'antd';
+import { Col, Row } from 'antd';
 import styled, { ITheme } from 'styled-components';
 
 export const Styled = styled(Row)`
@@ -18,34 +18,26 @@ export const Styled = styled(Row)`
     letter-spacing: 0.005em;
     color: ${({ theme }) => theme.text1};
   }
-  .twitter-text {
+  .default-margin-left {
     margin-left: 24px;
   }
   .button-text {
     cursor: pointer;
   }
-  .term {
-    color: ${({ theme }) => theme.text3};
-    margin-top: 12px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.005em;
-    margin-left: 20px;
-  }
-  .policy {
-    color: ${({ theme }) => theme.text3};
-    margin-top: 8px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.005em;
-    margin-left: 20px;
-  }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
   `}
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    flex-direction: column;
+    .default-margin-left {
+      margin-left: 0px;
+    }
+    .wrap-social {
+      flex-direction: column;
+    }
+    .normal-label {
+      margin-bottom: 6px;    
+      font-size: 14px;
+      line-height: 24px;
+    }
   `}
 `;

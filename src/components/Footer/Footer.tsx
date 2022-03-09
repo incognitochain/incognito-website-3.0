@@ -9,21 +9,23 @@ const Footer = () => {
     <Styled className="default-padding-horizontal">
       <Col>
         <p className="normal-label">© 2022 Incognito</p>
+      </Col>
+      <Row className="wrap-social">
         <button
-          className="term button-text"
+          className="normal-label button-text"
           onClick={() => {
             window.open(TermRoute);
           }}>
-          Term of service
+          Terms of Service
         </button>
         <button
-          className="policy button-text"
+          className="normal-label button-text default-margin-left"
           onClick={() => {
             window.open(PolicyRoute);
           }}>
-          Privacy policy
+          Privacy Policy
         </button>
-      </Col>
+      </Row>
       <Row className="wrap-social">
         <button
           className="normal-label button-text"
@@ -33,7 +35,7 @@ const Footer = () => {
           Telegram
         </button>
         <button
-          className="normal-label twitter-text button-text"
+          className="normal-label default-margin-left button-text"
           onClick={() => {
             window.open('https://twitter.com/IncognitoChain', '_blank');
           }}>
