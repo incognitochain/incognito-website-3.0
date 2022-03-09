@@ -808,7 +808,8 @@ const TermOfService = () => {
   return (
     <Styled className="default-padding-horizontal">
       <p className="fw-medium text-align-center term-main-title">
-        INCOGNITO TERM OF SERVICE
+        INCOGNITO WALLET APPLICATION and INCOGNITO WEBSITE <br />
+        Terms of Service
       </p>
       {renderSection1()}
       {renderSection2()}
