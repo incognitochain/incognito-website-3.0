@@ -135,11 +135,7 @@ const TermOfService = () => {
         information as set forth in the Privacy Policy. Incognito’s Privacy Policy is
         hereby incorporated in the Terms by reference in its entirety. The Privacy Policy
         can be found{' '}
-        <a
-          href="https://docs.google.com/document/u/7/d/1SFB03gqyFKRN0TSqzWQ25aSO_Qx0jT69tnuzXF-1l8c/edit"
-          target="_blank"
-          className="term-link"
-          rel="noreferrer">
+        <a href="/privacy-policy" target="_blank" className="term-link" rel="noreferrer">
           here
         </a>
         .
