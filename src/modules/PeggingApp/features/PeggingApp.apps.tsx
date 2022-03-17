@@ -314,28 +314,6 @@ const PeggingListApps = () => {
       />
       <Item
         data={{
-          img: avveImg,
-          name: 'pAave',
-          status: 'COMING SOON',
-          nameDesc: 'Private Aave',
-          chain: ['Polygon', 'Lending'],
-          desc: 'Earn interest on deposits and borrow assets on everyone’s favorite lending protocol – confidentially.',
-        }}
-        className="app-margin-top app-margin-top-small app-margin-left"
-      />
-      <Item
-        data={{
-          img: openSeaImg,
-          name: 'pOpenSea',
-          status: 'COMING SOON',
-          nameDesc: 'Private OpenSea',
-          chain: ['Polygon', 'Marketplace', 'NFT'],
-          desc: 'Purchase and hoard rare digital items and collectibles without anyone knowing about it.',
-        }}
-        className="app-margin-top app-margin-top-small app-margin-right"
-      />
-      <Item
-        data={{
           img: raydiumImg,
           name: 'pRaydium',
           status: 'COMING SOON',
@@ -344,6 +322,17 @@ const PeggingListApps = () => {
           desc: 'Explore DeFi on Solana with full privacy for your activity and assets. Swap, provide liquidity, farm, and stake.',
         }}
         className="app-margin-top app-margin-top-small app-margin-left"
+      />
+      <Item
+        data={{
+          img: avveImg,
+          name: 'pAave',
+          status: 'COMING SOON',
+          nameDesc: 'Private Aave',
+          chain: ['Polygon', 'Lending'],
+          desc: 'Earn interest on deposits and borrow assets on everyone’s favorite lending protocol – confidentially.',
+        }}
+        className="app-margin-top app-margin-top-small app-margin-right"
       />
       <Item
         data={{
@@ -366,7 +355,7 @@ const PeggingListApps = () => {
           link: 'Join the conversation',
           linkPath: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
         }}
-        className="app-margin-top app-margin-top-small app-margin-left"
+        className="app-margin-top app-margin-top-small app-margin-right"
       />
     </Styled>
   );
