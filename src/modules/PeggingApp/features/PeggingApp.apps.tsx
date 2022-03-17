@@ -1,5 +1,6 @@
 import avveImg from '@images/avve-logo.png';
 import cakeImg from '@images/cake-icon.png';
+import curveImg from '@images/curve-icon.png';
 import linkImg from '@images/link-icon.png';
 import openSeaImg from '@images/opensea-logo.png';
 import raydiumImg from '@images/raydium-logo.png';
@@ -10,6 +11,7 @@ import { Col, Row } from 'antd';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 import styled, { ITheme } from 'styled-components';
+
 const Styled = styled(Row)`
   margin-top: 60px;
   flex-direction: row;
@@ -301,6 +303,17 @@ const PeggingListApps = () => {
       />
       <Item
         data={{
+          img: curveImg,
+          name: 'pCurve',
+          nameDesc: 'Private Curve',
+          status: 'SHIPPED',
+          chain: ['Polygon', 'DEX'],
+          desc: 'Swap stablecoins with complete confidentiality using Privacy Curve. Low fees on Polygon meets full privacy on Incognito.',
+        }}
+        className="app-margin-top app-margin-top-small app-margin-right"
+      />
+      <Item
+        data={{
           img: avveImg,
           name: 'pAave',
           status: 'COMING SOON',
@@ -308,7 +321,7 @@ const PeggingListApps = () => {
           chain: ['Polygon', 'Lending'],
           desc: 'Earn interest on deposits and borrow assets on everyone’s favorite lending protocol – confidentially.',
         }}
-        className="app-margin-top app-margin-top-small app-margin-right"
+        className="app-margin-top app-margin-top-small app-margin-left"
       />
       <Item
         data={{
@@ -319,7 +332,7 @@ const PeggingListApps = () => {
           chain: ['Polygon', 'Marketplace', 'NFT'],
           desc: 'Purchase and hoard rare digital items and collectibles without anyone knowing about it.',
         }}
-        className="app-margin-top app-margin-top-small app-margin-left"
+        className="app-margin-top app-margin-top-small app-margin-right"
       />
       <Item
         data={{
@@ -330,7 +343,7 @@ const PeggingListApps = () => {
           chain: ['Solana', 'DEX', 'Farming'],
           desc: 'Explore DeFi on Solana with full privacy for your activity and assets. Swap, provide liquidity, farm, and stake.',
         }}
-        className="app-margin-top app-margin-top-small app-margin-right"
+        className="app-margin-top app-margin-top-small app-margin-left"
       />
       <Item
         data={{
@@ -341,7 +354,7 @@ const PeggingListApps = () => {
           chain: ['Solana', 'Lending'],
           desc: 'Get privacy for what you lend, borrow, and earn on Solana. Protect your activity from prying eyes.',
         }}
-        className="app-margin-top app-margin-top-small app-margin-left"
+        className="app-margin-top app-margin-top-small app-margin-right"
       />
       <Item
         data={{
@@ -353,7 +366,7 @@ const PeggingListApps = () => {
           link: 'Join the conversation',
           linkPath: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
         }}
-        className="app-margin-top app-margin-top-small app-margin-right"
+        className="app-margin-top app-margin-top-small app-margin-left"
       />
     </Styled>
   );
