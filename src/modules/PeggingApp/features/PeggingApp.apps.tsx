@@ -343,7 +343,7 @@ const PeggingListApps = () => {
           chain: ['Solana', 'Lending'],
           desc: 'Get privacy for what you lend, borrow, and earn on Solana. Protect your activity from prying eyes.',
         }}
-        className="app-margin-top app-margin-top-small app-margin-right"
+        className="app-margin-top app-margin-top-small app-margin-left"
       />
       <Item
         data={{
