@@ -24,8 +24,8 @@ const Home = () => {
           <p className="fw-medium main-title-text title">{peggingTrs.mainTitle}</p>
           <p className="text2 sub-title sub-title-text">
             {isMobile
-              ? `Get privacy for any decentralized application on Ethereum and Binance Smart Chain. Polygon and Solana coming soon.`
-              : `Get privacy for any decentralized application on Ethereum \nand Binance Smart Chain. Polygon and Solana coming soon.`}
+              ? `Get privacy for any decentralized application on Ethereum, Binance Smart Chain and Polygon. Solana and Fantom coming soon.`
+              : `Get privacy for any decentralized application on Ethereum, \nBinance Smart Chain and Polygon. Solana and Fantom coming soon.`}
           </p>
           <Button
             type="primary"
