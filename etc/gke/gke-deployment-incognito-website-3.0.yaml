@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "incognito-website-3.0-production"
+  namespace: "default"
+  labels:
+    app: "incognito-website-3.0-production"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "incognito-website-3.0-production"
+  template:
+    metadata:
+      labels:
+        app: "incognito-website-3.0-production"
+    spec:
+      containers:
+        - name: "incognito-website-3.0-sha256-1"
+          image: "gcr.io/staging-incognito/incognito-website-3.0@sha256:3d27cf61c98f5951265d2961c6583055d4e08f85b173974d63f4701cc5156dd4"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "incognito-website-3.0-production-hpa-on0v"
+  namespace: "default"
+  labels:
+    app: "incognito-website-3.0-production"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "incognito-website-3.0-production"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        targetAverageUtilization: 80

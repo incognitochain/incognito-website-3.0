@@ -1,0 +1,15 @@
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "incognito-website-3.0-production"
+  namespace: "default"
+  labels:
+    run: "incognito-website-3.0-production"
+spec:
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 80
+  selector:
+    run: "incognito-website-3.0-production"
+  type: "NodePort"
