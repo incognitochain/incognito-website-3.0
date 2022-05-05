@@ -30,6 +30,13 @@ const Footer = () => {
         <button
           className="normal-label button-text"
           onClick={() => {
+            window.open('https://incognito.org/mediakit', '_blank');
+          }}>
+          Media Kit
+        </button>
+        <button
+          className="normal-label button-text"
+          onClick={() => {
             window.open('https://t.me/incognitochain', '_blank');
           }}>
           Telegram
