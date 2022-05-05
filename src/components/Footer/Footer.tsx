@@ -35,7 +35,7 @@ const Footer = () => {
           Media Kit
         </button>
         <button
-          className="normal-label button-text"
+          className="normal-label default-margin-left button-text"
           onClick={() => {
             window.open('https://t.me/incognitochain', '_blank');
           }}>
