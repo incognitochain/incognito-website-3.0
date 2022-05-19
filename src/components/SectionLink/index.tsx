@@ -31,7 +31,7 @@ const Styled = styled.div`
 const SectionLink = React.memo(
   ({
     title = 'Want to start a market for your coin?',
-    subTitle = 'Talk to us',
+    subTitle = 'Go to exchange',
     className,
   }: {
     title?: string;
@@ -45,8 +45,7 @@ const SectionLink = React.memo(
           <span
             className="text3 link-text"
             onClick={() => {
-              const link =
-                'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=go@incognito.org&tf=1';
+              const link = 'https://we.incognito.org/t/incognito-exchange/337';
               window.open(link, '_blank');
             }}>
             {subTitle}
