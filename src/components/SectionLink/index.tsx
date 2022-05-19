@@ -32,10 +32,12 @@ const SectionLink = React.memo(
   ({
     title = 'Want to start a market for your coin?',
     subTitle = 'Go to exchange',
+    link = 'https://we.incognito.org/t/incognito-exchange/337',
     className,
   }: {
     title?: string;
     subTitle?: string;
+    link?: string;
     className?: string;
   }) => {
     return (
@@ -45,7 +47,6 @@ const SectionLink = React.memo(
           <span
             className="text3 link-text"
             onClick={() => {
-              const link = 'https://we.incognito.org/t/incognito-exchange/337';
               window.open(link, '_blank');
             }}>
             {subTitle}
