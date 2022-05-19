@@ -34,13 +34,13 @@ const Home = () => {
             className="button1 btn-how-work"
             onClick={() => {
               window.open(
-                'https://we.incognito.org/t/pethereum-specifications/1688',
+                'https://we.incognito.org/t/how-to-trade-with-ppancake/15567',
                 '_blank',
               );
             }}>
             {peggingTrs.howWork}
           </Button>
-          <SectionLink title="Want privacy for your app?" subTitle="Work with us" />
+          <SectionLink title="Want privacy for your app?" subTitle="Try it out" />
         </Row>
         <img src={cakeImg} alt="cake-logo" className="cake-img" />
       </Row>
