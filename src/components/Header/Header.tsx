@@ -35,19 +35,19 @@ const menuItem = [
 
 const moreItem = [
   {
-    name: 'Explore',
+    name: 'Explorer',
     path: 'https://explorer.incognito.org',
     sub: 'The network',
   },
   {
-    name: 'Learn',
+    name: 'White Paper',
     path: 'https://we.incognito.org/t/incognito-whitepaper-incognito-mode-for-cryptonetworks/168',
-    sub: 'How it works',
+    sub: 'The Incognito mode',
   },
   {
-    name: 'Follow',
+    name: 'Roadmap',
     path: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
-    sub: 'The roadmap',
+    sub: 'The development',
   },
 ];
 
@@ -99,7 +99,7 @@ const Header = () => {
     <MenuDropdown
       className="sub-menu-header"
       theme="dark"
-      style={{ width: 155, paddingTop: 16, paddingLeft: 24, paddingRight: 10 }}>
+      style={{ width: 200, paddingTop: 16, paddingLeft: 24, paddingRight: 10 }}>
       {moreItem.map((item) => {
         return (
           <Menu.Item
