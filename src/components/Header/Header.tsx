@@ -30,12 +30,12 @@ const menuItem = [
     name: 'Infrastructure',
     path: routeStructure,
   },
-  {
-    name: 'Community',
-    path: 'https://we.incognito.org/t/about-the-incognito-community/373',
-    target: '_blank',
-    isLink: true,
-  },
+  // {
+  //   name: 'Community',
+  //   path: 'https://we.incognito.org/t/about-the-incognito-community/373',
+  //   target: '_blank',
+  //   isLink: true,
+  // },
   {
     name: 'Earnings',
     path: routeEarnings,
@@ -57,6 +57,12 @@ const moreItem = [
     name: 'Roadmap',
     path: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
     sub: 'The development',
+  },
+
+  {
+    name: 'Community',
+    path: 'https://we.incognito.org/t/about-the-incognito-community/373',
+    sub: 'The Community',
   },
 ];
 
