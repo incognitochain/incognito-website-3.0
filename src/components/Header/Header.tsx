@@ -4,7 +4,12 @@ import downImg from '@images/down-icon.png';
 import logo from '@images/logo.png';
 import menuBarIcon from '@images/menu-bar.png';
 import { ReactComponent as IcClose } from '@images/svg/close-icon.svg';
-import { routeMarket, routePeggingApps, routeStructure } from '@src/modules';
+import {
+  routeEarnings,
+  routeMarket,
+  routePeggingApps,
+  routeStructure,
+} from '@src/modules';
 import { Button, Col, Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
@@ -30,6 +35,10 @@ const menuItem = [
     path: 'https://we.incognito.org/t/about-the-incognito-community/373',
     target: '_blank',
     isLink: true,
+  },
+  {
+    name: 'Earnings',
+    path: routeEarnings,
   },
 ];
 

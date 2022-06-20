@@ -9,7 +9,7 @@ export interface IRouteProps extends RouteProps {
   component: FunctionComponent | any;
   exact: boolean;
 }
-
+export { route as routeEarnings } from './Earnings/Earnings.route';
 export { default as MainRoute } from './MainRoute';
 export { route as routeMarket } from './Market/Market.route';
 export { route as routePeggingApps } from './PeggingApp/PeggingApp.route';
