@@ -1,22 +1,14 @@
 import SectionHead from '@components/SectionHead';
+import phoneIncognitoValidator from '@images/phone-incognito-validator.png';
 import phoneTransactionHistory from '@images/phone-transaciton-history.png';
 import animationData from '@src/assets/hexagon-animation.json';
-import { Button, Col, Row } from 'antd';
+import { Button } from 'antd';
 import { memo } from 'react';
-import Lottie from 'react-lottie';
 
 import HexagonAnimation from './HexagonAnimation';
 import { Styled } from './TopView.styled';
 
 const TopView = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
   return (
     <Styled>
       <div className="row">
@@ -24,7 +16,19 @@ const TopView = () => {
           <div className="animation-container">
             <HexagonAnimation />
           </div>
-          <img className="image-container" src={phoneTransactionHistory} alt="" />
+
+          <div className="image-wrapper">
+            <img
+              className="image-container"
+              src={phoneTransactionHistory}
+              alt="phone-transaction-history"
+            />
+            <img
+              className="image-container-1"
+              src={phoneIncognitoValidator}
+              alt="phone-incognito-validator"
+            />
+          </div>
         </div>
 
         <div className="space" />

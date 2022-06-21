@@ -17,7 +17,14 @@ import { Link } from 'rebass';
 
 import { DrawerStyled, MenuDropdown, Styled } from './Header.styled';
 
-const menuItem = [
+interface MenuItemProps {
+  name: string;
+  path: string;
+  isLink?: string;
+  target?: string;
+}
+
+const menuItem: MenuItemProps[] = [
   {
     name: 'Markets',
     path: routeMarket,

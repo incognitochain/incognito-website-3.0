@@ -1,22 +1,12 @@
 import SectionHead from '@components/SectionHead';
-import phoneTransactionHistory from '@images/phone-transaciton-history.png';
-import animationData from '@src/assets/hexagon-animation.json';
+import phoneIncognitoValidator from '@images/phone-incognito-validator.png';
+import phoneTokenList from '@images/phone-token-list.png';
 import { Button, Col, Row } from 'antd';
-import { memo } from 'react';
-import Lottie from 'react-lottie';
 
 import { Styled } from './BottomView.styled';
 import HexagonAnimation from './HexagonAnimation';
 
 const BottomView = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
   return (
     <Styled>
       <div className="row">
@@ -61,14 +51,24 @@ const BottomView = () => {
             </button>
           </div>
         </div>
+        <div className="space" />
         <div className="left">
           <div className="animation-container">
             <HexagonAnimation />
           </div>
-          <img className="image-container" src={phoneTransactionHistory} alt="" />
+          <div className="image-wrapper">
+            <img
+              className="image-container"
+              src={phoneTokenList}
+              alt="phone-token-list"
+            />
+            <img
+              className="image-container-1"
+              src={phoneIncognitoValidator}
+              alt="phone-incognito-validator"
+            />
+          </div>
         </div>
-
-        <div className="space" />
       </div>
     </Styled>
   );

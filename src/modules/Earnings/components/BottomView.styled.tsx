@@ -9,7 +9,6 @@ export const Styled = styled.div`
     .left {
       position: relative;
       display: flex;
-      /* border: 1px solid red; */
       align-items: center;
       justify-content: center;
       flex: 1;
@@ -22,11 +21,25 @@ export const Styled = styled.div`
         max-height: 860px;
         z-index: 0;
       }
-
+      .image-wrapper {
+        z-index: 1;
+        width: 100%;
+        height: auto;
+      }
+      .image-wrapper:hover .image-container-1 {
+        display: block;
+      }
+      .image-wrapper:hover .image-container {
+        display: none;
+      }
+      .image-container-1 {
+        display: none;
+        width: 100%;
+        height: auto;
+      }
       .image-container {
         width: 100%;
         height: auto;
-        z-index: 1;
       }
     }
 
@@ -87,13 +100,16 @@ export const Styled = styled.div`
         height: 50px;
       }
       .left .animation-container {
-        max-width: 320px;
-        max-height: 320px;
+        max-width: 350px;
+        max-height: 350px;
       }
-
       .left .image-container {
-        max-width: 320px;
-        max-height: 320px;
+        max-width: 350px;
+        max-height: 350px;
+      }
+      .left .image-container-1 {
+        max-width: 350px;
+        max-height: 350px;
       }
     `}
   }
