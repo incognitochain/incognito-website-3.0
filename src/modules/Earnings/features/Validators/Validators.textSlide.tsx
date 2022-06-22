@@ -1,6 +1,5 @@
-import voteIllustration from '@images/vote-illustration.png';
 import { memo } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styled, { ITheme } from 'styled-components';
 
 const Styled = styled.div`
@@ -8,7 +7,6 @@ const Styled = styled.div`
   height: 250px;
   max-height: 250px;
   display: inline-block;
-
   .wrapper {
     margin: 0px -200px;
     max-width: 100%;

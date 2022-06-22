@@ -1,52 +1,14 @@
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import voteIllustration from '@images/vote-illustration.png';
-import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
 import { memo } from 'react';
-import React, { useState } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
-import styled, { ITheme } from 'styled-components';
-// function getItem(
-//   label: React.ReactNode,
-//   key: React.Key,
-//   icon?: React.ReactNode,
-//   children?: MenuItem[],
-//   type?: 'group',
-// ): MenuItem {
-//   return {
-//     key,
-//     icon,
-//     children,
-//     label,
-//     type,
-//   } as MenuItem;
-// }
-// const items: any[] = [
-//   getItem('Navigation One', 'sub1', <MailOutlined />, [
-//     getItem('Option 1', '1'),
-//     getItem('Option 2', '2'),
-//     getItem('Option 3', '3'),
-//     getItem('Option 4', '4'),
-//   ]),
-//   getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
-//     getItem('Option 5', '5'),
-//     getItem('Option 6', '6'),
-//     getItem('Submenu', 'sub3', null, [
-//       getItem('Option 7', '7'),
-//       getItem('Option 8', '8'),
-//     ]),
-//   ]),
-//   getItem('Navigation Three', 'sub4', <SettingOutlined />, [
-//     getItem('Option 9', '9'),
-//     getItem('Option 10', '10'),
-//     getItem('Option 11', '11'),
-//     getItem('Option 12', '12'),
-//   ]),
-// ];
-// type MenuItem = Required<MenuProps>['items'][number];
+import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 
-// // submenu keys of first level
-// const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
+import AskQuestionItem from './components/AskQuestionItem';
+import AskQuestionItem1 from './components/AskQuestionItem.Item1';
+import AskQuestionItem2 from './components/AskQuestionItem.Item2';
+import AskQuestionItem3 from './components/AskQuestionItem.Item3';
+import AskQuestionItem4 from './components/AskQuestionItem.Item4';
+import AskQuestionItem5 from './components/AskQuestionItem.Item5';
+import AskQuestionItem6 from './components/AskQuestionItem.Item6';
 
 const Styled = styled.div`
   margin-top: 120px;
@@ -59,7 +21,6 @@ const Styled = styled.div`
 
   .leftView {
     display: flex;
-    /* background-color: red; */
     flex: 1;
     flex-direction: column;
 
@@ -71,23 +32,12 @@ const Styled = styled.div`
   .rightView {
     display: flex;
     flex: 1;
-    /* background-color: blue; */
     flex-direction: column;
   }
 `;
 
 const ValidatorAskedQuestion = () => {
   const history = useHistory();
-  const [openKeys, setOpenKeys] = useState(['sub1']);
-
-  // const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
-  //   const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
-  //   if (rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
-  //     setOpenKeys(keys);
-  //   } else {
-  //     setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
-  //   }
-  // };
   return (
     <Styled>
       <div className="leftView">
@@ -95,13 +45,36 @@ const ValidatorAskedQuestion = () => {
         <p className="sub-title sub-title-text">See all question</p>
       </div>
       <div className="rightView">
-        {/* <Menu
-          mode="inline"
-          openKeys={openKeys}
-          onOpenChange={onOpenChange}
-          style={{ width: 256 }}
-          items={items}
-        /> */}
+        <AskQuestionItem
+          title="What does it mean for Nodes to power privacy?"
+          subItem={<AskQuestionItem1 />}
+        />
+        <AskQuestionItem
+          title="How do Nodes make money?"
+          subItem={<AskQuestionItem2 />}
+        />
+        <AskQuestionItem
+          title="What does it mean for Nodes to power privacy?"
+          subItem={<AskQuestionItem1 />}
+        />
+        <AskQuestionItem
+          title="In which currency do Nodes earn?"
+          subItem={<AskQuestionItem3 />}
+        />
+
+        <AskQuestionItem
+          title="Is overstaking permitted?"
+          subItem={<AskQuestionItem4 />}
+        />
+
+        <AskQuestionItem
+          title="What does the lifecycle of a Node look like?"
+          subItem={<AskQuestionItem5 />}
+        />
+        <AskQuestionItem
+          title="Is there slashing on the network?"
+          subItem={<AskQuestionItem6 />}
+        />
       </div>
     </Styled>
   );

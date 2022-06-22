@@ -1,7 +1,6 @@
-import voteIllustration from '@images/vote-illustration.png';
 import { memo } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
-import styled, { ITheme } from 'styled-components';
+import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Styled = styled.div`
   margin-top: 140px;

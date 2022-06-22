@@ -9,6 +9,7 @@ import ValidatorStackingOptions from './Validators.stackingOptions';
 import { Styled } from './Validators.styled';
 import ValidatorsSubRoute from './Validators.subRoute';
 import ValidatorTextSlide from './Validators.textSlide';
+import ValidatorTutorial from './Validators.tutorial';
 
 const Validators = () => {
   const history = useHistory();
@@ -21,6 +22,7 @@ const Validators = () => {
       <ValidatorTextSlide />
       <ValidatorHowToStack />
       <ValidatorAskedQuestion />
+      <ValidatorTutorial />
     </Styled>
   );
 };

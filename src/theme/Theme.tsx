@@ -325,6 +325,15 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .ant-btn-round.ant-btn-lg {
       height: 60px;
     }
+
+    .description {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.01em;
+      white-space: pre-wrap;
+      color: #757575;
+    }
+
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
         .default-padding-horizontal {
           padding-left: 105px;

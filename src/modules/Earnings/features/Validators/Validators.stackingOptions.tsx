@@ -1,7 +1,7 @@
 import nodeImg from '@images/node-img.png';
 import vNodeScriptImg from '@images/vnode-script.png';
 import { memo } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styled, { ITheme } from 'styled-components';
 
 const Styled = styled.div`
