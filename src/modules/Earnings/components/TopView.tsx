@@ -1,14 +1,17 @@
 import SectionHead from '@components/SectionHead';
 import phoneIncognitoValidator from '@images/phone-incognito-validator.png';
 import phoneTransactionHistory from '@images/phone-transaciton-history.png';
+import { route as ValidatorRoute } from '@modules/Earnings/features/Validators/Validators.route';
 import animationData from '@src/assets/hexagon-animation.json';
 import { Button } from 'antd';
 import { memo } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 
 import HexagonAnimation from './HexagonAnimation';
 import { Styled } from './TopView.styled';
 
 const TopView = () => {
+  const history = useHistory();
   return (
     <Styled>
       <div className="row">
@@ -64,6 +67,7 @@ const TopView = () => {
             <button
               onClick={() => {
                 console.log(' More detail TO DO ');
+                history.push(ValidatorRoute);
               }}>
               <p className="more-detail-title">More detail</p>
             </button>

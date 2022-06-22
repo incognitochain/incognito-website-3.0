@@ -9,6 +9,8 @@ const enhance = (WrappedComponent: FunctionComponent) => (props: any) => {
   const handleGetRoutes = async () => {
     const allRoutes: IRouteProps[] = [];
     context.keys().map((path) => allRoutes.push(context(`${path}`).default));
+
+    console.log('allRoutes ', allRoutes);
     setRoutes([...allRoutes]);
   };
   React.useEffect(() => {
