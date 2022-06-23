@@ -1,6 +1,6 @@
 import { Button, Grid } from 'antd';
 import { Col, Divider, Row } from 'antd';
-import React, { memo } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Flex } from 'rebass';
 import styled, { ITheme } from 'styled-components';
@@ -136,9 +136,16 @@ const Styled = styled.div`
 `;
 
 const ValidatorHowToStack = () => {
-  const history = useHistory();
+  const myRef = useRef<any>(undefined);
+
+  useEffect(() => {
+    if (myRef) {
+      myRef && myRef?.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, []);
+
   return (
-    <Styled>
+    <Styled ref={myRef}>
       <div className="topView">
         <div className="topLeft">
           <p className="title fw-medium main-title-text">How to stake</p>

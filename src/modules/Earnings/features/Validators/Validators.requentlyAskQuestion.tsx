@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useHistory } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { ITheme } from 'styled-components';
 
 import AskQuestionItem from './components/AskQuestionItem';
 import AskQuestionItem1 from './components/AskQuestionItem.Item1';
@@ -34,6 +34,14 @@ const Styled = styled.div`
     flex: 1;
     flex-direction: column;
   }
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+      flex-direction: column;
+  `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+      flex-direction: column;
+  `}
 `;
 
 const ValidatorAskedQuestion = () => {

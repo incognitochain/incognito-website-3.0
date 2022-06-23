@@ -6,10 +6,9 @@ const Styled = styled.div`
   margin-top: 100px;
   height: 250px;
   max-height: 250px;
-  display: inline-block;
+  display: flex;
   .wrapper {
     margin: 0px -200px;
-    max-width: 100%;
     overflow: hidden;
   }
 
