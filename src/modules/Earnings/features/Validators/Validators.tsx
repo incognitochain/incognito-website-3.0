@@ -15,14 +15,14 @@ const Validators = () => {
   const history = useHistory();
   return (
     <Styled className="default-padding-horizontal default-margin-bottom">
-      <ValidatorsSubRoute />
-      <ValidatorsJoinNetwork />
+      {/* <ValidatorsSubRoute />
+      <ValidatorsJoinNetwork /> */}
       <ValidatorRewardEstimation />
-      <ValidatorStackingOptions />
+      {/* <ValidatorStackingOptions />
       <ValidatorTextSlide />
       <ValidatorHowToStack />
       <ValidatorAskedQuestion />
-      <ValidatorTutorial />
+      <ValidatorTutorial /> */}
     </Styled>
   );
 };

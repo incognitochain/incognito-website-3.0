@@ -6,6 +6,7 @@ interface IENVS {
   REACT_APP_DOMAIN_URL: string;
   REACT_APP_COIN_SERVICE_URL: string;
   REACT_APP_SERVICE_URL: string;
+  REACT_APP_EXPLORER_SERVICE_URL: string;
 }
 
 const defaultEnvs = {
@@ -14,6 +15,7 @@ const defaultEnvs = {
   REACT_APP_DOMAIN_URL: '',
   REACT_APP_COIN_SERVICE_URL: '',
   REACT_APP_SERVICE_URL: '',
+  REACT_APP_EXPLORER_SERVICE_URL: '',
 };
 
 export const getEnvs = () => {

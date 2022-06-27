@@ -1,4 +1,8 @@
-import { memo } from 'react';
+import apiExplorerService from '@src/services/rpcClient/apiExplorerService';
+import { convertISOtoMMYYYY } from '@src/utils/timeUtils';
+import { formatPrice } from '@utils/convert';
+import moment from 'moment';
+import React, { memo, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
   Area,
@@ -13,6 +17,29 @@ import {
   YAxis,
 } from 'recharts';
 import styled, { ITheme } from 'styled-components';
+interface ChartDataItem {
+  PRVRewardInMonth: number;
+  activeValidator: number;
+  averageAPR: number;
+  beaconHeight: number;
+  startOfMonth: string;
+}
+interface ChartData {
+  activeValidatorChartData: ChartDataItem[];
+  circulatingSupply: number;
+  estimatedAPR: number;
+  totalPRVStaked: number;
+  totalValidator: number;
+}
+
+const ChartDataInit: ChartData = {
+  activeValidatorChartData: [],
+  circulatingSupply: 0,
+  estimatedAPR: 0,
+  totalPRVStaked: 0,
+  totalValidator: 0,
+};
+
 const data = [
   {
     name: 'Page A',
@@ -98,13 +125,14 @@ const Styled = styled.div`
   }
   .row {
     flex: 1;
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
     .leftView {
       border: 2px solid #363636;
       border-radius: 16px;
       display: flex;
-      width: 60%;
+      flex: 0.75;
       height: 500px;
       max-height: 500px;
 
@@ -117,14 +145,11 @@ const Styled = styled.div`
       }
     }
 
-    .spaceView {
-      width: 20px;
-    }
-
     .rightView {
+      margin-left: 50px;
       display: flex;
-      flex: 1;
       padding: 20px;
+      flex: 0.25;
       border: 2px solid #363636;
       border-radius: 16px;
       /* background-color: lightgreen; */
@@ -155,42 +180,99 @@ const Styled = styled.div`
 
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
       flex-direction: column;
-      .spaceView {
-        height: 20px
+      .rightView {
+        flex: 1;
+      }
+      .leftView {
+        flex: 1;
       }
     `}
 
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       flex-direction: column;
-      .spaceView {
-        height: 20px
-      }
+      .rightView {
+      flex: 1;
+    }
+
+    .leftView {
+      flex: 1;
+    }
     `}
 
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
     flex-direction: column;
-    .spaceView {
-      height: 20px
+    .rightView {
+      flex: 1;
     }
+
+    .leftView {
+      flex: 1;
+    }
+  `}
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+    flex-direction: row;
   `}
   }
 `;
 
+const CustomizedAxisTick = (props: any) => {
+  const { x, y, stroke, payload } = props;
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text x={0} y={0} dy={16} textAnchor="end" fill="#FFFFFF" transform="rotate(-35)">
+        {payload.value}
+      </text>
+    </g>
+  );
+};
 const ValidatorRewardEstimation = () => {
-  const history = useHistory();
+  // const history = useHistory();
+  const [dataChart, setDataChart] = useState<ChartData>(ChartDataInit);
+  const [drawDataChart, setDrawDataChart] = useState<any[]>([]);
+
+  const getData = async () => {
+    const dataChart: ChartData = await apiExplorerService.getLandingValidatorData();
+    setDataChart(dataChart);
+    convertData(dataChart.activeValidatorChartData || []);
+  };
+
+  const convertData = (listData: ChartDataItem[]) => {
+    const activeValidatorChartData: ChartDataItem[] = listData;
+    const result = activeValidatorChartData.map((item) => ({
+      time: convertISOtoMMYYYY(item.startOfMonth),
+      uv: 590,
+      pv: 800,
+      amt: 1400,
+    }));
+    setDrawDataChart(result);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <Styled>
       <p className="title fw-medium main-title-text">Rewards Estimation</p>
       <div className="row">
         <div className="leftView">
           <ResponsiveContainer className="chart-container">
-            <ComposedChart data={data}>
+            <ComposedChart data={drawDataChart}>
               <CartesianGrid
                 stroke="#363636"
                 vertical={false}
-                horizontal={{ height: 22, width: '100%' }}
+                horizontal={{ width: '100%' }}
               />
-              <XAxis dataKey="name" className="timeText" stroke="#FFFFFF" />
+              <XAxis
+                dataKey="time"
+                className="timeText"
+                stroke="#FFFFFF"
+                height={50}
+                minTickGap={0}
+                tickMargin={10}
+                angle={40}
+                width={10}
+              />
               <YAxis stroke="#FFFFFF" />
               <Tooltip />
               <Bar dataKey="pv" barSize={25} fill="#1A73E8" />
@@ -198,34 +280,33 @@ const ValidatorRewardEstimation = () => {
             </ComposedChart>
           </ResponsiveContainer>
         </div>
-        <div className="spaceView"></div>
         <div className="rightView">
           <div className="tableContent">
             <p className="text2 title">Circulating supply:</p>
             <div className="rowTableView">
-              <p>999,999.00</p>
+              <p>{formatPrice({ price: dataChart.circulatingSupply })}</p>
               <p>PRV</p>
             </div>
             <p className="text2 title">Total PRV staked:</p>
             <div className="rowTableView">
-              <p>999,999.00</p>
+              <p>{formatPrice({ price: dataChart.totalPRVStaked })}</p>
               <p>PRV</p>
             </div>
 
             <p className="text2 title">Estimated APR:</p>
             <div className="rowTableView">
-              <p>1,000.00</p>
+              <p>{formatPrice({ price: dataChart.estimatedAPR })}</p>
               <p>%</p>
             </div>
 
             <p className="text2 title">Total validators:</p>
             <div className="rowTableView">
-              <p>999,999.00</p>
+              <p>{formatPrice({ price: dataChart.totalValidator })}</p>
             </div>
 
             <p className="text2 title">Statistics on</p>
             <div className="rowTableView">
-              <p>mm/dd/yy</p>
+              <p>{convertISOtoMMYYYY('2022-06-27T07:11:11.356Z')}</p>
             </div>
           </div>
         </div>
