@@ -1,8 +1,6 @@
-import { Button, Grid } from 'antd';
-import { Col, Divider, Row } from 'antd';
-import React, { memo, useEffect, useRef } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Flex } from 'rebass';
+import { Button, Col, Row } from 'antd';
+import { memo, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled, { ITheme } from 'styled-components';
 
 const ItemStyled = styled.div`
@@ -137,9 +135,11 @@ const Styled = styled.div`
 
 const ValidatorHowToStack = () => {
   const myRef = useRef<any>(undefined);
+  const location = useLocation();
+  const state = location.state as { activeScroll: boolean };
 
   useEffect(() => {
-    if (myRef) {
+    if (myRef && state && state.activeScroll) {
       myRef && myRef?.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }, []);

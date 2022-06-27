@@ -9,7 +9,6 @@ import { NavLink, useHistory } from 'react-router-dom';
 
 import HexagonAnimation from './HexagonAnimation';
 import { Styled } from './TopView.styled';
-
 const TopView = () => {
   const history = useHistory();
   return (
@@ -56,10 +55,12 @@ const TopView = () => {
               className="button1 btn-become-validator"
               onClick={() => {
                 console.log(' Stake now TO DO ');
-                // window.open(
-                //   'https://we.incognito.org/t/how-to-setup-your-own-node-in-a-blink-of-an-eye-now-support-multi-nodes-per-host/12003',
-                //   '_blank',
-                // );
+                history.push({
+                  pathname: ValidatorRoute,
+                  state: {
+                    activeScroll: true,
+                  },
+                });
               }}>
               {'Stake now'}
             </Button>
