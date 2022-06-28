@@ -3,10 +3,12 @@ import { convertISOtoMMYYYY } from '@src/utils/timeUtils';
 import { formatPrice } from '@utils/convert';
 import moment from 'moment';
 import React, { memo, useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import { useHistory } from 'react-router-dom';
 import {
   Area,
   Bar,
+  BarChart,
   CartesianGrid,
   ComposedChart,
   Legend,
@@ -16,6 +18,10 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+
+const MAX_ACTIVE_VALIDATOR = 5000;
+const MAX_APR = 150;
+
 import styled, { ITheme } from 'styled-components';
 interface ChartDataItem {
   PRVRewardInMonth: number;
@@ -40,82 +46,7 @@ const ChartDataInit: ChartData = {
   totalValidator: 0,
 };
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 590,
-    pv: 800,
-    amt: 1400,
-  },
-  {
-    name: 'Page B',
-    uv: 868,
-    pv: 967,
-    amt: 1506,
-  },
-  {
-    name: 'Page C',
-    uv: 1397,
-    pv: 1098,
-    amt: 989,
-  },
-  {
-    name: 'Page D',
-    uv: 1480,
-    pv: 1200,
-    amt: 1228,
-  },
-  {
-    name: 'Page E',
-    uv: 1520,
-    pv: 1108,
-    amt: 1100,
-  },
-  {
-    name: 'Page F',
-    uv: 1400,
-    pv: 680,
-    amt: 1700,
-  },
-  {
-    name: 'Page F',
-    uv: 1400,
-    pv: 680,
-    amt: 1700,
-  },
-  {
-    name: 'Page F',
-    uv: 1400,
-    pv: 680,
-    amt: 1700,
-  },
-  {
-    name: 'Page F',
-    uv: 400,
-    pv: 180,
-    amt: 1700,
-  },
-  {
-    name: 'Page F',
-    uv: 680,
-    pv: 280,
-    amt: 1700,
-  },
-  {
-    name: 'Page F',
-    uv: 2400,
-    pv: 1680,
-    amt: 1700,
-  },
-  {
-    name: 'Page F',
-    uv: 1100,
-    pv: 480,
-    amt: 1700,
-  },
-];
-
-const Styled = styled.div`
+const Styled = styled.div<{ isMobile: boolean }>`
   margin-top: 140px;
   display: flex;
   flex-direction: column;
@@ -123,25 +54,25 @@ const Styled = styled.div`
   .title {
     text-align: center;
   }
+
   .row {
     flex: 1;
     margin-top: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
     .leftView {
       border: 2px solid #363636;
       border-radius: 16px;
       display: flex;
       flex: 0.75;
-      height: 500px;
-      max-height: 500px;
+      height: 600px;
+      max-height: 600px;
+      /* overflow-y: scroll; */
 
       .chart-container {
-        flex: 1;
-        display: flex;
-      }
-      .timeText {
-        color: 'white';
+        /* min-width: 1200px; */
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -152,11 +83,9 @@ const Styled = styled.div`
       flex: 0.25;
       border: 2px solid #363636;
       border-radius: 16px;
-      /* background-color: lightgreen; */
 
       .tableContent {
         flex: 1;
-        /* background-color: red; */
         flex-direction: column;
         .title {
           margin-top: 20px;
@@ -178,50 +107,65 @@ const Styled = styled.div`
       }
     }
 
-    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
-      flex-direction: column;
-      .rightView {
-        flex: 1;
-      }
-      .leftView {
-        flex: 1;
-      }
-    `}
-
-    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-      flex-direction: column;
-      .rightView {
-      flex: 1;
-    }
-
-    .leftView {
-      flex: 1;
-    }
-    `}
-
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-    flex-direction: column;
-    .rightView {
-      flex: 1;
-    }
+      display: flex;
+      flex-direction: column !important;
+      overflow-y: scroll;
+      .leftView {
+        display: flex;
+        .chart-container {
+          min-width: 1200px;
+        }
+      }
+      .rightView {
+        margin-top: 20px;
+        margin-left: 0px;
+      }
+  `}
+  }
 
-    .leftView {
-      flex: 1;
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    .row {
+      flex-direction: column;
+      .leftView {
+        flex: initial;
+        height: 600px;
+        overflow-y: scroll;
+        max-height: 600px;
+        .chart-container {
+          min-width: 1200px;
+          width: 100%;
+          height: 100%;
+      }
+
+      }
+      .rightView {
+        flex: 0;
+        margin-top: 20px;
+        margin-left: 0px;
+      }
     }
   `}
-    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
-    flex-direction: row;
-  `}
+
+  .timeText {
+    word-wrap: break-word;
+    line-break: auto;
+    text-align: center;
+  }
+
+  .wrapperClassName {
+    background-color: #363636;
+    border-radius: 8px;
   }
 `;
 
 const CustomizedAxisTick = (props: any) => {
   const { x, y, stroke, payload } = props;
   return (
-    <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={16} textAnchor="end" fill="#FFFFFF" transform="rotate(-35)">
-        {payload.value}
-      </text>
+    <g transform={`translate(${x - 28},${y - 20})`}>
+      <foreignObject x="10" y="10" width="40" height="40">
+        <p className="timeText">{payload.value}</p>
+      </foreignObject>
     </g>
   );
 };
@@ -232,17 +176,17 @@ const ValidatorRewardEstimation = () => {
 
   const getData = async () => {
     const dataChart: ChartData = await apiExplorerService.getLandingValidatorData();
+    // console.log('DATA ', dataChart);
     setDataChart(dataChart);
     convertData(dataChart.activeValidatorChartData || []);
   };
 
   const convertData = (listData: ChartDataItem[]) => {
     const activeValidatorChartData: ChartDataItem[] = listData;
-    const result = activeValidatorChartData.map((item) => ({
+    const result = activeValidatorChartData.map((item, index) => ({
       time: convertISOtoMMYYYY(item.startOfMonth),
-      uv: 590,
-      pv: 800,
-      amt: 1400,
+      APR: formatPrice({ price: item.averageAPR }),
+      'Active Validator': item.activeValidator,
     }));
     setDrawDataChart(result);
   };
@@ -252,31 +196,87 @@ const ValidatorRewardEstimation = () => {
   }, []);
 
   return (
-    <Styled>
+    <Styled isMobile={isMobile}>
       <p className="title fw-medium main-title-text">Rewards Estimation</p>
       <div className="row">
         <div className="leftView">
           <ResponsiveContainer className="chart-container">
-            <ComposedChart data={drawDataChart}>
+            <ComposedChart
+              data={drawDataChart}
+              margin={{
+                top: 20,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}>
               <CartesianGrid
                 stroke="#363636"
                 vertical={false}
+                strokeDasharray="3 3"
                 horizontal={{ width: '100%' }}
               />
               <XAxis
                 dataKey="time"
-                className="timeText"
                 stroke="#FFFFFF"
                 height={50}
                 minTickGap={0}
                 tickMargin={10}
                 angle={40}
                 width={10}
+                tick={<CustomizedAxisTick />}
               />
-              <YAxis stroke="#FFFFFF" />
-              <Tooltip />
-              <Bar dataKey="pv" barSize={25} fill="#1A73E8" />
-              <Line type="monotone" dataKey="uv" stroke="red" fill={'#1A73E8'} />
+
+              <Tooltip
+                wrapperClassName="wrapperClassName"
+                contentStyle={{
+                  backgroundColor: '#363636',
+                  fontWeight: 600,
+                  fontSize: 16,
+                }}
+                labelStyle={{
+                  color: '#9C9C9C',
+                  fontWeight: 400,
+                  fontSize: 16,
+                }}
+              />
+              <Legend />
+              <YAxis
+                yAxisId="left"
+                orientation="left"
+                stroke="#1A73E8"
+                padding={{
+                  top: 50,
+                }}
+                type="number"
+                domain={[0, MAX_ACTIVE_VALIDATOR]}
+                tickCount={6}
+                allowDataOverflow={true}
+              />
+              <Bar
+                yAxisId="left"
+                dataKey="Active Validator"
+                fill="#1A73E8"
+                barSize={35}
+              />
+
+              <YAxis
+                stroke="#FFFFFF"
+                orientation="right"
+                padding={{
+                  top: 50,
+                }}
+                domain={[0, MAX_APR]}
+                tickCount={6}
+              />
+              <Line
+                type="monotone"
+                orientation="right"
+                strokeWidth={0.8}
+                dataKey="APR"
+                dot={{ stroke: '#FFFFFF', strokeWidth: 1, r: 4, strokeDasharray: '' }}
+                stroke="#FFFFFF"
+                fill={'#FFFFFF'}
+              />
             </ComposedChart>
           </ResponsiveContainer>
         </div>
@@ -306,7 +306,7 @@ const ValidatorRewardEstimation = () => {
 
             <p className="text2 title">Statistics on</p>
             <div className="rowTableView">
-              <p>{convertISOtoMMYYYY('2022-06-27T07:11:11.356Z')}</p>
+              <p>{moment(new Date().toISOString()).format('MM/DD/YYYY')}</p>
             </div>
           </div>
         </div>
