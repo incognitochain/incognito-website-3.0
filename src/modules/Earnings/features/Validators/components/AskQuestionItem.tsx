@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const MenuItemStyled = styled.div`
@@ -115,23 +115,24 @@ interface AskQuestionItemProps {
   isActive?: boolean;
   title?: string;
   subItem?: React.ReactNode;
+  itemOnClick: (key: string) => void;
 }
 const AskQuestionItem = (props: AskQuestionItemProps) => {
-  const { title = '', subItem = true, isActive = false } = props;
+  const { title = '', subItem = true, isActive = false, itemOnClick = () => {} } = props;
 
   const [expand, setExpand] = useState(false);
 
-  useLayoutEffect(() => {
-    console.log('AA');
+  useEffect(() => {
     setExpand(isActive);
-  }, []);
+  }, [isActive]);
+
   return (
     <MenuItemStyled>
       <div
         className="topView"
         onClick={() => {
-          console.log('expand ', expand);
           setExpand(!expand);
+          itemOnClick(title);
         }}>
         <p className="title sub-title-text">{title}</p>
         <div className="icon">
