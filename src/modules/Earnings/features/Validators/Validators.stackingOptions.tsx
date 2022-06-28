@@ -1,9 +1,9 @@
+import SectionHead from '@components/SectionHead';
 import nodeImg from '@images/node-img.png';
 import vNodeScriptImg from '@images/vnode-script.png';
 import { memo } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled, { ITheme } from 'styled-components';
-
 const Styled = styled.div`
   margin-top: 140px;
   display: flex;
@@ -36,7 +36,6 @@ const Styled = styled.div`
       height: 400px;
       padding-top: 40px;
       padding-left: 40px;
-      max-height: 440px;
       border-radius: 24px;
       background-color: #252525;
 
@@ -44,13 +43,20 @@ const Styled = styled.div`
         align-self: start;
       }
 
-      .image-container {
-        position: absolute;
-        width: 95%;
-        height: auto;
-        bottom: 0px;
-        right: 0px;
+      .vNodeScriptImgContainer {
+        margin-top: 10px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .image-container {
+          width: 100%;
+          height: auto;
+        }
       }
+
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+      `}
     }
     .space {
       width: 40px;
@@ -68,6 +74,7 @@ const Styled = styled.div`
 
       .left {
         flex: 1;
+        display: flex;
         padding-top: 40px;
         padding-left: 40px;
         flex-direction: column;
@@ -77,6 +84,14 @@ const Styled = styled.div`
         .sub-title-text {
           align-self: start;
           text-align: left;
+        }
+
+        .wrapper-section-head {
+          margin-top: 10px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
         }
       }
 
@@ -102,20 +117,6 @@ const Styled = styled.div`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
       .row {
         flex-direction: column;
-        .leftView {
-          position: relative;
-          align-items: flex-start;
-          max-height: none;
-          padding-top: 40px;
-          padding-left: 40px;
-          border-radius: 24px;
-
-          .image-container {
-            margin-top: 20px;
-            position: relative;
-            width: 100%;
-          }
-        }
         .space {
           height: 40px;
         }
@@ -125,19 +126,6 @@ const Styled = styled.div`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       .row {
         flex-direction: column;
-        .leftView {
-          position: relative;
-          align-items: flex-start;
-          padding-top: 40px;
-          padding-left: 40px;
-          max-height: none;
-          border-radius: 24px;
-
-          .image-container {
-            margin-top: 20px;
-            position: relative;
-          }
-        }
         .space {
           height: 40px;
         }
@@ -158,7 +146,9 @@ const ValidatorStackingOptions = () => {
         <div className="virualNodeView">
           <p className="title fw-medium main-title-text">Virtual Node</p>
           <p className="sub-title-text">Setup your node in only 1 line of code.</p>
-          <img className="image-container" src={vNodeScriptImg} alt="vnode-script" />
+          <div className="vNodeScriptImgContainer">
+            <img className="image-container" src={vNodeScriptImg} alt="vnode-script" />
+          </div>
         </div>
         <div className="space"></div>
         <div className="physicalNodeView">
@@ -167,6 +157,9 @@ const ValidatorStackingOptions = () => {
             <p className="sub-title-text">
               A plug and play hardware device for ease of use.
             </p>
+            <div className="wrapper-section-head">
+              <SectionHead title="coming soon" />
+            </div>
           </div>
           <div className="right">
             <img className="image-container1" src={nodeImg} alt="node" />

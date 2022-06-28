@@ -126,6 +126,10 @@ const Styled = styled.div`
     }
   }
 
+  .a {
+    margin-top: 10px;
+  }
+
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
   `}
 
