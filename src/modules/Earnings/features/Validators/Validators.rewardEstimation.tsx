@@ -67,10 +67,8 @@ const Styled = styled.div<{ isMobile: boolean }>`
       flex: 0.75;
       height: 600px;
       max-height: 600px;
-      /* overflow-y: scroll; */
 
       .chart-container {
-        /* min-width: 1200px; */
         width: 100%;
         height: 100%;
       }
@@ -83,9 +81,11 @@ const Styled = styled.div<{ isMobile: boolean }>`
       flex: 0.25;
       border: 2px solid #363636;
       border-radius: 16px;
+      /* background-color: lightgreen; */
 
       .tableContent {
         flex: 1;
+        /* background-color: red; */
         flex-direction: column;
         .title {
           margin-top: 20px;
@@ -121,7 +121,24 @@ const Styled = styled.div<{ isMobile: boolean }>`
         margin-top: 20px;
         margin-left: 0px;
       }
-  `}
+    `}/* ${({ theme }: { theme: ITheme }) =>
+      theme.mediaWidth.upToSupperLarge<{ isMobile: boolean }>`
+      display: flex;
+      flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')} !important;
+      background-color: blue;
+      .leftView {
+        display: flex;
+        flex: ${({ isMobile }) => (isMobile ? 'initial' : '0.75')}; ;
+        .chart-container {
+          min-width:  ${({ isMobile }) => (isMobile ? '1200px' : '0px')};;
+        }
+      }
+      .rightView {
+        flex: : ${({ isMobile }) => (isMobile ? '0' : '0.25')};
+        margin-top: 20px;
+        margin-left: 0px;
+      }
+    `} */
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
@@ -136,8 +153,7 @@ const Styled = styled.div<{ isMobile: boolean }>`
           min-width: 1200px;
           width: 100%;
           height: 100%;
-      }
-
+        }
       }
       .rightView {
         flex: 0;
