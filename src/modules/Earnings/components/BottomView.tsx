@@ -34,20 +34,22 @@ const BottomView = () => {
               size="large"
               className="button1 btn-become-validator"
               onClick={() => {
-                console.log(' Provide now TO DO ');
-                // window.open(
-                //   'https://we.incognito.org/t/how-to-setup-your-own-node-in-a-blink-of-an-eye-now-support-multi-nodes-per-host/12003',
-                //   '_blank',
-                // );
+                window.open(
+                  'https://we.incognito.org/t/how-to-contribute-liquidity-and-earn-rewards/15254',
+                  '_blank',
+                );
               }}>
               {'Provide now'}
             </Button>
 
             <button
               onClick={() => {
-                console.log(' More detail TO DO ');
+                window.open(
+                  'https://we.incognito.org/t/incognito-exchange-liquidity-mining/16083',
+                  '_blank',
+                );
               }}>
-              <p className="more-detail-title">More detail</p>
+              <p className="more-detail-title">More details</p>
             </button>
           </div>
         </div>
