@@ -12,7 +12,8 @@ const Styled = styled.div`
 
   .sub {
     color: white;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     text-align: center;
   }
 

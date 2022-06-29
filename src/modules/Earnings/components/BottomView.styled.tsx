@@ -26,17 +26,6 @@ export const Styled = styled.div`
         width: 100%;
         height: auto;
       }
-      .image-wrapper:hover .image-container-1 {
-        display: block;
-      }
-      .image-wrapper:hover .image-container {
-        display: none;
-      }
-      .image-container-1 {
-        display: none;
-        width: 100%;
-        height: auto;
-      }
       .image-container {
         width: 100%;
         height: auto;

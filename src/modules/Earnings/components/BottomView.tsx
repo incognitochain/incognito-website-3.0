@@ -64,11 +64,6 @@ const BottomView = () => {
               src={phoneTokenList}
               alt="phone-token-list"
             />
-            <img
-              className="image-container-1"
-              src={phoneIncognitoValidator}
-              alt="phone-incognito-validator"
-            />
           </div>
         </div>
       </div>

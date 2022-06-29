@@ -96,12 +96,19 @@ const Styled = styled.div`
       flex-direction: row;
       align-items: center;
       button {
-        margin-left: 10px;
+        margin-right: 10px;
         cursor: pointer;
       }
+
+      .prvButton {
+        margin-left: 10px;
+      }
+
       p {
+        font-size: 17px;
+        line-height: 19px;
+        border-bottom: 1px solid;
         cursor: pointer;
-        text-decoration: underline;
         :hover {
           opacity: 0.7;
         }
@@ -155,17 +162,28 @@ const ValidatorHowToStack = () => {
           <p className="title fw-medium main-title-text">How to stake</p>
         </div>
         <div className="topRight">
-          <p>See full walkthrough</p>
-          <button onClick={() => {}}>
-            <Button
-              type="primary"
-              shape="round"
-              size="large"
-              className="button1"
-              onClick={() => {}}>
-              {'Buy PRV'}
-            </Button>
+          <button
+            onClick={() => {
+              window.open(
+                'https://we.incognito.org/t/how-to-host-a-virtual-node/194',
+                '_blank',
+              );
+            }}>
+            <p>See full walkthrough</p>
           </button>
+          <Button
+            type="primary"
+            shape="round"
+            size="large"
+            className="button1 prvButton"
+            onClick={() => {
+              window.open(
+                'https://we.incognito.org/t/how-to-buy-prv-in-3-steps/793',
+                '_blank',
+              );
+            }}>
+            {'Buy PRV'}
+          </Button>
         </div>
       </div>
       <div className="stackItemListView">

@@ -57,7 +57,7 @@ const Styled = styled.div<{ isMobile: boolean }>`
 
   .row {
     flex: 1;
-    margin-top: 30px;
+    margin-top: 60px;
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
     .leftView {
