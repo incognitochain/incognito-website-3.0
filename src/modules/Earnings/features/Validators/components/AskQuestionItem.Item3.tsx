@@ -19,11 +19,7 @@ const AskQuestionItem3 = () => {
       <p className="description">
         Nodes will earn block rewards and transaction fees which is paid in PRV.
       </p>
-      <div
-        className="read-more description"
-        onClick={() => {
-          console.log('TO DO ');
-        }}>
+      <div className="read-more description" onClick={() => {}}>
         Read more on Sharding
       </div>
     </Styled>

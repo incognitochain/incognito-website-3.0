@@ -54,7 +54,6 @@ const TopView = () => {
               size="large"
               className="button1 btn-become-validator"
               onClick={() => {
-                console.log(' Stake now TO DO ');
                 history.push({
                   pathname: ValidatorRoute,
                   state: {
@@ -67,7 +66,6 @@ const TopView = () => {
 
             <button
               onClick={() => {
-                console.log(' More detail TO DO ');
                 history.push(ValidatorRoute);
               }}>
               <p className="more-detail-title">More detail</p>

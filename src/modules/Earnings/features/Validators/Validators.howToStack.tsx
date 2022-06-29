@@ -162,9 +162,7 @@ const ValidatorHowToStack = () => {
               shape="round"
               size="large"
               className="button1"
-              onClick={() => {
-                console.log(' Stake now TO DO ');
-              }}>
+              onClick={() => {}}>
               {'Buy PRV'}
             </Button>
           </button>

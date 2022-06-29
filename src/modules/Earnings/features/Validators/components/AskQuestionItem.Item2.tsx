@@ -23,11 +23,7 @@ const AskQuestionItem2 = () => {
         <br /> - Transaction fees: earn from the transactions in a specific shard that
         Node is assigned to.
       </p>
-      <div
-        className="read-more description"
-        onClick={() => {
-          console.log('TO DO ');
-        }}>
+      <div className="read-more description" onClick={() => {}}>
         Read more on Sharding
       </div>
     </Styled>

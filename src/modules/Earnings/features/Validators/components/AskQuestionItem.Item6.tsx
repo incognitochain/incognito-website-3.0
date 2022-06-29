@@ -24,11 +24,7 @@ const AskQuestionItem6 = () => {
         it at a later time. Also, rewards from slashed nodes will be distributed to
         remaining nodes in a committee
       </p>
-      <div
-        className="read-more description"
-        onClick={() => {
-          console.log('TO DO ');
-        }}>
+      <div className="read-more description" onClick={() => {}}>
         Read more on Sharding
       </div>
     </Styled>
