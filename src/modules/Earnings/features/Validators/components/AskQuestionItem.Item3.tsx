@@ -19,7 +19,14 @@ const AskQuestionItem3 = () => {
       <p className="description">
         Nodes will earn block rewards and transaction fees which is paid in PRV.
       </p>
-      <div className="read-more description" onClick={() => {}}>
+      <div
+        className="read-more description"
+        onClick={() => {
+          window.open(
+            'https://we.incognito.org/t/network-incentive-privacy-prv-mining-distribution/172',
+            '_blank',
+          );
+        }}>
         Read more on Sharding
       </div>
     </Styled>

@@ -103,6 +103,7 @@ const Styled = styled.div`
         .image-container1 {
           width: 100%;
           height: auto;
+          object-fit: cover;
         }
       }
     }

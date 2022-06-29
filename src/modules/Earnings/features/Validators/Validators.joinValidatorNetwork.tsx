@@ -22,7 +22,7 @@ const Styled = styled.div`
       line-height: 24px;
       letter-spacing: 0.01em;
       white-space: initial;
-      margin-top: 16px;
+      margin-top: 30px;
       margin-right: 40px;
     }
   }
