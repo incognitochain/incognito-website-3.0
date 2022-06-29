@@ -100,8 +100,10 @@ const Styled = styled.div`
         cursor: pointer;
       }
       p {
+        font-size: 17px;
+        line-height: 19px;
+        border-bottom: 1px solid;
         cursor: pointer;
-        text-decoration: underline;
         :hover {
           opacity: 0.7;
         }
