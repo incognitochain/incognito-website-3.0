@@ -157,8 +157,8 @@ const Styled = styled.div<{ isMobile: boolean }>`
   }
 
   .wrapperClassName {
-    background-color: #363636;
-    border-radius: 8px;
+    border-color: transparent;
+    border-radius: 14px;
   }
 `;
 
@@ -233,6 +233,8 @@ const ValidatorRewardEstimation = () => {
                 wrapperClassName="wrapperClassName"
                 contentStyle={{
                   backgroundColor: '#363636',
+                  borderColor: 'transparent',
+                  lineHeight: 2.2,
                   fontWeight: 600,
                   fontSize: 16,
                 }}
@@ -267,7 +269,6 @@ const ValidatorRewardEstimation = () => {
                 fill="#1A73E8"
                 barSize={35}
               />
-              <Bar dataKey="space" fill="transparent" />
               <YAxis
                 stroke="#FFFFFF"
                 orientation="right"
@@ -278,6 +279,7 @@ const ValidatorRewardEstimation = () => {
                 tickCount={6}
               />
               <Line
+                isAnimationActive={false}
                 type="monotone"
                 orientation="right"
                 strokeWidth={0.8}
