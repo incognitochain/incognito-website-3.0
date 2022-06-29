@@ -27,7 +27,7 @@ const AskQuestionItem3 = () => {
             '_blank',
           );
         }}>
-        Read more on Sharding
+        Read more on PRV
       </div>
     </Styled>
   );

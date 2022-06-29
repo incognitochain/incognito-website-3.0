@@ -18,8 +18,8 @@ const Validators = () => {
       <ValidatorsSubRoute />
       <ValidatorsJoinNetwork />
       <ValidatorRewardEstimation />
-      <ValidatorStackingOptions />
-      <ValidatorTextSlide />
+      {/* <ValidatorStackingOptions /> */}
+      {/* <ValidatorTextSlide /> */}
       <ValidatorHowToStack />
       <ValidatorAskedQuestion />
       <ValidatorTutorial />
