@@ -4,7 +4,12 @@ import downImg from '@images/down-icon.png';
 import logo from '@images/logo.png';
 import menuBarIcon from '@images/menu-bar.png';
 import { ReactComponent as IcClose } from '@images/svg/close-icon.svg';
-import { routeMarket, routePeggingApps, routeStructure } from '@src/modules';
+import {
+  routeEarnings,
+  routeMarket,
+  routePeggingApps,
+  routeStructure,
+} from '@src/modules';
 import { Button, Col, Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
@@ -12,7 +17,14 @@ import { Link } from 'rebass';
 
 import { DrawerStyled, MenuDropdown, Styled } from './Header.styled';
 
-const menuItem = [
+interface MenuItemProps {
+  name: string;
+  path: string;
+  isLink?: string;
+  target?: string;
+}
+
+const menuItem: MenuItemProps[] = [
   {
     name: 'Markets',
     path: routeMarket,
@@ -25,11 +37,15 @@ const menuItem = [
     name: 'Infrastructure',
     path: routeStructure,
   },
+  // {
+  //   name: 'Community',
+  //   path: 'https://we.incognito.org/t/about-the-incognito-community/373',
+  //   target: '_blank',
+  //   isLink: true,
+  // },
   {
-    name: 'Community',
-    path: 'https://we.incognito.org/t/about-the-incognito-community/373',
-    target: '_blank',
-    isLink: true,
+    name: 'Earnings',
+    path: routeEarnings,
   },
 ];
 
@@ -48,6 +64,12 @@ const moreItem = [
     name: 'Roadmap',
     path: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
     sub: 'The development',
+  },
+
+  {
+    name: 'Community',
+    path: 'https://we.incognito.org/t/about-the-incognito-community/373',
+    sub: 'The Community',
   },
 ];
 
