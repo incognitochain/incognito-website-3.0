@@ -20,7 +20,7 @@ import {
 } from 'recharts';
 
 const MAX_ACTIVE_VALIDATOR = 5000;
-const MAX_APR = 150;
+const MAX_APR = 180;
 
 import styled, { ITheme } from 'styled-components';
 interface ChartDataItem {
@@ -276,7 +276,7 @@ const ValidatorRewardEstimation = () => {
                   top: 50,
                 }}
                 domain={[0, MAX_APR]}
-                tickCount={6}
+                tickCount={8}
               />
               <Line
                 isAnimationActive={false}
