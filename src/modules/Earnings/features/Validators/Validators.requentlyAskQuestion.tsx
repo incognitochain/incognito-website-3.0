@@ -88,7 +88,7 @@ const ValidatorAskedQuestion = () => {
             });
             setActiveList(newActiveList);
           }}>
-          <p className="sub-title sub-title1 sub-title-text">See all question</p>
+          {/* <p className="sub-title sub-title1 sub-title-text">See all question</p> */}
         </button>
       </div>
       <div className="rightView">

@@ -68,7 +68,7 @@ const TopView = () => {
               onClick={() => {
                 history.push(ValidatorRoute);
               }}>
-              <p className="more-detail-title">More detail</p>
+              <p className="more-detail-title">More details</p>
             </button>
           </div>
         </div>
