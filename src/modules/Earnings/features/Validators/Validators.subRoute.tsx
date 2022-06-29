@@ -1,7 +1,7 @@
+import { routeEarnings } from '@src/modules';
 import { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import styled, { ITheme } from 'styled-components';
-
 const Styled = styled.div`
   display: flex;
   margin-top: 40px;
@@ -32,7 +32,7 @@ const ValidatorsSubRoute = () => {
       <button
         className="hover"
         onClick={() => {
-          history.goBack();
+          history.push(routeEarnings);
         }}>
         <p className="sub-title earnings-text">Earnings</p>
       </button>
