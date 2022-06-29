@@ -76,7 +76,7 @@ export const Styled = styled.div`
       }
 
       .row-button {
-        margin-top: 20px;
+        margin-top: 40px;
         display: flex;
         flex-direction: row;
         align-self: baseline;

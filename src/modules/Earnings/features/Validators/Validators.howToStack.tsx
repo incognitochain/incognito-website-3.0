@@ -101,7 +101,7 @@ const Styled = styled.div`
       }
 
       .prvButton {
-        margin-left: 10px;
+        margin-left: 40px;
       }
 
       p {

@@ -16,7 +16,7 @@ const Styled = styled.div`
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    animation: marquee 20s linear infinite;
+    animation: marquee 30s linear infinite;
   }
 
   .marquee p {

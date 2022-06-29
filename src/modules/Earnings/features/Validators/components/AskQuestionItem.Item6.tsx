@@ -24,7 +24,14 @@ const AskQuestionItem6 = () => {
         it at a later time. Also, rewards from slashed nodes will be distributed to
         remaining nodes in a committee
       </p>
-      <div className="read-more description" onClick={() => {}}>
+      <div
+        className="read-more description"
+        onClick={() => {
+          window.open(
+            'https://we.incognito.org/t/introducing-slashing-v2/13578',
+            '_blank',
+          );
+        }}>
         Read more on Sharding
       </div>
     </Styled>

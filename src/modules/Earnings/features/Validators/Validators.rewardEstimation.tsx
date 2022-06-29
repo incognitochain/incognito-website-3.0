@@ -67,6 +67,7 @@ const Styled = styled.div<{ isMobile: boolean }>`
       flex: 0.75;
       height: 600px;
       max-height: 600px;
+      min-height: 500px;
 
       .chart-container {
         width: 100%;
@@ -112,33 +113,18 @@ const Styled = styled.div<{ isMobile: boolean }>`
       flex-direction: column !important;
       overflow-y: scroll;
       .leftView {
-        display: flex;
+        border: 2px solid #363636;
+        border-radius: 16px;
         .chart-container {
           min-width: 1200px;
+          min-height: 600px;
         }
       }
       .rightView {
         margin-top: 20px;
         margin-left: 0px;
       }
-    `}/* ${({ theme }: { theme: ITheme }) =>
-      theme.mediaWidth.upToSupperLarge<{ isMobile: boolean }>`
-      display: flex;
-      flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')} !important;
-      background-color: blue;
-      .leftView {
-        display: flex;
-        flex: ${({ isMobile }) => (isMobile ? 'initial' : '0.75')}; ;
-        .chart-container {
-          min-width:  ${({ isMobile }) => (isMobile ? '1200px' : '0px')};;
-        }
-      }
-      .rightView {
-        flex: : ${({ isMobile }) => (isMobile ? '0' : '0.25')};
-        margin-top: 20px;
-        margin-left: 0px;
-      }
-    `} */
+    `}
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
@@ -151,6 +137,7 @@ const Styled = styled.div<{ isMobile: boolean }>`
         max-height: 600px;
         .chart-container {
           min-width: 1200px;
+          min-height: 400px;
           width: 100%;
           height: 100%;
         }
@@ -170,8 +157,8 @@ const Styled = styled.div<{ isMobile: boolean }>`
   }
 
   .wrapperClassName {
-    background-color: #363636;
-    border-radius: 8px;
+    border-color: transparent;
+    border-radius: 14px;
   }
 `;
 
@@ -246,6 +233,8 @@ const ValidatorRewardEstimation = () => {
                 wrapperClassName="wrapperClassName"
                 contentStyle={{
                   backgroundColor: '#363636',
+                  borderColor: 'transparent',
+                  lineHeight: 2.2,
                   fontWeight: 600,
                   fontSize: 16,
                 }}
@@ -255,7 +244,13 @@ const ValidatorRewardEstimation = () => {
                   fontSize: 16,
                 }}
               />
-              <Legend />
+              <Legend
+                iconSize={14}
+                wrapperStyle={{
+                  paddingTop: 30,
+                  paddingBottom: 30,
+                }}
+              />
               <YAxis
                 yAxisId="left"
                 orientation="left"
@@ -274,7 +269,6 @@ const ValidatorRewardEstimation = () => {
                 fill="#1A73E8"
                 barSize={35}
               />
-
               <YAxis
                 stroke="#FFFFFF"
                 orientation="right"
@@ -285,6 +279,7 @@ const ValidatorRewardEstimation = () => {
                 tickCount={6}
               />
               <Line
+                isAnimationActive={false}
                 type="monotone"
                 orientation="right"
                 strokeWidth={0.8}
