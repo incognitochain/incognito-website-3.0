@@ -32,7 +32,7 @@ const AskQuestionItem6 = () => {
             '_blank',
           );
         }}>
-        Read more on Sharding
+        Read more on Slashing
       </div>
     </Styled>
   );
