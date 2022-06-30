@@ -20,6 +20,7 @@ const MenuItemStyled = styled.div`
     .title {
       margin: 0px;
       flex: 1;
+      line-height: 132%;
       text-align: left;
       margin-right: 30px;
     }

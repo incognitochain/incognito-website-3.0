@@ -18,7 +18,7 @@ const TITLE_LIST = [
   'Is overstaking permitted?',
   'What does the lifecycle of a Node look like?',
   'Is there slashing on the network?',
-  'What`s the maximum number of validators needed?',
+  `What's the maximum number of validators needed?`,
 ];
 const Styled = styled.div`
   margin-top: 120px;

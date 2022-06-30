@@ -76,10 +76,10 @@ const Styled = styled.div<{ isMobile: boolean }>`
     }
 
     .rightView {
-      margin-left: 50px;
+      margin-left: 30px;
       display: flex;
-      padding: 20px;
-      min-width: 350px;
+      padding: 40px;
+      min-width: 400px;
       border: 2px solid #363636;
       border-radius: 16px;
 
@@ -87,21 +87,32 @@ const Styled = styled.div<{ isMobile: boolean }>`
         flex: 1;
         flex-direction: column;
         .title {
-          margin-top: 20px;
           text-align: left;
           p {
             font-weight: 400;
             font-size: 16px;
           }
+
+          ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+            p {
+              font-size: 14px;
+            }
+          `}
         }
         .rowTableView {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          margin-bottom: 30px;
           p {
             font-weight: 500;
             font-size: 24px;
           }
+          ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+            p {
+              font-size: 20px;
+            }
+          `}
         }
       }
     }
@@ -130,6 +141,9 @@ const Styled = styled.div<{ isMobile: boolean }>`
         .chart-container {
           min-width: 1200px;
         }
+      }
+      .rightView {
+        padding: 24px;
       }
     `}
   }
@@ -219,9 +233,12 @@ const ValidatorRewardEstimation = () => {
               <Tooltip
                 wrapperClassName="wrapperClassName"
                 contentStyle={{
+                  padding: 15,
+                  paddingLeft: 22,
+                  paddingRight: 22,
                   backgroundColor: '#363636',
                   borderColor: 'transparent',
-                  lineHeight: 2.2,
+                  lineHeight: 1.8,
                   fontWeight: 600,
                   fontSize: 16,
                 }}
