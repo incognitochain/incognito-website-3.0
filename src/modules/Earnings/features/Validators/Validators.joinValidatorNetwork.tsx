@@ -1,4 +1,4 @@
-import voteIllustration from '@images/vote-illustration.png';
+import validator from '@images/validator.png';
 import { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import styled, { ITheme } from 'styled-components';
@@ -11,6 +11,7 @@ const Styled = styled.div`
   max-height: 464px;
   border-radius: 24px;
   background-color: #252525;
+
   .leftView {
     display: flex;
     flex: 1;
@@ -30,19 +31,23 @@ const Styled = styled.div`
   .rightView {
     display: flex;
     flex: 1;
-    justify-content: center;
-    flex-direction: column;
+    margin-right: 50px;
     .img {
-      max-width: 464px;
-      max-height: 464px;
+      width: 100%;
+      height: auto;
       margin-left: auto;
       margin-right: auto;
+      object-fit: contain;
     }
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
       flex-direction: column;
+      display: flex;
       max-height: none;
+      .leftView {
+        padding: 20px;
+      }
       .rightView .img {
         width: 100%;
         height: auto;
@@ -52,8 +57,13 @@ const Styled = styled.div`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       flex-direction: column;
       max-height: none;
+      .leftView {
+        padding: 20px;
+      }
       .rightView .img {
-        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 80%;
         height: auto;
       }
   `}
@@ -76,7 +86,7 @@ const ValidatorsJoinNetwork = () => {
         </p>
       </div>
       <div className="rightView">
-        <img className="img" src={voteIllustration} alt="phone-incognito-validator" />
+        <img className="img" src={validator} alt="phone-incognito-validator" />
       </div>
     </Styled>
   );

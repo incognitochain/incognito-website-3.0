@@ -4,6 +4,7 @@ import downImg from '@images/down-icon.png';
 import logo from '@images/logo.png';
 import menuBarIcon from '@images/menu-bar.png';
 import { ReactComponent as IcClose } from '@images/svg/close-icon.svg';
+import { route as ValidatorRoute } from '@modules/Earnings/features/Validators/Validators.route';
 import {
   routeEarnings,
   routeMarket,
@@ -13,6 +14,7 @@ import {
 import { Button, Col, Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'rebass';
 
 import { DrawerStyled, MenuDropdown, Styled } from './Header.styled';
@@ -78,12 +80,14 @@ const Header = () => {
   const [visible, setVisible] = React.useState(false);
   const [expand, setExpand] = React.useState(false);
   const history = useHistory();
+  const location = useLocation();
   const openMenu = () => {
     setVisible(true);
   };
   const onClose = () => {
     setVisible(false);
   };
+
   React.useEffect(() => {
     const menuName = (
       menuItem.find((item: any) => item.path === history.location.pathname) as any
@@ -94,6 +98,13 @@ const Header = () => {
       setPathName('');
     }
   }, [window.location.pathname]);
+
+  React.useEffect(() => {
+    const { pathname = '' } = location;
+    if (pathname === ValidatorRoute) {
+      setPathName(menuItem[3].name);
+    }
+  }, [location]);
 
   const HomeMenu = () => {
     return (

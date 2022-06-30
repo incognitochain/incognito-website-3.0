@@ -1,11 +1,15 @@
+import Header from '@components/Header';
 import SectionHead from '@components/SectionHead';
 import SectionLink from '@components/SectionLink';
 import logoStrokeImg from '@images/logo-stroke.png';
+import { route as ValidatorRoute } from '@modules/Earnings/features/Validators/Validators.route';
 import { structureTranslateSelector } from '@src/configs';
 import { Button, Col, Row } from 'antd';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { NavLink, useHistory } from 'react-router-dom';
 import styled, { ITheme } from 'styled-components';
+
 const Styled = styled(Row)`
   .main-title {
     font-weight: 500;
@@ -64,6 +68,7 @@ const Styled = styled(Row)`
 
 const Section1 = () => {
   const structureTrs = useSelector(structureTranslateSelector);
+  const history = useHistory();
   return (
     <Styled
       align="middle"
@@ -79,10 +84,7 @@ const Section1 = () => {
           size="large"
           className="button1 btn-become-validator"
           onClick={() => {
-            window.open(
-              'https://we.incognito.org/t/how-to-setup-your-own-node-in-a-blink-of-an-eye-now-support-multi-nodes-per-host/12003',
-              '_blank',
-            );
+            history.push(ValidatorRoute);
           }}>
           {structureTrs.becomeValidator}
         </Button>

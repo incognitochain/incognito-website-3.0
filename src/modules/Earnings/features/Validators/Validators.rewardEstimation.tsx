@@ -59,17 +59,17 @@ const Styled = styled.div<{ isMobile: boolean }>`
     flex: 1;
     margin-top: 60px;
     display: flex;
-    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
+    flex-direction: row;
     .leftView {
       border: 2px solid #363636;
       border-radius: 16px;
       display: flex;
-      flex: 0.75;
-      height: 600px;
-      max-height: 600px;
-      min-height: 500px;
-
+      flex: 1;
+      min-height: 600px;
+      overflow: hidden;
       .chart-container {
+        display: flex;
+        position: relative;
         width: 100%;
         height: 100%;
       }
@@ -79,14 +79,12 @@ const Styled = styled.div<{ isMobile: boolean }>`
       margin-left: 50px;
       display: flex;
       padding: 20px;
-      flex: 0.25;
+      min-width: 350px;
       border: 2px solid #363636;
       border-radius: 16px;
-      /* background-color: lightgreen; */
 
       .tableContent {
         flex: 1;
-        /* background-color: red; */
         flex-direction: column;
         .title {
           margin-top: 20px;
@@ -109,46 +107,35 @@ const Styled = styled.div<{ isMobile: boolean }>`
     }
 
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-      display: flex;
+      margin-top: 60px;
       flex-direction: column !important;
-      overflow-y: scroll;
       .leftView {
         border: 2px solid #363636;
         border-radius: 16px;
+        min-height: 600px;
+        flex: none;
+        height: 600px;
+      }
+
+      .rightView {
+        margin-left: 0px;
+        margin-top: 40px;
+      }
+    `}
+
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+      .leftView {
+        overflow: auto;
+        overflow-y: hidden;
         .chart-container {
           min-width: 1200px;
-          min-height: 600px;
         }
-      }
-      .rightView {
-        margin-top: 20px;
-        margin-left: 0px;
       }
     `}
   }
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
-    .row {
-      flex-direction: column;
-      .leftView {
-        flex: initial;
-        height: 600px;
-        overflow-y: scroll;
-        max-height: 600px;
-        .chart-container {
-          min-width: 1200px;
-          min-height: 400px;
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .rightView {
-        flex: 0;
-        margin-top: 20px;
-        margin-left: 0px;
-      }
-    }
-  `}
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+    `}
 
   .timeText {
     word-wrap: break-word;
