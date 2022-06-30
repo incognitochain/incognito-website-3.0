@@ -11,6 +11,7 @@ const Styled = styled.div`
   max-height: 464px;
   border-radius: 24px;
   background-color: #252525;
+
   .leftView {
     display: flex;
     flex: 1;
@@ -42,7 +43,11 @@ const Styled = styled.div`
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
       flex-direction: column;
+      display: flex;
       max-height: none;
+      .leftView {
+        padding: 20px;
+      }
       .rightView .img {
         width: 100%;
         height: auto;
@@ -52,8 +57,13 @@ const Styled = styled.div`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       flex-direction: column;
       max-height: none;
+      .leftView {
+        padding: 20px;
+      }
       .rightView .img {
-        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 80%;
         height: auto;
       }
   `}

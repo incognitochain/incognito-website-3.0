@@ -21,6 +21,7 @@ const MenuItemStyled = styled.div`
     .title {
       margin: 0px;
       text-align: left;
+      margin-right: 20px;
     }
 
     .icon {
