@@ -42,6 +42,9 @@ const ItemStyled = styled.div`
 
   :hover {
     background-color: #363636;
+    .circleView {
+      background-color: #1a1a1a;
+    }
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
@@ -137,9 +140,6 @@ const Styled = styled.div`
     margin-top: 25px;
   }
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
-  `}
-
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
     .topView {
       display: flex;
@@ -150,6 +150,25 @@ const Styled = styled.div`
         p {
           align-self: left;
         }
+      }
+    }
+  `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    .topView {
+      .topRight {
+        flex-direction: column;
+        justify-content: center;
+        button {
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+        .prvButton {
+          margin-top: 30px;
+          margin-left: 0px;
+        }
+
       }
     }
   `}
