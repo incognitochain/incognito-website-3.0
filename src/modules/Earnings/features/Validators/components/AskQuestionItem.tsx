@@ -11,7 +11,6 @@ const MenuItemStyled = styled.div`
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
 
     :hover {
       cursor: pointer;
@@ -20,8 +19,9 @@ const MenuItemStyled = styled.div`
 
     .title {
       margin: 0px;
+      flex: 1;
       text-align: left;
-      margin-right: 20px;
+      margin-right: 30px;
     }
 
     .icon {
@@ -34,9 +34,9 @@ const MenuItemStyled = styled.div`
       background-color: #404040;
       .arrow {
         border: solid white;
-        border-width: 0 3px 3px 0;
+        border-width: 0 2.5px 2.5px 0;
         display: inline-block;
-        padding: 3px;
+        padding: 2.5px;
       }
       .up {
         transform: rotate(-135deg);
