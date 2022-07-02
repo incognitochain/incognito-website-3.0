@@ -326,15 +326,16 @@ export const ThemedGlobalStyle = createGlobalStyle`
       height: 60px;
     }
 
-    .description {
+    /* .description {
       font-size: 16px;
       line-height: 20px;
       letter-spacing: 0.01em;
       white-space: pre-wrap;
       color: #757575;
-    }
+    } */
 
-    .super-title-text {
+    .header {
+      color: ${({ theme }) => theme.color_white};
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 64px;
         font-weight: 500;
@@ -353,7 +354,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
       `}
     }
       
-    .description-title-text {
+    .description {
+      color: ${({ theme }) => theme.color_grey};
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 20px;
         font-weight: 400;
@@ -453,4 +455,27 @@ export const ThemedGlobalStyle = createGlobalStyle`
           height: 50px;
         }
     `}
+
+    // Colors global
+    .color-white {
+      color: ${({ theme }) => theme.color_white}
+    }
+    .color-dark {
+      color: ${({ theme }) => theme.color_dark}
+    }
+    .color_grey {
+      color: ${({ theme }) => theme.color_grey}
+    }
+    .color_grey1 {
+      color: ${({ theme }) => theme.color_grey1}
+    }
+    .color_blue {
+      color: ${({ theme }) => theme.color_blue}
+    }
+    .color_black1 {
+      color: ${({ theme }) => theme.color_black1}
+    }
+    .color_black1 {
+      color: ${({ theme }) => theme.color_black2}
+    }
 `;

@@ -25,6 +25,15 @@ export interface Colors {
 
   green1: Color;
   red1: Color;
+
+  color_white: Color;
+  color_dark: Color;
+  color_grey: Color;
+  color_grey1: Color;
+  color_grey2: Color;
+  color_blue: Color;
+  color_black1: Color;
+  color_black2: Color;
 }
 
 export interface Grids {

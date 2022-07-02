@@ -1,6 +1,6 @@
 import validator from '@images/validator.png';
 import { memo } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styled, { ITheme } from 'styled-components';
 
 const Styled = styled.div`
@@ -8,9 +8,8 @@ const Styled = styled.div`
   margin-top: 40px;
   flex-direction: row;
   width: 100%;
-  max-height: 464px;
   border-radius: 24px;
-  background-color: #252525;
+  background-color: ${({ theme }: { theme: ITheme }) => theme.color_grey2};
 
   .leftView {
     display: flex;
@@ -18,93 +17,54 @@ const Styled = styled.div`
     padding: 70px;
     justify-content: center;
     flex-direction: column;
-
-    .title-custom {
-    }
-
-    .sub-title-text {
-      font-size: 18px;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      white-space: initial;
-      margin-top: 30px;
-      margin-right: 40px;
+    .descriptionContainer {
+      margin-top: 40px;
     }
   }
 
   .rightView {
     display: flex;
     flex: 1;
-    margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     .img {
+      margin-top: 30px;
       width: 100%;
       height: auto;
+      max-width: 625px;
+      max-height: 437px;
       margin-left: auto;
       margin-right: auto;
-      object-fit: contain;
     }
   }
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+      flex-direction: row;
+  `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       flex-direction: column;
-      display: flex;
-      max-height: none;
       .leftView {
-        padding: 20px;
+        padding: 50px;
       }
       .rightView {
-        display: flex;
-        flex: 1;
+        padding: 0px;
         .img {
-          width: 100%;
-          height: auto;
-          object-fit: contain;
+          margin: 0px;
         }
       }
-  `}
-
+  `} 
+  
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-      flex-direction: column;
-      max-height: none;
       .leftView {
-        padding: 20px;
-        .title-custom {
-          font-size: 34px;
+        padding: 24px;
+        .descriptionContainer {
+          margin-top: 16px;
         }
       }
-      .rightView 
-        margin-right: 0px;
-        display: flex;
-        flex: 1;
-        .img {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: auto;
-          margin-right: auto;
-          height: auto;
-          object-fit: cover;
-        }
-      }
-  `}
-
-${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-      .leftView {
-        .title-custom {
-          font-size: 34px;
-        }
-      }
-      .rightView 
-        margin-right: 0px;
-        display: flex;
-        flex: 1;
-        .img {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: auto;
-          margin-right: auto;
-          height: auto;
-          object-fit: cover;
-        }
+      .rightView {
+        margin-top: 25px;
       }
   `}
 `;
@@ -114,18 +74,20 @@ const ValidatorsJoinNetwork = () => {
   return (
     <Styled>
       <div className="leftView">
-        <p className="title fw-medium main-title-text title-custom">
-          Join the Validator Network
-        </p>
-        <p className="text2 sub-title sub-title-text description">
-          Validators imply a group of nodes that perform consensus work, including
-          verifying transactions, voting to add new blocks to the blockchain and earning
-          block rewards.
-        </p>
-        <p className="text2 sub-title sub-title-text description">
-          The fixed stake of 1,750 PRV ensures the fair probability for Nodes to be
-          elected to join in the consensus group.
-        </p>
+        <p className="header">Join the Validator Network</p>
+        <div className="descriptionContainer">
+          <p className="description">
+            Validators imply a group of nodes that perform consensus work, including
+            verifying transactions, voting to add new blocks to the blockchain and earning
+            block rewards.
+          </p>
+        </div>
+        <div className="descriptionContainer">
+          <p className="description">
+            The fixed stake of 1,750 PRV ensures the fair probability for Nodes to be
+            elected to join in the consensus group.
+          </p>
+        </div>
       </div>
       <div className="rightView">
         <img className="img" src={validator} alt="phone-incognito-validator" />
