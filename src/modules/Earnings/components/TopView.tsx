@@ -1,6 +1,7 @@
 import SectionHead from '@components/SectionHead';
 import phoneIncognitoValidator from '@images/phone-incognito-validator.png';
 import phoneTransactionHistory from '@images/phone-transaciton-history.png';
+import validator from '@images/validator.png';
 import { route as ValidatorRoute } from '@modules/Earnings/features/Validators/Validators.route';
 import animationData from '@src/assets/hexagon-animation.json';
 import { Button } from 'antd';
@@ -14,27 +15,6 @@ const TopView = () => {
   return (
     <Styled>
       <div className="row">
-        <div className="left">
-          <div className="animation-container">
-            <HexagonAnimation />
-          </div>
-
-          <div className="image-wrapper">
-            <img
-              className="image-container"
-              src={phoneTransactionHistory}
-              alt="phone-transaction-history"
-            />
-            <img
-              className="image-container-1"
-              src={phoneIncognitoValidator}
-              alt="phone-incognito-validator"
-            />
-          </div>
-        </div>
-
-        <div className="space" />
-
         <div className="right">
           <div className="row-section-head">
             <SectionHead title="Secure the network" className="section-head" />
@@ -71,6 +51,24 @@ const TopView = () => {
               <p className="more-detail-title">More details</p>
             </button>
           </div>
+        </div>
+        <div className="space" />
+        <div className="left">
+          <img className="img" src={validator} alt="phone-incognito-validator" />
+          {/* <div className="animation-container">{<HexagonAnimation /> }</div> */}
+
+          {/* <div className="image-wrapper">
+            <img
+              className="image-container"
+              src={phoneTransactionHistory}
+              alt="phone-transaction-history"
+            />
+            <img
+              className="image-container-1"
+              src={phoneIncognitoValidator}
+              alt="phone-incognito-validator"
+            />
+          </div> */}
         </div>
       </div>
     </Styled>

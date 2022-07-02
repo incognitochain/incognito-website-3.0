@@ -181,6 +181,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
         justify-content: center;
         align-items: center;
     }
+  
     .row {
         display: flex;
         flex-direction: row;
@@ -353,6 +354,26 @@ export const ThemedGlobalStyle = createGlobalStyle`
         line-height: 124%;
       `}
     }
+
+
+    .header2 {
+      color: ${({ theme }) => theme.color_white};
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 120%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 124%;
+      `}
+    }
       
     .description {
       color: ${({ theme }) => theme.color_grey};
@@ -369,6 +390,26 @@ export const ThemedGlobalStyle = createGlobalStyle`
       `}
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+      `}
+    }
+
+    .description2 {
+      color: ${({ theme }) => theme.color_grey4};
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 0.005em;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 14px;
         font-weight: 400;
         line-height: 140%;
       `}
@@ -469,6 +510,15 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .color_grey1 {
       color: ${({ theme }) => theme.color_grey1}
     }
+    .color_grey2 {
+      color: ${({ theme }) => theme.color_grey2}
+    }
+    .color_grey3 {
+      color: ${({ theme }) => theme.color_grey3}
+    }
+    .color_grey4 {
+      color: ${({ theme }) => theme.color_grey4}
+    }
     .color_blue {
       color: ${({ theme }) => theme.color_blue}
     }
@@ -477,5 +527,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
     }
     .color_black1 {
       color: ${({ theme }) => theme.color_black2}
+    }
+
+    .text-center {
+      text-align: center
     }
 `;

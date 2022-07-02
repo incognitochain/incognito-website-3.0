@@ -108,8 +108,8 @@ const MenuItemStyled = styled.div`
 
   .lineBreak {
     flex: 1;
-    height: 1px;
-    border: 1px solid #363636;
+    height: 0.8px;
+    border: 0.8px solid #363636;
   }
 `;
 

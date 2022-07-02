@@ -4,11 +4,8 @@ import { formatPrice } from '@utils/convert';
 import moment from 'moment';
 import React, { memo, useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
-import { useHistory } from 'react-router-dom';
 import {
-  Area,
   Bar,
-  BarChart,
   CartesianGrid,
   ComposedChart,
   Legend,
@@ -51,99 +48,68 @@ const Styled = styled.div<{ isMobile: boolean }>`
   display: flex;
   flex-direction: column;
 
-  .title {
-    text-align: center;
-  }
-
-  .row {
-    flex: 1;
+  .contentView {
     margin-top: 60px;
     display: flex;
     flex-direction: row;
     .leftView {
-      border: 2px solid #363636;
-      border-radius: 16px;
-      display: flex;
-      flex: 1;
-      min-height: 600px;
+      flex: 0.75;
+      border: 2px solid ${({ theme }: { theme: ITheme }) => theme.color_grey3};
+      border-radius: 24px;
+      max-height: 576px;
       overflow: hidden;
-      .chart-container {
-        display: flex;
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
     }
-
     .rightView {
-      margin-left: 30px;
       display: flex;
+      flex: 0.25;
+      margin-left: 30px;
       padding: 40px;
-      min-width: 400px;
-      border: 2px solid #363636;
-      border-radius: 16px;
-
+      border: 2px solid ${({ theme }: { theme: ITheme }) => theme.color_grey3};
+      border-radius: 24px;
       .tableContent {
         flex: 1;
         flex-direction: column;
-        .title {
-          text-align: left;
-          p {
-            font-weight: 400;
-            font-size: 16px;
-          }
-
-          ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-            p {
-              font-size: 14px;
-            }
-          `}
-        }
         .rowTableView {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           margin-bottom: 30px;
-          p {
-            font-weight: 500;
-            font-size: 24px;
-          }
-          ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-            p {
-              font-size: 20px;
-            }
-          `}
         }
       }
     }
 
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+      display: flex;
+      flex-direction: row;
+    `}
+
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       margin-top: 60px;
-      flex-direction: column !important;
+      flex-direction: column;
       .leftView {
-        border: 2px solid #363636;
-        border-radius: 16px;
-        min-height: 600px;
-        flex: none;
-        height: 600px;
-      }
-
-      .rightView {
         display: flex;
-        flex: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        .chart-container {
+          min-width: 1200px;
+          min-height: 570px;
+        }
+      }
+      .rightView {
         margin-left: 0px;
         margin-top: 40px;
         margin-right: 0px;
-        min-width: 0px;
       }
     `}
 
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+      flex-direction: column;
       .leftView {
-        overflow-x: visible;
+        overflow-x: auto;
         overflow-y: hidden;
+        display: flex;
         .chart-container {
-          min-width: 1200px;
+          min-height: 460px;
         }
       }
       .rightView {
@@ -151,8 +117,6 @@ const Styled = styled.div<{ isMobile: boolean }>`
       }
     `}
   }
-
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge``}
 
   .timeText {
     word-wrap: break-word;
@@ -204,8 +168,9 @@ const ValidatorRewardEstimation = () => {
 
   return (
     <Styled isMobile={isMobile}>
-      <p className="title fw-medium main-title-text">Rewards Estimation</p>
-      <div className="row">
+      <p className="header text-center">Rewards Estimation</p>
+
+      <div className="contentView">
         <div className="leftView">
           <ResponsiveContainer className="chart-container">
             <ComposedChart
@@ -224,7 +189,7 @@ const ValidatorRewardEstimation = () => {
               />
               <XAxis
                 dataKey="time"
-                stroke="#FFFFFF"
+                stroke="#1A73E8"
                 height={50}
                 minTickGap={0}
                 tickMargin={10}
@@ -239,7 +204,7 @@ const ValidatorRewardEstimation = () => {
                   padding: 15,
                   paddingLeft: 22,
                   paddingRight: 22,
-                  backgroundColor: '#363636',
+                  backgroundColor: '#141111',
                   borderColor: 'transparent',
                   lineHeight: 1.8,
                   fontWeight: 600,
@@ -300,31 +265,39 @@ const ValidatorRewardEstimation = () => {
         </div>
         <div className="rightView">
           <div className="tableContent">
-            <p className="text2 title">Circulating supply:</p>
+            <p className="description2">Circulating supply:</p>
             <div className="rowTableView">
-              <p>{formatPrice({ price: dataChart.circulatingSupply })}</p>
-              <p>PRV</p>
+              <p className="header2">
+                {formatPrice({ price: dataChart.circulatingSupply })}
+              </p>
+              <p className="header2">PRV</p>
             </div>
-            <p className="text2 title">Total PRV staked:</p>
+            <p className="description2">Total PRV staked:</p>
             <div className="rowTableView">
-              <p>{formatPrice({ price: dataChart.totalPRVStaked })}</p>
-              <p>PRV</p>
-            </div>
-
-            <p className="text2 title">Estimated APR:</p>
-            <div className="rowTableView">
-              <p>{formatPrice({ price: dataChart.estimatedAPR })}</p>
-              <p>%</p>
+              <p className="header2">
+                {formatPrice({ price: dataChart.totalPRVStaked })}
+              </p>
+              <p className="header2">PRV</p>
             </div>
 
-            <p className="text2 title">Total validators:</p>
+            <p className="description2">Estimated APR:</p>
             <div className="rowTableView">
-              <p>{formatPrice({ price: dataChart.totalValidator })}</p>
+              <p className="header2">{formatPrice({ price: dataChart.estimatedAPR })}</p>
+              <p className="header2">%</p>
             </div>
 
-            <p className="text2 title">Statistics on</p>
+            <p className="description2">Total validators:</p>
             <div className="rowTableView">
-              <p>{moment(new Date().toISOString()).format('MM/DD/YYYY')}</p>
+              <p className="header2">
+                {formatPrice({ price: dataChart.totalValidator })}
+              </p>
+            </div>
+
+            <p className="description2">Statistics on</p>
+            <div className="rowTableView">
+              <p className="header2">
+                {moment(new Date().toISOString()).format('MM/DD/YYYY')}
+              </p>
             </div>
           </div>
         </div>

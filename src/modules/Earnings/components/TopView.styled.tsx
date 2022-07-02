@@ -13,6 +13,13 @@ export const Styled = styled.div`
       justify-content: center;
       flex: 1;
 
+      .img {
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .animation-container {
         position: absolute;
         align-content: center;
@@ -44,10 +51,11 @@ export const Styled = styled.div`
     }
 
     .space {
-      width: 80px;
+      width: 40px;
     }
 
     .right {
+      /* background-color: yellow; */
       display: flex;
       align-items: center;
       justify-content: flex-start;

@@ -23,10 +23,7 @@ const Styled = styled.div`
   }
 
   .rightView {
-    display: flex;
     flex: 1;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
     .img {
       margin-top: 30px;
@@ -89,7 +86,7 @@ const ValidatorsJoinNetwork = () => {
           </p>
         </div>
       </div>
-      <div className="rightView">
+      <div className="rightView center">
         <img className="img" src={validator} alt="phone-incognito-validator" />
       </div>
     </Styled>

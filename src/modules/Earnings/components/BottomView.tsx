@@ -10,6 +10,20 @@ const BottomView = () => {
   return (
     <Styled>
       <div className="row">
+        <div className="left">
+          <div className="animation-container">
+            <HexagonAnimation />
+          </div>
+          <div className="image-wrapper">
+            <img
+              className="image-container"
+              src={phoneTokenList}
+              alt="phone-token-list"
+            />
+          </div>
+        </div>
+        <div className="space" />
+
         <div className="right">
           <div className="row-section-head">
             <SectionHead title="Privacy Exchange" className="section-head" />
@@ -51,19 +65,6 @@ const BottomView = () => {
               }}>
               <p className="more-detail-title">More details</p>
             </button>
-          </div>
-        </div>
-        <div className="space" />
-        <div className="left">
-          <div className="animation-container">
-            <HexagonAnimation />
-          </div>
-          <div className="image-wrapper">
-            <img
-              className="image-container"
-              src={phoneTokenList}
-              alt="phone-token-list"
-            />
           </div>
         </div>
       </div>
