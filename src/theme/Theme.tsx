@@ -233,7 +233,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .text5 {
       color: ${({ theme }) => theme.text5}
     }
-    
+
     // background
     .background1 {
       background-color: ${({ theme }) => theme.background1}
@@ -334,6 +334,46 @@ export const ThemedGlobalStyle = createGlobalStyle`
       color: #757575;
     }
 
+    .super-title-text {
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -0.005em;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 120%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 124%;
+      `}
+    }
+      
+    .description-title-text {
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 0.005em;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+      `}
+    }
+
+
+    
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
         .default-padding-horizontal {
           padding-left: 105px;

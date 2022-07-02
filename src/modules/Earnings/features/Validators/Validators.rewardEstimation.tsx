@@ -129,14 +129,18 @@ const Styled = styled.div<{ isMobile: boolean }>`
       }
 
       .rightView {
+        display: flex;
+        flex: none;
         margin-left: 0px;
         margin-top: 40px;
+        margin-right: 0px;
+        min-width: 0px;
       }
     `}
 
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       .leftView {
-        overflow: auto;
+        overflow-x: visible;
         overflow-y: hidden;
         .chart-container {
           min-width: 1200px;
@@ -148,8 +152,7 @@ const Styled = styled.div<{ isMobile: boolean }>`
     `}
   }
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
-    `}
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge``}
 
   .timeText {
     word-wrap: break-word;

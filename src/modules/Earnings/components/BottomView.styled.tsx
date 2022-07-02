@@ -47,6 +47,7 @@ export const Styled = styled.div`
         display: flex;
         flex-direction: row;
         align-self: baseline;
+        flex-wrap: wrap;
         .space {
           width: 8px;
         }

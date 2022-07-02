@@ -56,6 +56,7 @@ export const Styled = styled.div`
 
       .row-section-head {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         align-self: baseline;
         .space {

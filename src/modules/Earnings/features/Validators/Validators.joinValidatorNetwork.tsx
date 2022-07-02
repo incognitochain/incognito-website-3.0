@@ -18,6 +18,10 @@ const Styled = styled.div`
     padding: 70px;
     justify-content: center;
     flex-direction: column;
+
+    .title-custom {
+    }
+
     .sub-title-text {
       font-size: 18px;
       line-height: 24px;
@@ -48,9 +52,14 @@ const Styled = styled.div`
       .leftView {
         padding: 20px;
       }
-      .rightView .img {
-        width: 100%;
-        height: auto;
+      .rightView {
+        display: flex;
+        flex: 1;
+        .img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
       }
   `}
 
@@ -59,12 +68,43 @@ const Styled = styled.div`
       max-height: none;
       .leftView {
         padding: 20px;
+        .title-custom {
+          font-size: 34px;
+        }
       }
-      .rightView .img {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        width: 80%;
-        height: auto;
+      .rightView 
+        margin-right: 0px;
+        display: flex;
+        flex: 1;
+        .img {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: auto;
+          margin-right: auto;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+  `}
+
+${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+      .leftView {
+        .title-custom {
+          font-size: 34px;
+        }
+      }
+      .rightView 
+        margin-right: 0px;
+        display: flex;
+        flex: 1;
+        .img {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: auto;
+          margin-right: auto;
+          height: auto;
+          object-fit: cover;
+        }
       }
   `}
 `;
@@ -74,7 +114,9 @@ const ValidatorsJoinNetwork = () => {
   return (
     <Styled>
       <div className="leftView">
-        <p className="title fw-medium main-title-text">Join the Validator Network</p>
+        <p className="title fw-medium main-title-text title-custom">
+          Join the Validator Network
+        </p>
         <p className="text2 sub-title sub-title-text description">
           Validators imply a group of nodes that perform consensus work, including
           verifying transactions, voting to add new blocks to the blockchain and earning
