@@ -43,6 +43,10 @@ export const Styled = styled.div`
       flex-direction: column;
       flex: 1;
 
+      .description-container {
+        margin-top: 25px;
+        margin-bottom: 40px;
+      }
       .row-section-head {
         display: flex;
         flex-direction: row;

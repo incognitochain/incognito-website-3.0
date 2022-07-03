@@ -394,8 +394,6 @@ export const ThemedGlobalStyle = createGlobalStyle`
         line-height: 124%;
       `}
     }
-
-    
       
     .description {
       color: ${({ theme }) => theme.color_grey};
@@ -645,5 +643,4 @@ export const ThemedGlobalStyle = createGlobalStyle`
         line-height: 140%;
       `}
     }
-
 `;

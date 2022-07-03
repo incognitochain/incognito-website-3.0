@@ -8,7 +8,8 @@ export const Styled = styled(Row)`
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.border1};
   z-index: 2;
-
+  display: flex;
+  flex-direction: row;
   .app-logo {
     width: 162px;
     height: 32px;
@@ -17,7 +18,7 @@ export const Styled = styled(Row)`
   .wrap-menu-desktop {
     margin: auto;
     padding-right: 80px;
-    display: initial;
+    display: flex;
     .menu {
       //min-width: 530px;
     }
@@ -110,22 +111,34 @@ export const Styled = styled(Row)`
     letter-spacing: 0;
     text-align: center;
     font-size: 18px;
-
     :hover {
       color: ${({ theme }: { theme: ITheme }) => theme.text1};
     }
   }
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+    .wrap-menu-desktop {
+      visibility: visible;
+    }
+  `}
+
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-    `}
+    justify-content: space-between;
+    .more-dropdown {
+      display: initial;
+    }
+
+  `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
-          justify-content: space-between;
-          .menu-mobile {
-            display: initial;
-          }
-          .wrap-menu-desktop {
-            display: none;
-          }
+    justify-content: space-between;
+      .wrap-menu-desktop {
+        width: 0%;
+        visibility: hidden;
+      }
+      .menu-mobile {
+         display: initial;
+      }
           .more-dropdown {
             display: none;
           }

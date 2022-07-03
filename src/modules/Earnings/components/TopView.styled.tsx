@@ -55,10 +55,7 @@ export const Styled = styled.div`
     }
 
     .right {
-      /* background-color: yellow; */
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
       flex-direction: column;
       flex: 1;
 
@@ -72,20 +69,12 @@ export const Styled = styled.div`
         }
       }
 
-      .title {
-        width: 100%;
-      }
-
-      .description {
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.01em;
-        white-space: initial;
-        margin-top: 16px;
+      .description-container {
+        margin-top: 25px;
+        margin-bottom: 40px;
       }
 
       .row-button {
-        margin-top: 40px;
         display: flex;
         flex-direction: row;
         align-self: baseline;
