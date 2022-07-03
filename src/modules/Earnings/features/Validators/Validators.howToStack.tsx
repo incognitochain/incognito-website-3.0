@@ -28,11 +28,12 @@ const ItemStyled = styled.div`
     }
   }
 
-  .title {
-    margin-top: 30px;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 140%;
+  .titleContainer {
+    margin-top: 40px;
+  }
+
+  .descriptionContainer {
+    margin-top: 24px;
   }
 
   .description {
@@ -47,18 +48,29 @@ const ItemStyled = styled.div`
       background-color: #1a1a1a;
     }
   }
-
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
-  `}
-
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+    .titleContainer {
+      margin-top: 40px;
+    }
   `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+    .titleContainer {
+      margin-top: 30px;
+    }
+    .descriptionContainer {
+      margin-top: 20px;
+    }
   `}
+  
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
-    max-height: 500px;
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+    .titleContainer {
+      margin-top: 20px;
+    }
+    .descriptionContainer {
+      margin-top: 18px;
+    }
   `}
 `;
 
@@ -73,10 +85,15 @@ const StackItem = (props: StackItemProps) => {
   return (
     <ItemStyled>
       <div className="circleView">
-        <p className="number">{index}</p>
+        <h5>{index}</h5>
       </div>
-      <p className="title">{title}</p>
-      <p className="description text2">{description}</p>
+      <div className="titleContainer">
+        <h4>{title}</h4>
+      </div>
+
+      <div className="descriptionContainer">
+        <h6>{description}</h6>
+      </div>
     </ItemStyled>
   );
 };
@@ -148,9 +165,6 @@ const Styled = styled.div`
       .topLeft {
         margin-top: 20px;
         margin-bottom: 20px;
-        p {
-          align-self: left;
-        }
       }
     }
   `}
@@ -190,7 +204,7 @@ const ValidatorHowToStack = () => {
     <Styled ref={myRef}>
       <div className="topView">
         <div className="topLeft">
-          <p className="title fw-medium main-title-text">How to stake</p>
+          <h1>How to stake</h1>
         </div>
         <div className="topRight">
           <button
@@ -200,7 +214,7 @@ const ValidatorHowToStack = () => {
                 '_blank',
               );
             }}>
-            <p>See full walkthrough</p>
+            <p className="description color-white">See full walkthrough</p>
           </button>
           <Button
             type="primary"
@@ -218,7 +232,7 @@ const ValidatorHowToStack = () => {
         </div>
       </div>
       <div className="stackItemListView">
-        <Row className="row" gutter={{ xs: 16, sm: 24, md: 32, lg: 40 }}>
+        <Row className="row" gutter={{ xs: 16, sm: 22, md: 28, lg: 30 }}>
           <Col lg={6} md={12} sm={16} xs={24} className={'margin'}>
             <StackItem
               index={1}

@@ -71,19 +71,19 @@ const ValidatorsJoinNetwork = () => {
   return (
     <Styled>
       <div className="leftView">
-        <p className="header">Join the Validator Network</p>
+        <h1>Join the Validator Network</h1>
         <div className="descriptionContainer">
-          <p className="description">
+          <h6>
             Validators imply a group of nodes that perform consensus work, including
             verifying transactions, voting to add new blocks to the blockchain and earning
             block rewards.
-          </p>
+          </h6>
         </div>
         <div className="descriptionContainer">
-          <p className="description">
+          <h6>
             The fixed stake of 1,750 PRV ensures the fair probability for Nodes to be
             elected to join in the consensus group.
-          </p>
+          </h6>
         </div>
       </div>
       <div className="rightView center">

@@ -11,12 +11,9 @@ const Styled = styled.div`
     text-align: center;
   }
 
-  .sub {
-    color: white;
+  .descripiton-container {
     margin-top: 30px;
-    margin-bottom: 50px;
-    text-align: center;
-
+    margin-bottom: 40px;
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       margin-bottom: 25px;
     `}
@@ -48,8 +45,15 @@ const Styled = styled.div`
 const ValidatorTutorial = () => {
   return (
     <Styled>
-      <p className="title fw-medium main-title-text">Tutorial</p>
-      <p className="description sub">Incognito Youtube chanel</p>
+      <div className="center">
+        <h1>Tutorial</h1>
+      </div>
+
+      <div className="center">
+        <p className="description2 descripiton-container color-white">
+          Incognito Youtube chanel
+        </p>
+      </div>
 
       {/* The easiest way to get the correct link is to right-click on the YouTube video and select copy embed code. */}
       <div className="video-container">

@@ -168,8 +168,7 @@ const ValidatorRewardEstimation = () => {
 
   return (
     <Styled isMobile={isMobile}>
-      <p className="header text-center">Rewards Estimation</p>
-
+      <h1 className="text-center">Rewards Estimation</h1>
       <div className="contentView">
         <div className="leftView">
           <ResponsiveContainer className="chart-container">
@@ -267,37 +266,29 @@ const ValidatorRewardEstimation = () => {
           <div className="tableContent">
             <p className="description2">Circulating supply:</p>
             <div className="rowTableView">
-              <p className="header2">
-                {formatPrice({ price: dataChart.circulatingSupply })}
-              </p>
-              <p className="header2">PRV</p>
+              <h5>{formatPrice({ price: dataChart.circulatingSupply })}</h5>
+              <h5>PRV</h5>
             </div>
             <p className="description2">Total PRV staked:</p>
             <div className="rowTableView">
-              <p className="header2">
-                {formatPrice({ price: dataChart.totalPRVStaked })}
-              </p>
-              <p className="header2">PRV</p>
+              <h5>{formatPrice({ price: dataChart.totalPRVStaked })}</h5>
+              <h5>PRV</h5>
             </div>
 
             <p className="description2">Estimated APR:</p>
             <div className="rowTableView">
-              <p className="header2">{formatPrice({ price: dataChart.estimatedAPR })}</p>
-              <p className="header2">%</p>
+              <h5>{formatPrice({ price: dataChart.estimatedAPR })}</h5>
+              <h5>%</h5>
             </div>
 
             <p className="description2">Total validators:</p>
             <div className="rowTableView">
-              <p className="header2">
-                {formatPrice({ price: dataChart.totalValidator })}
-              </p>
+              <h5>{formatPrice({ price: dataChart.totalValidator })}</h5>
             </div>
 
             <p className="description2">Statistics on</p>
             <div className="rowTableView">
-              <p className="header2">
-                {moment(new Date().toISOString()).format('MM/DD/YYYY')}
-              </p>
+              <h5>{moment(new Date().toISOString()).format('MM/DD/YYYY')}</h5>
             </div>
           </div>
         </div>
