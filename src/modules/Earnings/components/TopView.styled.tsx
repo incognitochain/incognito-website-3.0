@@ -13,6 +13,13 @@ export const Styled = styled.div`
       justify-content: center;
       flex: 1;
 
+      .img {
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .animation-container {
         position: absolute;
         align-content: center;
@@ -44,18 +51,17 @@ export const Styled = styled.div`
     }
 
     .space {
-      width: 80px;
+      width: 40px;
     }
 
     .right {
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
       flex-direction: column;
       flex: 1;
 
       .row-section-head {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         align-self: baseline;
         .space {
@@ -63,20 +69,12 @@ export const Styled = styled.div`
         }
       }
 
-      .title {
-        width: 100%;
-      }
-
-      .description {
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.01em;
-        white-space: initial;
-        margin-top: 16px;
+      .description-container {
+        margin-top: 25px;
+        margin-bottom: 40px;
       }
 
       .row-button {
-        margin-top: 40px;
         display: flex;
         flex-direction: row;
         align-self: baseline;

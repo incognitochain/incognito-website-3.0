@@ -18,31 +18,21 @@ const TITLE_LIST = [
   'Is overstaking permitted?',
   'What does the lifecycle of a Node look like?',
   'Is there slashing on the network?',
-  'What`s the maximum number of validators needed?',
+  `What's the maximum number of validators needed?`,
 ];
 const Styled = styled.div`
   margin-top: 120px;
   display: flex;
   flex-direction: row;
 
-  .title {
-    text-align: center;
-  }
-
   .leftView {
     display: flex;
     flex: 1;
     flex-direction: column;
-
-    .title {
+    .title-container {
       text-align: left;
-    }
-
-    .sub-title1 {
-      text-align: left;
-      :hover {
-        cursor: pointer;
-        opacity: 0.7;
+      .title-custom {
+        width: 100%;
       }
     }
   }
@@ -53,12 +43,25 @@ const Styled = styled.div`
     flex-direction: column;
   }
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
-      flex-direction: column;
-  `}
+  /* ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+      flex-direction: row;
+      .leftView .title-container {
+        text-align: left;
+      }
+  `} */
 
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       flex-direction: column;
+      .leftView .title-container {
+        text-align: center;
+        .title-custom {
+          width: 70%;
+        }
+      }
+
+      .rightView {
+        margin-top: 40px;
+      }
   `}
 `;
 
@@ -79,7 +82,10 @@ const ValidatorAskedQuestion = () => {
   return (
     <Styled>
       <div className="leftView">
-        <p className="title fw-medium main-title-text">Frequently Asked Questions</p>
+        <div className="title-container center">
+          <h1 className="title-custom">Frequently Asked Questions</h1>
+        </div>
+
         <button
           onClick={() => {
             const newActiveList = { ...activeList };
@@ -87,9 +93,7 @@ const ValidatorAskedQuestion = () => {
               newActiveList[item] = true;
             });
             setActiveList(newActiveList);
-          }}>
-          {/* <p className="sub-title sub-title1 sub-title-text">See all question</p> */}
-        </button>
+          }}></button>
       </div>
       <div className="rightView">
         <AskQuestionItem

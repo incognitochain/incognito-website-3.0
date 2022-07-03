@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { ITheme } from 'styled-components';
 
 const MenuItemStyled = styled.div`
   display: flex;
@@ -12,15 +12,9 @@ const MenuItemStyled = styled.div`
     align-items: center;
     flex-direction: row;
 
-    :hover {
-      cursor: pointer;
-      opacity: 0.7;
-    }
-
-    .title {
+    .title-container {
       margin: 0px;
       flex: 1;
-      text-align: left;
       margin-right: 30px;
     }
 
@@ -52,11 +46,11 @@ const MenuItemStyled = styled.div`
   .childrenView {
     margin-bottom: 20px;
     * {
-      animation: fadeIn 0.8s;
-      -webkit-animation: fadeIn 0.8s;
-      -moz-animation: fadeIn 0.8s;
-      -o-animation: fadeIn 0.8s;
-      -ms-animation: fadeIn 0.8s;
+      animation: fadeIn 0.6s;
+      -webkit-animation: fadeIn 0.6s;
+      -moz-animation: fadeIn 0.6s;
+      -o-animation: fadeIn 0.6s;
+      -ms-animation: fadeIn 0.6s;
     }
 
     @keyframes fadeIn {
@@ -107,8 +101,8 @@ const MenuItemStyled = styled.div`
 
   .lineBreak {
     flex: 1;
-    height: 1px;
-    border: 1px solid #363636;
+    height: 0.8px;
+    border: 0.8px solid ${({ theme }: { theme: ITheme }) => theme.color_grey3};
   }
 `;
 
@@ -130,12 +124,14 @@ const AskQuestionItem = (props: AskQuestionItemProps) => {
   return (
     <MenuItemStyled>
       <div
-        className="topView"
+        className="topView hover-opacity"
         onClick={() => {
           setExpand(!expand);
           itemOnClick(title);
         }}>
-        <p className="title sub-title-text">{title}</p>
+        <div className="title-container">
+          <h5>{title}</h5>
+        </div>
         <div className="icon">
           <i className={`arrow ${expand ? 'up' : 'down'}`} />
         </div>

@@ -10,6 +10,20 @@ const BottomView = () => {
   return (
     <Styled>
       <div className="row">
+        <div className="left">
+          <div className="animation-container">
+            <HexagonAnimation />
+          </div>
+          <div className="image-wrapper">
+            <img
+              className="image-container"
+              src={phoneTokenList}
+              alt="phone-token-list"
+            />
+          </div>
+        </div>
+        <div className="space" />
+
         <div className="right">
           <div className="row-section-head">
             <SectionHead title="Privacy Exchange" className="section-head" />
@@ -18,14 +32,14 @@ const BottomView = () => {
             <div className="space" />
             <SectionHead title="Permissionless" className="section-head" />
           </div>
-          <p className="title fw-medium main-title-text">
-            Become a Liquidity Provider for DEX
-          </p>
-          <p className="text2 sub-title sub-title-text description">
-            A liquidity pool is used to facilitate trades between the assets on a
-            decentralized exchange. Contribute liquidity and earn rewards for helping
-            people trade anonymously.
-          </p>
+          <h1>Become a Liquidity Provider for DEX</h1>
+          <div className="description-container">
+            <h6>
+              A liquidity pool is used to facilitate trades between the assets on a
+              decentralized exchange. Contribute liquidity and earn rewards for helping
+              people trade anonymously.
+            </h6>
+          </div>
 
           <div className="row-button">
             <Button
@@ -49,21 +63,8 @@ const BottomView = () => {
                   '_blank',
                 );
               }}>
-              <p className="more-detail-title">More details</p>
+              <p className="more-detail-title hover-opacity">More details</p>
             </button>
-          </div>
-        </div>
-        <div className="space" />
-        <div className="left">
-          <div className="animation-container">
-            <HexagonAnimation />
-          </div>
-          <div className="image-wrapper">
-            <img
-              className="image-container"
-              src={phoneTokenList}
-              alt="phone-token-list"
-            />
           </div>
         </div>
       </div>

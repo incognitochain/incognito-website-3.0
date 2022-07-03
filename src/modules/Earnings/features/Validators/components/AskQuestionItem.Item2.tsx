@@ -16,13 +16,13 @@ const Styled = styled.div`
 const AskQuestionItem2 = () => {
   return (
     <Styled>
-      <p className="description">
+      <h6>
         Incomes of a Node consist of 2 parts:
         <br /> - Block rewards: earn by performing consensus work, including verifying
         transactions and adding new blocks.
         <br /> - Transaction fees: earn from the transactions in a specific shard that
         Node is assigned to.
-      </p>
+      </h6>
       <div
         className="read-more description"
         onClick={() => {

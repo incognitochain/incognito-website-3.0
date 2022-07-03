@@ -27,6 +27,17 @@ const lightTheme = (): Colors => {
     btnBG1: '#1a73e8',
     green1: '#21A465',
     red1: '#D13D49',
+
+    color_white: '#FFFFFF',
+    color_dark: '#000000',
+    color_grey: '#9C9C9C',
+    color_grey1: '#303030',
+    color_grey2: '#252525',
+    color_grey3: '#363636',
+    color_grey4: '#757575',
+    color_blue: '#1A73E8',
+    color_black1: '#191919',
+    color_black2: '#1A1A1A',
   };
 };
 

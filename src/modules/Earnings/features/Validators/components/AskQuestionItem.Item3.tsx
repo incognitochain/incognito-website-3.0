@@ -16,9 +16,7 @@ const Styled = styled.div`
 const AskQuestionItem3 = () => {
   return (
     <Styled>
-      <p className="description">
-        Nodes will earn block rewards and transaction fees which is paid in PRV.
-      </p>
+      <h6>Nodes will earn block rewards and transaction fees which is paid in PRV.</h6>
       <div
         className="read-more description"
         onClick={() => {
