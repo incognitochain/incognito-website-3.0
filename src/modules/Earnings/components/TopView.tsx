@@ -20,7 +20,6 @@ const TopView = () => {
             <div className="space" />
             <SectionHead title="earn profit" className="section-head" />
           </div>
-          {/* <p className="title fw-medium main-title-text">Become a Validator</p> */}
           <h1 className="text-left">Become a Validator</h1>
           <div className="description-container">
             <h6>
