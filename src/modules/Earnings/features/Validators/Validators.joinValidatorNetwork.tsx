@@ -83,12 +83,6 @@ const ValidatorsJoinNetwork = () => {
             block rewards.
           </h6>
         </div>
-        <div className="descriptionContainer">
-          <h6>
-            The fixed stake of 1,750 PRV ensures the fair probability for Nodes to be
-            elected to join in the consensus group.
-          </h6>
-        </div>
       </div>
       <div className="rightView center">
         <img className="img" src={validator} alt="phone-incognito-validator" />

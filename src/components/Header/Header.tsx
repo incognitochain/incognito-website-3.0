@@ -156,7 +156,7 @@ const Header = () => {
       <NavLink className="logo-mobile" to="/" onClick={() => setPathName(routeMarket)}>
         <img className="app-logo" src={logo} alt="app-logo" />
       </NavLink>
-      <Row className="wrap-menu-desktop">
+      <Row className="wrap-menu-desktop center">
         <div className="menu">{HomeMenu()}</div>
       </Row>
       <Dropdown
