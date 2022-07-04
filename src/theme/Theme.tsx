@@ -359,7 +359,6 @@ export const ThemedGlobalStyle = createGlobalStyle`
       `}
     }
 
-
     .header1 {
       color: ${({ theme }) => theme.color_white};
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`

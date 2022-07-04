@@ -140,6 +140,14 @@ const CustomizedAxisTick = (props: any) => {
     </g>
   );
 };
+
+const formatterContent = (value: any, name: any, props: any) => {
+  if (name === 'APR') {
+    return [value + ' %', name, props];
+  }
+  return [value, name, props];
+};
+
 const ValidatorRewardEstimation = () => {
   // const history = useHistory();
   const [dataChart, setDataChart] = useState<ChartData>(ChartDataInit);
@@ -209,6 +217,7 @@ const ValidatorRewardEstimation = () => {
                   fontWeight: 600,
                   fontSize: 16,
                 }}
+                formatter={formatterContent}
                 labelStyle={{
                   color: '#9C9C9C',
                   fontWeight: 400,
