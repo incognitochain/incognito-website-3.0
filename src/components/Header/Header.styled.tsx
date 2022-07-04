@@ -17,10 +17,14 @@ export const Styled = styled(Row)`
 
   .wrap-menu-desktop {
     margin: auto;
-    padding-right: 80px;
+    flex: 1;
+    flex-direction: row;
     display: flex;
-    .menu {
-      //min-width: 530px;
+    .menuItem {
+      margin-right: 40px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
     }
   }
 
@@ -118,24 +122,24 @@ export const Styled = styled(Row)`
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
     .wrap-menu-desktop {
-      visibility: visible;
+      display: flex;
     }
   `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
     justify-content: space-between;
     .more-dropdown {
-      display: initial;
+      display: flex;
     }
-
+    .wrap-menu-desktop {
+        visibility: visible;
+      }
   `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
     justify-content: space-between;
       .wrap-menu-desktop {
-        max-width: 0.1px;
-        max-height: 0.1px;
-        visibility: hidden;
+        display: none;
       }
       .menu-mobile {
          display: initial;

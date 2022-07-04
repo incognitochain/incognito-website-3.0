@@ -106,28 +106,6 @@ const Header = () => {
     }
   }, [location]);
 
-  const HomeMenu = () => {
-    return (
-      <Menu theme="dark" mode="horizontal" defaultOpenKeys={[]} selectedKeys={[pathName]}>
-        {menuItem.map((item) => {
-          return (
-            <Menu.Item onClick={() => setPathName(item.name)} key={item.name}>
-              {item?.isLink ? (
-                <Link href={item.path} target="_blank" rel="noopener noreferrer">
-                  {item.name}
-                </Link>
-              ) : (
-                <NavLink target={item.target} to={item.path}>
-                  {item.name}
-                </NavLink>
-              )}
-            </Menu.Item>
-          );
-        })}
-      </Menu>
-    );
-  };
-
   const MoreMenu = () => (
     <MenuDropdown
       className="sub-menu-header"
@@ -156,9 +134,30 @@ const Header = () => {
       <NavLink className="logo-mobile" to="/" onClick={() => setPathName(routeMarket)}>
         <img className="app-logo" src={logo} alt="app-logo" />
       </NavLink>
-      <Row className="wrap-menu-desktop center">
-        <div className="menu">{HomeMenu()}</div>
-      </Row>
+      <div className="wrap-menu-desktop center">
+        {menuItem.map((item) => {
+          const isActive = item.name === pathName ? true : false;
+          return (
+            <div
+              className="menuItem"
+              onClick={() => setPathName(item.name)}
+              key={item.name}>
+              {item?.isLink ? (
+                <Link href={item.path} target="_blank" rel="noopener noreferrer">
+                  {item.name}
+                </Link>
+              ) : (
+                <NavLink
+                  target={item.target}
+                  to={item.path}
+                  className={`${isActive ? 'color-blue' : 'color-white'}`}>
+                  {item.name}
+                </NavLink>
+              )}
+            </div>
+          );
+        })}
+      </div>
       <Dropdown
         overlayStyle={{ width: 120 }}
         overlay={MoreMenu}
