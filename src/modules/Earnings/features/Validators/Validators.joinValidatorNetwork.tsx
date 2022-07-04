@@ -26,34 +26,36 @@ const Styled = styled.div`
     flex: 1;
     padding: 20px;
     .img {
-      margin-top: 30px;
       width: 100%;
-      height: auto;
-      max-width: 625px;
+      max-width: 625.99px;
       max-height: 437px;
+      height: auto;
       margin-left: auto;
       margin-right: auto;
     }
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
-      flex-direction: row;
+    flex-direction: row;
   `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-      flex-direction: column;
-      .leftView {
-        padding: 50px;
+    flex-direction: row;
+    .leftView {
+      flex: 1.1;
+      padding: 50px;
+    }
+    .rightView {
+      flex: 0.9;
+      padding: 0px;
+      .img {
+        margin: 0px;
       }
-      .rightView {
-        padding: 0px;
-        .img {
-          margin: 0px;
-        }
-      }
+    }
   `} 
   
-  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    flex-direction: column;
       .leftView {
         padding: 24px;
         .descriptionContainer {
@@ -61,6 +63,8 @@ const Styled = styled.div`
         }
       }
       .rightView {
+        margin-left: 20px;
+        margin-bottom: 20px;
         margin-top: 25px;
       }
   `}

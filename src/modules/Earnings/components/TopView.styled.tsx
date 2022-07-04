@@ -92,9 +92,13 @@ export const Styled = styled.div`
       }
     }
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
-      flex-direction: column;
+       flex-direction: column-reverse;
       .space {
         height: 50px;
+      }
+
+      .left .img {
+        margin-left: 20px;
       }
       .left .animation-container {
         max-width: 350px;

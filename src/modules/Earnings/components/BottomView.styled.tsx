@@ -88,11 +88,28 @@ export const Styled = styled.div`
       }
     }
 
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+      .right .row-section-head {
+        .section-head1 {
+          margin-top: -12px;
+        }
+      }
+    `}
+
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
       flex-direction: column;
       .space {
         height: 50px;
       }
+      .right .row-section-head {
+        .section-head1 {
+          margin-top: -12px;
+        }
+        .space {
+          width: 8px;
+        }
+      }
+
       .left .animation-container {
         max-width: 350px;
         max-height: 350px;

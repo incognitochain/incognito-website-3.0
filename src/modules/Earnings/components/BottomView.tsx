@@ -30,7 +30,7 @@ const BottomView = () => {
             <div className="space" />
             <SectionHead title="Cross-chain" className="section-head" />
             <div className="space" />
-            <SectionHead title="Permissionless" className="section-head" />
+            <SectionHead title="Permissionless" className="section-head section-head1" />
           </div>
           <h1>Become a Liquidity Provider for DEX</h1>
           <div className="description-container">
