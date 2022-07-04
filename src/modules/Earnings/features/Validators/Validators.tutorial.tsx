@@ -40,6 +40,14 @@ const Styled = styled.div`
       height: 100%;
     }
   }
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+    margin-top: 80px;
+  `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    margin-top: 50px;
+  `}
 `;
 
 const ValidatorTutorial = () => {

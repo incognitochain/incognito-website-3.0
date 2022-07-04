@@ -83,11 +83,12 @@ const Styled = styled.div<{ isMobile: boolean }>`
       flex-direction: row;
     `}
 
-    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
       margin-top: 60px;
       flex-direction: column;
       .leftView {
         display: flex;
+        flex: 0.82;
         overflow-x: auto;
         overflow-y: hidden;
         .chart-container {
@@ -96,13 +97,14 @@ const Styled = styled.div<{ isMobile: boolean }>`
         }
       }
       .rightView {
+        flex: 0.18;
         margin-left: 0px;
         margin-top: 40px;
         margin-right: 0px;
       }
     `}
 
-    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+    ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
       flex-direction: column;
       .leftView {
         overflow-x: auto;
@@ -128,6 +130,14 @@ const Styled = styled.div<{ isMobile: boolean }>`
     border-color: transparent;
     border-radius: 14px;
   }
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+    margin-top: 80px;
+  `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    margin-top: 50px;
+  `}
 `;
 
 const CustomizedAxisTick = (props: any) => {

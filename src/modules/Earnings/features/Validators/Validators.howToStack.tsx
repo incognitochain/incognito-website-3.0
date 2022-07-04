@@ -159,6 +159,7 @@ const Styled = styled.div`
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+    margin-top: 80px;
     .topView {
       display: flex;
       flex-direction: column;
@@ -170,6 +171,7 @@ const Styled = styled.div`
   `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    margin-top: 50px;
     .topView {
       .topRight {
         flex-direction: column;
