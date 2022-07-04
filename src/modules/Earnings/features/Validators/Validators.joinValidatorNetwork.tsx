@@ -49,7 +49,7 @@ const Styled = styled.div`
       flex: 0.9;
       padding: 0px;
       .img {
-        margin: 0px;
+        margin: 30px 10px 30px 30px;
       }
     }
   `} 

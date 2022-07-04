@@ -101,6 +101,11 @@ export const Styled = styled.div`
       .space {
         height: 50px;
       }
+      .right .description-container {
+        margin-top: 25px;
+        margin-bottom: 20px;
+      }
+
       .right .row-section-head {
         .section-head1 {
           margin-top: -12px;
