@@ -188,7 +188,7 @@ const ValidatorRewardEstimation = () => {
               />
               <XAxis
                 dataKey="time"
-                stroke="#1A73E8"
+                stroke="#363636"
                 height={50}
                 minTickGap={0}
                 tickMargin={10}
@@ -237,6 +237,7 @@ const ValidatorRewardEstimation = () => {
               <Bar
                 yAxisId="left"
                 dataKey="Active Validator"
+                isAnimationActive={false}
                 fill="#1A73E8"
                 barSize={35}
               />
