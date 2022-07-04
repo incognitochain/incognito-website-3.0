@@ -24,10 +24,10 @@ const Styled = styled.div`
   margin-top: 120px;
   display: flex;
   flex-direction: row;
-
   .leftView {
     display: flex;
     flex: 1;
+    margin-right: 20px;
     flex-direction: column;
     .title-container {
       text-align: left;
@@ -43,15 +43,13 @@ const Styled = styled.div`
     flex-direction: column;
   }
 
-  /* ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
-      flex-direction: row;
-      .leftView .title-container {
-        text-align: left;
-      }
-  `} */
-
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
-      flex-direction: column;
+    margin-top: 100px;
+  `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+    margin-top: 80px;
+    flex-direction: column;
       .leftView .title-container {
         text-align: center;
         .title-custom {
@@ -61,6 +59,10 @@ const Styled = styled.div`
       .rightView {
         margin-top: 40px;
       }
+  `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    margin-top: 50px;
   `}
 `;
 
