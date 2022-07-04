@@ -55,10 +55,9 @@ const Styled = styled.div`
       .leftView .title-container {
         text-align: center;
         .title-custom {
-          width: 70%;
+          width: 100%;
         }
       }
-
       .rightView {
         margin-top: 40px;
       }

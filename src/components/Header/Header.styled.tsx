@@ -133,7 +133,8 @@ export const Styled = styled(Row)`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
     justify-content: space-between;
       .wrap-menu-desktop {
-        width: 0%;
+        max-width: 0.1px;
+        max-height: 0.1px;
         visibility: hidden;
       }
       .menu-mobile {
