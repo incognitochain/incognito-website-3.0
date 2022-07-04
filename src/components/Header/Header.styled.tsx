@@ -131,9 +131,6 @@ export const Styled = styled(Row)`
     .more-dropdown {
       display: flex;
     }
-    .wrap-menu-desktop {
-        visibility: visible;
-      }
   `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
@@ -144,9 +141,9 @@ export const Styled = styled(Row)`
       .menu-mobile {
          display: initial;
       }
-          .more-dropdown {
-            display: none;
-          }
+      .more-dropdown {
+        display: none;
+      }
     `}
 `;
 
