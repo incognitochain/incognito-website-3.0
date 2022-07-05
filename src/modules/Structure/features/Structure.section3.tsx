@@ -47,6 +47,11 @@ const Styled = styled(Row)`
   .descripiton-1 {
   }
 
+  .title-2 {
+    white-space: pre-wrap;
+    text-align: left;
+  }
+
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
     .section3-title {
         margin-bottom: 40px;
@@ -69,7 +74,7 @@ const Styled = styled(Row)`
             line-height: 24px;
         }
         .link-text {
-            text-align: center;
+            text-align: left;
         }
         .section3-title {
             margin-bottom: 40px;
@@ -83,7 +88,16 @@ ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
         margin-bottom: 40px;
       }
 
+      .link-text {
+            text-align: center;
+      }
+
       .descripiton-1 {
+        text-align: center;
+      }
+
+      .title-2 {
+        white-space: pre-wrap;
         text-align: center;
       }
   `}
@@ -101,7 +115,7 @@ const Item = React.memo(({ image, title, desc, linkText, isRevert, link }: IFact
   const _Content = React.useMemo(
     () => (
       <Col xs={24} xxl={10} lg={12}>
-        <h3 className="title margin-add wrap-text-center">{title}</h3>
+        <h3 className="title margin-add title-2">{title}</h3>
         <h6 className="text2 descripiton-1">{desc}</h6>
         <a className="link-text description" href={link}>
           {` ${linkText}`}
