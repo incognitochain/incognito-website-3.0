@@ -747,4 +747,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
     .margin-add {
       margin-bottom: 10px;
     }
+
+    .wrap-text-center {
+      white-space: pre-wrap;
+      text-align: center;
+    }
 `;

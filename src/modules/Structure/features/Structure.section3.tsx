@@ -71,6 +71,14 @@ const Styled = styled(Row)`
             margin-bottom: 40px;
         }
   `}
+
+${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+      .section3-title {
+        white-space: pre-wrap;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+  `}
 `;
 
 const Item = React.memo(({ image, title, desc, linkText, isRevert, link }: IFactory) => {
@@ -85,7 +93,7 @@ const Item = React.memo(({ image, title, desc, linkText, isRevert, link }: IFact
   const _Content = React.useMemo(
     () => (
       <Col xs={24} xxl={10} lg={12}>
-        <h3 className="title margin-add">{title}</h3>
+        <h3 className="title margin-add wrap-text-center">{title}</h3>
         <h6 className="text2">{desc}</h6>
         <a className="link-text description" href={link}>
           {` ${linkText}`}
