@@ -151,7 +151,7 @@ const Styled = styled.div`
   }
 
   .margin {
-    margin-top: 25px;
+    margin-top: 20px;
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
@@ -184,7 +184,7 @@ const Styled = styled.div`
     }
 
     .stackItemListView {
-      margin-top: 32px;
+      margin-top: 28px;
     }
   `}
 `;
@@ -233,7 +233,7 @@ const ValidatorHowToStack = () => {
       </div>
       <div className="stackItemListView">
         <Row className="row" gutter={{ xs: 16, sm: 22, md: 28, lg: 30 }}>
-          <Col lg={6} md={12} sm={16} xs={24} className={'margin'}>
+          <Col lg={6} md={12} sm={16} xs={28} className={'margin'}>
             <StackItem
               index={1}
               title={'Get VPS'}
@@ -242,14 +242,14 @@ const ValidatorHowToStack = () => {
               }
             />
           </Col>
-          <Col lg={6} md={12} sm={16} xs={24} className={'margin'}>
+          <Col lg={6} md={12} sm={16} xs={28} className={'margin'}>
             <StackItem
               index={2}
               title={'Docker and Script installation'}
               description={`Start your node using Incognito's convenient and easy installation script.`}
             />
           </Col>
-          <Col lg={6} md={12} sm={16} xs={24} className={'margin'}>
+          <Col lg={6} md={12} sm={16} xs={28} className={'margin'}>
             <StackItem
               index={3}
               title={'Stake 1,750 PRV'}
@@ -258,7 +258,7 @@ const ValidatorHowToStack = () => {
               }
             />
           </Col>
-          <Col lg={6} md={12} sm={16} xs={24} className={'margin'}>
+          <Col lg={6} md={12} sm={16} xs={28} className={'margin'}>
             <StackItem
               index={4}
               title={'Earnings'}

@@ -33,7 +33,6 @@ export const Styled = styled(Row)`
 
   .category-sub-title {
     margin-top: 4px;
-    font-weight: 400;
   }
 
   .wrap-category-item:last-child {

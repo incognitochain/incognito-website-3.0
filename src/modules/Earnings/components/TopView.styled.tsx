@@ -93,7 +93,20 @@ export const Styled = styled.div`
       .space {
         height: 50px;
       }
+     
+      .right .row-section-head {
+        margin-bottom: -10px;
+      }
 
+      .right .description-container {
+        margin-top: 16px;
+        margin-bottom: 32px;
+      }
+
+      .right .row-button .btn-become-validator {
+        font-size: 16px;
+      }
+    
       .left .img {
         margin-left: 20px;
       }
