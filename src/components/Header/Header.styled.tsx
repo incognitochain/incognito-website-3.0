@@ -23,7 +23,7 @@ export const Styled = styled(Row)`
     .menuItem {
       margin-right: 40px;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 140%;
     }
   }

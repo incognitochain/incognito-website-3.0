@@ -11,6 +11,7 @@ const Styled = styled.div`
   }
   .link-text {
     cursor: pointer;
+    font-weight: 500;
   }
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
     .label {
@@ -42,7 +43,7 @@ const SectionLink = React.memo(
   }) => {
     return (
       <Styled className={`${className}`}>
-        <p className="text2 label">
+        <h6 className="text2 ">
           {`${title} `}
           <span
             className="text3 link-text"
@@ -56,7 +57,7 @@ const SectionLink = React.memo(
               alt="link-icon"
             />
           </span>
-        </p>
+        </h6>
       </Styled>
     );
   },

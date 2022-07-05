@@ -98,8 +98,18 @@ export const Styled = styled.div`
       .space {
         height: 50px;
       }
+      
       .right .description-container {
-        margin-top: 25px;
+        margin-top: 16px;
+        margin-bottom: 32px;
+      }
+
+      .right .row-button .btn-become-validator {
+        font-size: 16px;
+      }
+    
+      .right .description-container {
+        margin-top: 16px;
         margin-bottom: 20px;
       }
 

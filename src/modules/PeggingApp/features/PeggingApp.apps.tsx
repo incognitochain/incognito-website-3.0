@@ -210,7 +210,7 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
       <Row style={{ minWidth: 250 }}>
         {data.chain.map((item: any) => (
           <div style={{ marginTop: 12 }} key={item} className="wrap-chain background3">
-            <p className="description3 color-white">{item}</p>
+            <p className="description5 color-white">{item}</p>
           </div>
         ))}
       </Row>

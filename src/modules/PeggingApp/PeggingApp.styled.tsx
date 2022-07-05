@@ -72,10 +72,7 @@ export const Styled = styled.div`
   .section-2 {
     justify-content: space-between;
     .title {
-      font-size: 64px;
       white-space: pre-wrap;
-      line-height: 70px;
-      letter-spacing: 0.015em;
       text-align: center;
     }
     .sub-title {
@@ -97,8 +94,6 @@ export const Styled = styled.div`
         .title {
           text-align: center;
           width: 100%;
-          font-size: 34px;
-          line-height: 44px;
         }
         .btn-how-work {
           margin: auto;
