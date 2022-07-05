@@ -234,7 +234,7 @@ const MarketTokens = () => {
         justify="space-between"
         align="middle"
         className="token-main-title token-padding">
-        <p className="tab-header-title-left fw-suppermedium">{marketTrs.privacyMarket}</p>
+        <p className="header2">{marketTrs.privacyMarket}</p>
         <Tooltip
           key="Tooltip"
           title={marketTrs.whatPCoins}
