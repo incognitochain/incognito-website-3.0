@@ -99,7 +99,7 @@ const Styled = styled.div<{ isMobile: boolean }>`
       .rightView {
         flex: 0.18;
         margin-left: 0px;
-        margin-top: 40px;
+        margin-top: 25px;
         margin-right: 0px;
       }
     `}
@@ -115,10 +115,17 @@ const Styled = styled.div<{ isMobile: boolean }>`
         }
       }
       .rightView {
+        margin-top: 16px;
         padding: 24px;
       }
     `}
   }
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+    .contentView {
+      margin-top: 32px;
+    }
+  `}
 
   .timeText {
     word-wrap: break-word;

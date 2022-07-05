@@ -38,8 +38,6 @@ const ItemStyled = styled.div`
 
   .description {
     margin-top: 10px;
-    font-weight: 400;
-    font-size: 16px;
   }
 
   :hover {
@@ -126,9 +124,7 @@ const Styled = styled.div`
       }
 
       p {
-        font-size: 17px;
-        line-height: 19px;
-        border-bottom: 1px solid;
+        line-height: 120%;
         cursor: pointer;
         :hover {
           opacity: 0.7;
@@ -171,7 +167,7 @@ const Styled = styled.div`
   `}
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
-    margin-top: 50px;
+    margin-top: 40px;
     .topView {
       .topRight {
         flex-direction: column;
@@ -180,13 +176,15 @@ const Styled = styled.div`
           margin-top: 10px;
           cursor: pointer;
         }
-
         .prvButton {
           margin-top: 30px;
           margin-left: 0px;
         }
-
       }
+    }
+
+    .stackItemListView {
+      margin-top: 32px;
     }
   `}
 `;
@@ -216,7 +214,7 @@ const ValidatorHowToStack = () => {
                 '_blank',
               );
             }}>
-            <p className="description color-white">See full walkthrough</p>
+            <p className="description description3 color-white">See full walkthrough</p>
           </button>
           <Button
             type="primary"

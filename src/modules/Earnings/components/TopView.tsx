@@ -49,7 +49,7 @@ const TopView = () => {
               onClick={() => {
                 history.push(ValidatorRoute);
               }}>
-              <p className="more-detail-title hover-opacity">More details</p>
+              <p className="more-detail-title description3 hover-opacity">More details</p>
             </button>
           </div>
         </div>

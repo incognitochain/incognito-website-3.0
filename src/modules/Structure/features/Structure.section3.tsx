@@ -22,12 +22,6 @@ interface IFactory {
 
 const Styled = styled(Row)`
   padding-bottom: 40px;
-  .title {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 54px;
-    letter-spacing: 0.01em;
-  }
   .desc {
     font-size: 22px;
     line-height: 33px;
@@ -53,17 +47,11 @@ const Styled = styled(Row)`
     .section3-title {
         margin-bottom: 40px;
     }
-    .title {
-        font-size: 28px;
-        line-height: 36px;
-    }
     .desc {
         font-size: 18px;
         line-height: 27px;
     }
     .link-text {
-        font-size: 18px;
-        line-height: 27px;
     }
     .section3-item {
         padding-bottom: 40px;
@@ -71,12 +59,6 @@ const Styled = styled(Row)`
   `}
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         padding-top: 40px;
-        .title {
-            text-align: center;
-            font-weight: 600;
-            font-size: 28px;
-            line-height: 38px;
-        }
         .desc {
             text-align: center;
             font-size: 16px;
@@ -84,8 +66,6 @@ const Styled = styled(Row)`
         }
         .link-text {
             text-align: center;
-            font-size: 16px;
-            line-height: 24px;
         }
         .section3-title {
             margin-bottom: 40px;
@@ -105,9 +85,9 @@ const Item = React.memo(({ image, title, desc, linkText, isRevert, link }: IFact
   const _Content = React.useMemo(
     () => (
       <Col xs={24} xxl={10} lg={12}>
-        <p className="title">{title}</p>
-        <p className="desc text2">{desc}</p>
-        <a className="link-text fs-supermedium" href={link}>
+        <h3 className="title">{title}</h3>
+        <h6 className="text2">{desc}</h6>
+        <a className="link-text description" href={link}>
           {` ${linkText}`}
           <img
             src={linkImg}

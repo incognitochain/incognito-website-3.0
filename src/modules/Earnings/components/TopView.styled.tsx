@@ -80,13 +80,10 @@ export const Styled = styled.div`
         align-self: baseline;
 
         .more-detail-title {
+          color: #ffffff;
           margin-left: 40px;
           align-self: inherit;
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 24px;
           white-space: initial;
-          font-style: normal;
           cursor: pointer;
         }
       }

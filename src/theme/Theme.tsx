@@ -439,6 +439,46 @@ export const ThemedGlobalStyle = createGlobalStyle`
     }
 
 
+    .description3 {
+      color: ${({ theme }) => theme.color_grey4};
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.08em;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+    }
+
+
+    .description4 {
+      color: ${({ theme }) => theme.color_grey4};
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+      `}
+    }
+
     
     ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
         .default-padding-horizontal {
@@ -587,6 +627,45 @@ export const ThemedGlobalStyle = createGlobalStyle`
         line-height: 124%;
       `}
     }
+
+    h3 {
+      color: ${({ theme }) => theme.color_white};
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+    }
+
+    .h3_1 {
+      color: ${({ theme }) => theme.color_white};
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 140%;
+      `}
+    }
+
 
     h4 {
       color: ${({ theme }) => theme.color_white};
