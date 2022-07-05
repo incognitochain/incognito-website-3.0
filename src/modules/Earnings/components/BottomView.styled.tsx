@@ -103,7 +103,9 @@ export const Styled = styled.div`
         margin-top: 16px;
         margin-bottom: 32px;
       }
-
+      .right .row-button {
+        margin-top: 10px;
+      }
       .right .row-button .btn-become-validator {
         font-size: 16px;
       }
