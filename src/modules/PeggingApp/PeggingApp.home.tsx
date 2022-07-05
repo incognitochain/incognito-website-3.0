@@ -51,7 +51,7 @@ const Home = () => {
       <div className="default-padding-horizontal default-margin-top">
         <PeggingCategory />
         <div className="section-2 default-margin-top">
-          <p className="fw-medium title">{peggingTrs.privacyApp}</p>
+          <h1 className="title">{peggingTrs.privacyApp}</h1>
           {/*<p className="text3 fw-medium sub-title">{peggingTrs.coming}</p>*/}
         </div>
         <PeggingListApps />

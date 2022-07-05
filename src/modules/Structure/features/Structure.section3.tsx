@@ -22,12 +22,6 @@ interface IFactory {
 
 const Styled = styled(Row)`
   padding-bottom: 40px;
-  .title {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 54px;
-    letter-spacing: 0.01em;
-  }
   .desc {
     font-size: 22px;
     line-height: 33px;
@@ -49,21 +43,24 @@ const Styled = styled(Row)`
     margin-bottom: 60px;
     width: 100%;
   }
+
+  .descripiton-1 {
+  }
+
+  .title-2 {
+    white-space: pre-wrap;
+    text-align: left;
+  }
+
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
     .section3-title {
         margin-bottom: 40px;
-    }
-    .title {
-        font-size: 28px;
-        line-height: 36px;
     }
     .desc {
         font-size: 18px;
         line-height: 27px;
     }
     .link-text {
-        font-size: 18px;
-        line-height: 27px;
     }
     .section3-item {
         padding-bottom: 40px;
@@ -71,25 +68,38 @@ const Styled = styled(Row)`
   `}
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
         padding-top: 40px;
-        .title {
-            text-align: center;
-            font-weight: 600;
-            font-size: 28px;
-            line-height: 38px;
-        }
         .desc {
             text-align: center;
             font-size: 16px;
             line-height: 24px;
         }
         .link-text {
-            text-align: center;
-            font-size: 16px;
-            line-height: 24px;
+            text-align: left;
         }
         .section3-title {
             margin-bottom: 40px;
         }
+  `}
+
+${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+      .section3-title {
+        white-space: pre-wrap;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .link-text {
+            text-align: center;
+      }
+
+      .descripiton-1 {
+        text-align: center;
+      }
+
+      .title-2 {
+        white-space: pre-wrap;
+        text-align: center;
+      }
   `}
 `;
 
@@ -105,9 +115,9 @@ const Item = React.memo(({ image, title, desc, linkText, isRevert, link }: IFact
   const _Content = React.useMemo(
     () => (
       <Col xs={24} xxl={10} lg={12}>
-        <p className="title">{title}</p>
-        <p className="desc text2">{desc}</p>
-        <a className="link-text fs-supermedium" href={link}>
+        <h3 className="title margin-add title-2">{title}</h3>
+        <h6 className="text2 descripiton-1">{desc}</h6>
+        <a className="link-text description" href={link}>
           {` ${linkText}`}
           <img
             src={linkImg}

@@ -4,15 +4,29 @@ import downImg from '@images/down-icon.png';
 import logo from '@images/logo.png';
 import menuBarIcon from '@images/menu-bar.png';
 import { ReactComponent as IcClose } from '@images/svg/close-icon.svg';
-import { routeMarket, routePeggingApps, routeStructure } from '@src/modules';
+import { route as ValidatorRoute } from '@modules/Earnings/features/Validators/Validators.route';
+import {
+  routeEarnings,
+  routeMarket,
+  routePeggingApps,
+  routeStructure,
+} from '@src/modules';
 import { Button, Col, Dropdown, Menu, Row } from 'antd';
 import React, { memo } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'rebass';
 
 import { DrawerStyled, MenuDropdown, Styled } from './Header.styled';
 
-const menuItem = [
+interface MenuItemProps {
+  name: string;
+  path: string;
+  isLink?: string;
+  target?: string;
+}
+
+const menuItem: MenuItemProps[] = [
   {
     name: 'Markets',
     path: routeMarket,
@@ -25,11 +39,15 @@ const menuItem = [
     name: 'Infrastructure',
     path: routeStructure,
   },
+  // {
+  //   name: 'Community',
+  //   path: 'https://we.incognito.org/t/about-the-incognito-community/373',
+  //   target: '_blank',
+  //   isLink: true,
+  // },
   {
-    name: 'Community',
-    path: 'https://we.incognito.org/t/about-the-incognito-community/373',
-    target: '_blank',
-    isLink: true,
+    name: 'Earnings',
+    path: routeEarnings,
   },
 ];
 
@@ -49,6 +67,12 @@ const moreItem = [
     path: 'https://we.incognito.org/t/incognito-2022-technical-roadmap/15002',
     sub: 'The development',
   },
+
+  {
+    name: 'Community',
+    path: 'https://we.incognito.org/t/about-the-incognito-community/373',
+    sub: 'The Community',
+  },
 ];
 
 const Header = () => {
@@ -56,12 +80,14 @@ const Header = () => {
   const [visible, setVisible] = React.useState(false);
   const [expand, setExpand] = React.useState(false);
   const history = useHistory();
+  const location = useLocation();
   const openMenu = () => {
     setVisible(true);
   };
   const onClose = () => {
     setVisible(false);
   };
+
   React.useEffect(() => {
     const menuName = (
       menuItem.find((item: any) => item.path === history.location.pathname) as any
@@ -73,27 +99,12 @@ const Header = () => {
     }
   }, [window.location.pathname]);
 
-  const HomeMenu = () => {
-    return (
-      <Menu theme="dark" mode="horizontal" defaultOpenKeys={[]} selectedKeys={[pathName]}>
-        {menuItem.map((item) => {
-          return (
-            <Menu.Item onClick={() => setPathName(item.name)} key={item.name}>
-              {item?.isLink ? (
-                <Link href={item.path} target="_blank" rel="noopener noreferrer">
-                  {item.name}
-                </Link>
-              ) : (
-                <NavLink target={item.target} to={item.path}>
-                  {item.name}
-                </NavLink>
-              )}
-            </Menu.Item>
-          );
-        })}
-      </Menu>
-    );
-  };
+  React.useEffect(() => {
+    const { pathname = '' } = location;
+    if (pathname === ValidatorRoute) {
+      setPathName(menuItem[3].name);
+    }
+  }, [location]);
 
   const MoreMenu = () => (
     <MenuDropdown
@@ -123,9 +134,30 @@ const Header = () => {
       <NavLink className="logo-mobile" to="/" onClick={() => setPathName(routeMarket)}>
         <img className="app-logo" src={logo} alt="app-logo" />
       </NavLink>
-      <Row className="wrap-menu-desktop">
-        <div className="menu">{HomeMenu()}</div>
-      </Row>
+      <div className="wrap-menu-desktop center">
+        {menuItem.map((item) => {
+          const isActive = item.name === pathName ? true : false;
+          return (
+            <div
+              className="menuItem"
+              onClick={() => setPathName(item.name)}
+              key={item.name}>
+              {item?.isLink ? (
+                <Link href={item.path} target="_blank" rel="noopener noreferrer">
+                  {item.name}
+                </Link>
+              ) : (
+                <NavLink
+                  target={item.target}
+                  to={item.path}
+                  className={`${isActive ? 'color-blue' : 'color-white'}`}>
+                  {item.name}
+                </NavLink>
+              )}
+            </div>
+          );
+        })}
+      </div>
       <Dropdown
         overlayStyle={{ width: 120 }}
         overlay={MoreMenu}

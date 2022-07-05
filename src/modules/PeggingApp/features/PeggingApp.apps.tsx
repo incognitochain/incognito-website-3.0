@@ -125,10 +125,7 @@ const StyledItem = styled(Col)<{ isMobile: boolean }>`
   }
 
   .status-text {
-    font-size: 14px;
     height: fit-content;
-    font-weight: 400;
-    line-height: 18px;
   }
 
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
@@ -168,8 +165,6 @@ const StyledItem = styled(Col)<{ isMobile: boolean }>`
         }
        .desc-text {
          margin-top: 24px;
-         font-size: 16px;
-         line-height: 24px;
        }
         .wrap-chain {
             min-height: 24px;
@@ -188,8 +183,6 @@ const StyledItem = styled(Col)<{ isMobile: boolean }>`
       }
       .name-desc-text {
         margin-left: 0px;
-        font-size: 14px;
-        line-height: 21px;
       }
       .wrap-apps-head {
       }
@@ -207,7 +200,6 @@ const StyledItem = styled(Col)<{ isMobile: boolean }>`
         margin-left: ${({ isMobile }) => (isMobile ? 8 : 0)}px;
       }
       .status-text {
-        font-size: 10px;
       }
   `};
 `;
@@ -218,7 +210,7 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
       <Row style={{ minWidth: 250 }}>
         {data.chain.map((item: any) => (
           <div style={{ marginTop: 12 }} key={item} className="wrap-chain background3">
-            <p className="chain-text">{item}</p>
+            <p className="description5 color-white">{item}</p>
           </div>
         ))}
       </Row>
@@ -229,7 +221,10 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
     () =>
       data.status ? (
         <div className="wrap-status">
-          <p className="status-text fw-medium normal-text">{data.status}</p>
+          <p className="status-text description4 normal-text color-white">
+            {data.status}
+          </p>
+          {/* <p className="status-text fw-medium normal-text">{data.status}</p> */}
         </div>
       ) : null,
     [],
@@ -243,18 +238,16 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
             {!isMobile && Status}
             <div className="wrap-name">
               <Row align="middle">
-                <p className="large-text fw-medium normal-text">{data.name}</p>
+                <p className="normal-text h3_1">{data.name}</p>
                 {isMobile && Status}
               </Row>
-              <p className="medium-text text2 normal-text name-desc-text">
-                {data.nameDesc}
-              </p>
+              <h6 className="text2 normal-text name-desc-text">{data.nameDesc}</h6>
             </div>
             {!isMobile && ChainList}
           </Col>
           {isMobile && ChainList}
         </Row>
-        <p className="medium-text normal-text desc-text">
+        <p className="normal-text desc-text description color-white">
           {data.desc}{' '}
           {!!data.link && (
             <span

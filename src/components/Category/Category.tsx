@@ -29,17 +29,10 @@ export const Styled = styled(Row)`
 
   .category-title {
     margin-top: 16px;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 39px;
-    letter-spacing: 0.005em;
   }
 
   .category-sub-title {
     margin-top: 4px;
-    font-size: 18px;
-    line-height: 27px;
-    letter-spacing: 0.01em;
   }
 
   .wrap-category-item:last-child {
@@ -57,10 +50,6 @@ export const Styled = styled(Row)`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       .category-title {
         margin-top: 16px;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 30px;
-        letter-spacing: 0.005em;
       }
       .wrap-category-item {
         border-radius: 16px;
@@ -80,9 +69,6 @@ export const Styled = styled(Row)`
       }
       .category-sub-title {
         margin-top: 4px;
-        font-size: 14px;
-        line-height: 27px;
-        letter-spacing: 0.01em;
       }
   `}
 
@@ -98,8 +84,6 @@ export const Styled = styled(Row)`
           height: 100%
         }
         .category-title {
-          font-size: 20px;
-          line-height: 30px;
         }
         .category-item-center {
           margin-bottom: 0px;
@@ -117,8 +101,6 @@ export const Styled = styled(Row)`
           padding-bottom: 24px;
         }
         .category-sub-title {
-          font-size: 14px;
-          line-height: 21px;
         }
         .wrap-category-item:first-child {
           margin-right: 0px;
@@ -144,8 +126,8 @@ const Category = ({ data = [] }: { data: ICategory[] }) => {
     <Col className="wrapper" xl={8} xs={index === 2 ? 24 : 12} key={item.title}>
       <Col className={`wrap-category-item background2 ${item.className}`}>
         {item.icon}
-        <p className="fs-large fw-medium category-title">{item.title}</p>
-        <p className="fw-regular fs-medium category-sub-title text2">{item.subTitle}</p>
+        <h5 className="category-title">{item.title}</h5>
+        <p className="text2 description3 category-sub-title">{item.subTitle}</p>
       </Col>
     </Col>
   );

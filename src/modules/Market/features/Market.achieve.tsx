@@ -16,6 +16,9 @@ export const Styled = styled.div`
   }
   .achieve-sub-title {
     text-align: center;
+    margin-top: 24px;
+    letter-spacing: 0.01em;
+    white-space: pre-wrap;
   }
   .achieve-margin-right ~ .achieve-margin-right {
     margin-left: 24px;
@@ -73,7 +76,6 @@ const Item = styled.div`
   }
   .achieve-item-sub-title {
     margin-top: 24px;
-    font-size: 22px;
     color: ${({ theme }) => theme.text2};
   }
   .wrap-item {
@@ -91,7 +93,6 @@ const Item = styled.div`
             margin: auto;
         }
         .achieve-item-sub-title {
-            font-size: 14px;
             line-height: 27px;
         }
         .achieve-item-title {
@@ -111,8 +112,6 @@ const Item = styled.div`
             height: 145px;
           }
           .achieve-item-sub-title {
-            font-size: 16px;
-            line-height: 24px;
             margin-top: 11px;
           }
     `}
@@ -155,7 +154,7 @@ const MarketAchieve = () => {
         <div className={`achieve-circle`}>
           <p className="achieve-item-title">{item.title}</p>
         </div>
-        <p className="text-align-center fw-medium achieve-item-sub-title">
+        <p className="text-align-center description achieve-item-sub-title">
           {item.content}
         </p>
       </Item>
@@ -164,9 +163,7 @@ const MarketAchieve = () => {
   return (
     <Styled className="default-padding-horizontal default-padding-vertical default-margin-top background2">
       <p className="main-title-text achieve-title">{marketTrs.privacyMarketplace}</p>
-      <p className="sub-title-text text2 sub-title-text achieve-sub-title">
-        {marketTrs.inCogIsNone}
-      </p>
+      <h6 className="text2 achieve-sub-title">{marketTrs.inCogIsNone}</h6>
       <Row className="achieve-wrap default-margin-top">
         <Col xs={24}>
           <List
