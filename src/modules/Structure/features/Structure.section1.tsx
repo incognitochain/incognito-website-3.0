@@ -64,6 +64,17 @@ const Styled = styled(Row)`
         margin-bottom: 45px;
       }
   `}
+
+  ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
+      .main-title {
+        white-space: pre-wrap;
+        text-align: center;
+      }
+
+      .btn-become-validator {
+        // align-self: center;
+      }
+  `}
 `;
 
 const Section1 = () => {
