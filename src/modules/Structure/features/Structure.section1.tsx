@@ -68,7 +68,7 @@ const Styled = styled(Row)`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSmall`
       .main-title {
         white-space: pre-wrap;
-        text-align: center;
+        text-align: left;
       }
 
       .btn-become-validator {
