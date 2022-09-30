@@ -32,7 +32,9 @@ const BottomView = () => {
             <div className="space" />
             <SectionHead title="Permissionless" className="section-head section-head1" />
           </div>
-          <h1>Become a Liquidity Provider for DEX</h1>
+          <div style={{ width: '100%' }}>
+            <h1>Become a Liquidity Provider for DEX</h1>
+          </div>
           <div className="description-container">
             <h6>
               A liquidity pool is used to facilitate trades between the assets on a

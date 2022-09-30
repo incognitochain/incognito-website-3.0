@@ -29,10 +29,14 @@ export const Styled = styled(Row)`
 
   .category-title {
     margin-top: 16px;
+    font-weight: 500;
+    font-size: 26px;
   }
 
   .category-sub-title {
     margin-top: 4px;
+    font-size: 18px;
+    line-height: 27px;
   }
 
   .wrap-category-item:last-child {
@@ -50,6 +54,10 @@ export const Styled = styled(Row)`
   ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
       .category-title {
         margin-top: 16px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.005em;
       }
       .wrap-category-item {
         border-radius: 16px;
@@ -69,6 +77,9 @@ export const Styled = styled(Row)`
       }
       .category-sub-title {
         margin-top: 4px;
+        font-size: 14px;
+        line-height: 27px;
+        letter-spacing: 0.01em;
       }
   `}
 
@@ -84,6 +95,8 @@ export const Styled = styled(Row)`
           height: 100%
         }
         .category-title {
+          font-size: 20px;
+          line-height: 30px;
         }
         .category-item-center {
           margin-bottom: 0px;
@@ -127,7 +140,8 @@ const Category = ({ data = [] }: { data: ICategory[] }) => {
       <Col className={`wrap-category-item background2 ${item.className}`}>
         {item.icon}
         <h5 className="category-title">{item.title}</h5>
-        <p className="text2 description3 category-sub-title">{item.subTitle}</p>
+        {/* <p className="text2 description3 category-sub-title">{item.subTitle}</p> */}
+        <p className="h7">{item.subTitle}</p>
       </Col>
     </Col>
   );

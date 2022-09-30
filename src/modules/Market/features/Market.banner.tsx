@@ -58,15 +58,11 @@ export const Styled = styled(Col)`
 const MarketBanner = () => {
   const marketTrs = useSelector(marketTranslateSelector);
   return (
-    <Styled
-      xs={24}
-      xl={11}
-      xxl={9}
-      className={`${isMobile ? 'default-padding-horizontal' : ''}`}>
+    <Styled xs={24} xl={11} xxl={9} className={`${isMobile ? '' : ''}`}>
       <SectionHead title="Privacy Markets" className="section-head" />
-      <p className="text1 fw-medium special-main-title-text banner-title">
+      <h1 className="text1 special-main-title-text banner-title">
         {marketTrs.mainTitle}
-      </p>
+      </h1>
       <Col xs={24} lg={22}>
         <p className="text2 sub-title-text banner-sub-title">
           {`Here, your coins are privacy coins. Trade them cross-chain, commission-free.`}

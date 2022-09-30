@@ -11,15 +11,26 @@ import { useSelector } from 'react-redux';
 
 import { Styled } from './PeggingApp.styled';
 
+const renderSectionBottom = () => {
+  const peggingTrs = useSelector(peggingAppTranslateSelector);
+  return (
+    <div className="default-padding-horizontal default-margin-top">
+      <PeggingCategory />
+      <div className="section-2 default-margin-top">
+        <h1 className="title">{peggingTrs.privacyApp}</h1>
+        {/*<p className="text3 fw-medium sub-title">{peggingTrs.coming}</p>*/}
+      </div>
+      <PeggingListApps />
+    </div>
+  );
+};
+
 const Home = () => {
   const peggingTrs = useSelector(peggingAppTranslateSelector);
   return (
     <Styled>
-      <Row
-        align="middle"
-        justify="space-between"
-        className="section-1 default-padding-horizontal default-margin-top">
-        <Row style={{ flexDirection: 'column' }}>
+      <div className="section-1 default-padding-horizontal default-margin-top">
+        <Col style={{ flexDirection: 'column' }}>
           <SectionHead title="Privacy apps" className="section-head" />
           <p className="fw-medium main-title-text title">{peggingTrs.mainTitle}</p>
           <p className="text2 sub-title sub-title-text">
@@ -45,17 +56,10 @@ const Home = () => {
             subTitle="Try it out"
             link="https://we.incognito.org/t/how-to-trade-with-ppancake/15567"
           />
-        </Row>
+        </Col>
         <img src={cakeImg} alt="cake-logo" className="cake-img" />
-      </Row>
-      <div className="default-padding-horizontal default-margin-top">
-        <PeggingCategory />
-        <div className="section-2 default-margin-top">
-          <h1 className="title">{peggingTrs.privacyApp}</h1>
-          {/*<p className="text3 fw-medium sub-title">{peggingTrs.coming}</p>*/}
-        </div>
-        <PeggingListApps />
       </div>
+      {renderSectionBottom()}
     </Styled>
   );
 };
