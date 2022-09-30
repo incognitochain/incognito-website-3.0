@@ -9,7 +9,7 @@ import uniImg from '@images/uni-icon.png';
 import unknowImg from '@images/unknow-icon.png';
 import { Col, Row } from 'antd';
 import React from 'react';
-import { isMobile } from 'react-device-detect';
+// import { isMobile } from 'react-device-detect';
 import styled, { ITheme } from 'styled-components';
 
 const Styled = styled(Row)`
@@ -96,6 +96,7 @@ const StyledItem = styled(Col)<{ isMobile: boolean }>`
   }
 
   .wrap-main-content {
+    flex-direction: column;
   }
 
   .desc-text {
@@ -229,6 +230,7 @@ const Item = React.memo(({ className, data }: { className?: string; data: any })
       ) : null,
     [],
   );
+  let isMobile = false;
   return (
     <StyledItem md={24} xl={12} key={data.name} isMobile={isMobile}>
       <Col className={`wrap-item-content background2 ${className}`}>

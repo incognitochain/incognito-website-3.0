@@ -3,6 +3,8 @@ import styled, { ITheme } from 'styled-components';
 export const Styled = styled.div`
   padding-bottom: 40px;
   .section-1 {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     .title {
       white-space: pre-wrap;
