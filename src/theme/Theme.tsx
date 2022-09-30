@@ -341,6 +341,10 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     .header {
       color: ${({ theme }) => theme.color_white};
+      font-size: 64px;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -0.005em;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 64px;
         font-weight: 500;
@@ -361,6 +365,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     .header1 {
       color: ${({ theme }) => theme.color_white};
+      font-size: 28px;
+        font-weight: 500;
+        line-height: 140%;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 28px;
         font-weight: 500;
@@ -381,6 +388,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     .header2 {
       color: ${({ theme }) => theme.color_white};
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 140%;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 24px;
         font-weight: 500;
@@ -400,6 +410,10 @@ export const ThemedGlobalStyle = createGlobalStyle`
       
     .description {
       color: ${({ theme }) => theme.color_grey};
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: 0.005em;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 20px;
         font-weight: 400;
@@ -420,6 +434,10 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     .description2 {
       color: ${({ theme }) => theme.color_grey4};
+      font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 0.005em;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 16px;
         font-weight: 400;
@@ -441,6 +459,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     .description3 {
       color: ${({ theme }) => theme.color_grey4};
+      font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 18px;
         font-weight: 500;
@@ -461,6 +482,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     .description4 {
       color: ${({ theme }) => theme.color_grey4};
+      font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 14px;
         font-weight: 400;
@@ -481,6 +505,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
     
     .description5 {
       color: ${({ theme }) => theme.color_grey4};
+      font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 18px;
         font-weight: 500;
@@ -628,6 +655,10 @@ export const ThemedGlobalStyle = createGlobalStyle`
     //Header Global
     h1 {
       color: ${({ theme }) => theme.color_white};
+      font-size: 64px;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -0.005em;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 64px;
         font-weight: 500;
@@ -648,6 +679,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     h3 {
       color: ${({ theme }) => theme.color_white};
+      font-size: 40px;
+        font-weight: 500;
+        line-height: 140%;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 40px;
         font-weight: 500;
@@ -667,6 +701,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     .h3_1 {
       color: ${({ theme }) => theme.color_white};
+      font-size: 34px;
+        font-weight: 500;
+        line-height: 140%;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 34px;
         font-weight: 500;
@@ -687,6 +724,9 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     h4 {
       color: ${({ theme }) => theme.color_white};
+      font-size: 28px;
+        font-weight: 500;
+        line-height: 140%;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 28px;
         font-weight: 500;
@@ -707,9 +747,12 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     h5 {
       color: ${({ theme }) => theme.color_white};
+        font-size: 26px;
+        font-weight: 800;
+        line-height: 140%;
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 24px;
-        font-weight: 500;
+        font-weight: 800;
         line-height: 140%;
       `}
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
@@ -726,6 +769,12 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     h6 {
       color: ${({ theme }) => theme.color_grey};
+
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: 0.005em;
+
       ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
         font-size: 20px;
         font-weight: 400;
@@ -743,6 +792,30 @@ export const ThemedGlobalStyle = createGlobalStyle`
         line-height: 140%;
       `}
     }
+
+    .h7 {
+      color: ${({ theme }) => theme.color_grey};
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 140%;
+
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToSupperLarge`
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToLarge`
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 140%;
+      `}
+      ${({ theme }: { theme: ITheme }) => theme.mediaWidth.upToMedium`
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+      `}
+    }
+
 
     .margin-add {
       margin-bottom: 10px;
