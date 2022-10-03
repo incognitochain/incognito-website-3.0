@@ -61,9 +61,7 @@ const Policy = () => {
       <p className="fw-medium policy-sub-title">4. Information Collected</p>
       <div className="policy-wrap-number-content">
         <p className="text2 policy-content">
-          1. You agree to permit us to use cookies to track each of your actions and
-          collect and keep all the information that you leave on the Website and the Apps
-          including, but not limited to, your IP address, location, and other information.
+          1. You agree to permit us to track your activities on the Website and the Apps.
         </p>
         <p className="text2 policy-content">
           2. If you are willing to use the services offered by us, you will be required to
@@ -78,9 +76,8 @@ const Policy = () => {
           <p className="text2 policy-content">
             2. Service information
             <br /> Such information helps us to contact you and provide you with our
-            service and includes but not limited to, your phone number, valid email
-            address, mailing address, and information concerning your bank account
-            information (hereinafter collectively referred to as “service information“).
+            service and includes but not limited to, your email address (hereinafter
+            collectively referred to as ”service information”).
           </p>
           <p className="text2 policy-content">
             3. When you use the Service, we may collect more information necessary from
